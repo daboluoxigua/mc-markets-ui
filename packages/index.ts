@@ -60,6 +60,10 @@ import ElementPlusLocaleKy from 'element-plus/dist/locale/ky.mjs'
 import ElementPlusLocaleTk from 'element-plus/dist/locale/tk.mjs'
 import ElementPlusLocaleMn from 'element-plus/dist/locale/mn.mjs'
 
+
+// 自定义组件
+import Dialog from './components/Dialog/index.vue'
+export { Dialog }
 // ==================== Element Plus 完整导出 ====================
 // 导出所有 Element Plus 组件、指令、服务
 export * from 'element-plus'
@@ -270,6 +274,9 @@ const install = (app: App, options?: {
     locale: options?.locale ? locales[options.locale] : ElementPlusLocaleZhCn,
     size: 'default'
   })
+
+  // 注册自定义组件
+  app.component('Dialog', Dialog)
   
   // 自动导入样式
   if (options?.importStyle !== false) {
