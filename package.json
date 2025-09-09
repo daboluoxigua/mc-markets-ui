@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.9",
   "type": "module",
   "author": "chenyu",
   "description": "Element Plus 完整导出包，提供所有组件、指令和服务",
@@ -17,7 +17,6 @@
     "./style": "./dist/style.css",
     "./styles": "./dist/style.css",
     "./dist/style.css": "./dist/style.css",
-    "./css-variables": "./packages/styles/css-variables.css",
     "./scss-variables": "./packages/styles/variables.scss",
     "./styles/index": "./packages/styles/index.scss",
     "./theme-config": "./packages/styles/theme-config.ts",

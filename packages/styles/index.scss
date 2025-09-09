@@ -7,8 +7,5 @@
  * - 组件样式
  */
 
-// 导入 Element Plus 主题定制
-@import './variables.scss';
-
-// 导入 CSS 变量
-@import './css-variables.css';
+// 导入 Element Plus 主题定制（包含所有 CSS 变量）
+@use './variables.scss';

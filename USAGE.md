@@ -160,7 +160,7 @@ const setCustomTheme = () => {
 ```typescript
 import { createApp } from 'vue'
 import McMarketsUI from '@mc-markets/ui'
-import '@mc-markets/ui/css-variables' // 导入CSS变量
+import '@mc-markets/ui/scss-variables' // 导入SCSS变量
 
 const app = createApp(App)
 app.use(McMarketsUI)

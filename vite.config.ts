@@ -33,22 +33,7 @@ export default () => {
           /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
           /\.vue$/, /\.vue\?vue/, // .vue
         ],
-      }),
-      // 自定义插件：复制 Element Plus 样式文件
-      {
-        name: 'copy-element-plus-styles',
-        writeBundle() {
-          const elementPlusStylePath = path.resolve(__dirname, 'node_modules/element-plus/dist/index.css')
-          const distStylePath = path.resolve(__dirname, 'dist/style.css')
-          
-          if (existsSync(elementPlusStylePath)) {
-            copyFileSync(elementPlusStylePath, distStylePath)
-            console.log('✅ Element Plus 样式文件已复制到 dist/style.css')
-          } else {
-            console.warn('⚠️  Element Plus 样式文件未找到:', elementPlusStylePath)
-          }
-        }
-      }
+      })
     ],
     build: {
       outDir: "dist", //输出文件名称
