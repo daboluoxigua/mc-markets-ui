@@ -1,6 +1,6 @@
 <template>
   <div class="button-demo">
-    <MCButton>默认按钮</MCButton>
+    <el-button>默认按钮</el-button>
     <!-- 基础按钮类型 -->
     <el-card class="demo-card">
       <template #header>
@@ -9,13 +9,13 @@
         </div>
       </template>
       <div class="button-group">
-        <MCButton>默认按钮</MCButton>
-        <MCButton type="primary">主要按钮</MCButton>
-        <MCButton type="success">成功按钮</MCButton>
-        <MCButton type="warning">警告按钮</MCButton>
-        <MCButton type="danger">危险按钮</MCButton>
-        <MCButton type="info">信息按钮</MCButton>
-        <MCButton type="text">文本按钮</MCButton>
+        <el-button>默认按钮</el-button>
+        <el-button type="primary">主要按钮</el-button>
+        <el-button type="success">成功按钮</el-button>
+        <el-button type="warning">警告按钮</el-button>
+        <el-button type="danger">危险按钮</el-button>
+        <el-button type="info">信息按钮</el-button>
+        <el-button type="text">文本按钮</el-button>
       </div>
     </el-card>
 
@@ -27,10 +27,10 @@
         </div>
       </template>
       <div class="button-group">
-        <MCButton size="large" type="primary">大按钮</MCButton>
-        <MCButton type="primary">默认按钮</MCButton>
-        <MCButton size="small" type="primary">小按钮</MCButton>
-        <MCButton size="mini" type="primary">迷你按钮</MCButton>
+        <el-button size="large" type="primary">大按钮</el-button>
+        <el-button type="primary">默认按钮</el-button>
+        <el-button size="small" type="primary">小按钮</el-button>
+        <el-button size="mini" type="primary">迷你按钮</el-button>
       </div>
     </el-card>
 
@@ -42,17 +42,17 @@
         </div>
       </template>
       <div class="button-group">
-        <MCButton type="primary" :loading="loading" @click="handleLoading">
+        <el-button type="primary" :loading="loading" @click="handleLoading">
           {{ loading ? '加载中...' : '点击加载' }}
-        </MCButton>
-        <MCButton type="success" :disabled="disabled" @click="handleDisabled">
+        </el-button>
+        <el-button type="success" :disabled="disabled" @click="handleDisabled">
           {{ disabled ? '已禁用' : '可点击' }}
-        </MCButton>
-        <MCButton type="warning" plain>朴素按钮</MCButton>
-        <MCButton type="danger" round>圆角按钮</MCButton>
-        <MCButton type="info" circle>
+        </el-button>
+        <el-button type="warning" plain>朴素按钮</el-button>
+        <el-button type="danger" round>圆角按钮</el-button>
+        <el-button type="info" circle>
           <el-icon><Search /></el-icon>
-        </MCButton>
+        </el-button>
       </div>
     </el-card>
 
@@ -64,11 +64,11 @@
         </div>
       </template>
       <div class="button-group">
-        <MCButton type="primary">默认形状</MCButton>
-        <MCButton type="primary" round>圆角按钮</MCButton>
-        <MCButton type="primary" circle>
+        <el-button type="primary">默认形状</el-button>
+        <el-button type="primary" round>圆角按钮</el-button>
+        <el-button type="primary" circle>
           <el-icon><Edit /></el-icon>
-        </MCButton>
+        </el-button>
       </div>
     </el-card>
 
@@ -80,26 +80,26 @@
         </div>
       </template>
       <div class="button-group">
-        <MCButton type="primary">
+        <el-button type="primary">
           <el-icon><Search /></el-icon>
           搜索
-        </MCButton>
-        <MCButton type="success">
+        </el-button>
+        <el-button type="success">
           <el-icon><Edit /></el-icon>
           编辑
-        </MCButton>
-        <MCButton type="warning">
+        </el-button>
+        <el-button type="warning">
           <el-icon><Delete /></el-icon>
           删除
-        </MCButton>
-        <MCButton type="danger">
+        </el-button>
+        <el-button type="danger">
           <el-icon><Download /></el-icon>
           下载
-        </MCButton>
-        <MCButton type="info">
+        </el-button>
+        <el-button type="info">
           <el-icon><Upload /></el-icon>
           上传
-        </MCButton>
+        </el-button>
       </div>
     </el-card>
 
@@ -112,13 +112,13 @@
       </template>
       <div class="button-group">
         <el-button-group>
-          <MCButton type="primary" :icon="ArrowLeft">上一页</MCButton>
-          <MCButton type="primary" :icon="ArrowRight" icon-position="right">下一页</MCButton>
+          <el-button type="primary" :icon="ArrowLeft">上一页</el-button>
+          <el-button type="primary" :icon="ArrowRight" icon-position="right">下一页</el-button>
         </el-button-group>
         <el-button-group>
-          <MCButton type="primary" :icon="Edit">编辑</MCButton>
-          <MCButton type="success" :icon="Check">保存</MCButton>
-          <MCButton type="danger" :icon="Close">取消</MCButton>
+          <el-button type="primary" :icon="Edit">编辑</el-button>
+          <el-button type="success" :icon="Check">保存</el-button>
+          <el-button type="danger" :icon="Close">取消</el-button>
         </el-button-group>
       </div>
     </el-card>
@@ -131,11 +131,11 @@
         </div>
       </template>
       <div class="button-group">
-        <MCButton type="primary" @click="handleClick">点击事件</MCButton>
-        <MCButton type="success" @click="handleConfirm">确认对话框</MCButton>
-        <MCButton type="warning" @click="handleAlert">警告提示</MCButton>
-        <MCButton type="danger" @click="handleMessage">消息提示</MCButton>
-        <MCButton type="info" @click="handleNotification">通知消息</MCButton>
+        <el-button type="primary" @click="handleClick">点击事件</el-button>
+        <el-button type="success" @click="handleConfirm">确认对话框</el-button>
+        <el-button type="warning" @click="handleAlert">警告提示</el-button>
+        <el-button type="danger" @click="handleMessage">消息提示</el-button>
+        <el-button type="info" @click="handleNotification">通知消息</el-button>
       </div>
     </el-card>
 
@@ -147,10 +147,10 @@
         </div>
       </template>
       <div class="button-group">
-        <MCButton class="custom-button gradient-button">渐变按钮</MCButton>
-        <MCButton class="custom-button shadow-button">阴影按钮</MCButton>
-        <MCButton class="custom-button neon-button">霓虹按钮</MCButton>
-        <MCButton class="custom-button glass-button">玻璃按钮</MCButton>
+        <el-button class="custom-button gradient-button">渐变按钮</el-button>
+        <el-button class="custom-button shadow-button">阴影按钮</el-button>
+        <el-button class="custom-button neon-button">霓虹按钮</el-button>
+        <el-button class="custom-button glass-button">玻璃按钮</el-button>
       </div>
     </el-card>
   </div>
@@ -158,7 +158,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import MCButton from '@/components/button/index.vue'
 import { 
   Search, 
   Edit, 
