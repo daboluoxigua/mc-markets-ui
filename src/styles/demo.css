@@ -1,7 +1,6 @@
 /**
  * Demo 自定义样式
  */
- @import './variables/index.scss';
 
 /* 全局样式重置 */
 * {
