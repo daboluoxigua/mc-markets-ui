@@ -17,7 +17,7 @@
             v-model="isDark"
             @change="handleDarkModeChange"
             active-text="暗色模式"
-            style="margin-left: 20px;"
+            style="white-space: nowrap;"
           />
         </div>
       </div>
@@ -33,31 +33,35 @@
         >
           <el-menu-item index="components">
             <el-icon><Grid /></el-icon>
-            <span>组件展示</span>
+            <span class="menu-text">组件展示</span>
+          </el-menu-item>
+          <el-menu-item index="icons">
+            <Icon name="star-filled" :size="16" />
+            <span class="menu-text">字体图标</span>
           </el-menu-item>
           <el-menu-item index="colors">
-            <el-icon><Grid /></el-icon>
-            <span>颜色</span>
+            <Icon name="brush-cleaning" :size="16" />
+            <span class="menu-text">颜色</span>
           </el-menu-item>
           <el-menu-item index="buttons">
-            <el-icon><Grid /></el-icon>
-            <span>按钮</span>
+            <Icon name="square-check" :size="16" />
+            <span class="menu-text">按钮</span>
           </el-menu-item>
           <el-menu-item index="forms">
-            <el-icon><Edit /></el-icon>
-            <span>表单组件</span>
+            <Icon name="square-pen" :size="16" />
+            <span class="menu-text">表单组件</span>
           </el-menu-item>
           <el-menu-item index="tables">
-            <el-icon><List /></el-icon>
-            <span>表格组件</span>
+            <Icon name="layout-grid" :size="16" />
+            <span class="menu-text">表格组件</span>
           </el-menu-item>
           <el-menu-item index="theme">
-            <el-icon><Setting /></el-icon>
-            <span>主题配置</span>
+            <Icon name="adjustments-horizontal" :size="16" />
+            <span class="menu-text">主题配置</span>
           </el-menu-item>
           <el-menu-item index="i18n">
-            <el-icon><Translation /></el-icon>
-            <span>国际化</span>
+            <Icon name="globe" :size="16" />
+            <span class="menu-text">国际化</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -76,11 +80,26 @@
                     </div>
                   </template>
                   <div class="button-group">
-                    <el-button type="primary">主要按钮</el-button>
-                    <el-button type="success">成功按钮</el-button>
-                    <el-button type="warning">警告按钮</el-button>
-                    <el-button type="danger">危险按钮</el-button>
-                    <el-button type="info">信息按钮</el-button>
+                    <el-button type="primary">
+                      <Icon name="plus" :size="16" style="margin-right: 4px;" />
+                      主要按钮
+                    </el-button>
+                    <el-button type="success">
+                      <Icon name="circle-check" :size="16" style="margin-right: 4px;" />
+                      成功按钮
+                    </el-button>
+                    <el-button type="warning">
+                      <Icon name="alert-circle" :size="16" style="margin-right: 4px;" />
+                      警告按钮
+                    </el-button>
+                    <el-button type="danger">
+                      <Icon name="circle-x" :size="16" style="margin-right: 4px;" />
+                      危险按钮
+                    </el-button>
+                    <el-button type="info">
+                      <Icon name="circle-help" :size="16" style="margin-right: 4px;" />
+                      信息按钮
+                    </el-button>
                   </div>
                 </el-card>
               </el-col>
@@ -94,9 +113,14 @@
                   </template>
                   <div class="input-group">
                     <el-input v-model="inputValue" placeholder="请输入内容" />
-                    <el-input v-model="inputValue" placeholder="带图标" style="margin-top: 10px;">
+                    <el-input v-model="inputValue" placeholder="带字体图标" style="margin-top: 10px;">
                       <template #prefix>
-                        <el-icon><Search /></el-icon>
+                        <Icon name="search" :size="16" />
+                      </template>
+                    </el-input>
+                    <el-input v-model="inputValue" placeholder="带后缀图标" style="margin-top: 10px;">
+                      <template #suffix>
+                        <Icon name="eye" :size="16" />
                       </template>
                     </el-input>
                   </div>
@@ -107,17 +131,31 @@
                 <el-card class="demo-card">
                   <template #header>
                     <div class="card-header">
-                      <span>其他组件</span>
+                      <span>字体图标</span>
                     </div>
                   </template>
-                  <div class="other-group">
-                    <el-switch v-model="switchValue" />
-                    <el-rate v-model="rateValue" style="margin-top: 10px;" />
-                    <el-progress :percentage="progressValue" style="margin-top: 10px;" />
+                  <div class="icon-group">
+                    <div class="icon-row">
+                      <Icon name="home-filled" :size="20" />
+                      <Icon name="user-round" :size="20" />
+                      <Icon name="search" :size="20" />
+                      <Icon name="star-filled" :size="20" />
+                    </div>
+                    <div class="icon-row">
+                      <Icon name="refresh-cw" :size="20" :spin="true" />
+                      <Icon name="heart-handshake" :size="20" :pulse="true" />
+                      <Icon name="arrow-right-left" :size="20" :rotate="45" />
+                      <Icon name="circle-check" :size="20" color="#67c23a" />
+                    </div>
                   </div>
                 </el-card>
               </el-col>
             </el-row>
+          </div>
+          <!-- 字体图标 -->
+          <div v-if="activeMenu === 'icons'" class="demo-section">
+            <h2>字体图标</h2>
+            <icon />
           </div>
           <!-- 颜色 -->
           <div v-if="activeMenu === 'colors'" class="demo-section">
@@ -355,6 +393,10 @@ import {
   getLocaleLabel
 } from './utils/theme'
 
+// 导入字体图标组件
+import { Icon } from '@mc-markets/ui'
+import icon from './components/icon.vue'
+
 // 响应式数据
 const activeMenu = ref('components')
 const selectedTheme = ref('blue')
@@ -560,6 +602,9 @@ onMounted(() => {
 .header-actions {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 20px;
 }
 
 .demo-container {
@@ -575,6 +620,28 @@ onMounted(() => {
 .demo-menu {
   border: none;
   height: 100%;
+}
+
+.menu-text {
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+/* 确保菜单项中的图标和文本对齐 */
+.demo-menu .el-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+/* 菜单项悬停时文本颜色变化 */
+.demo-menu .el-menu-item:hover .menu-text {
+  color: var(--el-color-primary);
+}
+
+/* 菜单项激活时文本颜色 */
+.demo-menu .el-menu-item.is-active .menu-text {
+  color: var(--el-color-primary);
+  font-weight: 500;
 }
 
 .demo-main {
@@ -620,6 +687,19 @@ onMounted(() => {
   gap: 10px;
 }
 
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icon-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 .color-config,
 .style-config {
   display: flex;
@@ -658,6 +738,30 @@ onMounted(() => {
   
   .demo-menu .el-menu-item {
     white-space: nowrap;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-actions {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  
+  .header-actions .el-switch {
+    margin-left: 0 !important;
   }
 }
 </style>

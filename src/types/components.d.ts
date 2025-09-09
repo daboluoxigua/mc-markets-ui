@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     Buttons: typeof import('./../components/buttons.vue')['default']
     Colors: typeof import('./../components/colors.vue')['default']
     I18nDemo: typeof import('./../components/I18nDemo.vue')['default']
+    Icon: typeof import('./../components/icon.vue')['default']
     ThemeDemo: typeof import('./../components/ThemeDemo.vue')['default']
   }
 }

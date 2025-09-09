@@ -27,8 +27,9 @@
     "noEmit": true,
     "baseUrl": "./",
     "paths": {
-      "@": ["src", "packages"],
-      "@/*": ["src/*", "packages/*"]
+      "@": ["./packages"],
+      "@/*": ["./packages/*"],
+      "@mc-markets/ui": ["./packages"]
     }
   },
   "include": [

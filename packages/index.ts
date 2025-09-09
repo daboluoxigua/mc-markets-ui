@@ -8,8 +8,10 @@
 
 import { App } from 'vue'
 import Dialog from './components/Dialog/index.vue'
+import { Icon } from './components/Icon'
 
 export { Dialog }
+export { Icon }
 
 // 样式相关
 export * from './styles/theme-config'
@@ -26,6 +28,7 @@ const description = '自定义组件库，提供自定义组件和工具函数'
 const install = (app: App): void => {
   // 注册自定义组件
   app.component('Dialog', Dialog)
+  app.component('Icon', Icon)
   
   // 注册全局属性
   app.config.globalProperties.$mcMarketsUI = {
