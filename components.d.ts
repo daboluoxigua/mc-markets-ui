@@ -10,8 +10,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     I18nDemo: typeof import('./src/components/I18nDemo.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
     ThemeDemo: typeof import('./src/components/ThemeDemo.vue')['default']
   }
 }
