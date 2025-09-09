@@ -9,3 +9,8 @@
 
 // 导入 Element Plus 主题定制（包含所有 CSS 变量）
 @use './variables.scss';
+
+
+.el-button {
+  border-radius: var(--el-border-radius-base);
+}

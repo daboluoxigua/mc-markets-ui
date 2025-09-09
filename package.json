@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.0.9",
+  "version": "1.0.19",
   "type": "module",
   "author": "chenyu",
   "description": "Element Plus 完整导出包，提供所有组件、指令和服务",
