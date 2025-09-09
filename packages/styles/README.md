@@ -10,7 +10,7 @@
 packages/styles/
 ├── index.scss              # 样式入口文件
 ├── variables.scss          # Element Plus 主题变量覆盖
-├── css-variables.css       # CSS 变量定义
+├── variables.scss          # SCSS 变量和 CSS 变量定义
 ├── theme-config.ts         # 主题管理工具
 └── variables/              # 详细样式变量
     ├── index.scss
@@ -33,7 +33,6 @@ import '@mc-markets/ui/styles/index'
 
 // 或者分别导入
 import '@mc-markets/ui/scss-variables'
-import '@mc-markets/ui/css-variables'
 ```
 
 ### 2. 使用主题管理工具
@@ -115,7 +114,7 @@ setPrimaryColor('#722ed1')
 
 ### CSS 变量覆盖
 
-`css-variables.css` 文件定义了完整的 CSS 变量系统，支持：
+`variables.scss` 文件定义了完整的 SCSS 变量和 CSS 变量系统，支持：
 
 - 亮色/暗色主题切换
 - 动态颜色调整

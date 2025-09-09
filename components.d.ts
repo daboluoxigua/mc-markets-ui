@@ -9,6 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Buttons: typeof import('./src/components/buttons.vue')['default']
+    Colors: typeof import('./src/components/colors.vue')['default']
     I18nDemo: typeof import('./src/components/I18nDemo.vue')['default']
     ThemeDemo: typeof import('./src/components/ThemeDemo.vue')['default']
   }

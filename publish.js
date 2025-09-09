@@ -105,7 +105,7 @@ function updateVersionInFiles(newVersion) {
       `const version = '${newVersion}'`
     );
     indexContent = indexContent.replace(
-      /@version [^\\n]+/g,
+      /@version [^\n]+/g,
       `@version ${newVersion}`
     );
     fs.writeFileSync(indexTsPath, indexContent);

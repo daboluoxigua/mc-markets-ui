@@ -3,24 +3,22 @@
  * 
  * 提供自定义组件和工具函数
  * 
- * @version 1.0.3
+ * @version 1.0.9
  */
 
-import type { App } from 'vue'
-
-// 自定义组件
+import { App } from 'vue'
 import Dialog from './components/Dialog/index.vue'
+
 export { Dialog }
 
 // 样式相关
 export * from './styles/theme-config'
 export { default as variables } from './styles/variables.scss'
-export { default as cssVariables } from './styles/css-variables.css'
 export { default as styles } from './styles/index.scss'
 
 
 // ==================== 版本信息 ====================
-const version = '1.0.3'
+const version = '1.0.9'
 const author = 'chenyu'
 const description = '自定义组件库，提供自定义组件和工具函数'
 
