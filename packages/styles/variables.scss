@@ -1,0 +1,98 @@
+/**
+ * @mc-markets/ui - Element Plus 主题变量配置
+ * 
+ * 基于 Element Plus 官方主题定制指南
+ * @see https://element-plus.org/zh-CN/guide/theming.html
+ */
+
+// 导入 Element Plus 的 SCSS 变量
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // 自定义颜色变量
+  $colors: (
+    'primary': (
+      'base': #409eff, // 主色
+    ),
+    'success': (
+      'base': #67c23a, // 成功色
+    ),
+    'warning': (
+      'base': #e6a23c, // 警告色
+    ),
+    'danger': (
+      'base': #f56c6c, // 危险色
+    ),
+    'error': (
+      'base': #f56c6c, // 错误色
+    ),
+    'info': (
+      'base': #909399, // 信息色
+    ),
+  ),
+  
+  // 自定义字体大小
+  $font-size: (
+    'extra-large': 20px,
+    'large': 18px,
+    'medium': 16px,
+    'base': 14px,
+    'small': 13px,
+    'extra-small': 12px,
+  ),
+  
+  // 自定义圆角
+  $border-radius: (
+    'base': 4px,
+    'small': 2px,
+    'round': 20px,
+    'circle': 100%,
+  ),
+  
+  // 自定义阴影
+  $box-shadow: (
+    'base': (
+      0 2px 4px rgba(0, 0, 0, 0.12),
+      0 0 6px rgba(0, 0, 0, 0.04)
+    ),
+    'light': (
+      0 2px 12px 0 rgba(0, 0, 0, 0.1)
+    ),
+    'lighter': (
+      0 2px 12px 0 rgba(0, 0, 0, 0.06)
+    ),
+    'dark': (
+      0 2px 4px rgba(0, 0, 0, 0.12),
+      0 0 6px rgba(0, 0, 0, 0.12)
+    ),
+  ),
+  
+  // 自定义间距
+  $spacing: (
+    'base': 20px,
+    'small': 10px,
+    'large': 30px,
+  ),
+  
+  // 自定义动画时长
+  $transition-duration: (
+    'base': 0.3s,
+    'fast': 0.2s,
+    'slow': 0.5s,
+  ),
+  
+  // 自定义动画函数
+  $transition-function: (
+    'ease-in-out': cubic-bezier(0.645, 0.045, 0.355, 1),
+    'ease-out': cubic-bezier(0.23, 1, 0.32, 1),
+    'ease-in': cubic-bezier(0.755, 0.05, 0.855, 0.06),
+  ),
+  
+  // 自定义 z-index
+  $z-index: (
+    'normal': 1,
+    'top': 1000,
+    'popper': 2000,
+  )
+);
+
+// 导入所有 Element Plus 样式
+@use "element-plus/theme-chalk/src/index.scss" as *;
