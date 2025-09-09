@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
 
-
-import './styles/element.scss'
+// 导入 Element Plus 样式
+import '../packages/styles/index.scss'
 
 // 导入自定义样式
 import './styles/demo.css'
