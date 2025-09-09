@@ -26,7 +26,7 @@ export default () => {
       }),
       Components({
         resolvers: [ElementPlusResolver({
-          importStyle: 'css'
+          importStyle: 'sass'
         })],
         dts: true,
         include: [
@@ -74,6 +74,14 @@ export default () => {
       alias: {
         "@": fileURLToPath(new URL("./packages", import.meta.url)),
         "@mc-markets/ui": fileURLToPath(new URL("./packages", import.meta.url)),
+      },
+    },
+    
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // 可以在这里添加全局 SCSS 变量，但避免循环依赖
+        },
       },
     },
   });

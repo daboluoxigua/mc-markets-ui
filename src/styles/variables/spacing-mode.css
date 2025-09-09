@@ -1,0 +1,20 @@
+/* 4.-spacing-mode-1.css */
+:root {
+	--10xl: var(--spacing-32-128px);
+	--11xl: var(--spacing-40-160px);
+	--2xl: var(--spacing-5-20px);
+	--3xl: var(--spacing-6-24px);
+	--4xl: var(--spacing-8-32px);
+	--5xl: var(--spacing-10-40px);
+	--6xl: var(--spacing-12-48px);
+	--7xl: var(--spacing-16-64px);
+	--8xl: var(--spacing-20-80px);
+	--9xl: var(--spacing-24-96px);
+	--lg: var(--spacing-3-12px);
+	--md: var(--spacing-2-8px);
+	--none: var(--spacing-0-0px);
+	--sm: var(--spacing-1․5-6px);
+	--xl: var(--spacing-4-16px);
+	--xs: var(--spacing-1-4px);
+	--xxs: var(--spacing-0․5-2px);
+}

@@ -1,0 +1,40 @@
+/* 5.-typography-desktop.css */
+:root {
+	--font-family-pingfang-sc: 'pingfang sc';
+	--font-line-height-display-10xl: 128px;
+	--font-line-height-display-2xl: 32px;
+	--font-line-height-display-3xl: 34px;
+	--font-line-height-display-4xl: 38px;
+	--font-line-height-display-5xl: 44px;
+	--font-line-height-display-6xl: 60px;
+	--font-line-height-display-7xl: 72px;
+	--font-line-height-display-8xl: 90px;
+	--font-line-height-display-9xl: 96px;
+	--font-line-height-text-base: 24px;
+	--font-line-height-text-lg: 28px;
+	--font-line-height-text-sm: 20px;
+	--font-line-height-text-xl: 30px;
+	--font-line-height-text-xs: 18px;
+	--font-line-height-text-xxs: 14px;
+	--font-size-display-10xl: 128px;
+	--font-size-display-2xl: 24px;
+	--font-size-display-3xl: 28px;
+	--font-size-display-4xl: 30px;
+	--font-size-display-5xl: 36px;
+	--font-size-display-6xl: 48px;
+	--font-size-display-7xl: 60px;
+	--font-size-display-8xl: 72px;
+	--font-size-display-9xl: 96px;
+	--font-size-text-base: 16px;
+	--font-size-text-lg: 18px;
+	--font-size-text-sm: 14px;
+	--font-size-text-xl: 20px;
+	--font-size-text-xs: 12px;
+	--font-size-text-xxs: 10px;
+	--font-weight-pingfangsc-light: 'light';
+	--font-weight-pingfangsc-medium: 'medium';
+	--font-weight-pingfangsc-regular: 'regular';
+	--font-weight-pingfangsc-semibold: 'semibold';
+	--font-weight-pingfangsc-thin: 'thin';
+	--font-weight-pingfangsc-ultralight: 'ultralight';
+}

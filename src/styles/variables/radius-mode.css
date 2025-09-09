@@ -1,0 +1,14 @@
+/* 2.-radius-mode-1.css */
+:root {
+	--2xl: 16px;
+	--3xl: 20px;
+	--4xl: 24px;
+	--full: 9999px;
+	--lg: 10px;
+	--md: 8px;
+	--none: 0px;
+	--sm: 6px;
+	--xl: 12px;
+	--xs: 4px;
+	--xxs: 2px;
+}
