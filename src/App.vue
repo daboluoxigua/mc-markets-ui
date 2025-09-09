@@ -35,6 +35,14 @@
             <el-icon><Grid /></el-icon>
             <span>组件展示</span>
           </el-menu-item>
+          <el-menu-item index="colors">
+            <el-icon><Grid /></el-icon>
+            <span>颜色</span>
+          </el-menu-item>
+          <el-menu-item index="buttons">
+            <el-icon><Grid /></el-icon>
+            <span>按钮</span>
+          </el-menu-item>
           <el-menu-item index="forms">
             <el-icon><Edit /></el-icon>
             <span>表单组件</span>
@@ -111,7 +119,16 @@
               </el-col>
             </el-row>
           </div>
-
+          <!-- 颜色 -->
+          <div v-if="activeMenu === 'colors'" class="demo-section">
+            <h2>颜色</h2>
+            <Colors />
+          </div>
+          <!-- 按钮 -->
+          <div v-if="activeMenu === 'buttons'" class="demo-section">
+            <h2>按钮</h2>
+            <Buttons />
+          </div>
           <!-- 表单组件 -->
           <div v-if="activeMenu === 'forms'" class="demo-section">
             <h2>表单组件</h2>
