@@ -9,11 +9,9 @@
 import { App } from 'vue'
 import Dialog from './components/Dialog/index.vue'
 import { Icon } from './components/Icon'
-import TDButton from './components/Button/index.vue'
 
 
-export { Dialog, TDButton }
-export { Icon }
+export { Dialog, Icon }
 
 // 样式相关
 export * from './styles/theme-config'
@@ -29,8 +27,7 @@ const description = '自定义组件库，提供自定义组件和工具函数'
 // ==================== 组件注册配置 ====================
 const components = {
   Dialog,
-  ELButton: TDButton,
-  'td-button': TDButton
+  Icon
 }
 
 // ==================== 安装函数 ====================
