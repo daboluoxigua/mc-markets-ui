@@ -8,10 +8,12 @@
 
 import { App } from 'vue'
 import Dialog from './components/Dialog/index.vue'
+import { Icon } from './components/Icon'
 import TDButton from './components/Button/index.vue'
 
 
 export { Dialog, TDButton }
+export { Icon }
 
 // 样式相关
 export * from './styles/theme-config'

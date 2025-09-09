@@ -12,8 +12,7 @@ declare module '@vue/runtime-core' {
     Buttons: typeof import('./../components/buttons/index.vue')['default']
     Colors: typeof import('./../components/colors/index.vue')['default']
     I18nDemo: typeof import('./../components/I18nDemo.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    Icon: typeof import('./../components/icon.vue')['default']
     ThemeDemo: typeof import('./../components/ThemeDemo.vue')['default']
   }
 }
