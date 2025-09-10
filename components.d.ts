@@ -10,11 +10,12 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Buttons: typeof import('./src/components/buttons/index.vue')['default']
+    CodeToggle: typeof import('./src/components/CodeToggle.vue')['default']
+    CodeToggleExample: typeof import('./src/components/CodeToggleExample.vue')['default']
     Colors: typeof import('./src/components/colors/index.vue')['default']
     I18nDemo: typeof import('./src/components/I18nDemo.vue')['default']
     Icon: typeof import('./src/components/icon.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    Tab: typeof import('./src/components/tab.vue')['default']
     ThemeDemo: typeof import('./src/components/ThemeDemo.vue')['default']
   }
 }

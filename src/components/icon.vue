@@ -24,17 +24,12 @@
             </div>
           </div>
         </div>
-        <div class="demo-actions">
-          <button class="demo-toggle-btn" @click="toggleCode('basic')">
-            {{ showCode.basic ? '隐藏代码' : '显示代码' }}
-          </button>
-        </div>
-        <div v-show="showCode.basic" class="demo-code">
-          <pre><code>&lt;Icon name="home-filled" /&gt;
+        <CodeToggle>
+          &lt;Icon name="home-filled" /&gt;
 &lt;Icon name="user-round" /&gt;
 &lt;Icon name="search" /&gt;
-&lt;Icon name="star-filled" /&gt;</code></pre>
-        </div>
+&lt;Icon name="star-filled" /&gt;
+        </CodeToggle>
       </div>
     </section>
 
@@ -57,27 +52,17 @@
               <span>32px</span>
             </div>
             <div class="demo-item">
-              <Icon name="home-filled" :size="48" />
-              <span>48px</span>
-            </div>
-            <div class="demo-item">
               <Icon name="home-filled" size="2rem" />
               <span>2rem</span>
             </div>
           </div>
         </div>
-        <div class="demo-actions">
-          <button class="demo-toggle-btn" @click="toggleCode('size')">
-            {{ showCode.size ? '隐藏代码' : '显示代码' }}
-          </button>
-        </div>
-        <div v-show="showCode.size" class="demo-code">
-          <pre><code>&lt;Icon name="home-filled" :size="16" /&gt;
+        <CodeToggle>
+          &lt;Icon name="home-filled" :size="16" /&gt;
 &lt;Icon name="home-filled" :size="24" /&gt;
 &lt;Icon name="home-filled" :size="32" /&gt;
-&lt;Icon name="home-filled" :size="48" /&gt;
-&lt;Icon name="home-filled" size="2rem" /&gt;</code></pre>
-        </div>
+&lt;Icon name="home-filled" size="2rem" /&gt;
+        </CodeToggle>
       </div>
     </section>
 
@@ -90,10 +75,6 @@
             <div class="demo-item">
               <Icon name="star-filled" color="#ff6b6b" />
               <span>红色</span>
-            </div>
-            <div class="demo-item">
-              <Icon name="star-filled" color="#4ecdc4" />
-              <span>青色</span>
             </div>
             <div class="demo-item">
               <Icon name="star-filled" color="#45b7d1" />
@@ -109,18 +90,12 @@
             </div>
           </div>
         </div>
-        <div class="demo-actions">
-          <button class="demo-toggle-btn" @click="toggleCode('color')">
-            {{ showCode.color ? '隐藏代码' : '显示代码' }}
-          </button>
-        </div>
-        <div v-show="showCode.color" class="demo-code">
-          <pre><code>&lt;Icon name="star-filled" color="#ff6b6b" /&gt;
-&lt;Icon name="star-filled" color="#4ecdc4" /&gt;
+        <CodeToggle>
+          &lt;Icon name="star-filled" color="#ff6b6b" /&gt;
 &lt;Icon name="star-filled" color="#45b7d1" /&gt;
 &lt;Icon name="star-filled" color="#96ceb4" /&gt;
-&lt;Icon name="star-filled" color="#feca57" /&gt;</code></pre>
-        </div>
+&lt;Icon name="star-filled" color="#feca57" /&gt;
+        </CodeToggle>
       </div>
     </section>
 
@@ -148,17 +123,12 @@
             </div>
           </div>
         </div>
-        <div class="demo-actions">
-          <button class="demo-toggle-btn" @click="toggleCode('animation')">
-            {{ showCode.animation ? '隐藏代码' : '显示代码' }}
-          </button>
-        </div>
-        <div v-show="showCode.animation" class="demo-code">
-          <pre><code>&lt;Icon name="refresh-cw" :spin="true" /&gt;
+        <CodeToggle>
+          &lt;Icon name="refresh-cw" :spin="true" /&gt;
 &lt;Icon name="heart-handshake" :pulse="true" /&gt;
 &lt;Icon name="arrow-right-left" :rotate="45" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="90" /&gt;</code></pre>
-        </div>
+&lt;Icon name="arrow-right-left" :rotate="90" /&gt;
+        </CodeToggle>
       </div>
     </section>
 
@@ -186,17 +156,12 @@
             </div>
           </div>
         </div>
-        <div class="demo-actions">
-          <button class="demo-toggle-btn" @click="toggleCode('flip')">
-            {{ showCode.flip ? '隐藏代码' : '显示代码' }}
-          </button>
-        </div>
-        <div v-show="showCode.flip" class="demo-code">
-          <pre><code>&lt;Icon name="arrow-right-left" /&gt;
+        <CodeToggle>
+          &lt;Icon name="arrow-right-left" /&gt;
 &lt;Icon name="arrow-right-left" flip="horizontal" /&gt;
 &lt;Icon name="arrow-right-left" flip="vertical" /&gt;
-&lt;Icon name="arrow-right-left" flip="both" /&gt;</code></pre>
-        </div>
+&lt;Icon name="arrow-right-left" flip="both" /&gt;
+        </CodeToggle>
       </div>
     </section>
 
@@ -220,16 +185,11 @@
             </div>
           </div>
         </div>
-        <div class="demo-actions">
-          <button class="demo-toggle-btn" @click="toggleCode('combination')">
-            {{ showCode.combination ? '隐藏代码' : '显示代码' }}
-          </button>
-        </div>
-        <div v-show="showCode.combination" class="demo-code">
-          <pre><code>&lt;Icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" /&gt;
+        <CodeToggle>
+          &lt;Icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" /&gt;
 &lt;Icon name="heart-handshake" :pulse="true" color="#4ecdc4" :size="24" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="45" flip="horizontal" color="#45b7d1" :size="24" /&gt;</code></pre>
-        </div>
+&lt;Icon name="arrow-right-left" :rotate="45" flip="horizontal" color="#45b7d1" :size="24" /&gt;
+        </CodeToggle>
       </div>
     </section>
 
@@ -256,13 +216,8 @@
             你点击了图标: {{ clickedIcon }}
           </p>
         </div>
-        <div class="demo-actions">
-          <button class="demo-toggle-btn" @click="toggleCode('click')">
-            {{ showCode.click ? '隐藏代码' : '显示代码' }}
-          </button>
-        </div>
-        <div v-show="showCode.click" class="demo-code">
-          <pre><code>&lt;template&gt;
+        <CodeToggle>
+          &lt;template&gt;
   &lt;div class="demo-grid"&gt;
     &lt;div class="demo-item clickable" @click="handleIconClick('home-filled')"&gt;
       &lt;Icon name="home-filled" :size="24" /&gt;
@@ -283,7 +238,34 @@
 const handleIconClick = (iconName) =&gt; {
   console.log('点击了图标:', iconName)
 }
-&lt;/script&gt;</code></pre>
+&lt;/script&gt;
+        </CodeToggle>
+      </div>
+    </section>
+
+    <!-- 图标搜索和展示 -->
+    <section class="demo-section">
+      <h2>图标库 ({{ iconList.length }} 个)</h2>
+      <div class="search-container">
+        <input 
+          v-model="searchKeyword" 
+          type="text" 
+          placeholder="搜索图标名称..."
+          class="search-input"
+        />
+      </div>
+      <div class="all-icons-grid">
+        <div 
+          v-for="icon in filteredIcons" 
+          :key="icon.name"
+          class="icon-item"
+          :class="{ active: selectedIcon === icon.name }"
+          @click="selectIcon(icon.name as IconName)"
+        >
+          <Icon :name="icon.name" :size="24" />
+          <span class="icon-class" @click.stop="copyIconClass(`icon-${icon.fontClass}`)">
+            icon-{{ icon.fontClass }}
+          </span>
         </div>
       </div>
     </section>
@@ -386,33 +368,6 @@ const handleIconClick = (iconName) =&gt; {
       </div>
     </section>
 
-    <!-- 图标搜索和展示 -->
-    <section class="demo-section">
-      <h2>图标库 ({{ iconList.length }} 个)</h2>
-      <div class="search-container">
-        <input 
-          v-model="searchKeyword" 
-          type="text" 
-          placeholder="搜索图标名称..."
-          class="search-input"
-        />
-      </div>
-      <div class="all-icons-grid">
-        <div 
-          v-for="icon in filteredIcons" 
-          :key="icon.name"
-          class="icon-item"
-          :class="{ active: selectedIcon === icon.name }"
-          @click="selectIcon(icon.name as IconName)"
-        >
-          <Icon :name="icon.name" :size="24" />
-          <span class="icon-class" @click.stop="copyIconClass(`icon-${icon.fontClass}`)">
-            icon-{{ icon.fontClass }}
-          </span>
-        </div>
-      </div>
-    </section>
-
     <!-- 复制成功提示 -->
     <div v-if="copyMessage" class="copy-message">
       {{ copyMessage }}
@@ -424,21 +379,13 @@ const handleIconClick = (iconName) =&gt; {
 import { ref, computed } from 'vue'
 import { Icon } from '@mc-markets/ui'
 import { iconList, searchIcons, type IconName } from '../../packages/components/Icon/types'
+import CodeToggle from './CodeToggle.vue'
 
 // 响应式数据
 const clickedIcon = ref<string>('')
 const searchKeyword = ref('')
 const selectedIcon = ref<IconName>('home-filled')
 const copyMessage = ref<string>('')
-const showCode = ref({
-  basic: false,
-  size: false,
-  color: false,
-  animation: false,
-  flip: false,
-  combination: false,
-  click: false
-})
 
 // 计算属性
 const filteredIcons = computed(() => {
@@ -483,9 +430,6 @@ const copyIconClass = async (className: string) => {
   }
 }
 
-const toggleCode = (key: keyof typeof showCode.value) => {
-  showCode.value[key] = !showCode.value[key]
-}
 </script>
 
 <style scoped>
@@ -526,50 +470,6 @@ h2 {
   background: #fafafa;
 }
 
-.demo-actions {
-  padding: 12px 20px;
-  background: #f8f9fa;
-  border-top: 1px solid #e1e8ed;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.demo-toggle-btn {
-  background: var(--el-color-primary);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.demo-toggle-btn:hover {
-  background: var(--el-color-primary-light-3);
-  transform: translateY(-1px);
-}
-
-.demo-code {
-  background: #2c3e50;
-  color: #ecf0f1;
-  border-top: 1px solid #34495e;
-}
-
-.demo-code pre {
-  margin: 0;
-  padding: 20px;
-  overflow-x: auto;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.demo-code code {
-  color: #ecf0f1;
-  background: none;
-  padding: 0;
-}
 
 .demo-grid {
   display: grid;
@@ -677,7 +577,7 @@ h2 {
   font-size: 14px;
   color: #666;
   font-family: monospace;
-  padding: 2px 6px;
+  padding: 2px 0;
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.2s ease;
