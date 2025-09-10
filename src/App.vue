@@ -47,6 +47,14 @@
             <Icon name="layout-grid" :size="16" />
             <span class="menu-text">Tabs</span>
           </el-menu-item>
+          <el-menu-item index="alert">
+            <Icon name="alert-circle" :size="16" />
+            <span class="menu-text">Alert</span>
+          </el-menu-item>
+          <el-menu-item index="notification">
+            <Icon name="bell" :size="16" />
+            <span class="menu-text">Notification</span>
+          </el-menu-item>
           <el-menu-item index="colors">
             <Icon name="brush-cleaning" :size="16" />
             <span class="menu-text">颜色</span>
@@ -197,6 +205,16 @@
           <div v-if="activeMenu === 'tabs'" class="demo-section">
             <h2>Tabs</h2>
             <tab-doc />
+          </div>
+          <!-- Alert 文档 -->
+          <div v-if="activeMenu === 'alert'" class="demo-section">
+            <h2>Alert</h2>
+            <alert />
+          </div>
+          <!-- Notification 文档 -->
+          <div v-if="activeMenu === 'notification'" class="demo-section">
+            <h2>Notification</h2>
+            <notification />
           </div>
           <!-- 颜色 -->
           <div v-if="activeMenu === 'colors'" class="demo-section">
@@ -492,6 +510,8 @@ import {
 import { Icon } from "@mc-markets/ui";
 import icon from "./components/icon.vue";
 import tabDoc from './components/tab.vue'
+import alert from './components/alert.vue'
+import notification from './components/notification.vue'
 
 // 响应式数据
 const activeMenu = ref("components");
