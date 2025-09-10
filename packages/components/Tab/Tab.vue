@@ -12,60 +12,68 @@
   </el-tabs>
 </template>
 
-<script setup lang="ts">
-import { ElTabs } from 'element-plus'
-import type { TabsProps, TabPaneName, TabClickEvent, TabChangeEvent, TabRemoveEvent, TabAddEvent } from 'element-plus'
-
-// 定义组件属性，继承 Element Plus Tabs 的所有属性
-export interface TabProps extends Omit<TabsProps, 'modelValue'> {
-  modelValue?: TabPaneName
-}
-
-// 定义事件
-export interface TabEvents {
-  'update:modelValue': [value: TabPaneName]
-  'tab-click': [tab: TabClickEvent]
-  'tab-change': [name: TabChangeEvent]
-  'tab-remove': [name: TabRemoveEvent]
-  'tab-add': [event: TabAddEvent]
-}
-
+<script setup>
 // 定义 props
-const props = withDefaults(defineProps<TabProps>(), {
-  type: 'card',
-  closable: false,
-  addable: false,
-  editable: false,
-  tabPosition: 'top',
-  stretch: false,
-  beforeLeave: undefined
+const props = defineProps({
+  modelValue: {
+    type: [String, Number],
+    default: undefined
+  },
+  type: {
+    type: String,
+    default: 'card'
+  },
+  closable: {
+    type: Boolean,
+    default: false
+  },
+  addable: {
+    type: Boolean,
+    default: false
+  },
+  editable: {
+    type: Boolean,
+    default: false
+  },
+  tabPosition: {
+    type: String,
+    default: 'top'
+  },
+  stretch: {
+    type: Boolean,
+    default: false
+  },
+  beforeLeave: {
+    type: Function,
+    default: undefined
+  }
 })
 
 // 定义 emits
-const emit = defineEmits<TabEvents>()
+const emit = defineEmits(['update:modelValue', 'tab-click', 'tab-change', 'tab-remove', 'tab-add'])
 
 // 处理 modelValue 更新
-const handleUpdate = (value: TabPaneName) => {
+const handleUpdate = (value) => {
   emit('update:modelValue', value)
 }
 
 // 处理 tab 点击事件
-const handleTabClick = (tab: TabClickEvent) => {
+const handleTabClick = (tab) => {
   emit('tab-click', tab)
 }
 
 // 处理 tab 切换事件
-const handleTabChange = (name: TabChangeEvent) => {
+const handleTabChange = (name) => {
   emit('tab-change', name)
 }
 
 // 处理 tab 移除事件
-const handleTabRemove = (name: TabRemoveEvent) => {
+const handleTabRemove = (name) => {
   emit('tab-remove', name)
 }
 
 // 处理 tab 添加事件
-const handleTabAdd = (event: TabAddEvent) => {
+const handleTabAdd = (event) => {
   emit('tab-add', event)
 }
 </script>

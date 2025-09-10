@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import CodeToggle from './CodeToggle.vue'
 </script>
 

@@ -9,33 +9,45 @@
   </i>
 </template>
 
-<script setup lang="ts">
-import { computed, CSSProperties } from 'vue'
+<script setup>
+import { computed } from 'vue'
 
-export interface IconProps {
-  name: string
-  size?: string | number
-  color?: string
-  spin?: boolean
-  pulse?: boolean
-  rotate?: number
-  flip?: 'horizontal' | 'vertical' | 'both'
-  prefix?: string
-}
-
-const props = withDefaults(defineProps<IconProps>(), {
-  size: '16px',
-  color: 'inherit',
-  spin: false,
-  pulse: false,
-  rotate: 0,
-  flip: undefined,
-  prefix: 'icon'
+const props = defineProps({
+  name: {
+    type: String,
+    required: true
+  },
+  size: {
+    type: [String, Number],
+    default: '16px'
+  },
+  color: {
+    type: String,
+    default: 'inherit'
+  },
+  spin: {
+    type: Boolean,
+    default: false
+  },
+  pulse: {
+    type: Boolean,
+    default: false
+  },
+  rotate: {
+    type: Number,
+    default: 0
+  },
+  flip: {
+    type: String,
+    default: undefined
+  },
+  prefix: {
+    type: String,
+    default: 'icon'
+  }
 })
 
-const emit = defineEmits<{
-  click: [event: MouseEvent]
-}>()
+const emit = defineEmits(['click'])
 
 // 计算图标类名
 const iconClass = computed(() => {
@@ -63,8 +75,8 @@ const iconClass = computed(() => {
 })
 
 // 计算图标样式
-const iconStyle = computed((): CSSProperties => {
-  const style: CSSProperties = {}
+const iconStyle = computed(() => {
+  const style = {}
   
   // 设置大小
   if (props.size) {
@@ -89,7 +101,7 @@ const iconStyle = computed((): CSSProperties => {
 })
 
 // 点击事件处理
-const handleClick = (event: MouseEvent) => {
+const handleClick = (event) => {
   emit('click', event)
 }
 </script>

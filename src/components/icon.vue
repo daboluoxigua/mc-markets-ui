@@ -260,7 +260,7 @@ const handleIconClick = (iconName) =&gt; {
           :key="icon.name"
           class="icon-item"
           :class="{ active: selectedIcon === icon.name }"
-          @click="selectIcon(icon.name as IconName)"
+          @click="selectIcon(icon.name)"
         >
           <Icon :name="icon.name" :size="24" />
           <span class="icon-class" @click.stop="copyIconClass(`icon-${icon.fontClass}`)">
@@ -351,7 +351,7 @@ const handleIconClick = (iconName) =&gt; {
             <tbody>
               <tr>
                 <td><code>click</code></td>
-                <td><code>event: MouseEvent</code></td>
+                <td><code>event: Event</code></td>
                 <td>点击图标时触发</td>
               </tr>
             </tbody>
@@ -375,17 +375,17 @@ const handleIconClick = (iconName) =&gt; {
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref, computed } from 'vue'
 import { Icon } from '@mc-markets/ui'
-import { iconList, searchIcons, type IconName } from '../../packages/components/Icon/types'
+import { iconList, searchIcons } from '../../packages/components/Icon/types'
 import CodeToggle from './CodeToggle.vue'
 
 // 响应式数据
-const clickedIcon = ref<string>('')
+const clickedIcon = ref('')
 const searchKeyword = ref('')
-const selectedIcon = ref<IconName>('home-filled')
-const copyMessage = ref<string>('')
+const selectedIcon = ref('home-filled')
+const copyMessage = ref('')
 
 // 计算属性
 const filteredIcons = computed(() => {
@@ -396,18 +396,18 @@ const filteredIcons = computed(() => {
 })
 
 // 方法
-const handleIconClick = (iconName: string) => {
+const handleIconClick = (iconName) => {
   clickedIcon.value = iconName
   setTimeout(() => {
     clickedIcon.value = ''
   }, 2000)
 }
 
-const selectIcon = (iconName: IconName) => {
+const selectIcon = (iconName) => {
   selectedIcon.value = iconName
 }
 
-const copyIconClass = async (className: string) => {
+const copyIconClass = async (className) => {
   try {
     await navigator.clipboard.writeText(className)
     copyMessage.value = `已复制: ${className}`

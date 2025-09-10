@@ -11,16 +11,15 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 
 // 定义 props
-interface Props {
-  defaultVisible?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  defaultVisible: false
+const props = defineProps({
+  defaultVisible: {
+    type: Boolean,
+    default: false
+  }
 })
 
 // 响应式数据

@@ -21,34 +21,52 @@
   </el-dialog>
 </template>
 
-<script lang="ts" setup>
-interface DialogParam {
-  modelValue: boolean;
-  attrs?: Object; //其他Dialog所支持的属性
-  title?: string; // 弹窗标题
-  width?: number | string; // 弹窗宽度 数字或者字符串
-  draggable?: boolean; //是否可以拖拽
-  showConfirmButton?: boolean; //是否展示确认按钮
-  showCancelButton?: boolean; //是否展示取消按钮
-  confirmButtonText?: string; //确认按钮文案
-  cancelButtonText?: string; //取消按钮文案
-}
+<script setup>
+import { computed } from 'vue'
 
-// 接受父组件参数，配置默认值
-const props = withDefaults(defineProps<DialogParam>(), {
-  modelValue: true,
-  title: "",
-  width: "520px",
-  draggable: true,
-  showConfirmButton: true,
-  showCancelButton: true,
-  confirmButtonText: "确认",
-  cancelButtonText: "取消",
+// 接受父组件参数
+const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    default: true
+  },
+  attrs: {
+    type: Object,
+    default: () => ({})
+  },
+  title: {
+    type: String,
+    default: ""
+  },
+  width: {
+    type: [Number, String],
+    default: "520px"
+  },
+  draggable: {
+    type: Boolean,
+    default: true
+  },
+  showConfirmButton: {
+    type: Boolean,
+    default: true
+  },
+  showCancelButton: {
+    type: Boolean,
+    default: true
+  },
+  confirmButtonText: {
+    type: String,
+    default: "确认"
+  },
+  cancelButtonText: {
+    type: String,
+    default: "取消"
+  }
 });
 
 const emit = defineEmits(["update:modelValue", "close", "confirm"]);
 
-const handleClose = (done: () => void) => {
+const handleClose = (done) => {
   emit("update:modelValue", false);
   emit("close");
   done();
@@ -61,7 +79,7 @@ const handleConfirm = () => {
   emit("confirm");
 };
 
-const dialogVisible: any = computed({
+const dialogVisible = computed({
   get() {
     return props.modelValue;
   },

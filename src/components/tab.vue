@@ -3,59 +3,64 @@
     <!-- 基础用法 -->
     <section class="demo-section">
       <h3>基础用法</h3>
-      <Tab v-model="activeName" @tab-click="handleTabClick" type="" :closable="false" :addable="false" :editable="false" tab-position="top" :stretch="false" :before-leave="undefined">
-        <TabPane label="用户管理" name="user" :closable="false" :disabled="false" :lazy="false">
+      <Tab v-model="activeName" @tab-click="handleTabClick" type="card">
+        <TabPane label="用户管理" name="user">
           <div class="tab-content">
             <h4>用户管理</h4>
             <p>这里是用户管理的内容</p>
           </div>
         </TabPane>
-        <TabPane label="配置管理" name="config" :closable="false" :disabled="false" :lazy="false">
+        <TabPane label="配置管理" name="config">
           <div class="tab-content">
             <h4>配置管理</h4>
             <p>这里是配置管理的内容</p>
           </div>
         </TabPane>
-        <TabPane label="角色管理" name="role" :closable="false" :disabled="false" :lazy="false">
+        <TabPane label="角色管理" name="role">
           <div class="tab-content">
             <h4>角色管理</h4>
             <p>这里是角色管理的内容</p>
           </div>
         </TabPane>
       </Tab>
-      
+
       <CodeToggle>
-        <div v-html="`<Tab v-model=&quot;activeName&quot; @tab-click=&quot;handleTabClick&quot; type=&quot;&quot; :closable=&quot;false&quot; :addable=&quot;false&quot; :editable=&quot;false&quot; tab-position=&quot;top&quot; :stretch=&quot;false&quot; :before-leave=&quot;undefined&quot;>
-  <TabPane label=&quot;用户管理&quot; name=&quot;user&quot; :closable=&quot;false&quot; :disabled=&quot;false&quot; :lazy=&quot;false&quot;>
-    <div class=&quot;tab-content&quot;>
-      <h4>用户管理</h4>
-      <p>这里是用户管理的内容</p>
-    </div>
-  </TabPane>
-  <TabPane label=&quot;配置管理&quot; name=&quot;config&quot; :closable=&quot;false&quot; :disabled=&quot;false&quot; :lazy=&quot;false&quot;>
-    <div class=&quot;tab-content&quot;>
-      <h4>配置管理</h4>
-      <p>这里是配置管理的内容</p>
-    </div>
-  </TabPane>
-  <TabPane label=&quot;角色管理&quot; name=&quot;role&quot; :closable=&quot;false&quot; :disabled=&quot;false&quot; :lazy=&quot;false&quot;>
-    <div class=&quot;tab-content&quot;>
-      <h4>角色管理</h4>
-      <p>这里是角色管理的内容</p>
-    </div>
-  </TabPane>
-</Tab>`"></div>
+        {{`<Tab v-model="activeName" @tab-click="handleTabClick" type="card">
+          <TabPane label="用户管理" name="user">
+            <div class="tab-content">
+              <h4>用户管理</h4>
+              <p>这里是用户管理的内容</p>
+            </div>
+          </TabPane>
+          <TabPane label="配置管理" name="config">
+            <div class="tab-content">
+              <h4>配置管理</h4>
+              <p>这里是配置管理的内容</p>
+            </div>
+          </TabPane>
+          <TabPane label="角色管理" name="role">
+            <div class="tab-content">
+              <h4>角色管理</h4>
+              <p>这里是角色管理的内容</p>
+            </div>
+          </TabPane> </Tab
+        >` }}
       </CodeToggle>
     </section>
 
     <!-- 可关闭标签 -->
     <section class="demo-section">
       <h3>可关闭标签</h3>
-      <Tab v-model="activeName3" type="card" :closable="true" :addable="false" :editable="false" tab-position="top" :stretch="false" :before-leave="undefined" @tab-remove="handleTabRemove">
-        <TabPane 
-          v-for="tab in tabs" 
+      <Tab
+        v-model="activeName3"
+        type="card"
+        :closable="true"
+        @tab-remove="handleTabRemove"
+      >
+        <TabPane
+          v-for="tab in tabs"
           :key="tab.name"
-          :label="tab.label" 
+          :label="tab.label"
           :name="tab.name"
           :closable="tab.closable"
           :disabled="false"
@@ -67,30 +72,37 @@
           </div>
         </TabPane>
       </Tab>
-      
+
       <CodeToggle>
-        <div v-html="`<Tab v-model=&quot;activeName3&quot; type=&quot;card&quot; :closable=&quot;true&quot; @tab-remove=&quot;handleTabRemove&quot;>
-  <TabPane 
-    v-for=&quot;tab in tabs&quot; 
-    :key=&quot;tab.name&quot;
-    :label=&quot;tab.label&quot; 
-    :name=&quot;tab.name&quot;
-    :closable=&quot;tab.closable&quot;
-  >
-    <div class=&quot;tab-content&quot;>
-      <h4>{{ tab.label }}</h4>
-      <p>{{ tab.content }}</p>
-    </div>
-  </TabPane>
-</Tab>`"></div>
+        {{`<Tab
+          v-model="activeName3"
+          type="card"
+          :closable="true"
+          @tab-remove="handleTabRemove"
+        >
+          <TabPane
+            v-for="tab in tabs"
+            :key="tab.name"
+            :label="tab.label"
+            :name="tab.name"
+            :closable="tab.closable"
+            :disabled="false"
+            :lazy="false"
+          >
+            <div class="tab-content">
+              <h4>\{\{ tab.label \}\}</h4>
+              <p>\{\{ tab.content \}\}</p>
+            </div>
+          </TabPane> </Tab
+        >`}}
       </CodeToggle>
     </section>
 
     <!-- 带图标的标签 -->
     <section class="demo-section">
       <h3>带图标的标签</h3>
-      <Tab v-model="activeName4" type="card" :closable="false" :addable="false" :editable="false" tab-position="top" :stretch="false" :before-leave="undefined">
-        <TabPane name="user" label="用户管理" :closable="false" :disabled="false" :lazy="false">
+      <Tab v-model="activeName4" type="card">
+        <TabPane name="user" label="用户管理">
           <template #label>
             <span class="tab-label">
               <Icon name="circle-user" :size="16" />
@@ -102,7 +114,7 @@
             <p>这里是用户管理的内容</p>
           </div>
         </TabPane>
-        <TabPane name="config" label="配置管理" :closable="false" :disabled="false" :lazy="false">
+        <TabPane name="config" label="配置管理">
           <template #label>
             <span class="tab-label">
               <Icon name="adjustments-horizontal" :size="16" />
@@ -114,7 +126,7 @@
             <p>这里是配置管理的内容</p>
           </div>
         </TabPane>
-        <TabPane name="role" label="角色管理" :closable="false" :disabled="false" :lazy="false">
+        <TabPane name="role" label="角色管理">
           <template #label>
             <span class="tab-label">
               <Icon name="shield-check" :size="16" />
@@ -126,7 +138,7 @@
             <p>这里是角色管理的内容</p>
           </div>
         </TabPane>
-        <TabPane name="data" label="数据分析" :closable="false" :disabled="false" :lazy="false">
+        <TabPane name="data" label="数据分析">
           <template #label>
             <span class="tab-label">
               <Icon name="chart-pie" :size="16" />
@@ -139,58 +151,58 @@
           </div>
         </TabPane>
       </Tab>
-      
+
       <CodeToggle>
-        <div v-html="`<Tab v-model=&quot;activeName4&quot; type=&quot;card&quot;>
-  <TabPane name=&quot;user&quot; label=&quot;用户管理&quot;>
-    <template #label>
-      <span class=&quot;tab-label&quot;>
-        <Icon name=&quot;circle-user&quot; :size=&quot;16&quot; />
-        <span>用户管理</span>
-      </span>
-    </template>
-    <div class=&quot;tab-content&quot;>
-      <h4>用户管理</h4>
-      <p>这里是用户管理的内容</p>
-    </div>
-  </TabPane>
-  <TabPane name=&quot;config&quot; label=&quot;配置管理&quot;>
-    <template #label>
-      <span class=&quot;tab-label&quot;>
-        <Icon name=&quot;adjustments-horizontal&quot; :size=&quot;16&quot; />
-        <span>配置管理</span>
-      </span>
-    </template>
-    <div class=&quot;tab-content&quot;>
-      <h4>配置管理</h4>
-      <p>这里是配置管理的内容</p>
-    </div>
-  </TabPane>
-  <TabPane name=&quot;role&quot; label=&quot;角色管理&quot;>
-    <template #label>
-      <span class=&quot;tab-label&quot;>
-        <Icon name=&quot;shield-check&quot; :size=&quot;16&quot; />
-        <span>角色管理</span>
-      </span>
-    </template>
-    <div class=&quot;tab-content&quot;>
-      <h4>角色管理</h4>
-      <p>这里是角色管理的内容</p>
-    </div>
-  </TabPane>
-  <TabPane name=&quot;data&quot; label=&quot;数据分析&quot;>
-    <template #label>
-      <span class=&quot;tab-label&quot;>
-        <Icon name=&quot;chart-pie&quot; :size=&quot;16&quot; />
-        <span>数据分析</span>
-      </span>
-    </template>
-    <div class=&quot;tab-content&quot;>
-      <h4>数据分析</h4>
-      <p>这里是数据分析的内容</p>
-    </div>
-  </TabPane>
-</Tab>`"></div>
+        {{`<Tab v-model="activeName4" type="card">
+          <TabPane name="user" label="用户管理">
+            <template #label>
+              <span class="tab-label">
+                <Icon name="circle-user" :size="16" />
+                <span>用户管理</span>
+              </span>
+            </template>
+            <div class="tab-content">
+              <h4>用户管理</h4>
+              <p>这里是用户管理的内容</p>
+            </div>
+          </TabPane>
+          <TabPane name="config" label="配置管理">
+            <template #label>
+              <span class="tab-label">
+                <Icon name="adjustments-horizontal" :size="16" />
+                <span>配置管理</span>
+              </span>
+            </template>
+            <div class="tab-content">
+              <h4>配置管理</h4>
+              <p>这里是配置管理的内容</p>
+            </div>
+          </TabPane>
+          <TabPane name="role" label="角色管理">
+            <template #label>
+              <span class="tab-label">
+                <Icon name="shield-check" :size="16" />
+                <span>角色管理</span>
+              </span>
+            </template>
+            <div class="tab-content">
+              <h4>角色管理</h4>
+              <p>这里是角色管理的内容</p>
+            </div>
+          </TabPane>
+          <TabPane name="data" label="数据分析">
+            <template #label>
+              <span class="tab-label">
+                <Icon name="chart-pie" :size="16" />
+                <span>数据分析</span>
+              </span>
+            </template>
+            <div class="tab-content">
+              <h4>数据分析</h4>
+              <p>这里是数据分析的内容</p>
+            </div>
+          </TabPane> </Tab
+        >`}}
       </CodeToggle>
     </section>
 
@@ -364,72 +376,39 @@
             </tbody>
           </table>
         </div>
-
-        <h3>使用示例</h3>
-        <div class="code-block">
-          <pre><code>&lt;template&gt;
-  &lt;Tab v-model="activeName" type="card" :closable="true" @tab-click="handleClick"&gt;
-    &lt;TabPane label="用户管理" name="user"&gt;
-      &lt;template #label&gt;
-        &lt;span class="tab-label"&gt;
-          &lt;Icon name="circle-user" :size="16" /&gt;
-          &lt;span&gt;用户管理&lt;/span&gt;
-        &lt;/span&gt;
-      &lt;/template&gt;
-      &lt;div&gt;用户管理内容&lt;/div&gt;
-    &lt;/TabPane&gt;
-    &lt;TabPane label="配置管理" name="config"&gt;
-      &lt;div&gt;配置管理内容&lt;/div&gt;
-    &lt;/TabPane&gt;
-  &lt;/Tab&gt;
-&lt;/template&gt;
-
-&lt;script setup&gt;
-import { ref } from 'vue'
-import { Tab, TabPane, Icon } from '@mc-markets/ui'
-
-const activeName = ref('user')
-
-const handleClick = (tab) =&gt; {
-  console.log('点击了标签:', tab.props.name)
-}
-&lt;/script&gt;</code></pre>
-        </div>
       </div>
     </section>
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import { Tab, TabPane, Icon } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+<script setup>
+import { ref } from "vue";
+import { Tab, TabPane, Icon } from "@mc-markets/ui";
+import CodeToggle from "./CodeToggle.vue";
 
 // 响应式数据
-const activeName = ref('user')
-const activeName2 = ref('user')
-const activeName3 = ref('tab1')
-const activeName4 = ref('user')
+const activeName = ref("user");
+const activeName3 = ref("tab1");
+const activeName4 = ref("user");
 
 const tabs = ref([
-  { name: 'tab1', label: '标签一', content: '标签一内容', closable: true },
-  { name: 'tab2', label: '标签二', content: '标签二内容', closable: true },
-  { name: 'tab3', label: '标签三', content: '标签三内容', closable: false }
-])
+  { name: "tab1", label: "标签一", content: "标签一内容", closable: true },
+  { name: "tab2", label: "标签二", content: "标签二内容", closable: true },
+  { name: "tab3", label: "标签三", content: "标签三内容", closable: false },
+]);
 
 // 方法
-const handleTabClick = (tab: any) => {
-  console.log('点击了标签:', tab.props.name)
-}
+const handleTabClick = (tab) => {
+  console.log("点击了标签:", tab.props.name);
+};
 
-const handleTabRemove = (name: string) => {
-  console.log('移除了标签:', name)
-  const index = tabs.value.findIndex(tab => tab.name === name)
+const handleTabRemove = (name) => {
+  console.log("移除了标签:", name);
+  const index = tabs.value.findIndex((tab) => tab.name === name);
   if (index > -1) {
-    tabs.value.splice(index, 1)
+    tabs.value.splice(index, 1);
   }
-}
-
+};
 </script>
 
 <style scoped>
@@ -538,7 +517,7 @@ const handleTabRemove = (name: string) => {
   color: var(--el-color-primary);
   padding: 2px 6px;
   border-radius: 3px;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 13px;
   font-weight: 500;
 }
@@ -554,7 +533,7 @@ const handleTabRemove = (name: string) => {
   margin: 0;
   padding: 20px;
   overflow-x: auto;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 13px;
   line-height: 1.5;
   color: #ecf0f1;
@@ -572,17 +551,17 @@ const handleTabRemove = (name: string) => {
   .api-docs {
     padding: 15px;
   }
-  
+
   .api-table th,
   .api-table td {
     padding: 8px 10px;
     font-size: 12px;
   }
-  
+
   .code-block pre {
     padding: 10px;
   }
-  
+
   .code-block code {
     font-size: 12px;
   }
