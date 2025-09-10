@@ -461,6 +461,7 @@ const tableData = ref([
 
 // 主题选项
 const themes = [
+  { name: 'default', label: '默认主题', color: '#E6C305' },
   { name: 'blue', label: '蓝色主题', color: '#1890ff' },
   { name: 'green', label: '绿色主题', color: '#52c41a' },
   { name: 'purple', label: '紫色主题', color: '#722ed1' },
