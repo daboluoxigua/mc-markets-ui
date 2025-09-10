@@ -6,10 +6,10 @@ export default function createComponents() {
     dirs: ["src/components"],
     include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/],
     dts: "./src/types/components.d.ts",
-    // resolvers: [
-    //   ElementPlusResolver({
-    //     importStyle: "sass",
-    //   }),
-    // ], // ElementPlus按需加载
+    resolvers: [
+      ElementPlusResolver({
+        importStyle: "sass",
+      }),
+    ], // ElementPlus按需加载
   });
 }
