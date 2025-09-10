@@ -9,9 +9,17 @@
 import { App } from 'vue'
 import Dialog from './components/Dialog/index.vue'
 import { Icon } from './components/Icon'
-import { Tab, TabPane } from './components/Tab'
+import Tab from './components/Tab/Tab.vue'
+import TabPane from './components/Tab/TabPane.vue'
+import { Alert } from './components/Alert'
+import { Notification } from './components/Notification'
+import { DatePicker } from './components/DatePicker'
+import { Pagination } from './components/Pagination'
+import { Banner } from './components/Banner'
+import { Empty } from './components/Empty'
+import { Tooltips } from './components/Tooltips'
 
-export { Dialog, Icon, Tab, TabPane }
+export { Dialog, Icon, Tab, TabPane, Alert, Notification, DatePicker, Pagination, Banner, Empty, Tooltips }
 
 // 样式相关
 export * from './styles/theme-config'
@@ -29,7 +37,14 @@ const components = {
   Dialog,
   Icon,
   Tab,
-  TabPane
+  TabPane,
+  Alert,
+  Notification,
+  DatePicker,
+  Pagination,
+  Banner,
+  Empty,
+  Tooltips
 }
 
 // ==================== 安装函数 ====================

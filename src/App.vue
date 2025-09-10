@@ -47,6 +47,34 @@
             <Icon name="layout-grid" :size="16" />
             <span class="menu-text">Tabs</span>
           </el-menu-item>
+          <el-menu-item index="alert">
+            <Icon name="alert-circle" :size="16" />
+            <span class="menu-text">Alert</span>
+          </el-menu-item>
+          <el-menu-item index="notification">
+            <Icon name="bell" :size="16" />
+            <span class="menu-text">Notification</span>
+          </el-menu-item>
+          <el-menu-item index="datepicker">
+            <Icon name="calendar" :size="16" />
+            <span class="menu-text">DatePicker</span>
+          </el-menu-item>
+          <el-menu-item index="pagination">
+            <Icon name="layout-grid" :size="16" />
+            <span class="menu-text">Pagination</span>
+          </el-menu-item>
+          <el-menu-item index="banner">
+            <Icon name="flag" :size="16" />
+            <span class="menu-text">Banner</span>
+          </el-menu-item>
+          <el-menu-item index="empty">
+            <Icon name="circle-help" :size="16" />
+            <span class="menu-text">Empty</span>
+          </el-menu-item>
+          <el-menu-item index="tooltips">
+            <Icon name="message-circle" :size="16" />
+            <span class="menu-text">Tooltips</span>
+          </el-menu-item>
           <el-menu-item index="colors">
             <Icon name="brush-cleaning" :size="16" />
             <span class="menu-text">颜色</span>
@@ -197,6 +225,41 @@
           <div v-if="activeMenu === 'tabs'" class="demo-section">
             <h2>Tabs</h2>
             <tab-doc />
+          </div>
+          <!-- Alert 文档 -->
+          <div v-if="activeMenu === 'alert'" class="demo-section">
+            <h2>Alert</h2>
+            <alert />
+          </div>
+          <!-- Notification 文档 -->
+          <div v-if="activeMenu === 'notification'" class="demo-section">
+            <h2>Notification</h2>
+            <notification />
+          </div>
+          <!-- DatePicker 文档 -->
+          <div v-if="activeMenu === 'datepicker'" class="demo-section">
+            <h2>DatePicker</h2>
+            <datepicker />
+          </div>
+          <!-- Pagination 文档 -->
+          <div v-if="activeMenu === 'pagination'" class="demo-section">
+            <h2>Pagination</h2>
+            <pagination />
+          </div>
+          <!-- Banner 文档 -->
+          <div v-if="activeMenu === 'banner'" class="demo-section">
+            <h2>Banner</h2>
+            <banner />
+          </div>
+          <!-- Empty 文档 -->
+          <div v-if="activeMenu === 'empty'" class="demo-section">
+            <h2>Empty</h2>
+            <empty />
+          </div>
+          <!-- Tooltips 文档 -->
+          <div v-if="activeMenu === 'tooltips'" class="demo-section">
+            <h2>Tooltips</h2>
+            <tooltips />
           </div>
           <!-- 颜色 -->
           <div v-if="activeMenu === 'colors'" class="demo-section">
@@ -492,6 +555,13 @@ import {
 import { Icon } from "@mc-markets/ui";
 import icon from "./components/icon.vue";
 import tabDoc from './components/tab.vue'
+import alert from './components/alert.vue'
+import notification from './components/notification.vue'
+import datepicker from './components/datepicker.vue'
+import pagination from './components/pagination.vue'
+import banner from './components/banner.vue'
+import empty from './components/empty.vue'
+import tooltips from './components/tooltips.vue'
 
 // 响应式数据
 const activeMenu = ref("components");
