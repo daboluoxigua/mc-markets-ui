@@ -43,6 +43,10 @@
             <Icon name="star-filled" :size="16" />
             <span class="menu-text">字体图标</span>
           </el-menu-item>
+          <el-menu-item index="tabs">
+            <Icon name="layout-grid" :size="16" />
+            <span class="menu-text">Tabs</span>
+          </el-menu-item>
           <el-menu-item index="colors">
             <Icon name="brush-cleaning" :size="16" />
             <span class="menu-text">颜色</span>
@@ -188,6 +192,11 @@
           <div v-if="activeMenu === 'icons'" class="demo-section">
             <h2>字体图标</h2>
             <icon />
+          </div>
+          <!-- Tabs 文档 -->
+          <div v-if="activeMenu === 'tabs'" class="demo-section">
+            <h2>Tabs</h2>
+            <tab-doc />
           </div>
           <!-- 颜色 -->
           <div v-if="activeMenu === 'colors'" class="demo-section">
@@ -482,6 +491,7 @@ import {
 // 导入字体图标组件
 import { Icon } from "@mc-markets/ui";
 import icon from "./components/icon.vue";
+import tabDoc from './components/tab.vue'
 
 // 响应式数据
 const activeMenu = ref("components");
