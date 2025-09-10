@@ -25,10 +25,10 @@
           </div>
         </div>
         <CodeToggle>
-          &lt;Icon name="home-filled" /&gt;
-&lt;Icon name="user-round" /&gt;
-&lt;Icon name="search" /&gt;
-&lt;Icon name="star-filled" /&gt;
+          {{ `<Icon name="home-filled" />
+<Icon name="user-round" />
+<Icon name="search" />
+<Icon name="star-filled" />` }}
         </CodeToggle>
       </div>
     </section>
@@ -58,10 +58,10 @@
           </div>
         </div>
         <CodeToggle>
-          &lt;Icon name="home-filled" :size="16" /&gt;
-&lt;Icon name="home-filled" :size="24" /&gt;
-&lt;Icon name="home-filled" :size="32" /&gt;
-&lt;Icon name="home-filled" size="2rem" /&gt;
+          {{ `<Icon name="home-filled" :size="16" />
+<Icon name="home-filled" :size="24" />
+<Icon name="home-filled" :size="32" />
+<Icon name="home-filled" size="2rem" />` }}
         </CodeToggle>
       </div>
     </section>
@@ -91,10 +91,10 @@
           </div>
         </div>
         <CodeToggle>
-          &lt;Icon name="star-filled" color="#ff6b6b" /&gt;
-&lt;Icon name="star-filled" color="#45b7d1" /&gt;
-&lt;Icon name="star-filled" color="#96ceb4" /&gt;
-&lt;Icon name="star-filled" color="#feca57" /&gt;
+          {{ `<Icon name="star-filled" color="#ff6b6b" />
+<Icon name="star-filled" color="#45b7d1" />
+<Icon name="star-filled" color="#96ceb4" />
+<Icon name="star-filled" color="#feca57" />` }}
         </CodeToggle>
       </div>
     </section>
@@ -124,10 +124,10 @@
           </div>
         </div>
         <CodeToggle>
-          &lt;Icon name="refresh-cw" :spin="true" /&gt;
-&lt;Icon name="heart-handshake" :pulse="true" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="45" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="90" /&gt;
+          {{ `<Icon name="refresh-cw" :spin="true" />
+<Icon name="heart-handshake" :pulse="true" />
+<Icon name="arrow-right-left" :rotate="45" />
+<Icon name="arrow-right-left" :rotate="90" />` }}
         </CodeToggle>
       </div>
     </section>
@@ -157,10 +157,10 @@
           </div>
         </div>
         <CodeToggle>
-          &lt;Icon name="arrow-right-left" /&gt;
-&lt;Icon name="arrow-right-left" flip="horizontal" /&gt;
-&lt;Icon name="arrow-right-left" flip="vertical" /&gt;
-&lt;Icon name="arrow-right-left" flip="both" /&gt;
+          {{ `<Icon name="arrow-right-left" />
+<Icon name="arrow-right-left" flip="horizontal" />
+<Icon name="arrow-right-left" flip="vertical" />
+<Icon name="arrow-right-left" flip="both" />` }}
         </CodeToggle>
       </div>
     </section>
@@ -186,9 +186,9 @@
           </div>
         </div>
         <CodeToggle>
-          &lt;Icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" /&gt;
-&lt;Icon name="heart-handshake" :pulse="true" color="#4ecdc4" :size="24" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="45" flip="horizontal" color="#45b7d1" :size="24" /&gt;
+          {{ `<Icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" />
+<Icon name="heart-handshake" :pulse="true" color="#4ecdc4" :size="24" />
+<Icon name="arrow-right-left" :rotate="45" flip="horizontal" color="#45b7d1" :size="24" />` }}
         </CodeToggle>
       </div>
     </section>
@@ -217,28 +217,28 @@
           </p>
         </div>
         <CodeToggle>
-          &lt;template&gt;
-  &lt;div class="demo-grid"&gt;
-    &lt;div class="demo-item clickable" @click="handleIconClick('home-filled')"&gt;
-      &lt;Icon name="home-filled" :size="24" /&gt;
-      &lt;span&gt;点击我&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="demo-item clickable" @click="handleIconClick('star-filled')"&gt;
-      &lt;Icon name="star-filled" :size="24" /&gt;
-      &lt;span&gt;点击我&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="demo-item clickable" @click="handleIconClick('heart-handshake')"&gt;
-      &lt;Icon name="heart-handshake" :size="24" /&gt;
-      &lt;span&gt;点击我&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+          {{ `<template>
+  <div class="demo-grid">
+    <div class="demo-item clickable" @click="handleIconClick('home-filled')">
+      <Icon name="home-filled" :size="24" />
+      <span>点击我</span>
+    </div>
+    <div class="demo-item clickable" @click="handleIconClick('star-filled')">
+      <Icon name="star-filled" :size="24" />
+      <span>点击我</span>
+    </div>
+    <div class="demo-item clickable" @click="handleIconClick('heart-handshake')">
+      <Icon name="heart-handshake" :size="24" />
+      <span>点击我</span>
+    </div>
+  </div>
+</template>
 
-&lt;script setup&gt;
-const handleIconClick = (iconName) =&gt; {
+<script setup>
+const handleIconClick = (iconName) => {
   console.log('点击了图标:', iconName)
 }
-&lt;/script&gt;
+</script>` }}
         </CodeToggle>
       </div>
     </section>
