@@ -3,11 +3,11 @@
  * 
  * 提供自定义组件和工具函数
  * 
- * @version 1.0.19
+ * @version 1.0.32
  */
 
 import { App } from 'vue'
-import Dialog from './components/Dialog/index.vue'
+import TDDialog from './components/Dialog/index.vue'
 import { Icon } from './components/Icon'
 import Tab from './components/Tab/Tab.vue'
 import TabPane from './components/Tab/TabPane.vue'
@@ -19,7 +19,7 @@ import { Banner } from './components/Banner'
 import { Empty } from './components/Empty'
 import { Tooltips } from './components/Tooltips'
 
-export { Dialog, Icon, Tab, TabPane, Alert, Notification, DatePicker, Pagination, Banner, Empty, Tooltips }
+export { TDDialog, Icon, Tab, TabPane, Alert, Notification, DatePicker, Pagination, Banner, Empty, Tooltips }
 
 // 样式相关
 export * from './styles/theme-config'
@@ -28,13 +28,13 @@ export { default as styles } from './styles/index.scss?inline'
 
 
 // ==================== 版本信息 ====================
-const version = '1.0.19'
+const version = '1.0.32'
 const author = 'chenyu'
 const description = '自定义组件库，提供自定义组件和工具函数'
 
 // ==================== 组件注册配置 ====================
 const components = {
-  Dialog,
+  TDDialog,
   Icon,
   Tab,
   TabPane,
