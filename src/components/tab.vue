@@ -25,7 +25,7 @@
       </Tab>
 
       <CodeToggle>
-        {{`<Tab v-model="activeName" @tab-click="handleTabClick" type="card">
+        {{ `<Tab v-model="activeName" @tab-click="handleTabClick" type="card">
           <TabPane label="用户管理" name="user">
             <div class="tab-content">
               <h4>用户管理</h4>
@@ -43,29 +43,17 @@
               <h4>角色管理</h4>
               <p>这里是角色管理的内容</p>
             </div>
-          </TabPane> </Tab
-        >` }}
+          </TabPane>
+        </Tab>` }}
       </CodeToggle>
     </section>
 
     <!-- 可关闭标签 -->
     <section class="demo-section">
       <h3>可关闭标签</h3>
-      <Tab
-        v-model="activeName3"
-        type="card"
-        :closable="true"
-        @tab-remove="handleTabRemove"
-      >
-        <TabPane
-          v-for="tab in tabs"
-          :key="tab.name"
-          :label="tab.label"
-          :name="tab.name"
-          :closable="tab.closable"
-          :disabled="false"
-          :lazy="false"
-        >
+      <Tab v-model="activeName3" type="card" :closable="true" @tab-remove="handleTabRemove">
+        <TabPane v-for="tab in tabs" :key="tab.name" :label="tab.label" :name="tab.name" :closable="tab.closable"
+          :disabled="false" :lazy="false">
           <div class="tab-content">
             <h4>{{ tab.label }}</h4>
             <p>{{ tab.content }}</p>
@@ -74,27 +62,15 @@
       </Tab>
 
       <CodeToggle>
-        {{`<Tab
-          v-model="activeName3"
-          type="card"
-          :closable="true"
-          @tab-remove="handleTabRemove"
-        >
-          <TabPane
-            v-for="tab in tabs"
-            :key="tab.name"
-            :label="tab.label"
-            :name="tab.name"
-            :closable="tab.closable"
-            :disabled="false"
-            :lazy="false"
-          >
+        {{ `<Tab v-model="activeName3" type="card" :closable="true" @tab-remove="handleTabRemove">
+          <TabPane v-for="tab in tabs" :key="tab.name" :label="tab.label" :name="tab.name" :closable="tab.closable"
+            :disabled="false" :lazy="false">
             <div class="tab-content">
               <h4>\{\{ tab.label \}\}</h4>
               <p>\{\{ tab.content \}\}</p>
             </div>
-          </TabPane> </Tab
-        >`}}
+          </TabPane>
+        </Tab>`}}
       </CodeToggle>
     </section>
 
@@ -153,7 +129,7 @@
       </Tab>
 
       <CodeToggle>
-        {{`<Tab v-model="activeName4" type="card">
+        {{ `<Tab v-model="activeName4" type="card">
           <TabPane name="user" label="用户管理">
             <template #label>
               <span class="tab-label">
@@ -201,8 +177,8 @@
               <h4>数据分析</h4>
               <p>这里是数据分析的内容</p>
             </div>
-          </TabPane> </Tab
-        >`}}
+          </TabPane>
+        </Tab>`}}
       </CodeToggle>
     </section>
 
