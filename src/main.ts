@@ -3,6 +3,7 @@ import App from './App.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+import '@mc-markets/ui/styles/font/iconfont.scss'
 import '@mc-markets/ui/styles/index.scss'
 
 const app = createApp(App)

@@ -18,8 +18,24 @@ import { Pagination } from './components/Pagination'
 import { Banner } from './components/Banner'
 import { Empty } from './components/Empty'
 import { Tooltips } from './components/Tooltips'
+import { Button } from './components/Button'
+import { Input } from './components/Input'
+import { Select, SelectOption } from './components/Select'
+import { Table, TableColumn } from './components/Table'
+import { Form, FormItem } from './components/Form'
+import { Card } from './components/Card'
+import { Badge } from './components/Badge'
+import { Progress } from './components/Progress'
+import { Loading } from './components/Loading'
+import { Message } from './components/Message'
+import { MessageBox } from './components/MessageBox'
+import { Drawer } from './components/Drawer'
 
-export { TDDialog, Icon, Tab, TabPane, Alert, Notification, DatePicker, Pagination, Banner, Empty, Tooltips }
+export { 
+  TDDialog, Icon, Tab, TabPane, Alert, Notification, DatePicker, Pagination, Banner, Empty, Tooltips,
+  Button, Input, Select, SelectOption, Table, TableColumn, Form, FormItem, Card, Badge, 
+  Progress, Loading, Message, MessageBox, Drawer
+}
 
 // 样式相关
 export * from './styles/theme-config'
@@ -44,7 +60,22 @@ const components = {
   Pagination,
   Banner,
   Empty,
-  Tooltips
+  Tooltips,
+  Button,
+  Input,
+  Select,
+  SelectOption,
+  Table,
+  TableColumn,
+  Form,
+  FormItem,
+  Card,
+  Badge,
+  Progress,
+  Loading,
+  Message,
+  MessageBox,
+  Drawer
 }
 
 // ==================== 安装函数 ====================
