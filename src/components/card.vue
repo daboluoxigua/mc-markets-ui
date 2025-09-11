@@ -18,7 +18,7 @@
           </Card>
         </div>
         <CodeToggle>
-          <!-- {{ `<Card class="box-card">
+          <!-- <Card class="box-card">
             <template #header>
               <div class="card-header">
                 <span>卡片名称</span>
@@ -27,8 +27,8 @@
             </template>
             <div v-for="o in 4" :key="o" class="text item">
               {{ "列表内容 " + o }}
-            </div> </Card
-          >` }} -->
+            </div>
+          </Card> -->
         </CodeToggle>
       </div>
     </section>
@@ -45,11 +45,11 @@
           </Card>
         </div>
         <CodeToggle>
-          <!-- {{ `<Card class="box-card">
+          <!-- <Card class="box-card">
             <div v-for="o in 4" :key="o" class="text item">
               {{ "列表内容 " + o }}
-            </div> </Card
-          >` }} -->
+            </div>
+          </Card> -->
         </CodeToggle>
       </div>
     </section>
@@ -60,10 +60,8 @@
       <div class="demo-card">
         <div class="demo-preview">
           <Card class="box-card">
-            <img
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-              style="width: 100%"
-            />
+            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+              style="width: 100%" />
             <div style="padding: 14px">
               <span>好吃的汉堡</span>
               <div class="bottom">
@@ -74,20 +72,17 @@
           </Card>
         </div>
         <CodeToggle>
-          1111
-          <Card class="box-card">
-            <img
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-              style="width: 100%"
-            />
+          <!-- <Card class="box-card">
+            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+              style="width: 100%" />
             <div style="padding: 14px">
               <span>好吃的汉堡</span>
               <div class="bottom">
                 <time class="time">2021-04-01 20:00:00</time>
                 <Button class="button" text>操作按钮</Button>
               </div>
-            </div> </Card
-          >
+            </div>
+          </Card>-->
         </CodeToggle>
       </div>
     </section>
@@ -120,7 +115,7 @@
           </div>
         </div>
         <CodeToggle>
-          <template v-slot:default>
+          <!--
             <Card class="box-card" shadow="always">
               <div v-for="o in 4" :key="o" class="text item">
                 {{ "总是显示 " + o }}
@@ -135,8 +130,7 @@
               <div v-for="o in 4" :key="o" class="text item">
                 {{ "从不显示 " + o }}
               </div>
-            </Card>
-          </template>
+            </Card>-->
         </CodeToggle>
       </div>
     </section>
