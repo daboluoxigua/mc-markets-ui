@@ -1,145 +1,132 @@
 <template>
   <div class="card-demo">
     <!-- 基础用法 -->
-    <section class="demo-section">
-      <h2>基础用法</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Card class="box-card">
-            <template #header>
-              <div class="card-header">
-                <span>卡片名称</span>
-                <Button class="button" text>操作按钮</Button>
-              </div>
-            </template>
-            <div v-for="o in 4" :key="o" class="text item">
-              {{ "列表内容 " + o }}
+    <DemoSection title="基础用法">
+      <template #preview>
+        <Card class="box-card">
+          <template #header>
+            <div class="card-header">
+              <span>卡片名称</span>
+              <Button class="button" text>操作按钮</Button>
             </div>
-          </Card>
-        </div>
-        <CodeToggle>
-          <!-- <Card class="box-card">
-            <template #header>
-              <div class="card-header">
-                <span>卡片名称</span>
-                <Button class="button" text>操作按钮</Button>
-              </div>
-            </template>
-            <div v-for="o in 4" :key="o" class="text item">
-              {{ "列表内容 " + o }}
-            </div>
-          </Card> -->
-        </CodeToggle>
-      </div>
-    </section>
+          </template>
+          <div v-for="o in 4" :key="o" class="text item">
+            {{ "列表内容 " + o }}
+          </div>
+        </Card>
+      </template>
+      <template #code>
+        <pre><code>&lt;Card class="box-card"&gt;
+  &lt;template #header&gt;
+    &lt;div class="card-header"&gt;
+      &lt;span&gt;卡片名称&lt;/span&gt;
+      &lt;Button class="button" text&gt;操作按钮&lt;/Button&gt;
+    &lt;/div&gt;
+  &lt;/template&gt;
+  &lt;div v-for="o in 4" :key="o" class="text item"&gt;
+    {{ "列表内容 " + o }}
+  &lt;/div&gt;
+&lt;/Card&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 简单卡片 -->
-    <section class="demo-section">
-      <h2>简单卡片</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Card class="box-card">
-            <div v-for="o in 4" :key="o" class="text item">
-              {{ "列表内容 " + o }}
-            </div>
-          </Card>
-        </div>
-        <CodeToggle>
-          <!-- <Card class="box-card">
-            <div v-for="o in 4" :key="o" class="text item">
-              {{ "列表内容 " + o }}
-            </div>
-          </Card> -->
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="简单卡片">
+      <template #preview>
+        <Card class="box-card">
+          <div v-for="o in 4" :key="o" class="text item">
+            {{ "列表内容 " + o }}
+          </div>
+        </Card>
+      </template>
+      <template #code>
+        <pre><code>&lt;Card class="box-card"&gt;
+  &lt;div v-for="o in 4" :key="o" class="text item"&gt;
+    {{ "列表内容 " + o }}
+  &lt;/div&gt;
+&lt;/Card&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 带图片 -->
-    <section class="demo-section">
-      <h2>带图片</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Card class="box-card">
-            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-              style="width: 100%" />
-            <div style="padding: 14px">
-              <span>好吃的汉堡</span>
-              <div class="bottom">
-                <time class="time">2021-04-01 20:00:00</time>
-                <Button class="button" text>操作按钮</Button>
-              </div>
+    <DemoSection title="带图片">
+      <template #preview>
+        <Card class="box-card">
+          <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+            style="width: 100%" />
+          <div style="padding: 14px">
+            <span>好吃的汉堡</span>
+            <div class="bottom">
+              <time class="time">2021-04-01 20:00:00</time>
+              <Button class="button" text>操作按钮</Button>
+            </div>
+          </div>
+        </Card>
+      </template>
+      <template #code>
+        <pre><code>&lt;Card class="box-card"&gt;
+  &lt;img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+    style="width: 100%" /&gt;
+  &lt;div style="padding: 14px"&gt;
+    &lt;span&gt;好吃的汉堡&lt;/span&gt;
+    &lt;div class="bottom"&gt;
+      &lt;time class="time"&gt;2021-04-01 20:00:00&lt;/time&gt;
+      &lt;Button class="button" text&gt;操作按钮&lt;/Button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/Card&gt;</code></pre>
+      </template>
+    </DemoSection>
+
+    <!-- 阴影效果 -->
+    <DemoSection title="阴影效果">
+      <template #preview>
+        <div class="demo-shadow">
+          <Card class="box-card" shadow="always">
+            <div v-for="o in 4" :key="o" class="text item">
+              {{ "总是显示 " + o }}
             </div>
           </Card>
         </div>
-        <CodeToggle>
-          <!-- <Card class="box-card">
-            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-              style="width: 100%" />
-            <div style="padding: 14px">
-              <span>好吃的汉堡</span>
-              <div class="bottom">
-                <time class="time">2021-04-01 20:00:00</time>
-                <Button class="button" text>操作按钮</Button>
-              </div>
+        <div class="demo-shadow">
+          <Card class="box-card" shadow="hover">
+            <div v-for="o in 4" :key="o" class="text item">
+              {{ "悬停显示 " + o }}
             </div>
-          </Card>-->
-        </CodeToggle>
-      </div>
-    </section>
-
-    <!-- 阴影效果 -->
-    <section class="demo-section">
-      <h2>阴影效果</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-shadow">
-            <Card class="box-card" shadow="always">
-              <div v-for="o in 4" :key="o" class="text item">
-                {{ "总是显示 " + o }}
-              </div>
-            </Card>
-          </div>
-          <div class="demo-shadow">
-            <Card class="box-card" shadow="hover">
-              <div v-for="o in 4" :key="o" class="text item">
-                {{ "悬停显示 " + o }}
-              </div>
-            </Card>
-          </div>
-          <div class="demo-shadow">
-            <Card class="box-card" shadow="never">
-              <div v-for="o in 4" :key="o" class="text item">
-                {{ "从不显示 " + o }}
-              </div>
-            </Card>
-          </div>
+          </Card>
         </div>
-        <CodeToggle>
-          <!--
-            <Card class="box-card" shadow="always">
-              <div v-for="o in 4" :key="o" class="text item">
-                {{ "总是显示 " + o }}
-              </div>
-            </Card>
-            <Card class="box-card" shadow="hover">
-              <div v-for="o in 4" :key="o" class="text item">
-                {{ "悬停显示 " + o }}
-              </div>
-            </Card>
-            <Card class="box-card" shadow="never">
-              <div v-for="o in 4" :key="o" class="text item">
-                {{ "从不显示 " + o }}
-              </div>
-            </Card>-->
-        </CodeToggle>
-      </div>
-    </section>
+        <div class="demo-shadow">
+          <Card class="box-card" shadow="never">
+            <div v-for="o in 4" :key="o" class="text item">
+              {{ "从不显示 " + o }}
+            </div>
+          </Card>
+        </div>
+      </template>
+      <template #code>
+        <pre><code>&lt;Card class="box-card" shadow="always"&gt;
+  &lt;div v-for="o in 4" :key="o" class="text item"&gt;
+    {{ "总是显示 " + o }}
+  &lt;/div&gt;
+&lt;/Card&gt;
+&lt;Card class="box-card" shadow="hover"&gt;
+  &lt;div v-for="o in 4" :key="o" class="text item"&gt;
+    {{ "悬停显示 " + o }}
+  &lt;/div&gt;
+&lt;/Card&gt;
+&lt;Card class="box-card" shadow="never"&gt;
+  &lt;div v-for="o in 4" :key="o" class="text item"&gt;
+    {{ "从不显示 " + o }}
+  &lt;/div&gt;
+&lt;/Card&gt;</code></pre>
+      </template>
+    </DemoSection>
   </div>
 </template>
 
 <script setup>
 import { Card, Button } from "@mc-markets/ui";
-import CodeToggle from "./CodeToggle.vue";
+import DemoSection from "./DemoSection.vue";
 </script>
 
 <style scoped>
@@ -149,30 +136,6 @@ import CodeToggle from "./CodeToggle.vue";
   margin: 0 auto;
 }
 
-h2 {
-  color: #555;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
-}
 
 .box-card {
   width: 300px;

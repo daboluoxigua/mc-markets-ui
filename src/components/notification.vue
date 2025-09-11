@@ -329,7 +329,7 @@ ElNotification({
 <script setup>
 import { ElNotification } from 'element-plus'
 import { Button } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+import DemoSection from './DemoSection.vue'
 
 // 方法
 const showNotification = (type) => {
@@ -469,30 +469,6 @@ const showHTMLNotification = () => {
   margin: 0 auto;
 }
 
-h2 {
-  color: #555;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
-}
 
 .demo-buttons {
   display: flex;

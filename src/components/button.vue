@@ -1,159 +1,139 @@
 <template>
   <div class="button-demo">
     <!-- 基础用法 -->
-    <section class="demo-section">
-      <h2>基础用法</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button>默认按钮</Button>
-          <Button type="primary">主要按钮</Button>
-          <Button type="success">成功按钮</Button>
-          <Button type="info">信息按钮</Button>
-          <Button type="warning">警告按钮</Button>
-          <Button type="danger">危险按钮</Button>
-        </div>
-        <CodeToggle>
-          {{ `<Button>默认按钮</Button>
+    <DemoSection title="基础用法">
+      <template #preview>
+        <Button>默认按钮</Button>
+        <Button type="primary">主要按钮</Button>
+        <Button type="success">成功按钮</Button>
+        <Button type="info">信息按钮</Button>
+        <Button type="warning">警告按钮</Button>
+        <Button type="danger">危险按钮</Button>
+      </template>
+      <template #code>
+        {{ `<Button>默认按钮</Button>
 <Button type="primary">主要按钮</Button>
 <Button type="success">成功按钮</Button>
 <Button type="info">信息按钮</Button>
 <Button type="warning">警告按钮</Button>
 <Button type="danger">危险按钮</Button>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 朴素按钮 -->
-    <section class="demo-section">
-      <h2>朴素按钮</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button plain>朴素按钮</Button>
-          <Button type="primary" plain>主要按钮</Button>
-          <Button type="success" plain>成功按钮</Button>
-          <Button type="info" plain>信息按钮</Button>
-          <Button type="warning" plain>警告按钮</Button>
-          <Button type="danger" plain>危险按钮</Button>
-        </div>
-        <CodeToggle>
-          {{ `<Button plain>朴素按钮</Button>
+    <DemoSection title="朴素按钮">
+      <template #preview>
+        <Button plain>朴素按钮</Button>
+        <Button type="primary" plain>主要按钮</Button>
+        <Button type="success" plain>成功按钮</Button>
+        <Button type="info" plain>信息按钮</Button>
+        <Button type="warning" plain>警告按钮</Button>
+        <Button type="danger" plain>危险按钮</Button>
+      </template>
+      <template #code>
+        {{ `<Button plain>朴素按钮</Button>
 <Button type="primary" plain>主要按钮</Button>
 <Button type="success" plain>成功按钮</Button>
 <Button type="info" plain>信息按钮</Button>
 <Button type="warning" plain>警告按钮</Button>
 <Button type="danger" plain>危险按钮</Button>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 圆角按钮 -->
-    <section class="demo-section">
-      <h2>圆角按钮</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button round>圆角按钮</Button>
-          <Button type="primary" round>主要按钮</Button>
-          <Button type="success" round>成功按钮</Button>
-          <Button type="info" round>信息按钮</Button>
-          <Button type="warning" round>警告按钮</Button>
-          <Button type="danger" round>危险按钮</Button>
-        </div>
-        <CodeToggle>
-          {{ `<Button round>圆角按钮</Button>
+    <DemoSection title="圆角按钮">
+      <template #preview>
+        <Button round>圆角按钮</Button>
+        <Button type="primary" round>主要按钮</Button>
+        <Button type="success" round>成功按钮</Button>
+        <Button type="info" round>信息按钮</Button>
+        <Button type="warning" round>警告按钮</Button>
+        <Button type="danger" round>危险按钮</Button>
+      </template>
+      <template #code>
+        {{ `<Button round>圆角按钮</Button>
 <Button type="primary" round>主要按钮</Button>
 <Button type="success" round>成功按钮</Button>
 <Button type="info" round>信息按钮</Button>
 <Button type="warning" round>警告按钮</Button>
 <Button type="danger" round>危险按钮</Button>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 圆形按钮 -->
-    <section class="demo-section">
-      <h2>圆形按钮</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button circle icon="search" />
-          <Button type="primary" circle icon="edit" />
-          <Button type="success" circle icon="check" />
-          <Button type="info" circle icon="message" />
-          <Button type="warning" circle icon="star" />
-          <Button type="danger" circle icon="delete" />
-        </div>
-        <CodeToggle>
-          {{ `<Button circle icon="search" />
+    <DemoSection title="圆形按钮">
+      <template #preview>
+        <Button circle icon="search" />
+        <Button type="primary" circle icon="edit" />
+        <Button type="success" circle icon="check" />
+        <Button type="info" circle icon="message" />
+        <Button type="warning" circle icon="star" />
+        <Button type="danger" circle icon="delete" />
+      </template>
+      <template #code>
+        {{ `<Button circle icon="search" />
 <Button type="primary" circle icon="edit" />
 <Button type="success" circle icon="check" />
 <Button type="info" circle icon="message" />
 <Button type="warning" circle icon="star" />
 <Button type="danger" circle icon="delete" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 禁用状态 -->
-    <section class="demo-section">
-      <h2>禁用状态</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button disabled>默认按钮</Button>
-          <Button type="primary" disabled>主要按钮</Button>
-          <Button type="success" disabled>成功按钮</Button>
-          <Button type="info" disabled>信息按钮</Button>
-          <Button type="warning" disabled>警告按钮</Button>
-          <Button type="danger" disabled>危险按钮</Button>
-        </div>
-        <CodeToggle>
-          {{ `<Button disabled>默认按钮</Button>
+    <DemoSection title="禁用状态">
+      <template #preview>
+        <Button disabled>默认按钮</Button>
+        <Button type="primary" disabled>主要按钮</Button>
+        <Button type="success" disabled>成功按钮</Button>
+        <Button type="info" disabled>信息按钮</Button>
+        <Button type="warning" disabled>警告按钮</Button>
+        <Button type="danger" disabled>危险按钮</Button>
+      </template>
+      <template #code>
+        {{ `<Button disabled>默认按钮</Button>
 <Button type="primary" disabled>主要按钮</Button>
 <Button type="success" disabled>成功按钮</Button>
 <Button type="info" disabled>信息按钮</Button>
 <Button type="warning" disabled>警告按钮</Button>
 <Button type="danger" disabled>危险按钮</Button>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 文字按钮 -->
-    <section class="demo-section">
-      <h2>文字按钮</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button text>文字按钮</Button>
-          <Button type="primary" text>主要按钮</Button>
-          <Button type="success" text>成功按钮</Button>
-          <Button type="info" text>信息按钮</Button>
-          <Button type="warning" text>警告按钮</Button>
-          <Button type="danger" text>危险按钮</Button>
-        </div>
-        <CodeToggle>
-          {{ `<Button text>文字按钮</Button>
+    <DemoSection title="文字按钮">
+      <template #preview>
+        <Button text>文字按钮</Button>
+        <Button type="primary" text>主要按钮</Button>
+        <Button type="success" text>成功按钮</Button>
+        <Button type="info" text>信息按钮</Button>
+        <Button type="warning" text>警告按钮</Button>
+        <Button type="danger" text>危险按钮</Button>
+      </template>
+      <template #code>
+        {{ `<Button text>文字按钮</Button>
 <Button type="primary" text>主要按钮</Button>
 <Button type="success" text>成功按钮</Button>
 <Button type="info" text>信息按钮</Button>
 <Button type="warning" text>警告按钮</Button>
 <Button type="danger" text>危险按钮</Button>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 图标按钮 -->
-    <section class="demo-section">
-      <h2>图标按钮</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button type="primary" icon="edit" />
-          <Button type="primary" icon="delete" />
-          <Button type="primary" icon="share" />
-          <Button type="primary" icon="search">搜索</Button>
-          <Button type="primary">
-            上传
-            <Icon name="upload" />
-          </Button>
-        </div>
-        <CodeToggle>
-          {{ `<Button type="primary" icon="edit" />
+    <DemoSection title="图标按钮">
+      <template #preview>
+        <Button type="primary" icon="edit" />
+        <Button type="primary" icon="delete" />
+        <Button type="primary" icon="share" />
+        <Button type="primary" icon="search">搜索</Button>
+        <Button type="primary">
+          上传
+          <Icon name="upload" />
+        </Button>
+      </template>
+      <template #code>
+        {{ `<Button type="primary" icon="edit" />
 <Button type="primary" icon="delete" />
 <Button type="primary" icon="share" />
 <Button type="primary" icon="search">搜索</Button>
@@ -161,27 +141,24 @@
   上传
   <Icon name="upload" />
 </Button>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 按钮组 -->
-    <section class="demo-section">
-      <h2>按钮组</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <el-button-group>
-            <Button icon="arrow-left">上一页</Button>
-            <Button icon="arrow-right">下一页</Button>
-          </el-button-group>
-          <el-button-group>
-            <Button icon="edit" />
-            <Button icon="copy" />
-            <Button icon="delete" />
-          </el-button-group>
-        </div>
-        <CodeToggle>
-          {{ `<el-button-group>
+    <DemoSection title="按钮组">
+      <template #preview>
+        <el-button-group>
+          <Button icon="arrow-left">上一页</Button>
+          <Button icon="arrow-right">下一页</Button>
+        </el-button-group>
+        <el-button-group>
+          <Button icon="edit" />
+          <Button icon="copy" />
+          <Button icon="delete" />
+        </el-button-group>
+      </template>
+      <template #code>
+        {{ `<el-button-group>
   <Button icon="arrow-left">上一页</Button>
   <Button icon="arrow-right">下一页</Button>
 </el-button-group>
@@ -190,43 +167,36 @@
   <Button icon="copy" />
   <Button icon="delete" />
 </el-button-group>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 加载中 -->
-    <section class="demo-section">
-      <h2>加载中</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button type="primary" :loading="loading" @click="handleClick">
-            {{ loading ? '加载中' : '点击加载' }}
-          </Button>
-        </div>
-        <CodeToggle>
-          <!-- {{ `<Button type="primary" :loading="loading" @click="handleClick">
+    <DemoSection title="加载中">
+      <template #preview>
+        <Button type="primary" :loading="loading" @click="handleClick">
+          {{ loading ? '加载中' : '点击加载' }}
+        </Button>
+      </template>
+      <template #code>
+        <pre><code>&lt;Button type="primary" :loading="loading" @click="handleClick"&gt;
   {{ loading ? '加载中' : '点击加载' }}
-</Button>` }} -->
-        </CodeToggle>
-      </div>
-    </section>
+&lt;/Button&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 不同尺寸 -->
-    <section class="demo-section">
-      <h2>不同尺寸</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Button size="large">大型按钮</Button>
-          <Button>默认按钮</Button>
-          <Button size="small">小型按钮</Button>
-        </div>
-        <CodeToggle>
-          <!-- {{ `<Button size="large">大型按钮</Button>
-<Button>默认按钮</Button>
-<Button size="small">小型按钮</Button>` }} -->
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="不同尺寸">
+      <template #preview>
+        <Button size="large">大型按钮</Button>
+        <Button>默认按钮</Button>
+        <Button size="small">小型按钮</Button>
+      </template>
+      <template #code>
+        <pre><code>&lt;Button size="large"&gt;大型按钮&lt;/Button&gt;
+&lt;Button&gt;默认按钮&lt;/Button&gt;
+&lt;Button size="small"&gt;小型按钮&lt;/Button&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- API 文档 -->
     <section class="demo-section">
@@ -341,7 +311,7 @@
 
 <script setup>
 import { Button, Icon } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+import DemoSection from './DemoSection.vue'
 import { ref } from 'vue'
 
 // 响应式数据
@@ -361,31 +331,6 @@ const handleClick = () => {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-h2 {
-  color: #555;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
 }
 
 .demo-preview .el-button {

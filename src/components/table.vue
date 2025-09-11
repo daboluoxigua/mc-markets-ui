@@ -444,7 +444,7 @@
 
 <script setup>
 import { Table, TableColumn, Button } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+import DemoSection from './DemoSection.vue'
 import { ref } from 'vue'
 
 // 响应式数据
@@ -631,30 +631,6 @@ const indexMethod = (index) => {
   margin: 0 auto;
 }
 
-h2 {
-  color: #555;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
-}
 
 /* 响应式设计 */
 @media (max-width: 768px) {

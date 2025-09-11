@@ -1,75 +1,61 @@
 <template>
   <div class="input-demo">
     <!-- 基础用法 -->
-    <section class="demo-section">
-      <h2>基础用法</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="input" placeholder="请输入内容" />
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="input" placeholder="请输入内容" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="基础用法">
+      <template #preview>
+        <Input v-model="input" placeholder="请输入内容" />
+      </template>
+      <template #code>
+        {{ `<Input v-model="input" placeholder="请输入内容" />` }}
+      </template>
+    </DemoSection>
 
     <!-- 禁用状态 -->
-    <section class="demo-section">
-      <h2>禁用状态</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="input1" disabled placeholder="请输入内容" />
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="input1" disabled placeholder="请输入内容" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="禁用状态">
+      <template #preview>
+        <Input v-model="input1" disabled placeholder="请输入内容" />
+      </template>
+      <template #code>
+        {{ `<Input v-model="input1" disabled placeholder="请输入内容" />` }}
+      </template>
+    </DemoSection>
 
     <!-- 可清空 -->
-    <section class="demo-section">
-      <h2>可清空</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="input2" placeholder="请输入内容" clearable />
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="input2" placeholder="请输入内容" clearable />` }}
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="可清空">
+      <template #preview>
+        <Input v-model="input2" placeholder="请输入内容" clearable />
+      </template>
+      <template #code>
+        {{ `<Input v-model="input2" placeholder="请输入内容" clearable />` }}
+      </template>
+    </DemoSection>
 
     <!-- 密码框 -->
-    <section class="demo-section">
-      <h2>密码框</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="input3" type="password" placeholder="请输入密码" show-password />
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="input3" type="password" placeholder="请输入密码" show-password />` }}
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="密码框">
+      <template #preview>
+        <Input v-model="input3" type="password" placeholder="请输入密码" show-password />
+      </template>
+      <template #code>
+        {{ `<Input v-model="input3" type="password" placeholder="请输入密码" show-password />` }}
+      </template>
+    </DemoSection>
 
     <!-- 带图标的输入框 -->
-    <section class="demo-section">
-      <h2>带图标的输入框</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="input4" placeholder="请输入内容" clearable>
-            <template #prefix>
-              <Icon name="search" />
-            </template>
-          </Input>
-          <Input v-model="input5" placeholder="请输入内容">
-            <template #suffix>
-              <Icon name="calendar" />
-            </template>
-          </Input>
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="input4" placeholder="请输入内容" clearable>
+    <DemoSection title="带图标的输入框">
+      <template #preview>
+        <Input v-model="input4" placeholder="请输入内容" clearable>
+          <template #prefix>
+            <Icon name="search" />
+          </template>
+        </Input>
+        <Input v-model="input5" placeholder="请输入内容">
+          <template #suffix>
+            <Icon name="calendar" />
+          </template>
+        </Input>
+      </template>
+      <template #code>
+        {{ `<Input v-model="input4" placeholder="请输入内容" clearable>
   <template #prefix>
     <Icon name="search" />
   </template>
@@ -79,98 +65,82 @@
     <Icon name="calendar" />
   </template>
 </Input>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 文本域 -->
-    <section class="demo-section">
-      <h2>文本域</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="textarea" type="textarea" placeholder="请输入内容" />
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="textarea" type="textarea" placeholder="请输入内容" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="文本域">
+      <template #preview>
+        <Input v-model="textarea" type="textarea" placeholder="请输入内容" />
+      </template>
+      <template #code>
+        {{ `<Input v-model="textarea" type="textarea" placeholder="请输入内容" />` }}
+      </template>
+    </DemoSection>
 
     <!-- 可自适应文本高度的文本域 -->
-    <section class="demo-section">
-      <h2>可自适应文本高度的文本域</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="textarea2" type="textarea" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="请输入内容" />
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="textarea2" type="textarea" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="请输入内容" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+    <DemoSection title="可自适应文本高度的文本域">
+      <template #preview>
+        <Input v-model="textarea2" type="textarea" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="请输入内容" />
+      </template>
+      <template #code>
+        {{ `<Input v-model="textarea2" type="textarea" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="请输入内容" />` }}
+      </template>
+    </DemoSection>
 
     <!-- 复合型输入框 -->
-    <section class="demo-section">
-      <h2>复合型输入框</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="input6" placeholder="请输入内容">
-            <template #prepend>Http://</template>
-          </Input>
-          <Input v-model="input7" placeholder="请输入内容">
-            <template #append>.com</template>
-          </Input>
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="input6" placeholder="请输入内容">
+    <DemoSection title="复合型输入框">
+      <template #preview>
+        <Input v-model="input6" placeholder="请输入内容">
+          <template #prepend>Http://</template>
+        </Input>
+        <Input v-model="input7" placeholder="请输入内容">
+          <template #append>.com</template>
+        </Input>
+      </template>
+      <template #code>
+        {{ `<Input v-model="input6" placeholder="请输入内容">
   <template #prepend>Http://</template>
 </Input>
 <Input v-model="input7" placeholder="请输入内容">
   <template #append>.com</template>
 </Input>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 尺寸 -->
-    <section class="demo-section">
-      <h2>尺寸</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Input v-model="input8" size="large" placeholder="Large size" />
-          <Input v-model="input9" placeholder="Default size" />
-          <Input v-model="input10" size="small" placeholder="Small size" />
-        </div>
-        <CodeToggle>
-          {{ `<Input v-model="input8" size="large" placeholder="Large size" />
+    <DemoSection title="尺寸">
+      <template #preview>
+        <Input v-model="input8" size="large" placeholder="Large size" />
+        <Input v-model="input9" placeholder="Default size" />
+        <Input v-model="input10" size="small" placeholder="Small size" />
+      </template>
+      <template #code>
+        {{ `<Input v-model="input8" size="large" placeholder="Large size" />
 <Input v-model="input9" placeholder="Default size" />
 <Input v-model="input10" size="small" placeholder="Small size" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 带输入建议 -->
-    <section class="demo-section">
-      <h2>带输入建议</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <el-autocomplete
-            v-model="state"
-            :fetch-suggestions="querySearchAsync"
-            placeholder="请输入内容"
-            @select="handleSelect"
-          />
-        </div>
-        <CodeToggle>
-          {{ `<el-autocomplete
+    <DemoSection title="带输入建议">
+      <template #preview>
+        <el-autocomplete
+          v-model="state"
+          :fetch-suggestions="querySearchAsync"
+          placeholder="请输入内容"
+          @select="handleSelect"
+        />
+      </template>
+      <template #code>
+        {{ `<el-autocomplete
   v-model="state"
   :fetch-suggestions="querySearchAsync"
   placeholder="请输入内容"
   @select="handleSelect"
 />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- API 文档 -->
     <section class="demo-section">
@@ -428,7 +398,7 @@
 
 <script setup>
 import { Input, Icon } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+import DemoSection from './DemoSection.vue'
 import { ref } from 'vue'
 
 // 响应式数据
@@ -489,30 +459,6 @@ const handleSelect = (item) => {
   margin: 0 auto;
 }
 
-h2 {
-  color: #555;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
-}
 
 .demo-preview .el-input {
   margin-bottom: 10px;

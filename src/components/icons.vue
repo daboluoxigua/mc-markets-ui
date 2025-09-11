@@ -379,7 +379,7 @@ const handleIconClick = (iconName) => {
 import { ref, computed } from 'vue'
 import { Icon } from '@mc-markets/ui'
 import { iconList, searchIcons } from '../../packages/components/Icon/types'
-import CodeToggle from './CodeToggle.vue'
+import CodeToggle from '@/components/CodeToggle.vue'
 
 // 响应式数据
 const clickedIcon = ref('')
@@ -441,15 +441,15 @@ const copyIconClass = async (className) => {
 
 h1 {
   text-align: center;
-  color: var(--el-text-color-primary);
+  color: #333;
   margin-bottom: 40px;
 }
 
 h2 {
-  color: var(--el-text-color-regular);
+  color: #555;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--el-border-color-lighter);
+  border-bottom: 2px solid #eee;
 }
 
 .demo-section {
@@ -458,16 +458,16 @@ h2 {
 
 /* 演示卡片样式 */
 .demo-card {
-  border: 1px solid var(--el-border-color-lighter);
+  border: 1px solid #e1e8ed;
   border-radius: 8px;
   overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .demo-preview {
   padding: 20px;
-  background: var(--el-bg-color);
+  background: #fafafa;
 }
 
 
@@ -483,14 +483,14 @@ h2 {
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  border: 1px solid var(--el-border-color-lighter);
+  border: 1px solid #eee;
   border-radius: 8px;
-  background: var(--el-fill-color-lighter);
+  background: #fafafa;
   transition: all 0.3s ease;
 }
 
 .demo-item:hover {
-  background: var(--el-fill-color-light);
+  background: #f0f0f0;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -498,22 +498,22 @@ h2 {
 .demo-item span {
   margin-top: 8px;
   font-size: 12px;
-  color: var(--el-text-color-secondary);
+  color: #666;
   text-align: center;
 }
 
 .clickable {
   cursor: pointer;
-  background: var(--el-color-primary-light-9) !important;
+  background: #e3f2fd !important;
 }
 
 .clickable:hover {
-  background: var(--el-color-primary-light-7) !important;
+  background: #bbdefb !important;
 }
 
 .click-result {
   text-align: center;
-  color: var(--el-color-success);
+  color: #4caf50;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -525,7 +525,7 @@ h2 {
 .search-input {
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--el-border-color);
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
   margin-bottom: 15px;
@@ -535,10 +535,10 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
-  border: 1px solid var(--el-border-color-lighter);
+  border: 1px solid #eee;
   border-radius: 8px;
   padding: 20px;
-  background: var(--el-fill-color-lighter);
+  background: #fafafa;
 }
 
 .icon-item {
@@ -546,28 +546,28 @@ h2 {
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  border: 1px solid var(--el-border-color);
+  border: 1px solid #ddd;
   border-radius: 6px;
-  background: var(--el-bg-color);
+  background: white;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .icon-item:hover {
-  background: var(--el-fill-color-light);
+  background: #f0f0f0;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .icon-item.active {
-  background: var(--el-color-primary-light-9);
-  border-color: var(--el-color-primary);
+  background: #e3f2fd;
+  border-color: #2196f3;
 }
 
 .icon-name {
   margin-top: 8px;
   font-size: 12px;
-  color: var(--el-text-color-primary);
+  color: #333;
   text-align: center;
   word-break: break-all;
 }
@@ -575,7 +575,7 @@ h2 {
 .icon-class {
   margin-top: 15px;
   font-size: 14px;
-  color: var(--el-text-color-secondary);
+  color: #666;
   font-family: monospace;
   padding: 2px 0;
   border-radius: 3px;
@@ -584,8 +584,8 @@ h2 {
 }
 
 .icon-class:hover {
-  background: var(--el-fill-color-light);
-  color: var(--el-color-primary);
+  background: #e0e0e0;
+  color: #2196f3;
 }
 
 .copy-message {
@@ -593,7 +593,7 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--el-color-success);
+  background: #4caf50;
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
@@ -604,7 +604,7 @@ h2 {
 
 /* API 文档样式 */
 .api-docs {
-  background: var(--el-fill-color-lighter);
+  background: #f8f9fa;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -632,7 +632,7 @@ h2 {
 .api-table table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--el-bg-color);
+  background: white;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
