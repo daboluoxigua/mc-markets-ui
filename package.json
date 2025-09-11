@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.0.32",
+  "version": "1.0.33",
   "type": "module",
   "author": "chenyu",
   "description": "Element Plus 完整导出包，提供所有组件、指令和服务",
@@ -112,7 +112,7 @@
     "plop": "^3.1.2",
     "postcss-html": "^1.5.0",
     "prettier": "^2.8.8",
-    "sass": "^1.62.0",
+    "sass": "^1.77.0",
     "simple-git-hooks": "^2.8.1",
     "sortablejs": "^1.15.0",
     "stylelint": "^15.4.0",

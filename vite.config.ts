@@ -33,5 +33,14 @@ export default () => {
         "@mc-markets/ui": fileURLToPath(new URL("./packages", import.meta.url))
       },
     },
+
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler', // 使用现代编译器API
+          silenceDeprecations: ['legacy-js-api'] // 静默弃用警告
+        }
+      }
+    },
   });
 };
