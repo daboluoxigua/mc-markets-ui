@@ -65,7 +65,8 @@
   "dependencies": {
     "@vueuse/core": "^10.5.0",
     "element-plus": "^2.8.0",
-    "vue": "^3.3.0"
+    "vue": "^3.3.0",
+    "vue-router": "^4.5.1"
   },
   "peerDependencies": {
     "element-plus": "^2.8.0",

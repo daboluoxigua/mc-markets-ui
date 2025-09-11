@@ -33,7 +33,8 @@ export default ({ command }) => {
 
     resolve: {
       alias: {
-        "@": fileURLToPath(new URL("./packages", import.meta.url)),
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+        "@packages": fileURLToPath(new URL("./packages", import.meta.url)),
         "@mc-markets/ui": fileURLToPath(new URL("./packages", import.meta.url))
       },
     },
