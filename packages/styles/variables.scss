@@ -28,7 +28,7 @@
   ),
   $text-color: (
     'primary': #303133,
-    'regular': var(--text-tertiary),
+    'regular': red,
     'secondary': #909399,
     'placeholder': #C0C4CC,
   ),
@@ -48,7 +48,7 @@
     'round': 20px,
     'circle': 100%,
   ),
-  
+  $border-color-hover:var(--text-brand),
   // 自定义阴影
   $box-shadow: (
     'base': (
@@ -75,6 +75,7 @@
 @use "element-plus/theme-chalk/src/index.scss" as *;
 @use 'element-plus/theme-chalk/src/dark/css-vars.scss';
 
+
 // 导入项目变量
 @use './variables/border-mode.css';
 @use './variables/color-modes-dark.css';
@@ -83,81 +84,10 @@
 @use './variables/spacing-mode.css';
 @use './variables/typography-desktop.css';
 
-// // 生成CSS变量
-// :root{
-//   --el-component-size-large: 40px;
-//   --el-component-size: 48px;
-//   --el-component-size-small: 24px;
-// }
-// :root.dark {
-//   // 主色调
-//   --el-color-primary: #FFD905;
-//   --el-color-primary-light-3: #FFE855;
-//   --el-color-primary-light-5: #FFED7A;
-//   --el-color-primary-light-7: #FFF2A0;
-//   --el-color-primary-light-8: #FFF5B3;
-//   --el-color-primary-light-9: #FFF9D9;
-//   --el-color-primary-dark-2: #E6C300;
-  
-//   // 成功色
-//   --el-color-success: #34A88B;
-//   --el-color-success-light-3: #5BB89E;
-//   --el-color-success-light-5: #7CC7B1;
-//   --el-color-success-light-7: #9DD6C4;
-//   --el-color-success-light-8: #B3E0D2;
-//   --el-color-success-light-9: #D9F0E8;
-//   --el-color-success-dark-2: #2A8A73;
-  
-//   // 警告色
-//   --el-color-warning: #FFA61F;
-//   --el-color-warning-light-3: #FFB84D;
-//   --el-color-warning-light-5: #FFC973;
-//   --el-color-warning-light-7: #FFD999;
-//   --el-color-warning-light-8: #FFE2B3;
-//   --el-color-warning-light-9: #FFF0D9;
-//   --el-color-warning-dark-2: #E6940C;
-  
-//   // 危险色
-//   --el-color-danger: #f14654;
-//   --el-color-danger-light-3: #F46B77;
-//   --el-color-danger-light-5: #F78A94;
-//   --el-color-danger-light-7: #FAA9B1;
-//   --el-color-danger-light-8: #FBC2C8;
-//   --el-color-danger-light-9: #FDE0E3;
-//   --el-color-danger-dark-2: #D63A47;
-  
-//   // 信息色
-//   --el-color-info: #585660;
-//   --el-color-info-light-3: #7A7A82;
-//   --el-color-info-light-5: #96969C;
-//   --el-color-info-light-7: #B2B2B6;
-//   --el-color-info-light-8: #C6C6C9;
-//   --el-color-info-light-9: #E0E0E2;
-//   --el-color-info-dark-2: #46464E;
-  
-//   // 字体大小
-//   --el-font-size-extra-large: 20px;
-//   --el-font-size-large: 18px;
-//   --el-font-size-medium: 16px;
-//   --el-font-size-base: 14px;
-//   --el-font-size-small: 12px;
-//   --el-font-size-extra-small: 10px;
-  
-//   // 圆角
-//   --el-border-radius-base: 8px;
-//   --el-border-radius-small: 4px;
-//   --el-border-radius-round: 20px;
-//   --el-border-radius-circle: 100%;
-  
-//   // 间距
-//   --el-spacing-base: 16px;
-//   --el-spacing-small: 8px;
-//   --el-spacing-large: 24px;
 
-//   // 边框
-
-//   // 
-//   --el-component-size-large: 40px;
-//   --el-component-size: 48px;
-//   --el-component-size-small: 24px;
-// }
+html.dark{
+  --el-text-color-regular: var(--text-white);
+  --el-disabled-border-color:rgba(255, 255, 255, 0);
+  --el-border-color-light:var(--border-primary);
+  --el-popover-border-radius:8px;
+}

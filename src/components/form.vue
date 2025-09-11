@@ -41,6 +41,47 @@
       </div>
     </section>
 
+      <!-- 禁用状态 -->
+    <section class="demo-section">
+      <h2>禁用状态</h2>
+      <div class="demo-card">
+        <div class="demo-preview">
+          <Form :model="form" label-width="120px" disabled>
+            <FormItem label="活动名称">
+              <Input v-model="form.name" placeholder="请输入活动名称" />
+            </FormItem>
+            <FormItem label="活动区域">
+              <Select v-model="form.region" placeholder="请选择活动区域">
+                <SelectOption label="区域一" value="shanghai" />
+                <SelectOption label="区域二" value="beijing" />
+              </Select>
+            </FormItem>
+            <FormItem>
+              <Button type="primary" @click="onSubmit">立即创建</Button>
+              <Button @click="onReset">重置</Button>
+            </FormItem>
+          </Form>
+        </div>
+        <CodeToggle>
+          {{ `<Form :model="form" label-width="120px">
+  <FormItem label="活动名称">
+    <Input v-model="form.name" placeholder="请输入活动名称" />
+  </FormItem>
+  <FormItem label="活动区域">
+    <Select v-model="form.region" placeholder="请选择活动区域">
+      <SelectOption label="区域一" value="shanghai" />
+      <SelectOption label="区域二" value="beijing" />
+    </Select>
+  </FormItem>
+  <FormItem>
+    <Button type="primary" @click="onSubmit">立即创建</Button>
+    <Button @click="onReset">重置</Button>
+  </FormItem>
+</Form>` }}
+        </CodeToggle>
+      </div>
+    </section>
+
     <!-- 行内表单 -->
     <section class="demo-section">
       <h2>行内表单</h2>
@@ -85,7 +126,7 @@
       <h2>对齐方式</h2>
       <div class="demo-card">
         <div class="demo-preview">
-          <Form :model="form3" label-width="120px" label-position="right">
+          <Form :model="form3" label-width="120px" label-position="top">
             <FormItem label="活动名称">
               <Input v-model="form3.name" placeholder="请输入活动名称" />
             </FormItem>

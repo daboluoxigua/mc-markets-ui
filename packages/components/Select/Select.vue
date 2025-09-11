@@ -1,5 +1,5 @@
 <template>
-  <el-select v-bind="$attrs">
+  <el-select :show-arrow="false" v-bind="$attrs">
     <template #default v-if="$slots.default">
       <slot />
     </template>
