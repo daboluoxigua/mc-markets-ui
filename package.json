@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.0.33",
+  "version": "1.0.37",
   "type": "module",
   "author": "chenyu",
   "description": "Element Plus 完整导出包，提供所有组件、指令和服务",
@@ -50,6 +50,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
+    "dev:fast": "cross-env NODE_ENV=development vite --force",
+    "dev:inspector": "cross-env VUE_INSPECTOR=true vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit",
@@ -100,6 +102,7 @@
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "autoprefixer": "^10.4.14",
     "bumpp": "^9.1.0",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "cz-git": "^1.6.1",
     "eslint": "^8.38.0",

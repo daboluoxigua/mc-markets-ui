@@ -3,7 +3,7 @@
  * 
  * 提供自定义组件和工具函数
  * 
- * @version 1.0.33
+ * @version 1.0.37
  */
 
 import { App } from 'vue'
@@ -44,7 +44,7 @@ export { default as styles } from './styles/index.scss?inline'
 
 
 // ==================== 版本信息 ====================
-const version = '1.0.33'
+const version = '1.0.37'
 const author = 'chenyu'
 const description = '自定义组件库，提供自定义组件和工具函数'
 

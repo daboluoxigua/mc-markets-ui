@@ -600,7 +600,7 @@
 <script setup>
 // 自动导入 Element Plus 组件，无需手动导入
 // 自动导入 Vue 组合式 API，无需手动导入
-
+import { ElMessage } from 'element-plus'
 import {
   setTheme,
   setPrimaryColor,
@@ -642,8 +642,8 @@ import Progress from './components/progress.vue'
 
 // 响应式数据
 const activeMenu = ref("components");
-const selectedTheme = ref("blue");
-const isDark = ref(false);
+const selectedTheme = ref("default");
+const isDark = ref(true);
 const inputValue = ref("");
 const switchValue = ref(true);
 const rateValue = ref(4);
