@@ -79,6 +79,38 @@
             <Icon name="brush-cleaning" :size="16" />
             <span class="menu-text">颜色</span>
           </el-menu-item>
+          <el-menu-item index="button">
+            <Icon name="square-check" :size="16" />
+            <span class="menu-text">Button 按钮</span>
+          </el-menu-item>
+          <el-menu-item index="input">
+            <Icon name="edit" :size="16" />
+            <span class="menu-text">Input 输入框</span>
+          </el-menu-item>
+          <el-menu-item index="select">
+            <Icon name="chevron-down" :size="16" />
+            <span class="menu-text">Select 选择器</span>
+          </el-menu-item>
+          <el-menu-item index="table">
+            <Icon name="layout-grid" :size="16" />
+            <span class="menu-text">Table 表格</span>
+          </el-menu-item>
+          <el-menu-item index="form">
+            <Icon name="square-pen" :size="16" />
+            <span class="menu-text">Form 表单</span>
+          </el-menu-item>
+          <el-menu-item index="card">
+            <Icon name="credit-card" :size="16" />
+            <span class="menu-text">Card 卡片</span>
+          </el-menu-item>
+          <el-menu-item index="badge">
+            <Icon name="circle-check" :size="16" />
+            <span class="menu-text">Badge 徽章</span>
+          </el-menu-item>
+          <el-menu-item index="progress">
+            <Icon name="trending-up" :size="16" />
+            <span class="menu-text">Progress 进度条</span>
+          </el-menu-item>
           <el-menu-item index="buttons">
             <Icon name="square-check" :size="16" />
             <span class="menu-text">按钮</span>
@@ -261,6 +293,38 @@
             <h2>Tooltips</h2>
             <tooltips />
           </div>
+          <!-- Button 文档 -->
+          <div v-if="activeMenu === 'button'" class="demo-section">
+            <Button />
+          </div>
+          <!-- Input 文档 -->
+          <div v-if="activeMenu === 'input'" class="demo-section">
+            <Input />
+          </div>
+          <!-- Select 文档 -->
+          <div v-if="activeMenu === 'select'" class="demo-section">
+            <Select />
+          </div>
+          <!-- Table 文档 -->
+          <div v-if="activeMenu === 'table'" class="demo-section">
+            <Table />
+          </div>
+          <!-- Form 文档 -->
+          <div v-if="activeMenu === 'form'" class="demo-section">
+            <Form />
+          </div>
+          <!-- Card 文档 -->
+          <div v-if="activeMenu === 'card'" class="demo-section">
+            <Card />
+          </div>
+          <!-- Badge 文档 -->
+          <div v-if="activeMenu === 'badge'" class="demo-section">
+            <Badge />
+          </div>
+          <!-- Progress 文档 -->
+          <div v-if="activeMenu === 'progress'" class="demo-section">
+            <Progress />
+          </div>
           <!-- 颜色 -->
           <div v-if="activeMenu === 'colors'" class="demo-section">
             <h2>颜色</h2>
@@ -280,7 +344,7 @@
           <div v-if="activeMenu === 'forms'" class="demo-section">
             <h2>表单组件</h2>
             <el-form
-              :model="form"
+              :model="formData"
               :rules="rules"
               ref="formRef"
               label-width="100px"
@@ -289,14 +353,14 @@
                 <el-col :span="12">
                   <el-form-item label="用户名" prop="username">
                     <el-input
-                      v-model="form.username"
+                      v-model="formData.username"
                       placeholder="请输入用户名"
                     />
                   </el-form-item>
                 </el-col>
                 <el-col :span="12">
                   <el-form-item label="邮箱" prop="email">
-                    <el-input v-model="form.email" placeholder="请输入邮箱" />
+                    <el-input v-model="formData.email" placeholder="请输入邮箱" />
                   </el-form-item>
                 </el-col>
               </el-row>
@@ -304,7 +368,7 @@
               <el-row :gutter="20">
                 <el-col :span="12">
                   <el-form-item label="性别" prop="gender">
-                    <el-select v-model="form.gender" placeholder="请选择性别">
+                    <el-select v-model="formData.gender" placeholder="请选择性别">
                       <el-option label="男" value="male" />
                       <el-option label="女" value="female" />
                     </el-select>
@@ -313,7 +377,7 @@
                 <el-col :span="12">
                   <el-form-item label="生日" prop="birthday">
                     <el-date-picker
-                      v-model="form.birthday"
+                      v-model="formData.birthday"
                       type="date"
                       placeholder="选择日期"
                       style="width: 100%"
@@ -323,7 +387,7 @@
               </el-row>
 
               <el-form-item label="爱好" prop="hobbies">
-                <el-checkbox-group v-model="form.hobbies">
+                <el-checkbox-group v-model="formData.hobbies">
                   <el-checkbox label="reading">阅读</el-checkbox>
                   <el-checkbox label="music">音乐</el-checkbox>
                   <el-checkbox label="sports">运动</el-checkbox>
@@ -332,7 +396,7 @@
 
               <el-form-item label="描述" prop="description">
                 <el-input
-                  v-model="form.description"
+                  v-model="formData.description"
                   type="textarea"
                   :rows="3"
                   placeholder="请输入描述"
@@ -554,6 +618,9 @@ import {
 // 导入字体图标组件
 import { Icon } from "@mc-markets/ui";
 import icon from "./components/icon.vue";
+
+// 导入 Element Plus 的 Message 和 MessageBox
+import { ElMessage, ElMessageBox } from 'element-plus';
 import tabDoc from './components/tab.vue'
 import alert from './components/alert.vue'
 import notification from './components/notification.vue'
@@ -562,6 +629,16 @@ import pagination from './components/pagination.vue'
 import banner from './components/banner.vue'
 import empty from './components/empty.vue'
 import tooltips from './components/tooltips.vue'
+
+// 导入新创建的组件文档
+import Button from './components/button.vue'
+import Input from './components/input.vue'
+import Select from './components/select.vue'
+import Table from './components/table.vue'
+import Form from './components/form.vue'
+import Card from './components/card.vue'
+import Badge from './components/badge.vue'
+import Progress from './components/progress.vue'
 
 // 响应式数据
 const activeMenu = ref("components");
@@ -591,7 +668,7 @@ const fontSize = ref(14);
 const spacing = ref(20);
 
 // 表单数据
-const form = reactive({
+const formData = reactive({
   username: "",
   email: "",
   gender: "",
@@ -696,7 +773,7 @@ const submitForm = async () => {
   try {
     await formRef.value.validate();
     ElMessage.success("表单提交成功！");
-    console.log("表单数据:", form);
+    console.log("表单数据:", formData);
   } catch (error) {
     ElMessage.error("表单验证失败！");
   }
