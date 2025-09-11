@@ -598,9 +598,6 @@
 </template>
 
 <script setup>
-// 自动导入 Element Plus 组件，无需手动导入
-// 自动导入 Vue 组合式 API，无需手动导入
-import { ElMessage } from 'element-plus'
 import {
   setTheme,
   setPrimaryColor,
