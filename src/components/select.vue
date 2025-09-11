@@ -6,6 +6,13 @@
       <div class="demo-card">
         <div class="demo-preview">
           <Select v-model="value" placeholder="请选择">
+            <template #header>
+              <Input v-model="value" class="solid" placeholder="Text" style="--el-input-bg-color:var(--border-primary)">
+                <template #prefix>
+                  <Icon name="search" :size="24"/>
+                </template>
+              </Input>
+            </template>
             <SelectOption label="选项1" value="选项1" />
             <SelectOption label="选项2" value="选项2" />
             <SelectOption label="选项3" value="选项3" />
@@ -529,7 +536,7 @@
 </template>
 
 <script setup>
-import { Select, SelectOption } from '@mc-markets/ui'
+import { Select, SelectOption,Input,Icon } from '@mc-markets/ui'
 import DemoSection from './DemoSection.vue'
 import { ref } from 'vue'
 

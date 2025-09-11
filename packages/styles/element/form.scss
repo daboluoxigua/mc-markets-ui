@@ -1,3 +1,4 @@
+
 .el-form-item__label {
   height: var(--el-component-size);
   line-height: var(--el-component-size);
@@ -19,9 +20,11 @@
   margin-bottom: 20px;
 }
 
-
+.el-select-dropdown{
+  padding: 12px;
+}
 .el-select-dropdown__list{
-  padding:4px 6px;
+  padding:0;
 }
 .el-select-dropdown__item{
   padding:0px 12px;
@@ -33,4 +36,10 @@
   &:hover{
     background: var(--all-alphe-white-6, #FFFFFF0F);
   }
+}
+
+.el-select-dropdown__header{
+  border: none;
+  padding: 0;
+  padding-bottom: 4px;
 }

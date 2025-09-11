@@ -20,3 +20,9 @@ defineOptions({
   name: 'MCInput'
 })
 </script>
+<style scoped lang="scss">
+.solid{
+  --el-input-bg-color:var(--border-primary);
+  --el-input-border-color:var(--border-primary);
+}
+</style>
