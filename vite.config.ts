@@ -5,9 +5,20 @@ import createVitePlugins from "./vite/plugins";
 import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
-export default () => {
+export default ({ command }) => {
+  const isDev = command === 'serve'
+  
   return defineConfig({
-    plugins: [...createVitePlugins(),dts()],
+    plugins: [
+      ...createVitePlugins(),
+      // 只在构建时生成类型声明文件，开发时跳过以提升性能
+      !isDev && dts({
+        include: ['packages/**/*'],
+        exclude: ['src/**/*', 'node_modules/**/*'],
+        outDir: 'dist',
+        copyDtsFiles: true,
+      })
+    ].filter(Boolean),
     build: {
       outDir: "dist", //输出文件名称
       lib: {
@@ -32,15 +43,6 @@ export default () => {
         "@": fileURLToPath(new URL("./packages", import.meta.url)),
         "@mc-markets/ui": fileURLToPath(new URL("./packages", import.meta.url))
       },
-    },
-
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler', // 使用现代编译器API
-          silenceDeprecations: ['legacy-js-api'] // 静默弃用警告
-        }
-      }
     },
   });
 };

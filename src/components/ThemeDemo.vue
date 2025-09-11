@@ -169,7 +169,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
-import { ElMessage } from '@mc-markets/ui'
+import { ElMessage } from 'element-plus'
 import { 
   setTheme, 
   setPrimaryColor, 
