@@ -83,6 +83,7 @@ const handleMenuSelect = (path) => {
 .header-content h1 {
   margin: 0;
   font-size: 24px;
+  color: var(--text-quaternary);
 }
 
 .header-actions {

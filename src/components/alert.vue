@@ -1,103 +1,89 @@
 <template>
   <div class="alert-demo">
     <!-- 基础用法 -->
-    <section class="demo-section">
-      <h2>基础用法</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Alert title="成功提示的文案" type="success" />
-          <Alert title="消息提示的文案" type="info" />
-          <Alert title="警告提示的文案" type="warning" />
-          <Alert title="错误提示的文案" type="error" />
-        </div>
-        <CodeToggle>
-          {{ `<Alert title="成功提示的文案" type="success" />
+    <DemoSection title="基础用法">
+      <template #preview>
+        <Alert title="成功提示的文案" type="success" />
+        <Alert title="消息提示的文案" type="info" />
+        <Alert title="警告提示的文案" type="warning" />
+        <Alert title="错误提示的文案" type="error" />
+      </template>
+      <template #code>
+        {{ `<Alert title="成功提示的文案" type="success" />
 <Alert title="消息提示的文案" type="info" />
 <Alert title="警告提示的文案" type="warning" />
 <Alert title="错误提示的文案" type="error" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 自定义关闭按钮 -->
-    <section class="demo-section">
-      <h2>自定义关闭按钮</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Alert title="不可关闭的 alert" type="success" :closable="false" />
-          <Alert title="自定义 close-text" type="info" close-text="知道了" />
-          <Alert title="设置了回调的 alert" type="warning" @close="handleClose" />
-        </div>
-        <CodeToggle>
-          {{ `<Alert title="不可关闭的 alert" type="success" :closable="false" />
+    <DemoSection title="自定义关闭按钮">
+      <template #preview>
+        <Alert title="不可关闭的 alert" type="success" :closable="false" />
+        <Alert title="自定义 close-text" type="info" close-text="知道了" />
+        <Alert title="设置了回调的 alert" type="warning" @close="handleClose" />
+      </template>
+      <template #code>
+        {{ `<Alert title="不可关闭的 alert" type="success" :closable="false" />
 <Alert title="自定义 close-text" type="info" close-text="知道了" />
 <Alert title="设置了回调的 alert" type="warning" @close="handleClose" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 带有 icon -->
-    <section class="demo-section">
-      <h2>带有 icon</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Alert title="成功提示的文案" type="success" show-icon />
-          <Alert title="消息提示的文案" type="info" show-icon />
-          <Alert title="警告提示的文案" type="warning" show-icon />
-          <Alert title="错误提示的文案" type="error" show-icon />
-        </div>
-        <CodeToggle>
-          {{ `<Alert title="成功提示的文案" type="success" show-icon />
+    <DemoSection title="带有 icon">
+      <template #preview>
+        <Alert title="成功提示的文案" type="success" show-icon />
+        <Alert title="消息提示的文案" type="info" show-icon />
+        <Alert title="警告提示的文案" type="warning" show-icon />
+        <Alert title="错误提示的文案" type="error" show-icon />
+      </template>
+      <template #code>
+        {{ `<Alert title="成功提示的文案" type="success" show-icon />
 <Alert title="消息提示的文案" type="info" show-icon />
 <Alert title="警告提示的文案" type="warning" show-icon />
 <Alert title="错误提示的文案" type="error" show-icon />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 文字居中 -->
-    <section class="demo-section">
-      <h2>文字居中</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Alert title="成功提示的文案" type="success" center show-icon />
-          <Alert title="消息提示的文案" type="info" center show-icon />
-          <Alert title="警告提示的文案" type="warning" center show-icon />
-          <Alert title="错误提示的文案" type="error" center show-icon />
-        </div>
-        <CodeToggle>
-          {{ `<Alert title="成功提示的文案" type="success" center show-icon />
+    <DemoSection title="文字居中">
+      <template #preview>
+        <Alert title="成功提示的文案" type="success" center show-icon />
+        <Alert title="消息提示的文案" type="info" center show-icon />
+        <Alert title="警告提示的文案" type="warning" center show-icon />
+        <Alert title="错误提示的文案" type="error" center show-icon />
+      </template>
+      <template #code>
+        {{ `<Alert title="成功提示的文案" type="success" center show-icon />
 <Alert title="消息提示的文案" type="info" center show-icon />
 <Alert title="警告提示的文案" type="warning" center show-icon />
 <Alert title="错误提示的文案" type="error" center show-icon />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- 自定义内容 -->
-    <section class="demo-section">
-      <h2>自定义内容</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <Alert type="success">
-            <template #title>
-              <span>带标题的提示</span>
-            </template>
-            <template #default>
-              <p>这是一段描述性文字</p>
-            </template>
-          </Alert>
-          <Alert type="info">
-            <template #title>
-              <span>带标题的提示</span>
-            </template>
-            <template #default>
-              <p>这是一段描述性文字</p>
-            </template>
-          </Alert>
-        </div>
-        <CodeToggle>
-          {{ `<Alert type="success">
+    <DemoSection title="自定义内容">
+      <template #preview>
+        <Alert type="success">
+          <template #title>
+            <span>带标题的提示</span>
+          </template>
+          <template #default>
+            <p>这是一段描述性文字</p>
+          </template>
+        </Alert>
+        <Alert type="info">
+          <template #title>
+            <span>带标题的提示</span>
+          </template>
+          <template #default>
+            <p>这是一段描述性文字</p>
+          </template>
+        </Alert>
+      </template>
+      <template #code>
+        {{ `<Alert type="success">
   <template #title>
     <span>带标题的提示</span>
   </template>
@@ -114,9 +100,8 @@
     <p>这是一段描述性文字</p>
   </template>
 </Alert>` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+    </DemoSection>
 
     <!-- API 文档 -->
     <section class="demo-section">
@@ -220,7 +205,7 @@
 
 <script setup>
 import { Alert } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+import DemoSection from './DemoSection.vue'
 
 // 方法
 const handleClose = () => {
@@ -235,34 +220,6 @@ const handleClose = () => {
   margin: 0 auto;
 }
 
-h2 {
-  color: #555;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
-}
-
-.demo-preview .el-alert {
-  margin-bottom: 10px;
-}
 
 /* API 文档样式 */
 .api-docs {
