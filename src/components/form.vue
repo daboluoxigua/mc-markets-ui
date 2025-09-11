@@ -77,7 +77,7 @@
     <!-- 对齐方式 -->
     <DemoSection title="对齐方式">
       <template #preview>
-        <Form :model="form3" label-width="120px" label-position="right">
+        <Form :model="form3" label-width="120px" label-position="top">
           <FormItem label="活动名称">
             <Input v-model="form3.name" placeholder="请输入活动名称" />
           </FormItem>
