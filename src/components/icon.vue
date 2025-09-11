@@ -441,15 +441,15 @@ const copyIconClass = async (className) => {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: var(--el-text-color-primary);
   margin-bottom: 40px;
 }
 
 h2 {
-  color: #555;
+  color: var(--el-text-color-regular);
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid var(--el-border-color-lighter);
 }
 
 .demo-section {
@@ -458,16 +458,16 @@ h2 {
 
 /* 演示卡片样式 */
 .demo-card {
-  border: 1px solid #e1e8ed;
+  border: 1px solid var(--el-border-color-lighter);
   border-radius: 8px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--el-bg-color);
+  box-shadow: var(--el-box-shadow-light);
 }
 
 .demo-preview {
   padding: 20px;
-  background: #fafafa;
+  background: var(--el-bg-color);
 }
 
 
@@ -483,14 +483,14 @@ h2 {
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  border: 1px solid #eee;
+  border: 1px solid var(--el-border-color-lighter);
   border-radius: 8px;
-  background: #fafafa;
+  background: var(--el-fill-color-lighter);
   transition: all 0.3s ease;
 }
 
 .demo-item:hover {
-  background: #f0f0f0;
+  background: var(--el-fill-color-light);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -498,22 +498,22 @@ h2 {
 .demo-item span {
   margin-top: 8px;
   font-size: 12px;
-  color: #666;
+  color: var(--el-text-color-secondary);
   text-align: center;
 }
 
 .clickable {
   cursor: pointer;
-  background: #e3f2fd !important;
+  background: var(--el-color-primary-light-9) !important;
 }
 
 .clickable:hover {
-  background: #bbdefb !important;
+  background: var(--el-color-primary-light-7) !important;
 }
 
 .click-result {
   text-align: center;
-  color: #4caf50;
+  color: var(--el-color-success);
   font-weight: bold;
   margin-top: 10px;
 }
@@ -525,7 +525,7 @@ h2 {
 .search-input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--el-border-color);
   border-radius: 4px;
   font-size: 16px;
   margin-bottom: 15px;
@@ -535,10 +535,10 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
-  border: 1px solid #eee;
+  border: 1px solid var(--el-border-color-lighter);
   border-radius: 8px;
   padding: 20px;
-  background: #fafafa;
+  background: var(--el-fill-color-lighter);
 }
 
 .icon-item {
@@ -546,28 +546,28 @@ h2 {
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--el-border-color);
   border-radius: 6px;
-  background: white;
+  background: var(--el-bg-color);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .icon-item:hover {
-  background: #f0f0f0;
+  background: var(--el-fill-color-light);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .icon-item.active {
-  background: #e3f2fd;
-  border-color: #2196f3;
+  background: var(--el-color-primary-light-9);
+  border-color: var(--el-color-primary);
 }
 
 .icon-name {
   margin-top: 8px;
   font-size: 12px;
-  color: #333;
+  color: var(--el-text-color-primary);
   text-align: center;
   word-break: break-all;
 }
@@ -575,7 +575,7 @@ h2 {
 .icon-class {
   margin-top: 15px;
   font-size: 14px;
-  color: #666;
+  color: var(--el-text-color-secondary);
   font-family: monospace;
   padding: 2px 0;
   border-radius: 3px;
@@ -584,8 +584,8 @@ h2 {
 }
 
 .icon-class:hover {
-  background: #e0e0e0;
-  color: #2196f3;
+  background: var(--el-fill-color-light);
+  color: var(--el-color-primary);
 }
 
 .copy-message {
@@ -593,7 +593,7 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #4caf50;
+  background: var(--el-color-success);
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
@@ -604,7 +604,7 @@ h2 {
 
 /* API 文档样式 */
 .api-docs {
-  background: #f8f9fa;
+  background: var(--el-fill-color-lighter);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -632,7 +632,7 @@ h2 {
 .api-table table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  background: var(--el-bg-color);
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

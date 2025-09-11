@@ -11,14 +11,7 @@ export default ({ command }) => {
   return defineConfig({
     plugins: [
       ...createVitePlugins(),
-      // 只在构建时生成类型声明文件，开发时跳过以提升性能
-      !isDev && dts({
-        include: ['packages/**/*'],
-        exclude: ['src/**/*', 'node_modules/**/*'],
-        outDir: 'dist',
-        copyDtsFiles: true,
-      })
-    ].filter(Boolean),
+    ],
     build: {
       outDir: "dist", //输出文件名称
       lib: {

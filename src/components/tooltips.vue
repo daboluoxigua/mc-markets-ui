@@ -7,44 +7,44 @@
         <div class="demo-preview">
           <div class="demo-row">
             <Tooltips content="Top Left 提示文字" placement="top-start">
-              <el-button>上左</el-button>
+              <Button>上左</Button>
             </Tooltips>
             <Tooltips content="Top Center 提示文字" placement="top">
-              <el-button>上边</el-button>
+              <Button>上边</Button>
             </Tooltips>
             <Tooltips content="Top Right 提示文字" placement="top-end">
-              <el-button>上右</el-button>
+              <Button>上右</Button>
             </Tooltips>
           </div>
           <div class="demo-row">
             <Tooltips content="Left 提示文字" placement="left">
-              <el-button>左边</el-button>
+              <Button>左边</Button>
             </Tooltips>
             <Tooltips content="Right 提示文字" placement="right">
-              <el-button>右边</el-button>
+              <Button>右边</Button>
             </Tooltips>
           </div>
           <div class="demo-row">
             <Tooltips content="Bottom Left 提示文字" placement="bottom-start">
-              <el-button>下左</el-button>
+              <Button>下左</Button>
             </Tooltips>
             <Tooltips content="Bottom Center 提示文字" placement="bottom">
-              <el-button>下边</el-button>
+              <Button>下边</Button>
             </Tooltips>
             <Tooltips content="Bottom Right 提示文字" placement="bottom-end">
-              <el-button>下右</el-button>
+              <Button>下右</Button>
             </Tooltips>
           </div>
         </div>
         <CodeToggle>
           {{ `<Tooltips content="Top Left 提示文字" placement="top-start">
-  <el-button>上左</el-button>
+  <Button>上左</Button>
 </Tooltips>
 <Tooltips content="Top Center 提示文字" placement="top">
-  <el-button>上边</el-button>
+  <Button>上边</Button>
 </Tooltips>
 <Tooltips content="Top Right 提示文字" placement="top-end">
-  <el-button>上右</el-button>
+  <Button>上右</Button>
 </Tooltips>` }}
         </CodeToggle>
       </div>
@@ -57,19 +57,19 @@
         <div class="demo-preview">
           <div class="demo-row">
             <Tooltips content="Dark theme" effect="dark">
-              <el-button>Dark</el-button>
+              <Button>Dark</Button>
             </Tooltips>
             <Tooltips content="Light theme" effect="light">
-              <el-button>Light</el-button>
+              <Button>Light</Button>
             </Tooltips>
           </div>
         </div>
         <CodeToggle>
           {{ `<Tooltips content="Dark theme" effect="dark">
-  <el-button>Dark</el-button>
+  <Button>Dark</Button>
 </Tooltips>
 <Tooltips content="Light theme" effect="light">
-  <el-button>Light</el-button>
+  <Button>Light</Button>
 </Tooltips>` }}
         </CodeToggle>
       </div>
@@ -86,7 +86,7 @@
                 <div>多行信息</div>
                 <div>第二行信息</div>
               </template>
-              <el-button>多行</el-button>
+              <Button>多行</Button>
             </Tooltips>
           </div>
         </div>
@@ -109,19 +109,19 @@
         <div class="demo-preview">
           <div class="demo-row">
             <Tooltips content="Tooltip with arrow" :show-arrow="true">
-              <el-button>显示箭头</el-button>
+              <Button>显示箭头</Button>
             </Tooltips>
             <Tooltips content="Tooltip without arrow" :show-arrow="false">
-              <el-button>隐藏箭头</el-button>
+              <Button>隐藏箭头</Button>
             </Tooltips>
           </div>
         </div>
         <CodeToggle>
           {{ `<Tooltips content="Tooltip with arrow" :show-arrow="true">
-  <el-button>显示箭头</el-button>
+  <Button>显示箭头</Button>
 </Tooltips>
 <Tooltips content="Tooltip without arrow" :show-arrow="false">
-  <el-button>隐藏箭头</el-button>
+  <Button>隐藏箭头</Button>
 </Tooltips>` }}
         </CodeToggle>
       </div>
@@ -134,19 +134,19 @@
         <div class="demo-preview">
           <div class="demo-row">
             <Tooltips content="Tooltip with delay" :show-after="1000">
-              <el-button>延迟显示</el-button>
+              <Button>延迟显示</Button>
             </Tooltips>
             <Tooltips content="Tooltip with hide delay" :hide-after="1000">
-              <el-button>延迟隐藏</el-button>
+              <Button>延迟隐藏</Button>
             </Tooltips>
           </div>
         </div>
         <CodeToggle>
           {{ `<Tooltips content="Tooltip with delay" :show-after="1000">
-  <el-button>延迟显示</el-button>
+  <Button>延迟显示</Button>
 </Tooltips>
 <Tooltips content="Tooltip with hide delay" :hide-after="1000">
-  <el-button>延迟隐藏</el-button>
+  <Button>延迟隐藏</Button>
 </Tooltips>` }}
         </CodeToggle>
       </div>
@@ -159,9 +159,9 @@
         <div class="demo-preview">
           <div class="demo-row">
             <Tooltips ref="tooltipRef" content="Tooltip content" :visible="visible" @before-show="handleBeforeShow" @before-hide="handleBeforeHide">
-              <el-button @click="visible = !visible">
+              <Button @click="visible = !visible">
                 {{ visible ? '隐藏' : '显示' }} Tooltip
-              </el-button>
+              </Button>
             </Tooltips>
           </div>
         </div>
@@ -340,7 +340,7 @@ const handleBeforeHide = () => {
 
 <script setup>
 import { ref } from 'vue'
-import { Tooltips } from '@mc-markets/ui'
+import { Tooltips, Button } from '@mc-markets/ui'
 import CodeToggle from './CodeToggle.vue'
 
 // 响应式数据
@@ -377,16 +377,16 @@ h2 {
 
 /* 演示卡片样式 */
 .demo-card {
-  border: 1px solid #e1e8ed;
+  border: 1px solid var(--el-border-color-lighter);
   border-radius: 8px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--el-bg-color);
+  box-shadow: var(--el-box-shadow-light);
 }
 
 .demo-preview {
   padding: 20px;
-  background: #fafafa;
+  background: var(--el-bg-color);
 }
 
 .demo-row {

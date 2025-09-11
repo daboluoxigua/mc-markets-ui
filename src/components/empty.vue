@@ -71,13 +71,13 @@
         <div class="demo-preview">
           <div class="demo-row">
             <Empty>
-              <el-button type="primary">按钮</el-button>
+              <Button type="primary">按钮</Button>
             </Empty>
           </div>
         </div>
         <CodeToggle>
           {{ `<Empty>
-  <el-button type="primary">按钮</el-button>
+  <Button type="primary">按钮</Button>
 </Empty>` }}
         </CodeToggle>
       </div>
@@ -96,7 +96,7 @@
               <template #description>
                 <p>自定义描述内容</p>
               </template>
-              <el-button type="primary">按钮</el-button>
+              <Button type="primary">按钮</Button>
             </Empty>
           </div>
         </div>
@@ -108,7 +108,7 @@
   <template #description>
     <p>自定义描述内容</p>
   </template>
-  <el-button type="primary">按钮</el-button>
+  <Button type="primary">按钮</Button>
 </Empty>` }}
         </CodeToggle>
       </div>
@@ -166,7 +166,7 @@
 </template>
 
 <script setup>
-import { Empty } from '@mc-markets/ui'
+import { Empty, Button } from '@mc-markets/ui'
 import CodeToggle from './CodeToggle.vue'
 </script>
 
@@ -190,16 +190,16 @@ h2 {
 
 /* 演示卡片样式 */
 .demo-card {
-  border: 1px solid #e1e8ed;
+  border: 1px solid var(--el-border-color-lighter);
   border-radius: 8px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--el-bg-color);
+  box-shadow: var(--el-box-shadow-light);
 }
 
 .demo-preview {
   padding: 20px;
-  background: #fafafa;
+  background: var(--el-bg-color);
 }
 
 .demo-row {

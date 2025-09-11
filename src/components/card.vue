@@ -168,16 +168,16 @@ h2 {
 
 /* 演示卡片样式 */
 .demo-card {
-  border: 1px solid #e1e8ed;
+  border: 1px solid var(--el-border-color-lighter);
   border-radius: 8px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--el-bg-color);
+  box-shadow: var(--el-box-shadow-light);
 }
 
 .demo-preview {
   padding: 20px;
-  background: #fafafa;
+  background: var(--el-bg-color);
 }
 
 .box-card {

@@ -1,9 +1,9 @@
 <template>
   <div class="code-toggle">
     <div class="demo-actions">
-      <button class="demo-toggle-btn" @click="toggle">
+      <el-button type="primary" class="demo-toggle-btn" @click="toggle">
         {{ isVisible ? '隐藏代码' : '显示代码' }}
-      </button>
+      </el-button>
     </div>
     <div v-if="isVisible" class="demo-code">
       <pre><code v-html="formattedCode"></code></pre>
@@ -105,26 +105,10 @@ onMounted(() => {
 
 .demo-actions {
   padding: 12px 20px;
-  background: #f8f9fa;
-  border-top: 1px solid #e1e8ed;
+  background: var(--el-fill-color-lighter);
+  border-top: 1px solid var(--el-border-color-lighter);
   display: flex;
   justify-content: flex-end;
-}
-
-.demo-toggle-btn {
-  background: var(--el-color-primary);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.demo-toggle-btn:hover {
-  background: var(--el-color-primary-light-3);
-  transform: translateY(-1px);
 }
 
 .demo-code {

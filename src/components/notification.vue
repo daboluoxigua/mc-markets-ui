@@ -6,10 +6,10 @@
       <div class="demo-card">
         <div class="demo-preview">
           <div class="demo-buttons">
-            <el-button @click="showNotification('success')">成功</el-button>
-            <el-button @click="showNotification('warning')">警告</el-button>
-            <el-button @click="showNotification('info')">消息</el-button>
-            <el-button @click="showNotification('error')">错误</el-button>
+            <Button @click="showNotification('success')">成功</Button>
+            <Button @click="showNotification('warning')">警告</Button>
+            <Button @click="showNotification('info')">消息</Button>
+            <Button @click="showNotification('error')">错误</Button>
           </div>
         </div>
         <CodeToggle>
@@ -36,10 +36,10 @@ const showNotification = (type) => {
       <div class="demo-card">
         <div class="demo-preview">
           <div class="demo-buttons">
-            <el-button @click="showSuccessNotification">成功通知</el-button>
-            <el-button @click="showWarningNotification">警告通知</el-button>
-            <el-button @click="showInfoNotification">信息通知</el-button>
-            <el-button @click="showErrorNotification">错误通知</el-button>
+            <Button @click="showSuccessNotification">成功通知</Button>
+            <Button @click="showWarningNotification">警告通知</Button>
+            <Button @click="showInfoNotification">信息通知</Button>
+            <Button @click="showErrorNotification">错误通知</Button>
           </div>
         </div>
         <CodeToggle>
@@ -80,10 +80,10 @@ ElNotification({
       <div class="demo-card">
         <div class="demo-preview">
           <div class="demo-buttons">
-            <el-button @click="showTopLeft">左上角</el-button>
-            <el-button @click="showTopRight">右上角</el-button>
-            <el-button @click="showBottomLeft">左下角</el-button>
-            <el-button @click="showBottomRight">右下角</el-button>
+            <Button @click="showTopLeft">左上角</Button>
+            <Button @click="showTopRight">右上角</Button>
+            <Button @click="showBottomLeft">左下角</Button>
+            <Button @click="showBottomRight">右下角</Button>
           </div>
         </div>
         <CodeToggle>
@@ -124,9 +124,9 @@ ElNotification({
       <div class="demo-card">
         <div class="demo-preview">
           <div class="demo-buttons">
-            <el-button @click="showShortNotification">短时间显示</el-button>
-            <el-button @click="showLongNotification">长时间显示</el-button>
-            <el-button @click="showPermanentNotification">永久显示</el-button>
+            <Button @click="showShortNotification">短时间显示</Button>
+            <Button @click="showLongNotification">长时间显示</Button>
+            <Button @click="showPermanentNotification">永久显示</Button>
           </div>
         </div>
         <CodeToggle>
@@ -160,8 +160,8 @@ ElNotification({
       <div class="demo-card">
         <div class="demo-preview">
           <div class="demo-buttons">
-            <el-button @click="showIconNotification">带图标通知</el-button>
-            <el-button @click="showCustomIconNotification">自定义图标</el-button>
+            <Button @click="showIconNotification">带图标通知</Button>
+            <Button @click="showCustomIconNotification">自定义图标</Button>
           </div>
         </div>
         <CodeToggle>
@@ -189,8 +189,8 @@ ElNotification({
       <div class="demo-card">
         <div class="demo-preview">
           <div class="demo-buttons">
-            <el-button @click="showCustomContentNotification">自定义内容</el-button>
-            <el-button @click="showHTMLNotification">HTML内容</el-button>
+            <Button @click="showCustomContentNotification">自定义内容</Button>
+            <Button @click="showHTMLNotification">HTML内容</Button>
           </div>
         </div>
         <CodeToggle>
@@ -328,6 +328,7 @@ ElNotification({
 
 <script setup>
 import { ElNotification } from 'element-plus'
+import { Button } from '@mc-markets/ui'
 import CodeToggle from './CodeToggle.vue'
 
 // 方法
@@ -481,16 +482,16 @@ h2 {
 
 /* 演示卡片样式 */
 .demo-card {
-  border: 1px solid #e1e8ed;
+  border: 1px solid var(--el-border-color-lighter);
   border-radius: 8px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--el-bg-color);
+  box-shadow: var(--el-box-shadow-light);
 }
 
 .demo-preview {
   padding: 20px;
-  background: #fafafa;
+  background: var(--el-bg-color);
 }
 
 .demo-buttons {

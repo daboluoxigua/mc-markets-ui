@@ -5,24 +5,7 @@
       <div class="header-content">
         <h1>@mc-markets/ui Demo</h1>
         <div class="header-actions">
-          <el-select
-            v-model="selectedTheme"
-            @change="handleThemeChange"
-            placeholder="选择主题"
-          >
-            <el-option
-              v-for="theme in themes"
-              :key="theme.name"
-              :label="theme.label"
-              :value="theme.name"
-            />
-          </el-select>
-          <el-switch
-            v-model="isDark"
-            @change="handleDarkModeChange"
-            active-text="暗色模式"
-            style="white-space: nowrap"
-          />
+          <!-- 主题选择器和黑暗模式开关已移除，默认使用黑暗模式 -->
         </div>
       </div>
     </el-header>
@@ -152,42 +135,42 @@
                     </div>
                   </template>
                   <div class="button-group">
-                    <el-button type="primary">
+                    <Button type="primary">
                       <Icon name="plus" :size="16" style="margin-right: 4px" />
                       主要按钮
-                    </el-button>
-                    <el-button type="success">
+                    </Button>
+                    <Button type="success">
                       <Icon
                         name="circle-check"
                         :size="16"
                         style="margin-right: 4px"
                       />
                       成功按钮
-                    </el-button>
-                    <el-button type="warning">
+                    </Button>
+                    <Button type="warning">
                       <Icon
                         name="alert-circle"
                         :size="16"
                         style="margin-right: 4px"
                       />
                       警告按钮
-                    </el-button>
-                    <el-button type="danger">
+                    </Button>
+                    <Button type="danger">
                       <Icon
                         name="circle-x"
                         :size="16"
                         style="margin-right: 4px"
                       />
                       危险按钮
-                    </el-button>
-                    <el-button type="info">
+                    </Button>
+                    <Button type="info">
                       <Icon
                         name="circle-help"
                         :size="16"
                         style="margin-right: 4px"
                       />
                       信息按钮
-                    </el-button>
+                    </Button>
                   </div>
                 </el-card>
               </el-col>
@@ -295,7 +278,7 @@
           </div>
           <!-- Button 文档 -->
           <div v-if="activeMenu === 'button'" class="demo-section">
-            <Button />
+            <ButtonDoc />
           </div>
           <!-- Input 文档 -->
           <div v-if="activeMenu === 'input'" class="demo-section">
@@ -404,8 +387,8 @@
               </el-form-item>
 
               <el-form-item>
-                <el-button type="primary" @click="submitForm">提交</el-button>
-                <el-button @click="resetForm">重置</el-button>
+                <Button type="primary" @click="submitForm">提交</Button>
+                <Button @click="resetForm">重置</Button>
               </el-form-item>
             </el-form>
           </div>
@@ -428,14 +411,14 @@
               </el-table-column>
               <el-table-column label="操作" width="150">
                 <template #default="scope">
-                  <el-button size="small" @click="handleEdit(scope.row)"
-                    >编辑</el-button
+                  <Button size="small" @click="handleEdit(scope.row)"
+                    >编辑</Button
                   >
-                  <el-button
+                  <Button
                     size="small"
                     type="danger"
                     @click="handleDelete(scope.row)"
-                    >删除</el-button
+                    >删除</Button
                   >
                 </template>
               </el-table-column>
@@ -535,11 +518,11 @@
                 </div>
               </template>
               <div class="theme-preview">
-                <el-button type="primary">主要按钮</el-button>
-                <el-button type="success">成功按钮</el-button>
-                <el-button type="warning">警告按钮</el-button>
-                <el-button type="danger">危险按钮</el-button>
-                <el-button type="info">信息按钮</el-button>
+                <Button type="primary">主要按钮</Button>
+                <Button type="success">成功按钮</Button>
+                <Button type="warning">警告按钮</Button>
+                <Button type="danger">危险按钮</Button>
+                <Button type="info">信息按钮</Button>
               </div>
             </el-card>
           </div>
@@ -600,23 +583,20 @@
 <script setup>
 // 自动导入 Element Plus 组件，无需手动导入
 // 自动导入 Vue 组合式 API，无需手动导入
-import { ElMessage } from 'element-plus'
 import {
-  setTheme,
   setPrimaryColor,
   setSuccessColor,
   setWarningColor,
   setDangerColor,
   setInfoColor,
   setCssVar,
-  toggleDark,
   supportedLocales,
   getLocale,
   getLocaleLabel,
 } from "./utils/theme";
 
-// 导入字体图标组件
-import { Icon } from "@mc-markets/ui";
+// 导入字体图标组件和按钮组件
+import { Icon, Button } from "@mc-markets/ui";
 import icon from "./components/icon.vue";
 
 // 导入 Element Plus 的 Message 和 MessageBox
@@ -631,7 +611,7 @@ import empty from './components/empty.vue'
 import tooltips from './components/tooltips.vue'
 
 // 导入新创建的组件文档
-import Button from './components/button.vue'
+import ButtonDoc from './components/button.vue'
 import Input from './components/input.vue'
 import Select from './components/select.vue'
 import Table from './components/table.vue'
@@ -642,8 +622,6 @@ import Progress from './components/progress.vue'
 
 // 响应式数据
 const activeMenu = ref("components");
-const selectedTheme = ref("default");
-const isDark = ref(true);
 const inputValue = ref("");
 const switchValue = ref(true);
 const rateValue = ref(4);
@@ -697,40 +675,14 @@ const tableData = ref([
   { name: "赵六", age: 35, email: "zhaoliu@example.com", status: "active" },
 ]);
 
-// 主题选项
-const themes = [
-  { name: "default", label: "默认主题", color: "#E6C305" },
-  { name: "blue", label: "蓝色主题", color: "#1890ff" },
-  { name: "green", label: "绿色主题", color: "#52c41a" },
-  { name: "purple", label: "紫色主题", color: "#722ed1" },
-  { name: "orange", label: "橙色主题", color: "#fa8c16" },
-  { name: "red", label: "红色主题", color: "#ff4d4f" },
-];
+// 主题选项已移除，默认使用黑暗模式
 
 // 方法
 const handleMenuSelect = (index) => {
   activeMenu.value = index;
 };
 
-const handleThemeChange = (themeName) => {
-  const theme = themes.find((t) => t.name === themeName);
-  if (theme) {
-    setTheme({
-      name: theme.name,
-      primaryColor: theme.color,
-      dark: isDark.value,
-    });
-    ElMessage.success(`已切换到${theme.label}`);
-  }
-};
-
-const handleDarkModeChange = (dark) => {
-  setTheme({
-    name: selectedTheme.value,
-    dark: dark,
-  });
-  ElMessage.success(dark ? "已切换到暗色模式" : "已切换到亮色模式");
-};
+// 主题切换方法已移除，默认使用黑暗模式
 
 const updatePrimaryColor = (color) => {
   setPrimaryColor(color);
