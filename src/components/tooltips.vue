@@ -341,7 +341,7 @@ const handleBeforeHide = () => {
 <script setup>
 import { ref } from 'vue'
 import { Tooltips, Button } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+import DemoSection from './DemoSection.vue'
 
 // 响应式数据
 const visible = ref(false)

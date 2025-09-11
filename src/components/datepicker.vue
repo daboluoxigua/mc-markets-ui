@@ -1,138 +1,104 @@
 <template>
   <div class="datepicker-demo">
     <!-- 基础用法 -->
-    <section class="demo-section">
-      <h2>基础用法</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-row">
-            <DatePicker v-model="dateValue1" placeholder="选择日期" />
-          </div>
-          <div class="demo-row">
-            <DatePicker v-model="dateRangeValue1" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" />
-          </div>
+    <DemoSection title="基础用法">
+      <template #preview>
+        <div class="demo-row">
+          <DatePicker v-model="dateValue1" placeholder="选择日期" />
         </div>
-        <CodeToggle>
-          {{ `<DatePicker v-model="dateValue" placeholder="选择日期" />
-<DatePicker v-model="dateRangeValue" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+        <div class="demo-row">
+          <DatePicker v-model="dateRangeValue1" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" />
+        </div>
+      </template>
+      <template #code>
+        <pre><code>&lt;DatePicker v-model="dateValue" placeholder="选择日期" /&gt;
+&lt;DatePicker v-model="dateRangeValue" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" /&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 其他日期单位 -->
-    <section class="demo-section">
-      <h2>其他日期单位</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-row">
-            <DatePicker v-model="monthValue" type="month" placeholder="选择月" />
-          </div>
-          <div class="demo-row">
-            <DatePicker v-model="yearValue" type="year" placeholder="选择年" />
-          </div>
-          <div class="demo-row">
-            <DatePicker v-model="weekValue" type="week" placeholder="选择周" />
-          </div>
-          <div class="demo-row">
-            <DatePicker v-model="datetimeValue" type="datetime" placeholder="选择日期时间" />
-          </div>
+    <DemoSection title="其他日期单位">
+      <template #preview>
+        <div class="demo-row">
+          <DatePicker v-model="monthValue" type="month" placeholder="选择月" />
         </div>
-        <CodeToggle>
-          {{ `<DatePicker v-model="monthValue" type="month" placeholder="选择月" />
-<DatePicker v-model="yearValue" type="year" placeholder="选择年" />
-<DatePicker v-model="weekValue" type="week" placeholder="选择周" />
-<DatePicker v-model="datetimeValue" type="datetime" placeholder="选择日期时间" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+        <div class="demo-row">
+          <DatePicker v-model="yearValue" type="year" placeholder="选择年" />
+        </div>
+        <div class="demo-row">
+          <DatePicker v-model="weekValue" type="week" placeholder="选择周" />
+        </div>
+      </template>
+      <template #code>
+        <pre><code>&lt;DatePicker v-model="monthValue" type="month" placeholder="选择月" /&gt;
+&lt;DatePicker v-model="yearValue" type="year" placeholder="选择年" /&gt;
+&lt;DatePicker v-model="weekValue" type="week" placeholder="选择周" /&gt;</code></pre>
+      </template>
+    </DemoSection>
+
+    <!-- 日期范围选择 -->
+    <DemoSection title="日期范围选择">
+      <template #preview>
+        <div class="demo-row">
+          <DatePicker v-model="dateRangeValue2" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" />
+        </div>
+        <div class="demo-row">
+          <DatePicker v-model="monthRangeValue" type="monthrange" range-separator="至" start-placeholder="开始月份" end-placeholder="结束月份" />
+        </div>
+      </template>
+      <template #code>
+        <pre><code>&lt;DatePicker v-model="dateRangeValue" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" /&gt;
+&lt;DatePicker v-model="monthRangeValue" type="monthrange" range-separator="至" start-placeholder="开始月份" end-placeholder="结束月份" /&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 带快捷选项 -->
-    <section class="demo-section">
-      <h2>带快捷选项</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-row">
-            <DatePicker v-model="shortcutValue" type="daterange" :shortcuts="shortcuts" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" />
-          </div>
+    <DemoSection title="带快捷选项">
+      <template #preview>
+        <div class="demo-row">
+          <DatePicker v-model="dateValue3" type="date" placeholder="选择日期" :shortcuts="shortcuts" />
         </div>
-        <CodeToggle>
-          {{ `<DatePicker v-model="shortcutValue" type="daterange" :shortcuts="shortcuts" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" />
-
-// 快捷选项配置
-const shortcuts = [
-  {
-    text: '最近一周',
-    value: () => {
-      const end = new Date()
-      const start = new Date()
-      start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
-      return [start, end]
-    }
-  },
-  {
-    text: '最近一个月',
-    value: () => {
-      const end = new Date()
-      const start = new Date()
-      start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
-      return [start, end]
-    }
-  },
-  {
-    text: '最近三个月',
-    value: () => {
-      const end = new Date()
-      const start = new Date()
-      start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
-      return [start, end]
-    }
-  }
-]` }}
-        </CodeToggle>
-      </div>
-    </section>
-
-    <!-- 带输入框 -->
-    <section class="demo-section">
-      <h2>带输入框</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-row">
-            <DatePicker v-model="inputValue" type="date" placeholder="选择日期" :clearable="false" />
-          </div>
-          <div class="demo-row">
-            <DatePicker v-model="inputValue2" type="date" placeholder="选择日期" :clearable="true" />
-          </div>
+        <div class="demo-row">
+          <DatePicker v-model="dateRangeValue3" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" :shortcuts="rangeShortcuts" />
         </div>
-        <CodeToggle>
-          {{ `<DatePicker v-model="inputValue" type="date" placeholder="选择日期" :clearable="false" />
-<DatePicker v-model="inputValue2" type="date" placeholder="选择日期" :clearable="true" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+      <template #code>
+        <pre><code>&lt;DatePicker v-model="dateValue" type="date" placeholder="选择日期" :shortcuts="shortcuts" /&gt;
+&lt;DatePicker v-model="dateRangeValue" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" :shortcuts="rangeShortcuts" /&gt;</code></pre>
+      </template>
+    </DemoSection>
 
-    <!-- 尺寸 -->
-    <section class="demo-section">
-      <h2>尺寸</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-row">
-            <DatePicker v-model="sizeValue1" size="large" placeholder="Large" />
-          </div>
-          <div class="demo-row">
-            <DatePicker v-model="sizeValue2" size="default" placeholder="Default" />
-          </div>
-          <div class="demo-row">
-            <DatePicker v-model="sizeValue3" size="small" placeholder="Small" />
-          </div>
+    <!-- 禁用状态 -->
+    <DemoSection title="禁用状态">
+      <template #preview>
+        <div class="demo-row">
+          <DatePicker v-model="dateValue4" placeholder="选择日期" disabled />
         </div>
-        <CodeToggle>
-          {{ `<DatePicker v-model="sizeValue1" size="large" placeholder="Large" />
-<DatePicker v-model="sizeValue2" size="default" placeholder="Default" />
-<DatePicker v-model="sizeValue3" size="small" placeholder="Small" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+        <div class="demo-row">
+          <DatePicker v-model="dateRangeValue4" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" disabled />
+        </div>
+      </template>
+      <template #code>
+        <pre><code>&lt;DatePicker v-model="dateValue" placeholder="选择日期" disabled /&gt;
+&lt;DatePicker v-model="dateRangeValue" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" disabled /&gt;</code></pre>
+      </template>
+    </DemoSection>
+
+    <!-- 只读状态 -->
+    <DemoSection title="只读状态">
+      <template #preview>
+        <div class="demo-row">
+          <DatePicker v-model="dateValue5" placeholder="选择日期" readonly />
+        </div>
+        <div class="demo-row">
+          <DatePicker v-model="dateRangeValue5" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" readonly />
+        </div>
+      </template>
+      <template #code>
+        <pre><code>&lt;DatePicker v-model="dateValue" placeholder="选择日期" readonly /&gt;
+&lt;DatePicker v-model="dateRangeValue" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" readonly /&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- API 文档 -->
     <section class="demo-section">
@@ -144,83 +110,89 @@ const shortcuts = [
             <thead>
               <tr>
                 <th>属性名</th>
-                <th>类型</th>
-                <th>默认值</th>
                 <th>说明</th>
+                <th>类型</th>
+                <th>可选值</th>
+                <th>默认值</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>modelValue / v-model</code></td>
-                <td><code>Date | string | number | Array</code></td>
-                <td><code>-</code></td>
+                <td><code>model-value / v-model</code></td>
                 <td>绑定值</td>
+                <td>Date / string / number / Array</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>type</code></td>
-                <td><code>string</code></td>
-                <td><code>'date'</code></td>
-                <td>显示类型，可选值：date/dates/datetime/week/month/year/daterange/monthrange/datetimerange</td>
+                <td>显示类型</td>
+                <td>string</td>
+                <td>year / month / date / dates / week / datetime / datetimerange / daterange / monthrange</td>
+                <td>date</td>
               </tr>
               <tr>
                 <td><code>placeholder</code></td>
-                <td><code>string</code></td>
-                <td><code>-</code></td>
                 <td>输入框占位文本</td>
+                <td>string</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>start-placeholder</code></td>
-                <td><code>string</code></td>
-                <td><code>-</code></td>
                 <td>范围选择时开始日期的占位内容</td>
+                <td>string</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>end-placeholder</code></td>
-                <td><code>string</code></td>
-                <td><code>-</code></td>
                 <td>范围选择时结束日期的占位内容</td>
+                <td>string</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>range-separator</code></td>
-                <td><code>string</code></td>
-                <td><code>'-'</code></td>
                 <td>选择范围时的分隔符</td>
+                <td>string</td>
+                <td>—</td>
+                <td>' - '</td>
               </tr>
               <tr>
                 <td><code>format</code></td>
-                <td><code>string</code></td>
-                <td><code>YYYY-MM-DD</code></td>
                 <td>显示在输入框中的格式</td>
+                <td>string</td>
+                <td>—</td>
+                <td>YYYY-MM-DD</td>
               </tr>
               <tr>
                 <td><code>value-format</code></td>
-                <td><code>string</code></td>
-                <td><code>-</code></td>
                 <td>可选，绑定值的格式。不指定则绑定值为 Date 对象</td>
-              </tr>
-              <tr>
-                <td><code>size</code></td>
-                <td><code>string</code></td>
-                <td><code>default</code></td>
-                <td>输入框尺寸，可选值：large/default/small</td>
+                <td>string</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>disabled</code></td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
                 <td>是否禁用</td>
+                <td>boolean</td>
+                <td>—</td>
+                <td>false</td>
               </tr>
               <tr>
-                <td><code>clearable</code></td>
-                <td><code>boolean</code></td>
-                <td><code>true</code></td>
-                <td>是否显示清除按钮</td>
+                <td><code>readonly</code></td>
+                <td>完全只读</td>
+                <td>boolean</td>
+                <td>—</td>
+                <td>false</td>
               </tr>
               <tr>
                 <td><code>shortcuts</code></td>
-                <td><code>Array</code></td>
-                <td><code>-</code></td>
-                <td>设置快捷选项，需要传入数组对象</td>
+                <td>设置快捷选项</td>
+                <td>Array</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
             </tbody>
           </table>
@@ -232,45 +204,28 @@ const shortcuts = [
             <thead>
               <tr>
                 <th>事件名</th>
-                <th>参数</th>
                 <th>说明</th>
+                <th>参数</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><code>change</code></td>
-                <td><code>value: Date | string | number | Array</code></td>
                 <td>用户确认选定的值时触发</td>
+                <td>(val: Date / string / Array)</td>
               </tr>
               <tr>
                 <td><code>blur</code></td>
-                <td><code>event: FocusEvent</code></td>
                 <td>当 input 失去焦点时触发</td>
+                <td>(event: Event)</td>
               </tr>
               <tr>
                 <td><code>focus</code></td>
-                <td><code>event: FocusEvent</code></td>
                 <td>当 input 获得焦点时触发</td>
-              </tr>
-              <tr>
-                <td><code>calendar-change</code></td>
-                <td><code>value: [Date, Date]</code></td>
-                <td>日历显示状态改变时触发</td>
-              </tr>
-              <tr>
-                <td><code>panel-change</code></td>
-                <td><code>value, mode, view</code></td>
-                <td>日期面板改变时触发</td>
+                <td>(event: Event)</td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <h3>插槽</h3>
-        <div class="css-info">
-          <ul>
-            <li><code>default</code> - 自定义内容</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -280,7 +235,7 @@ const shortcuts = [
 <script setup>
 import { ref } from 'vue'
 import { DatePicker } from '@mc-markets/ui'
-import CodeToggle from './CodeToggle.vue'
+import DemoSection from './DemoSection.vue'
 
 // 响应式数据
 const dateValue1 = ref('')
@@ -288,16 +243,40 @@ const dateRangeValue1 = ref('')
 const monthValue = ref('')
 const yearValue = ref('')
 const weekValue = ref('')
-const datetimeValue = ref('')
-const shortcutValue = ref('')
-const inputValue = ref('')
-const inputValue2 = ref('')
-const sizeValue1 = ref('')
-const sizeValue2 = ref('')
-const sizeValue3 = ref('')
+const dateRangeValue2 = ref('')
+const monthRangeValue = ref('')
+const dateValue3 = ref('')
+const dateRangeValue3 = ref('')
+const dateValue4 = ref('')
+const dateRangeValue4 = ref('')
+const dateValue5 = ref('')
+const dateRangeValue5 = ref('')
 
-// 快捷选项配置
+// 快捷选项
 const shortcuts = [
+  {
+    text: '今天',
+    value: new Date()
+  },
+  {
+    text: '昨天',
+    value: () => {
+      const date = new Date()
+      date.setTime(date.getTime() - 3600 * 1000 * 24)
+      return date
+    }
+  },
+  {
+    text: '一周前',
+    value: () => {
+      const date = new Date()
+      date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+      return date
+    }
+  }
+]
+
+const rangeShortcuts = [
   {
     text: '最近一周',
     value: () => {
@@ -333,31 +312,6 @@ const shortcuts = [
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-h2 {
-  color: #555;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
 }
 
 .demo-row {
@@ -419,33 +373,6 @@ h2 {
 }
 
 .api-table code {
-  background: var(--el-color-primary-light-9);
-  color: var(--el-color-primary);
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 12px;
-}
-
-.css-info {
-  background: white;
-  border: 1px solid #e1e8ed;
-  border-radius: 6px;
-  padding: 15px;
-}
-
-.css-info ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.css-info li {
-  margin-bottom: 5px;
-  color: #2c3e50;
-  font-size: 13px;
-}
-
-.css-info li code {
   background: var(--el-color-primary-light-9);
   color: var(--el-color-primary);
   padding: 2px 6px;

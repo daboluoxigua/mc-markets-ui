@@ -1,6 +1,6 @@
 <template>
   <div class="badge-page">
-    <h2>Badge 徽章</h2>
+    <h2>字体图标</h2>
     <Icon />
   </div>
 </template>

@@ -1,19 +1,17 @@
 <template>
   <div class="notification-demo">
     <!-- 基础用法 -->
-    <section class="demo-section">
-      <h2>基础用法</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-buttons">
-            <Button @click="showNotification('success')">成功</Button>
-            <Button @click="showNotification('warning')">警告</Button>
-            <Button @click="showNotification('info')">消息</Button>
-            <Button @click="showNotification('error')">错误</Button>
-          </div>
+    <DemoSection title="基础用法">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showNotification('success')">成功</Button>
+          <Button @click="showNotification('warning')">警告</Button>
+          <Button @click="showNotification('info')">消息</Button>
+          <Button @click="showNotification('error')">错误</Button>
         </div>
-        <CodeToggle>
-          {{ `// 在组件中使用
+      </template>
+      <template #code>
+        <pre><code>// 在组件中使用
 import { ElNotification } from 'element-plus'
 
 const showNotification = (type) => {
@@ -25,25 +23,22 @@ const showNotification = (type) => {
 }
 
 // 或者使用我们的组件
-<Notification title="标题" message="这是一条消息提示" type="success" />` }}
-        </CodeToggle>
-      </div>
-    </section>
+&lt;Notification title="标题" message="这是一条消息提示" type="success" /&gt;</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 不同类型的通知 -->
-    <section class="demo-section">
-      <h2>不同类型的通知</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-buttons">
-            <Button @click="showSuccessNotification">成功通知</Button>
-            <Button @click="showWarningNotification">警告通知</Button>
-            <Button @click="showInfoNotification">信息通知</Button>
-            <Button @click="showErrorNotification">错误通知</Button>
-          </div>
+    <DemoSection title="不同类型的通知">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showSuccessNotification">成功通知</Button>
+          <Button @click="showWarningNotification">警告通知</Button>
+          <Button @click="showInfoNotification">信息通知</Button>
+          <Button @click="showErrorNotification">错误通知</Button>
         </div>
-        <CodeToggle>
-          {{ `// 成功通知
+      </template>
+      <template #code>
+        <pre><code>// 成功通知
 ElNotification({
   title: '成功',
   message: '这是一条成功的提示消息',
@@ -69,25 +64,22 @@ ElNotification({
   title: '错误',
   message: '这是一条错误的提示消息',
   type: 'error'
-})` }}
-        </CodeToggle>
-      </div>
-    </section>
+})</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 自定义位置 -->
-    <section class="demo-section">
-      <h2>自定义位置</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-buttons">
-            <Button @click="showTopLeft">左上角</Button>
-            <Button @click="showTopRight">右上角</Button>
-            <Button @click="showBottomLeft">左下角</Button>
-            <Button @click="showBottomRight">右下角</Button>
-          </div>
+    <DemoSection title="自定义位置">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showTopLeft">左上角</Button>
+          <Button @click="showTopRight">右上角</Button>
+          <Button @click="showBottomLeft">左下角</Button>
+          <Button @click="showBottomRight">右下角</Button>
         </div>
-        <CodeToggle>
-          {{ `// 左上角
+      </template>
+      <template #code>
+        <pre><code>// 左上角
 ElNotification({
   title: '自定义位置',
   message: '通知会在左上角弹出',
@@ -113,24 +105,21 @@ ElNotification({
   title: '自定义位置',
   message: '通知会在右下角弹出',
   position: 'bottom-right'
-})` }}
-        </CodeToggle>
-      </div>
-    </section>
+})</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 自定义时长 -->
-    <section class="demo-section">
-      <h2>自定义时长</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-buttons">
-            <Button @click="showShortNotification">短时间显示</Button>
-            <Button @click="showLongNotification">长时间显示</Button>
-            <Button @click="showPermanentNotification">永久显示</Button>
-          </div>
+    <DemoSection title="自定义时长">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showShortNotification">短时间显示</Button>
+          <Button @click="showLongNotification">长时间显示</Button>
+          <Button @click="showPermanentNotification">永久显示</Button>
         </div>
-        <CodeToggle>
-          {{ `// 短时间显示 (2秒)
+      </template>
+      <template #code>
+        <pre><code>// 短时间显示 (2秒)
 ElNotification({
   title: '短时间显示',
   message: '这条通知会在2秒后消失',
@@ -149,23 +138,20 @@ ElNotification({
   title: '永久显示',
   message: '这条通知不会自动消失',
   duration: 0
-})` }}
-        </CodeToggle>
-      </div>
-    </section>
+})</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 带图标 -->
-    <section class="demo-section">
-      <h2>带图标</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-buttons">
-            <Button @click="showIconNotification">带图标通知</Button>
-            <Button @click="showCustomIconNotification">自定义图标</Button>
-          </div>
+    <DemoSection title="带图标">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showIconNotification">带图标通知</Button>
+          <Button @click="showCustomIconNotification">自定义图标</Button>
         </div>
-        <CodeToggle>
-          {{ `// 带图标通知
+      </template>
+      <template #code>
+        <pre><code>// 带图标通知
 ElNotification({
   title: '带图标通知',
   message: '这条通知带有图标',
@@ -177,149 +163,184 @@ ElNotification({
 ElNotification({
   title: '自定义图标',
   message: '这条通知使用了自定义图标',
-  icon: 'el-icon-star-on'
-})` }}
-        </CodeToggle>
-      </div>
-    </section>
+  icon: 'el-icon-star-on',
+  type: 'info'
+})</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- 自定义内容 -->
-    <section class="demo-section">
-      <h2>自定义内容</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-buttons">
-            <Button @click="showCustomContentNotification">自定义内容</Button>
-            <Button @click="showHTMLNotification">HTML内容</Button>
-          </div>
+    <DemoSection title="自定义内容">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showCustomContentNotification">自定义内容</Button>
+          <Button @click="showHtmlNotification">HTML内容</Button>
         </div>
-        <CodeToggle>
-          {{ `// 自定义内容
+      </template>
+      <template #code>
+        <pre><code>// 自定义内容
 ElNotification({
   title: '自定义内容',
+  message: '这是一条自定义内容的通知',
   dangerouslyUseHTMLString: true,
-  message: '<strong>这是加粗的文本</strong><br/>这是第二行文本'
+  customClass: 'custom-notification'
 })
 
-// 使用组件
-<Notification title="自定义内容">
-  <template #default>
-    <p><strong>这是加粗的文本</strong></p>
-    <p>这是第二行文本</p>
-  </template>
-</Notification>` }}
-        </CodeToggle>
-      </div>
-    </section>
+// HTML内容
+ElNotification({
+  title: 'HTML内容',
+  message: '&lt;strong&gt;这是HTML内容&lt;/strong&gt; &lt;em&gt;支持HTML标签&lt;/em&gt;',
+  dangerouslyUseHTMLString: true
+})</code></pre>
+      </template>
+    </DemoSection>
+
+    <!-- 手动关闭 -->
+    <DemoSection title="手动关闭">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showManualCloseNotification">手动关闭通知</Button>
+          <Button @click="showNoCloseNotification">无关闭按钮</Button>
+        </div>
+      </template>
+      <template #code>
+        <pre><code>// 手动关闭通知
+ElNotification({
+  title: '手动关闭',
+  message: '这条通知需要手动关闭',
+  showClose: true,
+  duration: 0
+})
+
+// 无关闭按钮
+ElNotification({
+  title: '无关闭按钮',
+  message: '这条通知没有关闭按钮',
+  showClose: false,
+  duration: 3000
+})</code></pre>
+      </template>
+    </DemoSection>
+
+    <!-- 回调函数 -->
+    <DemoSection title="回调函数">
+      <template #preview>
+        <div class="demo-buttons">
+          <Button @click="showCallbackNotification">带回调的通知</Button>
+        </div>
+      </template>
+      <template #code>
+        <pre><code>// 带回调的通知
+ElNotification({
+  title: '回调通知',
+  message: '这条通知有回调函数',
+  type: 'success',
+  onClose: () => {
+    console.log('通知已关闭')
+  },
+  onClick: () => {
+    console.log('通知被点击')
+  }
+})</code></pre>
+      </template>
+    </DemoSection>
 
     <!-- API 文档 -->
     <section class="demo-section">
       <h2>API 文档</h2>
       <div class="api-docs">
-        <h3>Notification 组件属性</h3>
+        <h3>ElNotification 方法</h3>
         <div class="api-table">
           <table>
             <thead>
               <tr>
-                <th>属性名</th>
-                <th>类型</th>
-                <th>默认值</th>
+                <th>参数</th>
                 <th>说明</th>
+                <th>类型</th>
+                <th>可选值</th>
+                <th>默认值</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><code>title</code></td>
-                <td><code>string</code></td>
-                <td><code>-</code></td>
                 <td>标题</td>
+                <td>string</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>message</code></td>
-                <td><code>string</code></td>
-                <td><code>-</code></td>
                 <td>说明文字</td>
+                <td>string / VNode</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>type</code></td>
-                <td><code>'success' | 'warning' | 'info' | 'error'</code></td>
-                <td><code>-</code></td>
-                <td>主题样式，如果不在可选值内将被忽略</td>
+                <td>主题</td>
+                <td>string</td>
+                <td>success / warning / info / error</td>
+                <td>—</td>
               </tr>
               <tr>
-                <td><code>position</code></td>
-                <td><code>'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'</code></td>
-                <td><code>'top-right'</code></td>
-                <td>自定义弹出位置</td>
+                <td><code>iconClass</code></td>
+                <td>自定义图标的类名</td>
+                <td>string</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><code>customClass</code></td>
+                <td>自定义类名</td>
+                <td>string</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>duration</code></td>
-                <td><code>number</code></td>
-                <td><code>4500</code></td>
                 <td>显示时间，毫秒。设为 0 则不会自动关闭</td>
+                <td>number</td>
+                <td>—</td>
+                <td>4500</td>
+              </tr>
+              <tr>
+                <td><code>position</code></td>
+                <td>自定义弹出位置</td>
+                <td>string</td>
+                <td>top-right / top-left / bottom-right / bottom-left</td>
+                <td>top-right</td>
               </tr>
               <tr>
                 <td><code>showClose</code></td>
-                <td><code>boolean</code></td>
-                <td><code>true</code></td>
                 <td>是否显示关闭按钮</td>
-              </tr>
-              <tr>
-                <td><code>dangerouslyUseHTMLString</code></td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-                <td>是否将 message 属性作为 HTML 片段处理</td>
-              </tr>
-              <tr>
-                <td><code>icon</code></td>
-                <td><code>string</code></td>
-                <td><code>-</code></td>
-                <td>自定义图标的类名</td>
+                <td>boolean</td>
+                <td>—</td>
+                <td>true</td>
               </tr>
               <tr>
                 <td><code>onClose</code></td>
-                <td><code>function</code></td>
-                <td><code>-</code></td>
                 <td>关闭时的回调函数</td>
+                <td>function</td>
+                <td>—</td>
+                <td>—</td>
               </tr>
               <tr>
                 <td><code>onClick</code></td>
-                <td><code>function</code></td>
-                <td><code>-</code></td>
                 <td>点击 Notification 时的回调函数</td>
+                <td>function</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><code>offset</code></td>
+                <td>距离窗口顶部的偏移量</td>
+                <td>number</td>
+                <td>—</td>
+                <td>0</td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <h3>方法</h3>
-        <div class="api-table">
-          <table>
-            <thead>
-              <tr>
-                <th>方法名</th>
-                <th>参数</th>
-                <th>返回值</th>
-                <th>说明</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>close</code></td>
-                <td><code>-</code></td>
-                <td><code>void</code></td>
-                <td>关闭当前的 Notification</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>插槽</h3>
-        <div class="css-info">
-          <ul>
-            <li><code>default</code> - 自定义内容</li>
-            <li><code>title</code> - 自定义标题</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -441,23 +462,57 @@ const showCustomIconNotification = () => {
   ElNotification({
     title: '自定义图标',
     message: '这条通知使用了自定义图标',
-    icon: 'el-icon-star-on'
+    icon: 'el-icon-star-on',
+    type: 'info'
   })
 }
 
 const showCustomContentNotification = () => {
   ElNotification({
     title: '自定义内容',
+    message: '这是一条自定义内容的通知',
     dangerouslyUseHTMLString: true,
-    message: '<strong>这是加粗的文本</strong><br/>这是第二行文本'
+    customClass: 'custom-notification'
   })
 }
 
-const showHTMLNotification = () => {
+const showHtmlNotification = () => {
   ElNotification({
     title: 'HTML内容',
-    dangerouslyUseHTMLString: true,
-    message: '<p><strong>这是加粗的文本</strong></p><p>这是第二行文本</p>'
+    message: '<strong>这是HTML内容</strong> <em>支持HTML标签</em>',
+    dangerouslyUseHTMLString: true
+  })
+}
+
+const showManualCloseNotification = () => {
+  ElNotification({
+    title: '手动关闭',
+    message: '这条通知需要手动关闭',
+    showClose: true,
+    duration: 0
+  })
+}
+
+const showNoCloseNotification = () => {
+  ElNotification({
+    title: '无关闭按钮',
+    message: '这条通知没有关闭按钮',
+    showClose: false,
+    duration: 3000
+  })
+}
+
+const showCallbackNotification = () => {
+  ElNotification({
+    title: '回调通知',
+    message: '这条通知有回调函数',
+    type: 'success',
+    onClose: () => {
+      console.log('通知已关闭')
+    },
+    onClick: () => {
+      console.log('通知被点击')
+    }
   })
 }
 </script>
@@ -468,7 +523,6 @@ const showHTMLNotification = () => {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 
 .demo-buttons {
   display: flex;
@@ -527,33 +581,6 @@ const showHTMLNotification = () => {
 }
 
 .api-table code {
-  background: var(--el-color-primary-light-9);
-  color: var(--el-color-primary);
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 12px;
-}
-
-.css-info {
-  background: white;
-  border: 1px solid #e1e8ed;
-  border-radius: 6px;
-  padding: 15px;
-}
-
-.css-info ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.css-info li {
-  margin-bottom: 5px;
-  color: #2c3e50;
-  font-size: 13px;
-}
-
-.css-info li code {
   background: var(--el-color-primary-light-9);
   color: var(--el-color-primary);
   padding: 2px 6px;

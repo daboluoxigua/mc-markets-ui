@@ -239,24 +239,6 @@ const routes: RouteRecordRaw[] = [
       title: '表格组件',
       icon: 'layout-grid'
     }
-  },
-  {
-    path: '/theme',
-    name: 'Theme',
-    component: ThemePage,
-    meta: {
-      title: '主题配置',
-      icon: 'adjustments-horizontal'
-    }
-  },
-  {
-    path: '/i18n',
-    name: 'I18n',
-    component: I18nPage,
-    meta: {
-      title: '国际化',
-      icon: 'globe'
-    }
   }
 ]
 
