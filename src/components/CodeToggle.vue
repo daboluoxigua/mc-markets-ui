@@ -66,7 +66,7 @@ const formattedCode = computed(() => {
 
   // 使用prettier格式化代码
   try {
-    return prettier.format(code, {
+    const result = prettier.format(code, {
       parser: "html",
       plugins: [parserHtml],
       printWidth: 80,
@@ -77,6 +77,9 @@ const formattedCode = computed(() => {
       bracketSpacing: true,
       arrowParens: "avoid",
     });
+    
+    // 确保返回的是字符串
+    return typeof result === 'string' ? result : code;
   } catch (error) {
     console.warn("代码格式化失败，使用原始代码:", error);
     return code;
@@ -87,9 +90,12 @@ const formattedCode = computed(() => {
 const highlightedCode = computed(() => {
   if (!formattedCode.value) return "";
 
+  // 确保 formattedCode.value 是字符串
+  const codeString = typeof formattedCode.value === 'string' ? formattedCode.value : String(formattedCode.value);
+
   try {
     // 使用highlight.js进行代码高亮和格式化
-    const result = hljs.highlight(formattedCode.value, {
+    const result = hljs.highlight(codeString, {
       language: props.language,
       ignoreIllegals: true,
     });
@@ -97,7 +103,7 @@ const highlightedCode = computed(() => {
   } catch (error) {
     console.warn("代码高亮失败，使用原始代码:", error);
     // 如果高亮失败，返回转义后的原始代码
-    return formattedCode.value
+    return codeString
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")

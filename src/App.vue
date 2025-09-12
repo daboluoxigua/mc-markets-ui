@@ -3,7 +3,7 @@
     <!-- 头部导航 -->
     <el-header class="demo-header">
       <div class="header-content">
-        <h1>@mc-markets/ui Demo</h1>
+        <h1>@mc-markets/ui</h1>
         <div class="header-actions">
           <!-- 主题选择器和黑暗模式开关已移除，默认使用黑暗模式 -->
         </div>

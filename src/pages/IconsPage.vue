@@ -162,7 +162,13 @@
           class="search-input"
         />
       </div>
-      <div class="all-icons-grid">
+      <div v-if="isLoading" class="loading-container">
+        <div class="loading-spinner">
+          <div class="spinner"></div>
+          <p>加载图标中... ({{ displayIcons.length }}/{{ iconList.length }})</p>
+        </div>
+      </div>
+      <div v-else class="all-icons-grid">
         <div
           v-for="icon in filteredIcons"
           :key="icon.name"
@@ -198,7 +204,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, nextTick } from "vue";
 import { Icon } from "@mc-markets/ui";
 import { iconList, searchIcons } from "@mc-markets/ui";
 import DemoSection from "@/components/DemoSection.vue";
@@ -210,6 +216,10 @@ const clickedIcon = ref("");
 const searchKeyword = ref("");
 const selectedIcon = ref("home-filled");
 const copyMessage = ref("");
+
+// 延迟加载图标数据
+const displayIcons = ref([]);
+const isLoading = ref(true);
 
 // API 文档数据
 const iconApiProps = [
@@ -305,9 +315,37 @@ const iconApiCssClasses = [
 // 计算属性
 const filteredIcons = computed(() => {
   if (!searchKeyword.value) {
-    return iconList;
+    return displayIcons.value;
   }
   return searchIcons(searchKeyword.value);
+});
+
+// 初始化图标数据（延迟加载）
+onMounted(() => {
+  // 使用 nextTick 确保 DOM 渲染完成后再加载数据
+  nextTick(() => {
+    // 分批加载图标，避免一次性渲染太多 DOM 节点
+    const batchSize = 20;
+    const totalIcons = iconList.length;
+    let currentIndex = 0;
+    
+    const loadBatch = () => {
+      const endIndex = Math.min(currentIndex + batchSize, totalIcons);
+      const batch = iconList.slice(currentIndex, endIndex);
+      displayIcons.value.push(...batch);
+      currentIndex = endIndex;
+      
+      if (currentIndex < totalIcons) {
+        // 使用 requestAnimationFrame 确保不阻塞 UI
+        requestAnimationFrame(loadBatch);
+      } else {
+        isLoading.value = false;
+      }
+    };
+    
+    // 开始加载第一批
+    loadBatch();
+  });
 });
 
 // 方法
@@ -413,6 +451,39 @@ const copyIconClass = async (className) => {
     border-radius: 8px;
     padding: 20px;
     background: var(--el-bg-color);
+  }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    margin-top: 20px;
+  }
+
+  .loading-spinner {
+    text-align: center;
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid var(--el-border-color-lighter);
+      border-top: 4px solid var(--el-color-primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+    
+    p {
+      color: var(--el-text-color-regular);
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
   .icon-item {
