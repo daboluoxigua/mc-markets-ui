@@ -13,3 +13,17 @@ defineOptions({
   name: 'MCSelect'
 })
 </script>
+
+<style scoped lang="scss">
+.solid{
+  --el-border-color:var(--bg-tertiary-hover);
+  :deep(.el-select__wrapper){
+    background: var(--bg-tertiary-hover);
+  }
+  :deep(.el-select__caret){
+    color: var(--all-base-white);
+  }
+}
+
+
+</style>
