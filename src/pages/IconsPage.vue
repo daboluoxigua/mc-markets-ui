@@ -217,68 +217,88 @@ const iconApiProps = [
     name: "name",
     type: "string",
     default: "-",
-    description: "图标名称，必填",
+    description: "图标名称，必填。支持所有内置图标名称",
   },
   {
     name: "size",
     type: "string | number",
     default: "'16px'",
-    description: "图标大小，支持数字(px)或字符串(如'2rem')",
+    description: "图标大小，支持数字(px)或字符串(如'2rem', '1.5em')",
   },
   {
     name: "color",
     type: "string",
     default: "'inherit'",
-    description: "图标颜色，支持CSS颜色值",
+    description: "图标颜色，支持CSS颜色值(如'#ff0000', 'red', 'var(--el-color-primary)')",
   },
   {
     name: "spin",
     type: "boolean",
     default: "false",
-    description: "是否旋转动画",
+    description: "是否启用旋转动画效果",
   },
   {
     name: "pulse",
     type: "boolean",
     default: "false",
-    description: "是否脉冲动画",
+    description: "是否启用脉冲动画效果",
   },
   {
     name: "rotate",
     type: "number",
     default: "0",
-    description: "旋转角度(度)",
+    description: "图标旋转角度，单位为度(0-360)",
   },
   {
     name: "flip",
     type: "'horizontal' | 'vertical' | 'both'",
     default: "undefined",
-    description: "翻转方向",
+    description: "图标翻转方向：horizontal(水平翻转) / vertical(垂直翻转) / both(双向翻转)",
   },
   {
     name: "prefix",
     type: "string",
     default: "'icon'",
-    description: "CSS类名前缀",
+    description: "CSS类名前缀，用于生成图标类名",
   },
 ];
 
 const iconApiEvents = [
   {
     name: "click",
-    params: "event: Event",
     description: "点击图标时触发",
+    params: "(event: MouseEvent)",
   },
 ];
 
 const iconApiCssClasses = [
   {
-    name: "icon-spin",
-    description: '旋转动画类（当 spin="true" 时）',
+    name: ".iconfont",
+    description: "图标根元素基础样式类",
   },
   {
-    name: "icon-pulse",
-    description: '脉冲动画类（当 pulse="true" 时）',
+    name: ".icon-{name}",
+    description: "具体图标样式类，{name}为图标名称",
+  },
+  {
+    name: ".icon-spin",
+    description: "旋转动画样式类（当 spin=true 时自动添加）",
+  },
+  {
+    name: ".icon-pulse",
+    description: "脉冲动画样式类（当 pulse=true 时自动添加）",
+  },
+  {
+    name: ".icon-flip-horizontal",
+    description: "水平翻转样式类（当 flip='horizontal' 时自动添加）",
+  },
+  {
+    name: ".icon-flip-vertical",
+    description: "垂直翻转样式类（当 flip='vertical' 时自动添加）",
+  },
+  {
+    name: ".icon-flip-both",
+    description: "双向翻转样式类（当 flip='both' 时自动添加）",
   },
 ];
 
@@ -315,7 +335,7 @@ const copyIconClass = async (className) => {
 .icons-page {
   .doc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     margin-bottom: 20px;
   }
@@ -451,10 +471,22 @@ const copyIconClass = async (className) => {
   }
 
   /* 响应式设计 */
+  @media (max-width: 1200px) {
+    .doc-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .all-icons-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+  }
+
   @media (max-width: 768px) {
     .doc-grid {
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
     }
 
     .all-icons-grid {
@@ -478,6 +510,26 @@ const copyIconClass = async (className) => {
     .api-table td {
       padding: 8px 10px;
       font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .doc-grid {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 8px;
+    }
+
+    .all-icons-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 8px;
+    }
+
+    .doc-item {
+      padding: 8px;
+    }
+
+    .icon-item {
+      padding: 8px;
     }
   }
 }

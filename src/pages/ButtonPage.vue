@@ -1,164 +1,243 @@
 <template>
   <div class="button-page">
     <!-- 基础按钮类型 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>基础按钮类型</span>
+    <DemoSection title="基础按钮类型">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button>默认按钮</Button>
+          <span>Default</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button>默认按钮</el-button>
-        <el-button type="primary">主要按钮</el-button>
-        <!-- <el-button type="success">成功按钮</el-button>
-        <el-button type="warning">警告按钮</el-button>
-        <el-button type="danger">危险按钮</el-button>
-        <el-button type="info">信息按钮</el-button>
-        <el-button type="text">文本按钮</el-button> -->
+        <div class="doc-item">
+          <Button type="primary">主要按钮</Button>
+          <span>Primary</span>
+        </div>
+        <div class="doc-item">
+          <Button type="success">成功按钮</Button>
+          <span>Success</span>
+        </div>
+        <div class="doc-item">
+          <Button type="warning">警告按钮</Button>
+          <span>Warning</span>
+        </div>
+        <div class="doc-item">
+          <Button type="danger">危险按钮</Button>
+          <span>Danger</span>
+        </div>
+        <div class="doc-item">
+          <Button type="info">信息按钮</Button>
+          <span>Info</span>
+        </div>
       </div>
-    </el-card>
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
+    </DemoSection>
+    <!-- Plain 按钮 -->
+    <DemoSection title="Plain 按钮">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button plain>Plain</Button>
           <span>Plain</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button plain>Plain</el-button>
-        <el-button plain disabled>禁用状态</el-button>
-        <!-- <el-button type="primary" plain>Primary</el-button> -->
-        <!-- <el-button type="success" plain>Success</el-button>
-        <el-button type="info" plain>Info</el-button>
-        <el-button type="warning" plain>Warning</el-button>
-        <el-button type="danger" plain>Danger</el-button> -->
-      </div>
-    </el-card>
-    <!-- 按钮尺寸 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>按钮尺寸</span>
+        <div class="doc-item">
+          <Button plain disabled>禁用状态</Button>
+          <span>Disabled</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button size="large" type="primary">大按钮</el-button>
-        <el-button type="primary">默认按钮</el-button>
-        <el-button size="small" type="primary">小按钮</el-button>
+        <div class="doc-item">
+          <Button type="primary" plain>Primary</Button>
+          <span>Primary</span>
+        </div>
+        <div class="doc-item">
+          <Button type="success" plain>Success</Button>
+          <span>Success</span>
+        </div>
+        <div class="doc-item">
+          <Button type="info" plain>Info</Button>
+          <span>Info</span>
+        </div>
+        <div class="doc-item">
+          <Button type="warning" plain>Warning</Button>
+          <span>Warning</span>
+        </div>
+        <div class="doc-item">
+          <Button type="danger" plain>Danger</Button>
+          <span>Danger</span>
+        </div>
       </div>
-    </el-card>
+    </DemoSection>
+    <!-- 按钮尺寸 -->
+    <DemoSection title="按钮尺寸">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button size="large" type="primary">大按钮</Button>
+          <span>Large</span>
+        </div>
+        <div class="doc-item">
+          <Button type="primary">默认按钮</Button>
+          <span>Default</span>
+        </div>
+        <div class="doc-item">
+          <Button size="small" type="primary">小按钮</Button>
+          <span>Small</span>
+        </div>
+      </div>
+    </DemoSection>
 
     <!-- 按钮状态 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>按钮状态</span>
+    <DemoSection title="按钮状态">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button type="primary" disabled>禁用状态</Button>
+          <span>Disabled</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button type="primary" disabled>禁用状态</el-button>
-        <el-button type="primary" :loading="loading" @click="handleLoading">
-          {{ loading ? "加载中..." : "点击加载" }}
-        </el-button>
-        <el-button :disabled="disabled" @click="handleDisabled">
-          {{ disabled ? "已禁用" : "可点击" }}
-        </el-button>
-        <el-button plain>朴素按钮</el-button>
-        <el-button round>圆角按钮</el-button>
-        <el-button circle>
-          <el-icon><Search /></el-icon>
-        </el-button>
+        <div class="doc-item">
+          <Button type="primary" :loading="loading" @click="handleLoading">
+            {{ loading ? "加载中..." : "点击加载" }}
+          </Button>
+          <span>Loading</span>
+        </div>
+        <div class="doc-item">
+          <Button :disabled="disabled" @click="handleDisabled">
+            {{ disabled ? "已禁用" : "可点击" }}
+          </Button>
+          <span>Toggle</span>
+        </div>
+        <div class="doc-item">
+          <Button plain>朴素按钮</Button>
+          <span>Plain</span>
+        </div>
+        <div class="doc-item">
+          <Button round>圆角按钮</Button>
+          <span>Round</span>
+        </div>
+        <div class="doc-item">
+          <Button circle>
+            <el-icon><Search /></el-icon>
+          </Button>
+          <span>Circle</span>
+        </div>
       </div>
-    </el-card>
+    </DemoSection>
 
     <!-- 按钮形状 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>按钮形状</span>
+    <DemoSection title="按钮形状">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button type="primary">默认形状</Button>
+          <span>Default</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button type="primary">默认形状</el-button>
-        <el-button type="primary" round>圆角按钮</el-button>
-        <el-button type="primary" circle>
-          <el-icon><Edit /></el-icon>
-        </el-button>
+        <div class="doc-item">
+          <Button type="primary" round>圆角按钮</Button>
+          <span>Round</span>
+        </div>
+        <div class="doc-item">
+          <Button type="primary" circle>
+            <el-icon><Edit /></el-icon>
+          </Button>
+          <span>Circle</span>
+        </div>
       </div>
-    </el-card>
+    </DemoSection>
 
     <!-- 图标按钮 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>图标按钮</span>
+    <DemoSection title="图标按钮">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button type="primary" :icon="Search"> 搜索 </Button>
+          <span>Search</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button type="primary" :icon="Search"> 搜索 </el-button>
-        <el-button :icon="Edit"> 编辑 </el-button>
-        <el-button :icon="Delete"> 删除 </el-button>
-        <el-button :icon="Download"> 下载 </el-button>
-        <el-button :icon="Upload"> 上传 </el-button>
+        <div class="doc-item">
+          <Button :icon="Edit"> 编辑 </Button>
+          <span>Edit</span>
+        </div>
+        <div class="doc-item">
+          <Button :icon="Delete"> 删除 </Button>
+          <span>Delete</span>
+        </div>
+        <div class="doc-item">
+          <Button :icon="Download"> 下载 </Button>
+          <span>Download</span>
+        </div>
+        <div class="doc-item">
+          <Button :icon="Upload"> 上传 </Button>
+          <span>Upload</span>
+        </div>
       </div>
-    </el-card>
+    </DemoSection>
 
     <!-- 按钮组 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>按钮组</span>
-        </div>
-      </template>
-      <div class="button-group">
+    <DemoSection title="按钮组">
+      <div class="doc-item">
         <el-button-group>
-          <el-button type="primary" :icon="ArrowLeft">上一页</el-button>
-          <el-button type="primary" :icon="ArrowRight" icon-position="right"
-            >下一页</el-button
-          >
+          <Button type="primary" :icon="Edit">编辑</Button>
+          <Button type="success" :icon="Check">保存</Button>
+          <Button type="danger" :icon="Close">取消</Button>
         </el-button-group>
-        <el-button-group>
-          <el-button type="primary" :icon="Edit">编辑</el-button>
-          <el-button type="success" :icon="Check">保存</el-button>
-          <el-button type="danger" :icon="Close">取消</el-button>
-        </el-button-group>
+        <span>Actions</span>
       </div>
-    </el-card>
+    </DemoSection>
 
     <!-- 交互演示 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>交互演示</span>
+    <DemoSection title="交互演示">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button type="primary" @click="handleClick">点击事件</Button>
+          <span>Click</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button type="primary" @click="handleClick">点击事件</el-button>
-        <el-button type="success" @click="handleConfirm">确认对话框</el-button>
-        <el-button type="warning" @click="handleAlert">警告提示</el-button>
-        <el-button type="danger" @click="handleMessage">消息提示</el-button>
-        <el-button type="info" @click="handleNotification">通知消息</el-button>
+        <div class="doc-item">
+          <Button type="success" @click="handleConfirm">确认对话框</Button>
+          <span>Confirm</span>
+        </div>
+        <div class="doc-item">
+          <Button type="warning" @click="handleAlert">警告提示</Button>
+          <span>Alert</span>
+        </div>
+        <div class="doc-item">
+          <Button type="danger" @click="handleMessage">消息提示</Button>
+          <span>Message</span>
+        </div>
+        <div class="doc-item">
+          <Button type="info" @click="handleNotification">通知消息</Button>
+          <span>Notification</span>
+        </div>
       </div>
-    </el-card>
+    </DemoSection>
 
     <!-- 自定义样式按钮 -->
-    <el-card class="demo-card">
-      <template #header>
-        <div class="card-header">
-          <span>自定义样式按钮</span>
+    <DemoSection title="自定义样式按钮">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <Button class="custom-button gradient-button">渐变按钮</Button>
+          <span>Gradient</span>
         </div>
-      </template>
-      <div class="button-group">
-        <el-button class="custom-button gradient-button">渐变按钮</el-button>
-        <el-button class="custom-button shadow-button">阴影按钮</el-button>
-        <el-button class="custom-button neon-button">霓虹按钮</el-button>
-        <el-button class="custom-button glass-button">玻璃按钮</el-button>
+        <div class="doc-item">
+          <Button class="custom-button shadow-button">阴影按钮</Button>
+          <span>Shadow</span>
+        </div>
+        <div class="doc-item">
+          <Button class="custom-button neon-button">霓虹按钮</Button>
+          <span>Neon</span>
+        </div>
+        <div class="doc-item">
+          <Button class="custom-button glass-button">玻璃按钮</Button>
+          <span>Glass</span>
+        </div>
       </div>
-    </el-card>
+    </DemoSection>
+
+    <!-- API 文档 -->
+    <ApiDocs
+      title="Button 组件 API 文档"
+      :props="buttonApiProps"
+      props-title="Button 组件属性"
+      :events="buttonApiEvents"
+      :css-classes="buttonApiCssClasses"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import DemoSection from "@/components/DemoSection.vue";
+import ApiDocs from "@/components/ApiDocs.vue";
+import { Button, searchIcons } from "@mc-markets/ui";
 import {
   Search,
   Edit,
@@ -174,6 +253,159 @@ import {
 // 响应式数据
 const loading = ref(true);
 const disabled = ref(false);
+
+// API 文档数据
+const buttonApiProps = [
+  {
+    name: "type",
+    type: "string",
+    default: "-",
+    description: "按钮类型，可选值：primary / success / warning / danger / info / text",
+  },
+  {
+    name: "size",
+    type: "string",
+    default: "-",
+    description: "按钮尺寸，可选值：large / default / small",
+  },
+  {
+    name: "plain",
+    type: "boolean",
+    default: "false",
+    description: "是否为朴素按钮",
+  },
+  {
+    name: "round",
+    type: "boolean",
+    default: "false",
+    description: "是否为圆角按钮",
+  },
+  {
+    name: "circle",
+    type: "boolean",
+    default: "false",
+    description: "是否为圆形按钮",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "是否禁用状态",
+  },
+  {
+    name: "loading",
+    type: "boolean",
+    default: "false",
+    description: "是否加载中状态",
+  },
+  {
+    name: "icon",
+    type: "string | Component",
+    default: "-",
+    description: "图标组件",
+  },
+  {
+    name: "icon-position",
+    type: "string",
+    default: "left",
+    description: "图标位置，可选值：left / right",
+  },
+  {
+    name: "native-type",
+    type: "string",
+    default: "button",
+    description: "原生 type 属性，可选值：button / submit / reset",
+  },
+  {
+    name: "autofocus",
+    type: "boolean",
+    default: "false",
+    description: "是否默认聚焦",
+  },
+  {
+    name: "tag",
+    type: "string | Component",
+    default: "button",
+    description: "自定义元素标签",
+  },
+];
+
+const buttonApiEvents = [
+  {
+    name: "click",
+    description: "点击按钮时触发",
+    params: "(event: MouseEvent)",
+  },
+  {
+    name: "focus",
+    description: "按钮获得焦点时触发",
+    params: "(event: FocusEvent)",
+  },
+  {
+    name: "blur",
+    description: "按钮失去焦点时触发",
+    params: "(event: FocusEvent)",
+  },
+];
+
+const buttonApiCssClasses = [
+  {
+    name: ".el-button",
+    description: "按钮根元素",
+  },
+  {
+    name: ".el-button--primary",
+    description: "主要按钮样式",
+  },
+  {
+    name: ".el-button--success",
+    description: "成功按钮样式",
+  },
+  {
+    name: ".el-button--warning",
+    description: "警告按钮样式",
+  },
+  {
+    name: ".el-button--danger",
+    description: "危险按钮样式",
+  },
+  {
+    name: ".el-button--info",
+    description: "信息按钮样式",
+  },
+  {
+    name: ".el-button--text",
+    description: "文本按钮样式",
+  },
+  {
+    name: ".el-button--large",
+    description: "大尺寸按钮样式",
+  },
+  {
+    name: ".el-button--small",
+    description: "小尺寸按钮样式",
+  },
+  {
+    name: ".is-plain",
+    description: "朴素按钮样式",
+  },
+  {
+    name: ".is-round",
+    description: "圆角按钮样式",
+  },
+  {
+    name: ".is-circle",
+    description: "圆形按钮样式",
+  },
+  {
+    name: ".is-disabled",
+    description: "禁用状态样式",
+  },
+  {
+    name: ".is-loading",
+    description: "加载中状态样式",
+  },
+];
 
 // 方法
 const handleLoading = () => {
@@ -237,26 +469,38 @@ const handleNotification = () => {
 
 <style scoped lang="scss">
 .button-page {
-  .demo-card {
+  .doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
     margin-bottom: 20px;
   }
 
-  .card-header {
+  .doc-item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    font-weight: 600;
-    color: var(--el-text-color-primary);
+    padding: 15px;
+    border: 1px solid var(--el-border-color-lighter);
+    border-radius: 8px;
+    background: var(--el-bg-color);
+    transition: all 0.3s ease;
   }
 
-  .button-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
+  /* .doc-item:hover {
+  border-color: var(--el-color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+} */
+
+  .doc-item span {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--el-text-color-regular);
+    text-align: center;
   }
 
-  // 自定义样式按钮
+  /* 自定义样式按钮 */
   .custom-button {
     position: relative;
     overflow: hidden;
@@ -308,7 +552,7 @@ const handleNotification = () => {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #333;
+    color: #ddd;
 
     &:hover {
       background: rgba(255, 255, 255, 0.2);
@@ -328,16 +572,41 @@ const handleNotification = () => {
     }
   }
 
-  // 响应式设计
-  @media (max-width: 768px) {
-    .button-group {
-      flex-direction: column;
-      align-items: stretch;
+  /* 响应式设计 */
+  @media (max-width: 1200px) {
+    .doc-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+  }
 
-      .el-button {
-        width: 100%;
-        margin-bottom: 8px;
-      }
+  @media (max-width: 768px) {
+    .button-page {
+      padding: 16px;
+    }
+
+    .doc-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .doc-item {
+      padding: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .button-page {
+      padding: 12px;
+    }
+
+    .doc-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .doc-item {
+      padding: 10px;
     }
   }
 }
