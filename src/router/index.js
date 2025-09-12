@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import IconsPage from '@/pages/IconsPage.vue'
 import ButtonPage from '@/pages/ButtonPage.vue'
 import CardPage from '@/pages/CardPage.vue'
+import InputPage from '@/pages/InputPage.vue'
 
 const routes = [
   {
@@ -35,6 +36,14 @@ const routes = [
     meta: {
       title: 'Card 卡片',
       icon: 'credit-card'
+    }
+  }, {
+    path: '/input',
+    name: 'Input',
+    component: InputPage,
+    meta: {
+      title: 'Input 输入框',
+      icon: 'input'
     }
   }
 ]

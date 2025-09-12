@@ -30,6 +30,18 @@ export function createInstallFunction({
       app.component(name, component)
     })
     
+    // 为映射表中的所有组件提供回退机制
+    Object.keys(elementPlusMapping).forEach(componentName => {
+      if (!components[componentName]) {
+        // 如果自定义组件不存在，注册 Element Plus 组件作为回退
+        const elementComponentName = elementPlusMapping[componentName]
+        if (ElementPlus[elementComponentName]) {
+          app.component(componentName, ElementPlus[elementComponentName])
+          console.log(`[MC-Markets-UI] 注册回退组件: ${componentName} -> ${elementComponentName}`)
+        }
+      }
+    })
+    
     // 注册全局属性
     app.config.globalProperties.$mcMarketsUI = {
       version,
