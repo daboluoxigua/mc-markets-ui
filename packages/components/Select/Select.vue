@@ -1,12 +1,14 @@
 <template>
   <el-select :show-arrow="false" v-bind="$attrs">
-    <template #default v-if="$slots.default">
-      <slot />
+    <!-- 自动渲染所有插槽 -->
+    <template v-for="(_, name) in slots" :key="name" #[name]>
+      <slot :name="name" />
     </template>
   </el-select>
 </template>
 
 <script setup lang="ts">
+const slots = useSlots()
 defineOptions({
   name: 'MCSelect'
 })
