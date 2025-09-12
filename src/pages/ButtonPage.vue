@@ -1,8 +1,8 @@
 <template>
   <div class="button-page">
     <!-- 基础按钮类型 -->
-    <DemoSection title="基础按钮类型">
-      <div class="doc-grid">
+    <DemoSection title="基础按钮类型">{{  
+      `<div class="doc-grid">
         <div class="doc-item">
           <m-button>默认按钮</m-button>
           <span>Default</span>
@@ -27,7 +27,8 @@
           <m-button type="info">信息按钮</m-button>
           <span>Info</span>
         </div>
-      </div>
+      </div>`
+      }}
     </DemoSection>
     <!-- Plain 按钮 -->
     <DemoSection title="Plain 按钮">

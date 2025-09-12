@@ -112,6 +112,85 @@ const highlightedCode = computed(() => {
   }
 });
 
+// 组件名称映射表 - 将内部组件名映射回用户使用的标签名
+const componentNameMapping = {
+  'MCButton': 'm-button',
+  'MCCard': 'm-card',
+  'MCInput': 'm-input',
+  'MCForm': 'm-form',
+  'MCFormItem': 'm-form-item',
+  'MCSelect': 'm-select',
+  'MCOption': 'm-option',
+  'MCDatePicker': 'm-date-picker',
+  'MCTimePicker': 'm-time-picker',
+  'MCTable': 'm-table',
+  'MCTableColumn': 'm-table-column',
+  'MCPagination': 'm-pagination',
+  'MCDialog': 'm-dialog',
+  'MCDrawer': 'm-drawer',
+  'MCPopover': 'm-popover',
+  'MCTooltip': 'm-tooltip',
+  'MCDropdown': 'm-dropdown',
+  'MCDropdownMenu': 'm-dropdown-menu',
+  'MCDropdownItem': 'm-dropdown-item',
+  'MCMenu': 'm-menu',
+  'MCMenuItem': 'm-menu-item',
+  'MCSubMenu': 'm-submenu',
+  'MCTabs': 'm-tabs',
+  'MCTabPane': 'm-tab-pane',
+  'MCSteps': 'm-steps',
+  'MCStep': 'm-step',
+  'MCBreadcrumb': 'm-breadcrumb',
+  'MCBreadcrumbItem': 'm-breadcrumb-item',
+  'MCAlert': 'm-alert',
+  'MCNotification': 'm-notification',
+  'MCMessage': 'm-message',
+  'MCMessageBox': 'm-message-box',
+  'MCLoading': 'm-loading',
+  'MCInfiniteScroll': 'm-infinite-scroll',
+  'MCImage': 'm-image',
+  'MCAvatar': 'm-avatar',
+  'MCBadge': 'm-badge',
+  'MCTag': 'm-tag',
+  'MCProgress': 'm-progress',
+  'MCSkeleton': 'm-skeleton',
+  'MCEmpty': 'm-empty',
+  'MCDescriptions': 'm-descriptions',
+  'MCDescriptionsItem': 'm-descriptions-item',
+  'MCResult': 'm-result',
+  'MCStatistic': 'm-statistic',
+  'MCTimeline': 'm-timeline',
+  'MCTimelineItem': 'm-timeline-item',
+  'MCCarousel': 'm-carousel',
+  'MCCarouselItem': 'm-carousel-item',
+  'MCCollapse': 'm-collapse',
+  'MCCollapseItem': 'm-collapse-item',
+  'MCDivider': 'm-divider',
+  'MCLink': 'm-link',
+  'MCText': 'm-text',
+  'MCSpace': 'm-space',
+  'MCAffix': 'm-affix',
+  'MCBacktop': 'm-backtop',
+  'MCPageHeader': 'm-page-header',
+  'MCRadio': 'm-radio',
+  'MCRadioGroup': 'm-radio-group',
+  'MCRadioButton': 'm-radio-button',
+  'MCCheckbox': 'm-checkbox',
+  'MCCheckboxGroup': 'm-checkbox-group',
+  'MCCheckboxButton': 'm-checkbox-button',
+  'MCSwitch': 'm-switch',
+  'MCSlider': 'm-slider',
+  'MCRate': 'm-rate',
+  'MCColorPicker': 'm-color-picker',
+  'MCTransfer': 'm-transfer',
+  'MCTree': 'm-tree',
+  'MCTreeSelect': 'm-tree-select',
+  'MCCascader': 'm-cascader',
+  'MCUpload': 'm-upload',
+  'MCUploadDragger': 'm-upload-dragger',
+  'MCUploadList': 'm-upload-list'
+};
+
 // 将 VNode 转换为源代码（无缩进版本）
 function vnodeToSourceRaw(vnode) {
   if (!vnode) return "";
@@ -142,7 +221,9 @@ function vnodeToSourceRaw(vnode) {
   // 处理Vue组件 - 显示为组件标签而不是HTML标签
   if (typeof vnode.type === "object" && vnode.type.__name) {
     // 这是一个Vue组件，显示为组件标签
-    result += `<${vnode.type.__name}`;
+    // 使用映射表将内部组件名映射回用户使用的标签名
+    const displayName = componentNameMapping[vnode.type.__name] || vnode.type.__name;
+    result += `<${displayName}`;
 
     // 添加属性
     if (vnode.props) {
@@ -191,7 +272,7 @@ function vnodeToSourceRaw(vnode) {
             ? vnode.children[0]
             : vnode.children[0].children || "";
         // 文本内容总是放在同一行
-        result += `>${text}</${vnode.type.__name}>`;
+        result += `>${text}</${displayName}>`;
       } else {
         result += ">\n";
         for (const child of vnode.children) {
@@ -200,7 +281,7 @@ function vnodeToSourceRaw(vnode) {
             result += childCode;
           }
         }
-        result += `</${vnode.type.__name}>`;
+        result += `</${displayName}>`;
       }
     } else {
       result += " />";
