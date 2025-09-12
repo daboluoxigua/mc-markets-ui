@@ -11,6 +11,11 @@ export default ({ command }) => {
     plugins: [
       ...createVitePlugins(),
     ],
+    server: {
+      hmr: {
+        overlay: false
+      }
+    },
     css: {
       preprocessorOptions: {
         scss: {
