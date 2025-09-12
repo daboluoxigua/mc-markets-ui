@@ -3,7 +3,7 @@
     <h2>{{ title || 'API 文档' }}</h2>
     <div class="api-docs">
       <!-- 属性表格 -->
-      <div v-if="props.length > 0">
+      <div v-if="props.props.length > 0">
         <h3>{{ propsTitle || '组件属性' }}</h3>
         <div class="api-table">
           <table>
@@ -16,7 +16,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="prop in props" :key="prop.name">
+              <tr v-for="prop in props.props" :key="prop.name">
                 <td><code>{{ prop.name }}</code></td>
                 <td><code>{{ prop.type }}</code></td>
                 <td><code>{{ prop.default || '-' }}</code></td>
@@ -28,7 +28,7 @@
       </div>
 
       <!-- 事件表格 -->
-      <div v-if="events.length > 0">
+      <div v-if="props.events.length > 0">
         <h3>{{ eventsTitle || '事件' }}</h3>
         <div class="api-table">
           <table>
@@ -40,7 +40,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="event in events" :key="event.name">
+              <tr v-for="event in props.events" :key="event.name">
                 <td><code>{{ event.name }}</code></td>
                 <td><code>{{ event.params }}</code></td>
                 <td>{{ event.description }}</td>
@@ -50,12 +50,58 @@
         </div>
       </div>
 
+      <!-- 插槽表格 -->
+      <div v-if="props.slots.length > 0">
+        <h3>{{ slotsTitle || '插槽' }}</h3>
+        <div class="api-table">
+          <table>
+            <thead>
+              <tr>
+                <th>插槽名</th>
+                <th>说明</th>
+                <th v-if="hasSubTags">子标签</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="slot in props.slots" :key="slot.name">
+                <td><code>{{ slot.name }}</code></td>
+                <td>{{ slot.description }}</td>
+                <td v-if="hasSubTags"><code>{{ slot.subTags || '-' }}</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 暴露的方法和属性表格 -->
+      <div v-if="props.exposes.length > 0">
+        <h3>{{ exposesTitle || '暴露的方法和属性' }}</h3>
+        <div class="api-table">
+          <table>
+            <thead>
+              <tr>
+                <th>属性名</th>
+                <th>类型</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="expose in props.exposes" :key="expose.name">
+                <td><code>{{ expose.name }}</code></td>
+                <td><code>{{ expose.type }}</code></td>
+                <td>{{ expose.description }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <!-- CSS 类名说明 -->
-      <div v-if="cssClasses.length > 0">
+      <div v-if="props.cssClasses.length > 0">
         <h3>{{ cssTitle || 'CSS 类名' }}</h3>
         <div class="css-info">
           <ul>
-            <li v-for="cssClass in cssClasses" :key="cssClass.name">
+            <li v-for="cssClass in props.cssClasses" :key="cssClass.name">
               <code>{{ cssClass.name }}</code> - {{ cssClass.description }}
             </li>
           </ul>
@@ -66,7 +112,9 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   title: {
     type: String,
     default: 'API 文档'
@@ -87,6 +135,22 @@ defineProps({
     type: String,
     default: '事件'
   },
+  slots: {
+    type: Array,
+    default: () => []
+  },
+  slotsTitle: {
+    type: String,
+    default: '插槽'
+  },
+  exposes: {
+    type: Array,
+    default: () => []
+  },
+  exposesTitle: {
+    type: String,
+    default: '暴露的方法和属性'
+  },
   cssClasses: {
     type: Array,
     default: () => []
@@ -96,6 +160,12 @@ defineProps({
     default: 'CSS 类名'
   }
 })
+
+// 计算属性：是否有子标签列
+const hasSubTags = computed(() => {
+  return props.slots.some(slot => slot.subTags)
+})
+
 </script>
 
 <style scoped lang="scss">
