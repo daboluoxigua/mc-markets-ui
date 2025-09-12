@@ -24,8 +24,6 @@
             :key="route.path"
             :index="route.path"
           >
-            <el-icon v-if="route.meta?.icon === 'Grid'"><Grid /></el-icon>
-            <Icon v-else :name="route.meta?.icon" :size="16" />
             <span class="menu-text">{{ route.meta?.title }}</span>
           </el-menu-item>
         </el-menu>

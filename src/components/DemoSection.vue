@@ -6,7 +6,7 @@
         <slot name="preview"></slot>
       </div>
       <CodeToggle>
-        <slot name="preview"></slot>
+        <slot name="code"></slot>
       </CodeToggle>
     </div>
   </section>

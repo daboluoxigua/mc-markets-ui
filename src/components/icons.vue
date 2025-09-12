@@ -23,7 +23,8 @@
         </div>
       </template>
       <template #code>
-        <!-- <div class="demo-grid">
+        {{ `
+        <div class="demo-grid">
           <div class="demo-item">
             <Icon name="home-filled" />
             <span>home-filled</span>
@@ -40,7 +41,8 @@
             <Icon name="star-filled" />
             <span>star-filled</span>
           </div>
-        </div> -->
+        </div>
+        ` }}
       </template>
     </DemoSection>
 
@@ -67,10 +69,26 @@
         </div>
       </template>
       <template #code>
-        <pre><code>&lt;Icon name="home-filled" :size="16" /&gt;
-&lt;Icon name="home-filled" :size="24" /&gt;
-&lt;Icon name="home-filled" :size="32" /&gt;
-&lt;Icon name="home-filled" size="2rem" /&gt;</code></pre>
+        {{ `
+        <div class="demo-grid">
+          <div class="demo-item">
+            <Icon name="home-filled" :size="16" />
+            <span>16px</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="home-filled" :size="24" />
+            <span>24px</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="home-filled" :size="32" />
+            <span>32px</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="home-filled" size="2rem" />
+            <span>2rem</span>
+          </div>
+        </div>
+        ` }}
       </template>
     </DemoSection>
 
@@ -97,7 +115,7 @@
         </div>
       </template>
       <template #code>
-        <div class="demo-grid">
+        {{ `<div class="demo-grid">
           <div class="demo-item">
             <Icon name="star-filled" color="#ff6b6b" />
             <span>红色</span>
@@ -114,7 +132,7 @@
             <Icon name="star-filled" color="#feca57" />
             <span>黄色</span>
           </div>
-        </div>
+        </div>` }}
       </template>
     </DemoSection>
 
@@ -141,10 +159,24 @@
         </div>
       </template>
       <template #code>
-        <pre><code>&lt;Icon name="refresh-cw" :spin="true" /&gt;
-&lt;Icon name="heart-handshake" :pulse="true" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="45" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="90" /&gt;</code></pre>
+        {{ `<div class="demo-grid">
+          <div class="demo-item">
+            <Icon name="refresh-cw" :spin="true" />
+            <span>旋转</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="heart-handshake" :pulse="true" />
+            <span>脉冲</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="arrow-right-left" :rotate="45" />
+            <span>旋转45度</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="arrow-right-left" :rotate="90" />
+            <span>旋转90度</span>
+          </div>
+        </div>` }}
       </template>
     </DemoSection>
 
@@ -171,10 +203,24 @@
         </div>
       </template>
       <template #code>
-        <pre><code>&lt;Icon name="arrow-right-left" /&gt;
-&lt;Icon name="arrow-right-left" flip="horizontal" /&gt;
-&lt;Icon name="arrow-right-left" flip="vertical" /&gt;
-&lt;Icon name="arrow-right-left" flip="both" /&gt;</code></pre>
+        {{ `<div class="demo-grid">
+          <div class="demo-item">
+            <Icon name="arrow-right-left" />
+            <span>原始</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="arrow-right-left" flip="horizontal" />
+            <span>水平翻转</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="arrow-right-left" flip="vertical" />
+            <span>垂直翻转</span>
+          </div>
+          <div class="demo-item">
+            <Icon name="arrow-right-left" flip="both" />
+            <span>双向翻转</span>
+          </div>
+        </div>` }}
       </template>
     </DemoSection>
 
@@ -208,9 +254,31 @@
         </div>
       </template>
       <template #code>
-        <pre><code>&lt;Icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" /&gt;
-&lt;Icon name="heart-handshake" :pulse="true" color="#4ecdc4" :size="24" /&gt;
-&lt;Icon name="arrow-right-left" :rotate="45" flip="horizontal" color="#45b7d1" :size="24" /&gt;</code></pre>
+        {{ `<div class="demo-grid">
+          <div class="demo-item">
+            <Icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" />
+            <span>旋转+颜色+大小</span>
+          </div>
+          <div class="demo-item">
+            <Icon
+              name="heart-handshake"
+              :pulse="true"
+              color="#4ecdc4"
+              :size="24"
+            />
+            <span>脉冲+颜色+大小</span>
+          </div>
+          <div class="demo-item">
+            <Icon
+              name="arrow-right-left"
+              :rotate="45"
+              flip="horizontal"
+              color="#45b7d1"
+              :size="24"
+            />
+            <span>旋转+翻转+颜色+大小</span>
+          </div>
+        </div>` }}
       </template>
     </DemoSection>
 
@@ -225,48 +293,24 @@
             <Icon name="home-filled" :size="24" />
             <span>点击我</span>
           </div>
-          <div
-            class="demo-item clickable"
-            @click="handleIconClick('star-filled')"
-          >
-            <Icon name="star-filled" :size="24" />
-            <span>点击我</span>
-          </div>
-          <div
-            class="demo-item clickable"
-            @click="handleIconClick('heart-handshake')"
-          >
-            <Icon name="heart-handshake" :size="24" />
-            <span>点击我</span>
-          </div>
         </div>
         <p v-if="clickedIcon" class="click-result">
           你点击了图标: {{ clickedIcon }}
         </p>
       </template>
       <template #code>
-        <pre><code>&lt;template&gt;
-  &lt;div class="demo-grid"&gt;
-    &lt;div class="demo-item clickable" @click="handleIconClick('home-filled')"&gt;
-      &lt;Icon name="home-filled" :size="24" /&gt;
-      &lt;span&gt;点击我&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="demo-item clickable" @click="handleIconClick('star-filled')"&gt;
-      &lt;Icon name="star-filled" :size="24" /&gt;
-      &lt;span&gt;点击我&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="demo-item clickable" @click="handleIconClick('heart-handshake')"&gt;
-      &lt;Icon name="heart-handshake" :size="24" /&gt;
-      &lt;span&gt;点击我&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script setup&gt;
-const handleIconClick = (iconName) => {
-  console.log('点击了图标:', iconName)
-}
-&lt;/script&gt;</code></pre>
+        {{`<div class="demo-grid">
+          <div
+            class="demo-item clickable"
+            @click="handleIconClick('home-filled')"
+          >
+            <Icon name="home-filled" :size="24" />
+            <span>点击我</span>
+          </div>
+        </div>
+        <p v-if="clickedIcon" class="click-result">
+          你点击了图标: \{\{ clickedIcon \}\}
+        </p>`}}
       </template>
     </DemoSection>
 
@@ -300,32 +344,31 @@ const handleIconClick = (iconName) => {
         </div>
       </template>
       <template #code>
-        <pre><code>&lt;template&gt;
-  &lt;div class="icon-search"&gt;
-    &lt;div class="search-container"&gt;
-      &lt;input 
-        v-model="searchKeyword" 
-        type="text" 
-        placeholder="搜索图标名称..."
-        class="search-input"
-      /&gt;
-    &lt;/div&gt;
-    &lt;div class="all-icons-grid"&gt;
-      &lt;div 
-        v-for="icon in filteredIcons" 
-        :key="icon.name"
-        class="icon-item"
-        :class="{ active: selectedIcon === icon.name }"
-        @click="selectIcon(icon.name)"
-      &gt;
-        &lt;Icon :name="icon.name" :size="24" /&gt;
-        &lt;span class="icon-class" @click.stop="copyIconClass(`icon-${icon.fontClass}`)"&gt;
-          icon-{{ icon.fontClass }}
-        &lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;</code></pre>
+        {{ `<div class="search-container">
+          <input
+            v-model="searchKeyword"
+            type="text"
+            placeholder="搜索图标名称..."
+            class="search-input"
+          />
+        </div>
+        <div class="all-icons-grid">
+          <div
+            v-for="icon in filteredIcons"
+            :key="icon.name"
+            class="icon-item"
+            :class="{ active: selectedIcon === icon.name }"
+            @click="selectIcon(icon.name)"
+          >
+            <Icon :name="icon.name" :size="24" />
+            <span
+              class="icon-class"
+              @click.stop="copyIconClass(\`icon-\$\{icon.fontClass\}\`)"
+            >
+              icon-\{\{ icon.fontClass \}\}
+            </span>
+          </div>
+        </div>` }}
       </template>
     </DemoSection>
 
