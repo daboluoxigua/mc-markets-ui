@@ -12,6 +12,13 @@ export default ({ command }) => {
     plugins: [
       ...createVitePlugins(),
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          silenceDeprecations: ['legacy-js-api']
+        }
+      }
+    },
     build: {
       outDir: "dist", //输出文件名称
       lib: {

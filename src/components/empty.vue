@@ -1,19 +1,16 @@
 <template>
   <div class="empty-demo">
     <!-- 基础用法 -->
-    <section class="demo-section">
-      <h2>基础用法</h2>
-      <div class="demo-card">
-        <div class="demo-preview">
-          <div class="demo-row">
-            <Empty />
-          </div>
+    <DemoSection title="基础用法">
+      <template #preview>
+        <div class="demo-row">
+          <Empty />
         </div>
-        <CodeToggle>
-          {{ `<Empty />` }}
-        </CodeToggle>
-      </div>
-    </section>
+      </template>
+      <template #code>
+        {{ `<Empty />` }}
+      </template>
+    </DemoSection>
 
     <!-- 自定义图片 -->
     <section class="demo-section">

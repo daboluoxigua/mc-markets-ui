@@ -1,5 +1,5 @@
 <template>
-  <div class="badge-page">
+  <div class="icons-page">
     <h2>字体图标</h2>
     <Icon />
   </div>
@@ -10,7 +10,7 @@ import Icon from '@/components/icons.vue'
 </script>
 
 <style scoped>
-.badge-page {
+.icons-page {
   padding: 20px;
 }
 </style>
