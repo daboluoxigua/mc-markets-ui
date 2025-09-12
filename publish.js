@@ -96,10 +96,10 @@ function updateVersionInFiles(newVersion) {
   packageJson.version = newVersion;
   fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2) + '\n');
 
-  // 更新 packages/index.ts 中的版本号
-  const indexTsPath = path.join(__dirname, 'packages', 'index.ts');
-  if (fs.existsSync(indexTsPath)) {
-    let indexContent = fs.readFileSync(indexTsPath, 'utf8');
+  // 更新 packages/index.js 中的版本号
+  const indexJsPath = path.join(__dirname, 'packages', 'index.js');
+  if (fs.existsSync(indexJsPath)) {
+    let indexContent = fs.readFileSync(indexJsPath, 'utf8');
     indexContent = indexContent.replace(
       /const version = ['"`][^'"`]+['"`]/g,
       `const version = '${newVersion}'`
@@ -108,19 +108,9 @@ function updateVersionInFiles(newVersion) {
       /@version [^\n]+/g,
       `@version ${newVersion}`
     );
-    fs.writeFileSync(indexTsPath, indexContent);
+    fs.writeFileSync(indexJsPath, indexContent);
   }
 
-  // 更新 packages/types/index.d.ts 中的版本号
-  const typesPath = path.join(__dirname, 'packages', 'types', 'index.d.ts');
-  if (fs.existsSync(typesPath)) {
-    let typesContent = fs.readFileSync(typesPath, 'utf8');
-    typesContent = typesContent.replace(
-      /export const version = ['"`][^'"`]+['"`];/g,
-      `export const version = '${newVersion}';`
-    );
-    fs.writeFileSync(typesPath, typesContent);
-  }
 
   console.log('✅ 版本号更新完成');
 }

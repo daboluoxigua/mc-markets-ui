@@ -225,7 +225,7 @@ const copyCode = async () => {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .code-toggle {
   width: 100%;
 }
@@ -236,6 +236,14 @@ const copyCode = async () => {
   border-top: 1px solid var(--el-border-color-lighter);
   display: flex;
   justify-content: flex-end;
+}
+
+.demo-toggle-btn {
+  font-size: 12px !important;
+  padding: 6px 12px !important;
+  height: auto !important;
+  min-height: 28px !important;
+  border-radius: 4px !important;
 }
 
 .demo-code {

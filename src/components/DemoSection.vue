@@ -3,10 +3,10 @@
     <h2>{{ title }}</h2>
     <div class="demo-card">
       <div class="demo-preview">
-        <slot name="preview"></slot>
+        <slot/>
       </div>
       <CodeToggle>
-        <slot name="code"></slot>
+        <slot/>
       </CodeToggle>
     </div>
   </section>
@@ -24,7 +24,7 @@ defineProps({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .demo-section {
   margin-bottom: 40px;
 }
@@ -34,23 +34,23 @@ h2 {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--border-primary);
-}
 
-/* 演示卡片样式 */
-.demo-card {
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--el-bg-color);
-  box-shadow: var(--el-box-shadow-light);
-}
-
-.demo-preview {
-  padding: 20px;
-  background: var(--el-bg-color);
-}
-
-.demo-preview .el-alert {
-  margin-bottom: 10px;
+  /* 演示卡片样式 */
+  .demo-card {
+    border: 1px solid var(--el-border-color-lighter);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--el-bg-color);
+    box-shadow: var(--el-box-shadow-light);
+  }
+  
+  .demo-preview {
+    padding: 20px;
+    background: var(--el-bg-color);
+  }
+  
+  .demo-preview .el-alert {
+    margin-bottom: 10px;
+  }
 }
 </style>

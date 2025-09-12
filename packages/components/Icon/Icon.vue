@@ -106,7 +106,7 @@ const handleClick = (event) => {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .iconfont {
   display: inline-block;
   font-style: normal;

@@ -197,7 +197,7 @@ const successColors = ref([
 ])
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .color-showcase {
   padding: 24px;
   background: var(--all-gray-10);

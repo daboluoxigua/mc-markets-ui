@@ -1,12 +1,12 @@
 <template>
   <el-button v-bind="$attrs">
-    <template #default v-if="$slots.default">
-      <slot />
+    <template v-for="(_, name) in $slots" :key="name" #[name]>
+      <slot :name="name" />
     </template>
   </el-button>
 </template>
 
-<script setup lang="ts">
+<script setup>
 defineOptions({
   name: 'MCButton'
 })

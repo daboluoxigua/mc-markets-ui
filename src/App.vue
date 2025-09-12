@@ -41,7 +41,6 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { Icon } from '@mc-markets/ui'
 
 const router = useRouter()
 
@@ -56,7 +55,7 @@ const handleMenuSelect = (path) => {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .demo-app {
   height: 100vh;
   display: flex;
