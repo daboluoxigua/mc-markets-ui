@@ -19,27 +19,3 @@
 .el-form-item{
   margin-bottom: 20px;
 }
-
-.el-select-dropdown{
-  padding: 12px;
-}
-.el-select-dropdown__list{
-  padding:0;
-}
-.el-select-dropdown__item{
-  padding:0px 12px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 6px;
-  font-size: var(--font-size-text-sm);
-  color: var(--text-primary);
-  &:hover{
-    background: var(--all-alphe-white-6, #FFFFFF0F);
-  }
-}
-
-.el-select-dropdown__header{
-  border: none;
-  padding: 0;
-  padding-bottom: 4px;
-}
