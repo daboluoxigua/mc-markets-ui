@@ -4,27 +4,27 @@
     <DemoSection title="基础按钮类型">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button>默认按钮</Button>
+          <m-button>默认按钮</m-button>
           <span>Default</span>
         </div>
         <div class="doc-item">
-          <Button type="primary">主要按钮</Button>
+          <m-button type="primary">主要按钮</m-button>
           <span>Primary</span>
         </div>
         <div class="doc-item">
-          <Button type="success">成功按钮</Button>
+          <m-button type="success">成功按钮</m-button>
           <span>Success</span>
         </div>
         <div class="doc-item">
-          <Button type="warning">警告按钮</Button>
+          <m-button type="warning">警告按钮</m-button>
           <span>Warning</span>
         </div>
         <div class="doc-item">
-          <Button type="danger">危险按钮</Button>
+          <m-button type="danger">危险按钮</m-button>
           <span>Danger</span>
         </div>
         <div class="doc-item">
-          <Button type="info">信息按钮</Button>
+          <m-button type="info">信息按钮</m-button>
           <span>Info</span>
         </div>
       </div>
@@ -33,31 +33,31 @@
     <DemoSection title="Plain 按钮">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button plain>Plain</Button>
+          <m-button plain>Plain</m-button>
           <span>Plain</span>
         </div>
         <div class="doc-item">
-          <Button plain disabled>禁用状态</Button>
+          <m-button plain disabled>禁用状态</m-button>
           <span>Disabled</span>
         </div>
         <div class="doc-item">
-          <Button type="primary" plain>Primary</Button>
+          <m-button type="primary" plain>Primary</m-button>
           <span>Primary</span>
         </div>
         <div class="doc-item">
-          <Button type="success" plain>Success</Button>
+          <m-button type="success" plain>Success</m-button>
           <span>Success</span>
         </div>
         <div class="doc-item">
-          <Button type="info" plain>Info</Button>
+          <m-button type="info" plain>Info</m-button>
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <Button type="warning" plain>Warning</Button>
+          <m-button type="warning" plain>Warning</m-button>
           <span>Warning</span>
         </div>
         <div class="doc-item">
-          <Button type="danger" plain>Danger</Button>
+          <m-button type="danger" plain>Danger</m-button>
           <span>Danger</span>
         </div>
       </div>
@@ -66,15 +66,15 @@
     <DemoSection title="按钮尺寸">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button size="large" type="primary">大按钮</Button>
+          <m-button size="large" type="primary">大按钮</m-button>
           <span>Large</span>
         </div>
         <div class="doc-item">
-          <Button type="primary">默认按钮</Button>
+          <m-button type="primary">默认按钮</m-button>
           <span>Default</span>
         </div>
         <div class="doc-item">
-          <Button size="small" type="primary">小按钮</Button>
+          <m-button size="small" type="primary">小按钮</m-button>
           <span>Small</span>
         </div>
       </div>
@@ -84,33 +84,33 @@
     <DemoSection title="按钮状态">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button type="primary" disabled>禁用状态</Button>
+          <m-button type="primary" disabled>禁用状态</m-button>
           <span>Disabled</span>
         </div>
         <div class="doc-item">
-          <Button type="primary" :loading="loading" @click="handleLoading">
+          <m-button type="primary" :loading="loading" @click="handleLoading">
             {{ loading ? "加载中..." : "点击加载" }}
-          </Button>
+          </m-button>
           <span>Loading</span>
         </div>
         <div class="doc-item">
-          <Button :disabled="disabled" @click="handleDisabled">
+          <m-button :disabled="disabled" @click="handleDisabled">
             {{ disabled ? "已禁用" : "可点击" }}
-          </Button>
+          </m-button>
           <span>Toggle</span>
         </div>
         <div class="doc-item">
-          <Button plain>朴素按钮</Button>
+          <m-button plain>朴素按钮</m-button>
           <span>Plain</span>
         </div>
         <div class="doc-item">
-          <Button round>圆角按钮</Button>
+          <m-button round>圆角按钮</m-button>
           <span>Round</span>
         </div>
         <div class="doc-item">
-          <Button circle>
+          <m-button circle>
             <el-icon><Search /></el-icon>
-          </Button>
+          </m-button>
           <span>Circle</span>
         </div>
       </div>
@@ -120,17 +120,17 @@
     <DemoSection title="按钮形状">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button type="primary">默认形状</Button>
+          <m-button type="primary">默认形状</m-button>
           <span>Default</span>
         </div>
         <div class="doc-item">
-          <Button type="primary" round>圆角按钮</Button>
+          <m-button type="primary" round>圆角按钮</m-button>
           <span>Round</span>
         </div>
         <div class="doc-item">
-          <Button type="primary" circle>
+          <m-button type="primary" circle>
             <el-icon><Edit /></el-icon>
-          </Button>
+          </m-button>
           <span>Circle</span>
         </div>
       </div>
@@ -140,23 +140,23 @@
     <DemoSection title="图标按钮">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button type="primary" :icon="Search"> 搜索 </Button>
+          <m-button type="primary" :icon="Search"> 搜索 </m-button>
           <span>Search</span>
         </div>
         <div class="doc-item">
-          <Button :icon="Edit"> 编辑 </Button>
+          <m-button :icon="Edit"> 编辑 </m-button>
           <span>Edit</span>
         </div>
         <div class="doc-item">
-          <Button :icon="Delete"> 删除 </Button>
+          <m-button :icon="Delete"> 删除 </m-button>
           <span>Delete</span>
         </div>
         <div class="doc-item">
-          <Button :icon="Download"> 下载 </Button>
+          <m-button :icon="Download"> 下载 </m-button>
           <span>Download</span>
         </div>
         <div class="doc-item">
-          <Button :icon="Upload"> 上传 </Button>
+          <m-button :icon="Upload"> 上传 </m-button>
           <span>Upload</span>
         </div>
       </div>
@@ -166,9 +166,9 @@
     <DemoSection title="按钮组">
       <div class="doc-item">
         <el-button-group>
-          <Button type="primary" :icon="Edit">编辑</Button>
-          <Button type="success" :icon="Check">保存</Button>
-          <Button type="danger" :icon="Close">取消</Button>
+          <m-button type="primary" :icon="Edit">编辑</m-button>
+          <m-button type="success" :icon="Check">保存</m-button>
+          <m-button type="danger" :icon="Close">取消</m-button>
         </el-button-group>
         <span>Actions</span>
       </div>
@@ -178,23 +178,23 @@
     <DemoSection title="交互演示">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button type="primary" @click="handleClick">点击事件</Button>
+          <m-button type="primary" @click="handleClick">点击事件</m-button>
           <span>Click</span>
         </div>
         <div class="doc-item">
-          <Button type="success" @click="handleConfirm">确认对话框</Button>
+          <m-button type="success" @click="handleConfirm">确认对话框</m-button>
           <span>Confirm</span>
         </div>
         <div class="doc-item">
-          <Button type="warning" @click="handleAlert">警告提示</Button>
+          <m-button type="warning" @click="handleAlert">警告提示</m-button>
           <span>Alert</span>
         </div>
         <div class="doc-item">
-          <Button type="danger" @click="handleMessage">消息提示</Button>
+          <m-button type="danger" @click="handleMessage">消息提示</m-button>
           <span>Message</span>
         </div>
         <div class="doc-item">
-          <Button type="info" @click="handleNotification">通知消息</Button>
+          <m-button type="info" @click="handleNotification">通知消息</m-button>
           <span>Notification</span>
         </div>
       </div>
@@ -204,19 +204,19 @@
     <DemoSection title="自定义样式按钮">
       <div class="doc-grid">
         <div class="doc-item">
-          <Button class="custom-button gradient-button">渐变按钮</Button>
+          <m-button class="custom-button gradient-button">渐变按钮</m-button>
           <span>Gradient</span>
         </div>
         <div class="doc-item">
-          <Button class="custom-button shadow-button">阴影按钮</Button>
+          <m-button class="custom-button shadow-button">阴影按钮</m-button>
           <span>Shadow</span>
         </div>
         <div class="doc-item">
-          <Button class="custom-button neon-button">霓虹按钮</Button>
+          <m-button class="custom-button neon-button">霓虹按钮</m-button>
           <span>Neon</span>
         </div>
         <div class="doc-item">
-          <Button class="custom-button glass-button">玻璃按钮</Button>
+          <m-button class="custom-button glass-button">玻璃按钮</m-button>
           <span>Glass</span>
         </div>
       </div>
@@ -237,7 +237,7 @@
 import { ref } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
-import { Button, searchIcons } from "@mc-markets/ui";
+import { MButton, searchIcons } from "@mc-markets/ui";
 import {
   Search,
   Edit,

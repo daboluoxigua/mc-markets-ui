@@ -4,19 +4,19 @@
     <DemoSection title="基础使用">
       <div class="doc-grid">
         <div class="doc-item">
-          <Icon name="home-filled" />
+          <m-icon name="home-filled" />
           <span>home-filled</span>
         </div>
         <div class="doc-item">
-          <Icon name="user-round" />
+          <m-icon name="user-round" />
           <span>user-round</span>
         </div>
         <div class="doc-item">
-          <Icon name="search" />
+          <m-icon name="search" />
           <span>search</span>
         </div>
         <div class="doc-item">
-          <Icon name="star-filled" />
+          <m-icon name="star-filled" />
           <span>star-filled</span>
         </div>
       </div>
@@ -26,19 +26,19 @@
     <DemoSection title="不同大小">
       <div class="doc-grid">
         <div class="doc-item">
-          <Icon name="home-filled" :size="16" />
+          <m-icon name="home-filled" :size="16" />
           <span>16px</span>
         </div>
         <div class="doc-item">
-          <Icon name="home-filled" :size="24" />
+          <m-icon name="home-filled" :size="24" />
           <span>24px</span>
         </div>
         <div class="doc-item">
-          <Icon name="home-filled" :size="32" />
+          <m-icon name="home-filled" :size="32" />
           <span>32px</span>
         </div>
         <div class="doc-item">
-          <Icon name="home-filled" size="2rem" />
+          <m-icon name="home-filled" size="2rem" />
           <span>2rem</span>
         </div>
       </div>
@@ -48,19 +48,19 @@
     <DemoSection title="不同颜色">
       <div class="doc-grid">
         <div class="doc-item">
-          <Icon name="star-filled" color="#ff6b6b" />
+          <m-icon name="star-filled" color="#ff6b6b" />
           <span>红色</span>
         </div>
         <div class="doc-item">
-          <Icon name="star-filled" color="#45b7d1" />
+          <m-icon name="star-filled" color="#45b7d1" />
           <span>蓝色</span>
         </div>
         <div class="doc-item">
-          <Icon name="star-filled" color="#96ceb4" />
+          <m-icon name="star-filled" color="#96ceb4" />
           <span>绿色</span>
         </div>
         <div class="doc-item">
-          <Icon name="star-filled" color="#feca57" />
+          <m-icon name="star-filled" color="#feca57" />
           <span>黄色</span>
         </div>
       </div>
@@ -70,19 +70,19 @@
     <DemoSection title="动画效果">
       <div class="doc-grid">
         <div class="doc-item">
-          <Icon name="refresh-cw" :spin="true" />
+          <m-icon name="refresh-cw" :spin="true" />
           <span>旋转</span>
         </div>
         <div class="doc-item">
-          <Icon name="heart-handshake" :pulse="true" />
+          <m-icon name="heart-handshake" :pulse="true" />
           <span>脉冲</span>
         </div>
         <div class="doc-item">
-          <Icon name="arrow-right-left" :rotate="45" />
+          <m-icon name="arrow-right-left" :rotate="45" />
           <span>旋转45度</span>
         </div>
         <div class="doc-item">
-          <Icon name="arrow-right-left" :rotate="90" />
+          <m-icon name="arrow-right-left" :rotate="90" />
           <span>旋转90度</span>
         </div>
       </div>
@@ -92,19 +92,19 @@
     <DemoSection title="翻转效果">
       <div class="doc-grid">
         <div class="doc-item">
-          <Icon name="arrow-right-left" />
+          <m-icon name="arrow-right-left" />
           <span>原始</span>
         </div>
         <div class="doc-item">
-          <Icon name="arrow-right-left" flip="horizontal" />
+          <m-icon name="arrow-right-left" flip="horizontal" />
           <span>水平翻转</span>
         </div>
         <div class="doc-item">
-          <Icon name="arrow-right-left" flip="vertical" />
+          <m-icon name="arrow-right-left" flip="vertical" />
           <span>垂直翻转</span>
         </div>
         <div class="doc-item">
-          <Icon name="arrow-right-left" flip="both" />
+          <m-icon name="arrow-right-left" flip="both" />
           <span>双向翻转</span>
         </div>
       </div>
@@ -114,11 +114,11 @@
     <DemoSection title="组合效果">
       <div class="doc-grid">
         <div class="doc-item">
-          <Icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" />
+          <m-icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" />
           <span>旋转+颜色+大小</span>
         </div>
         <div class="doc-item">
-          <Icon
+          <m-icon
             name="heart-handshake"
             :pulse="true"
             color="#4ecdc4"
@@ -127,7 +127,7 @@
           <span>脉冲+颜色+大小</span>
         </div>
         <div class="doc-item">
-          <Icon
+          <m-icon
             name="arrow-right-left"
             :rotate="45"
             flip="horizontal"
@@ -143,7 +143,7 @@
     <DemoSection title="点击事件">
       <div class="doc-grid">
         <div class="doc-item clickable" @click="handleIconClick('home-filled')">
-          <Icon name="home-filled" :size="24" />
+          <m-icon name="home-filled" :size="24" />
           <span>点击我</span>
         </div>
       </div>
@@ -170,7 +170,7 @@
           :class="{ active: selectedIcon === icon.name }"
           @click="selectIcon(icon.name)"
         >
-          <Icon :name="icon.name" :size="24" />
+          <m-icon :name="icon.name" :size="24" />
           <span
             class="icon-class"
             @click.stop="copyIconClass(`icon-${icon.fontClass}`)"
@@ -199,8 +199,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { Icon } from "@mc-markets/ui";
-import { iconList, searchIcons } from "@mc-markets/ui";
+import { MIcon, iconList, searchIcons } from "@mc-markets/ui";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { copyWithMessage } from "@/utils/clipboard.js";
