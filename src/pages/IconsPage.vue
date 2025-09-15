@@ -195,11 +195,6 @@
       :events="iconApiEvents"
       :css-classes="iconApiCssClasses"
     />
-
-    <!-- 复制成功提示 -->
-    <div v-if="copyMessage" class="copy-message">
-      {{ copyMessage }}
-    </div>
   </div>
 </template>
 
@@ -209,12 +204,12 @@ import { iconList, searchIcons } from "@/utils/icon-types.js";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { copyWithMessage } from "@/utils/clipboard.js";
+import { MMessage } from "@mc-markets/ui";
 
 // 响应式数据
 const clickedIcon = ref("");
 const searchKeyword = ref("");
 const selectedIcon = ref("home-filled");
-const copyMessage = ref("");
 
 // 延迟加载图标数据
 const displayIcons = ref([]);
@@ -350,6 +345,7 @@ onMounted(() => {
 // 方法
 const handleIconClick = (iconName) => {
   clickedIcon.value = iconName;
+  MMessage.success(`你点击了图标: ${iconName}`);
   setTimeout(() => {
     clickedIcon.value = "";
   }, 2000);
@@ -360,11 +356,15 @@ const selectIcon = (iconName) => {
 };
 
 const copyIconClass = async (className) => {
-  await copyWithMessage(className, {
-    onMessage: (message) => {
-      copyMessage.value = message;
-    },
-  });
+  try {
+    await copyWithMessage(className, {
+      onMessage: (message) => {
+        MMessage.success(message);
+      },
+    });
+  } catch (error) {
+    MMessage.error("复制失败，请手动复制");
+  }
 };
 </script>
 

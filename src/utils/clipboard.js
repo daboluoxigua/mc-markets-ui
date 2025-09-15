@@ -79,26 +79,28 @@ function fallbackCopyTextToClipboard(text, onSuccess, onError) {
 export async function copyWithMessage(text, options = {}) {
   const { 
     successMessage = `已复制: ${text}`, 
-    duration = 2000, 
+    duration = 0, 
     onMessage 
   } = options;
   
   const success = await copyToClipboard(text, {
     onSuccess: () => {
-      onMessage?.(successMessage);
       if (duration > 0) {
         setTimeout(() => {
-          onMessage?.('');
+          onMessage?.(successMessage);
         }, duration);
+      }else{
+        onMessage?.(successMessage);
       }
     },
     onError: (err) => {
       console.error('复制失败:', err);
-      onMessage?.(`复制失败: ${err.message}`);
       if (duration > 0) {
         setTimeout(() => {
-          onMessage?.('');
+          onMessage?.(successMessage);
         }, duration);
+      }else{
+        onMessage?.(`复制失败: ${err.message}`);
       }
     }
   });

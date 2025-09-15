@@ -20,6 +20,7 @@ import MessagePage from '@/pages/MessagePage.vue'
 import NotificationPage from '@/pages/NotificationPage.vue'
 import DatePickerPage from '@/pages/DatePickerPage.vue'
 import EmptyPage from '@/pages/EmptyPage.vue'
+import BannerPage from '@/pages/BannerPage.vue'
 
 const routes = [
   {
@@ -176,6 +177,14 @@ const routes = [
     component: EmptyPage,
     meta: {
       title: 'Empty 空状态'
+    }
+  },
+  {
+    path: '/banner',
+    name: 'Banner',
+    component: BannerPage,
+    meta: {
+      title: 'Banner 横幅'
     }
   }
 ]

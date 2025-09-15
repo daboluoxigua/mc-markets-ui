@@ -30,10 +30,11 @@ import MNotification from './components/Notification/Notification.vue'
 import MDatePicker from './components/DatePicker/DatePicker.vue'
 import MEmpty from './components/Empty/Empty.vue'
 import MTable from './components/Table/Table.vue'
+import MBanner from './components/Banner/Banner.vue'
 import MOption from './components/Option/Option.vue'
 import MOptionGroup from './components/OptionGroup/OptionGroup.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MOption, MOptionGroup]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MBanner, MOption, MOptionGroup]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -98,7 +99,7 @@ const install = (app) => {
 }
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MOption, MOptionGroup }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MBanner, MOption, MOptionGroup }
 
 // 手动导出常用的 Element Plus 函数（只导出函数，不导出组件）
 export const MMessage = ElementPlusComponents.ElMessage

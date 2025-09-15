@@ -42,7 +42,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev:demo": "vite --config vite.config.demo.js",
+    "dev": "vite --config vite.config.demo.js",
     "build": "vite build",
     "build:demo": "vite build --config vite.config.demo.js && node scripts/move-html.js",
     "preview": "vite preview",
