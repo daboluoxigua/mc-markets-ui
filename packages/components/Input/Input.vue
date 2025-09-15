@@ -8,6 +8,6 @@
 
 <script setup>
 defineOptions({
-  name: 'MCInput'
+  name: 'MInput'
 })
 </script>

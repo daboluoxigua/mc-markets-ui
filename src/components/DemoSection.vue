@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { computed, h, resolveComponent } from 'vue'
+import { computed, h, resolveComponent, getCurrentInstance } from 'vue'
 import CodeToggle from './CodeToggle.vue'
 
 // 定义 props
@@ -27,6 +27,9 @@ const props = defineProps({
 
 // 定义 slots
 const slots = defineSlots()
+
+// 获取当前实例以访问全局组件
+const instance = getCurrentInstance()
 
 // Element Plus 组件映射表
 const elementPlusMapping = {
@@ -158,9 +161,25 @@ const parseTemplate = (template) => {
       try {
         // 首先检查是否是 m- 前缀的组件
         const componentName = elementPlusMapping[tagName] || tagName
-        const component = resolveComponent(componentName)
+        let component = null
+        
+        // 尝试从全局组件中解析
+        if (instance && instance.appContext.components[componentName]) {
+          component = instance.appContext.components[componentName]
+        } else {
+          // 尝试使用 resolveComponent
+          component = resolveComponent(componentName)
+        }
+        
+        // 检查组件是否有效
+        if (!component) {
+          console.warn(`[DemoSection] 组件 ${componentName} 未找到，使用普通元素 ${tagName}`)
+          return h(tagName, props, children)
+        }
+        
         return h(component, props, children)
       } catch (e) {
+        console.warn(`[DemoSection] 解析组件 ${tagName} 失败:`, e)
         // 如果不是组件，创建普通元素
         return h(tagName, props, children)
       }

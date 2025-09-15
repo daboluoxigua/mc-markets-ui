@@ -10,7 +10,7 @@
 import { computed, useAttrs } from 'vue'
 
 defineOptions({
-  name: 'MCTooltip'
+  name: 'MTooltip'
 })
 
 // 定义props
@@ -57,9 +57,11 @@ const mergedAttrs = computed(() => {
   &.is-light {
     color: #606266 !important;
     background-color: #fff !important;
-    border: 1px solid #e4e7ed !important;.el-popper__arrow::before{
-        background-color: #fff !important;
-        border-color: #fff !important;
+    border: 1px solid #e4e7ed !important;
+    
+    .el-popper__arrow::before {
+      background-color: #fff !important;
+      border-color: #fff !important;
     }
   }
 }

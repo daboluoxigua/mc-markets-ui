@@ -324,9 +324,7 @@ import { MTooltip, MButton } from "@mc-markets/ui";
 
 // 响应式数据
 const disabled = ref(false);
-const showVirtual = ref(false);
 const controlledVisible = ref(false);
-const virtualRef = ref(null);
 
 // API 文档数据 - 严格按照 Element Plus 2.11.2 规范
 const tooltipApiProps = [

@@ -5,6 +5,7 @@ import IconsPage from '@/pages/IconsPage.vue'
 import ButtonPage from '@/pages/ButtonPage.vue'
 import CardPage from '@/pages/CardPage.vue'
 import TooltipPage from '@/pages/TooltipPage.vue'
+import InputPage from '@/pages/InputPage.vue'
 
 const routes = [
   {
@@ -16,8 +17,7 @@ const routes = [
     name: 'Icons',
     component: IconsPage,
     meta: {
-      title: '字体图标',
-      icon: 'star-filled'
+      title: '字体图标'
     }
   },
   {
@@ -25,8 +25,7 @@ const routes = [
     name: 'Button',
     component: ButtonPage,
     meta: {
-      title: 'Button 按钮',
-      icon: 'square-check'
+      title: 'Button 按钮'
     }
   },
   {
@@ -34,8 +33,7 @@ const routes = [
     name: 'Card',
     component: CardPage,
     meta: {
-      title: 'Card 卡片',
-      icon: 'credit-card'
+      title: 'Card 卡片'
     }
   },
   {
@@ -43,8 +41,15 @@ const routes = [
     name: 'Tooltip',
     component: TooltipPage,
     meta: {
-      title: 'Tooltip 文字提示',
-      icon: 'chat-dot-round'
+      title: 'Tooltip 文字提示'
+    }
+  },
+  {
+    path: '/input',
+    name: 'Input',
+    component: InputPage,
+    meta: {
+      title: 'Input 输入框'
     }
   }
 ]

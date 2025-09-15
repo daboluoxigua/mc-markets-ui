@@ -8,6 +8,6 @@
 
 <script setup>
 defineOptions({
-  name: 'MCForm'
+  name: 'MForm'
 })
 </script>
