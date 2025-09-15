@@ -26,6 +26,9 @@ defineOptions({
     .el-select__wrapper {
       background: var(--bg-tertiary-hover);
     }
+    .el-select__caret{
+      color: var(--all-base-white);
+    }
   }
   
   .el-select__wrapper {
@@ -40,34 +43,6 @@ defineOptions({
     padding: 4px 16px;
     font-size: var(--font-size-text-sm);
   }
-}
 
-// 下拉菜单样式 - 全局样式
-.el-select-dropdown {
-  padding: 12px;
-}
-
-.el-select-dropdown__list {
-  padding: 0;
-}
-
-.el-select-dropdown__item {
-  padding: 0px 12px;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 6px;
-  font-size: var(--font-size-text-sm);
-  color: var(--text-primary);
-  
-  &:hover,
-  &.is-hovering {
-    background: var(--all-alphe-white-6, #FFFFFF0F);
-  }
-}
-
-.el-select-dropdown__header {
-  border: none;
-  padding: 0;
-  padding-bottom: 4px;
 }
 </style>

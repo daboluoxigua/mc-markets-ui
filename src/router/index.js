@@ -14,6 +14,8 @@ import SwitchPage from '@/pages/SwitchPage.vue'
 import TagPage from '@/pages/TagPage.vue'
 import AlertPage from '@/pages/AlertPage.vue'
 import DialogPage from '@/pages/DialogPage.vue'
+import FormPage from '@/pages/FormPage.vue'
+import TablePage from '@/pages/TablePage.vue'
 
 const routes = [
   {
@@ -122,6 +124,22 @@ const routes = [
     component: DialogPage,
     meta: {
       title: 'Dialog 对话框'
+    }
+  },
+  {
+    path: '/form',
+    name: 'Form',
+    component: FormPage,
+    meta: {
+      title: 'Form 表单'
+    }
+  },
+  {
+    path: '/table',
+    name: 'Table',
+    component: TablePage,
+    meta: {
+      title: 'Table 表格'
     }
   }
 ]

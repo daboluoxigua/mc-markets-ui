@@ -23,6 +23,7 @@ defineOptions({
 
   .el-form-item--label-top .el-form-item__label {
     line-height: 20px;
+    height: 20px;
   }
 
   .el-input__wrapper {

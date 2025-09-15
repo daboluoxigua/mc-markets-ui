@@ -186,12 +186,7 @@ h2 {
     transition: all 0.3s ease;
   }
 
-  .doc-item > span {
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--el-text-color-regular);
-    text-align: center;
-  }
+
 
   /* 响应式设计 */
   @media (max-width: 1200px) {
