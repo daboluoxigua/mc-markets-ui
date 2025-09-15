@@ -28,88 +28,6 @@ const props = defineProps({
 // 定义 slots
 const slots = defineSlots()
 
-// 获取当前实例以访问全局组件
-const instance = getCurrentInstance()
-
-// Element Plus 组件映射表
-const elementPlusMapping = {
-  'm-input': 'ElInput',
-  'm-button': 'ElButton',
-  'm-card': 'ElCard',
-  'm-form': 'ElForm',
-  'm-form-item': 'ElFormItem',
-  'm-select': 'ElSelect',
-  'm-option': 'ElOption',
-  'm-date-picker': 'ElDatePicker',
-  'm-time-picker': 'ElTimePicker',
-  'm-table': 'ElTable',
-  'm-table-column': 'ElTableColumn',
-  'm-pagination': 'ElPagination',
-  'm-dialog': 'ElDialog',
-  'm-drawer': 'ElDrawer',
-  'm-popover': 'ElPopover',
-  'm-tooltip': 'ElTooltip',
-  'm-dropdown': 'ElDropdown',
-  'm-dropdown-menu': 'ElDropdownMenu',
-  'm-dropdown-item': 'ElDropdownItem',
-  'm-menu': 'ElMenu',
-  'm-menu-item': 'ElMenuItem',
-  'm-submenu': 'ElSubMenu',
-  'm-tabs': 'ElTabs',
-  'm-tab-pane': 'ElTabPane',
-  'm-steps': 'ElSteps',
-  'm-step': 'ElStep',
-  'm-breadcrumb': 'ElBreadcrumb',
-  'm-breadcrumb-item': 'ElBreadcrumbItem',
-  'm-alert': 'ElAlert',
-  'm-notification': 'ElNotification',
-  'm-message': 'ElMessage',
-  'm-message-box': 'ElMessageBox',
-  'm-loading': 'ElLoading',
-  'm-infinite-scroll': 'ElInfiniteScroll',
-  'm-image': 'ElImage',
-  'm-avatar': 'ElAvatar',
-  'm-badge': 'ElBadge',
-  'm-tag': 'ElTag',
-  'm-progress': 'ElProgress',
-  'm-skeleton': 'ElSkeleton',
-  'm-empty': 'ElEmpty',
-  'm-descriptions': 'ElDescriptions',
-  'm-descriptions-item': 'ElDescriptionsItem',
-  'm-result': 'ElResult',
-  'm-statistic': 'ElStatistic',
-  'm-timeline': 'ElTimeline',
-  'm-timeline-item': 'ElTimelineItem',
-  'm-carousel': 'ElCarousel',
-  'm-carousel-item': 'ElCarouselItem',
-  'm-collapse': 'ElCollapse',
-  'm-collapse-item': 'ElCollapseItem',
-  'm-divider': 'ElDivider',
-  'm-link': 'ElLink',
-  'm-text': 'ElText',
-  'm-space': 'ElSpace',
-  'm-affix': 'ElAffix',
-  'm-backtop': 'ElBacktop',
-  'm-page-header': 'ElPageHeader',
-  'm-radio': 'ElRadio',
-  'm-radio-group': 'ElRadioGroup',
-  'm-radio-button': 'ElRadioButton',
-  'm-checkbox': 'ElCheckbox',
-  'm-checkbox-group': 'ElCheckboxGroup',
-  'm-checkbox-button': 'ElCheckboxButton',
-  'm-switch': 'ElSwitch',
-  'm-slider': 'ElSlider',
-  'm-rate': 'ElRate',
-  'm-color-picker': 'ElColorPicker',
-  'm-transfer': 'ElTransfer',
-  'm-tree': 'ElTree',
-  'm-tree-select': 'ElTreeSelect',
-  'm-cascader': 'ElCascader',
-  'm-upload': 'ElUpload',
-  'm-upload-dragger': 'ElUploadDragger',
-  'm-upload-list': 'ElUploadList'
-}
-
 // 解析模板字符串并创建 VNode
 const parseTemplate = (template) => {
   if (!template) return null
@@ -159,24 +77,8 @@ const parseTemplate = (template) => {
       
       // 尝试解析为 Vue 组件
       try {
-        // 首先检查是否是 m- 前缀的组件
-        const componentName = elementPlusMapping[tagName] || tagName
-        let component = null
-        
-        // 尝试从全局组件中解析
-        if (instance && instance.appContext.components[componentName]) {
-          component = instance.appContext.components[componentName]
-        } else {
-          // 尝试使用 resolveComponent
-          component = resolveComponent(componentName)
-        }
-        
-        // 检查组件是否有效
-        if (!component) {
-          console.warn(`[DemoSection] 组件 ${componentName} 未找到，使用普通元素 ${tagName}`)
-          return h(tagName, props, children)
-        }
-        
+        // 直接使用标签名作为组件名
+        const component = resolveComponent(tagName)
         return h(component, props, children)
       } catch (e) {
         console.warn(`[DemoSection] 解析组件 ${tagName} 失败:`, e)

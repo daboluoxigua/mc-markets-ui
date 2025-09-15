@@ -324,7 +324,7 @@
 import { ref } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
-import { MButton, searchIcons } from "@mc-markets/ui";
+import { MButton, mFns } from "@mc-markets/ui";
 import {
   Search,
   Edit,
@@ -336,6 +336,9 @@ import {
   Check,
   Close,
 } from "@element-plus/icons-vue";
+
+// 使用转换后的函数
+const { mMessage: ElMessage, mMessageBox: ElMessageBox, mNotification: ElNotification } = mFns;
 
 // 响应式数据
 const loading = ref(true);
