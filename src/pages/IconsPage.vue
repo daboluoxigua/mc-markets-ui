@@ -205,7 +205,7 @@
 
 <script setup>
 import { ref, computed, onMounted, nextTick } from "vue";
-import { MIcon, iconList, searchIcons } from "@mc-markets/ui";
+import { iconList, searchIcons } from "@/utils/icon-types.js";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { copyWithMessage } from "@/utils/clipboard.js";

@@ -156,9 +156,8 @@ const parseTemplate = (template) => {
       
       // 尝试解析为 Vue 组件
       try {
-        // 首先检查是否是 m- 前缀的组件
-        const componentName = elementPlusMapping[tagName] || tagName
-        const component = resolveComponent(componentName)
+        // 直接使用标签名作为组件名
+        const component = resolveComponent(tagName)
         return h(component, props, children)
       } catch (e) {
         // 如果不是组件，创建普通元素
