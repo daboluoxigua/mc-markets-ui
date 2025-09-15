@@ -1,5 +1,5 @@
 <template>
-  <section class="demo-section">
+  <section class="demo-section" :style="{ '--grid-columns': columns }">
     <h2>{{ title }}</h2>
     <div class="demo-card">
       <div class="demo-preview">
@@ -22,6 +22,10 @@ const props = defineProps({
   title: {
     type: String,
     required: true
+  },
+  columns: {
+    type: Number,
+    default: 4
   }
 })
 
@@ -166,7 +170,7 @@ h2 {
 .demo-section .demo-preview {
   .doc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(var(--grid-columns, 4), 1fr);
     gap: 20px;
     margin-bottom: 20px;
   }
@@ -192,14 +196,14 @@ h2 {
   /* 响应式设计 */
   @media (max-width: 1200px) {
     .doc-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(180px, auto));
       gap: 16px;
     }
   }
 
   @media (max-width: 768px) {
     .doc-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(150px, auto));
       gap: 12px;
     }
 

@@ -274,7 +274,7 @@ const handleClose = () => {
 .card-page {
   .doc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     gap: 20px;
     margin-bottom: 20px;
   }
@@ -344,7 +344,7 @@ const handleClose = () => {
   /* 响应式设计 */
   @media (max-width: 1200px) {
     .doc-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, auto));
       gap: 16px;
     }
   }
