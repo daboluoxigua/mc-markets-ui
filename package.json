@@ -44,14 +44,19 @@
   "scripts": {
     "dev": "vite",
     "dev:inspector": "cross-env VUE_INSPECTOR=true vite",
+    "dev:demo": "vite --config vite.config.demo.js",
     "build": "vite build",
+    "build:demo": "vite build --config vite.config.demo.js",
     "preview": "vite preview",
+    "preview:demo": "vite preview --config vite.config.demo.js",
     "lint": "eslint . --ext .vue,.js,.jsx --fix",
     "format": "prettier --write .",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "prepublishOnly": "npm run build",
-    "publish:lib": "node publish.js"
+    "publish:lib": "node publish.js",
+    "clean:demo": "rimraf dist-demo",
+    "serve:demo": "npm run build:demo && npm run preview:demo"
   },
   "dependencies": {
     "element-plus": "^2.11.2",
@@ -63,6 +68,7 @@
     "@vitejs/plugin-vue": "^5.0.0",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "prettier": "^2.8.8",
+    "rimraf": "^5.0.0",
     "sass": "^1.92.1",
     "unplugin-auto-import": "^0.15.3",
     "unplugin-vue-components": "^0.24.1",
