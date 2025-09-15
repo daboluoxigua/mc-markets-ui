@@ -409,8 +409,7 @@ const copyCode = async () => {
 <style scoped lang="scss">
 .code-toggle {
   width: 100%;
-  border: 1px solid var(--el-border-color-lighter);
-  border-radius: var(--el-border-radius-base);
+  border-top: 1px solid var(--el-border-color-lighter);
 }
 
 .demo-actions {

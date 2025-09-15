@@ -181,6 +181,10 @@ export { allComponents, dynamicExports }
 export const MIcon = componentExports.Icon
 export const MButton = componentExports.Button
 export const MCard = componentExports.Card
+export const MInput = componentExports.Input
+export const MForm = componentExports.Form
+export const MFormItem = componentExports.FormItem
+export const MTooltip = componentExports.Tooltip
 
 // 注意：新组件需要通过 dynamicExports 对象访问
 // 例如：import { dynamicExports } from '@mc-markets/ui'

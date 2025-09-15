@@ -174,7 +174,11 @@ const parseTemplate = (template) => {
 
 // 计算渲染的模板
 const renderedTemplate = computed(() => {
-  const slotContent = slots.default?.()
+  if (!slots.default) {
+    return null
+  }
+  
+  const slotContent = slots.default()
   
   if (!slotContent || slotContent.length === 0) {
     return null
