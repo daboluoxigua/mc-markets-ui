@@ -27,10 +27,13 @@ export default defineConfig({
     assetsDir: "assets", // 静态资源目录
     sourcemap: false, // 生产环境不生成sourcemap
     minify: 'terser', // 使用terser压缩
+    // 设置基础路径为空，支持静态托管和本地文件运行
+    base: './',
     // SPA模式配置
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, "src/index.html") // 演示入口文件
+        main: path.resolve(__dirname, "src/index.html"), // 演示入口文件
+        '404': path.resolve(__dirname, "src/404.html") // 404页面
       },
       output: {
         // 静态资源文件名格式

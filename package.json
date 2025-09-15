@@ -1,102 +1,10 @@
 {
-  "name": "@mc-markets/ui",
-  "private": false,
-  "version": "1.0.38",
-  "type": "module",
+  "name": "@mc-markets/ui Demo",
+  "description": "Vue 3 组件库演示",
+  "version": "1.0.0",
   "author": "chenyu",
-  "description": "Vue 3 组件库，基于 Element Plus 的自定义组件",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
-    "./style": "./dist/style.css",
-    "./styles": "./dist/style.css",
-    "./dist/style.css": "./dist/style.css",
-    "./scss-variables": "./packages/styles/variables.scss",
-    "./styles/index": "./packages/styles/index.scss",
-    "./theme-config": "./packages/styles/theme-config.js",
-    "./element-plus": {
-      "import": "./node_modules/element-plus/dist/index.full.mjs",
-      "require": "./node_modules/element-plus/dist/index.full.js"
-    },
-    "./element-plus/style": "./node_modules/element-plus/dist/index.css",
-    "./element-plus/styles": "./node_modules/element-plus/dist/index.css"
-  },
-  "files": [
-    "dist",
-    "packages/styles",
-    "README.md",
-    "node_modules/element-plus/dist"
-  ],
-  "keywords": [
-    "vue3",
-    "javascript",
-    "ui",
-    "component",
-    "element-plus",
-    "ui-library",
-    "components"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "dev": "vite",
-    "dev:inspector": "cross-env VUE_INSPECTOR=true vite",
-    "dev:demo": "vite --config vite.config.demo.js",
-    "build": "vite build",
-    "build:demo": "vite build --config vite.config.demo.js",
-    "preview": "vite preview",
-    "preview:demo": "vite preview --config vite.config.demo.js",
-    "lint": "eslint . --ext .vue,.js,.jsx --fix",
-    "format": "prettier --write .",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "prepublishOnly": "npm run build",
-    "publish:lib": "node publish.js",
-    "clean:demo": "rimraf dist-demo",
-    "serve:demo": "npm run build:demo && npm run preview:demo"
-  },
-  "dependencies": {
-    "element-plus": "^2.11.2",
-    "highlight.js": "^11.11.1",
-    "vue": "^3.3.0",
-    "vue-router": "^4.5.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.0",
-    "@vitejs/plugin-vue-jsx": "^4.0.0",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.0",
-    "sass": "^1.92.1",
-    "unplugin-auto-import": "^0.15.3",
-    "unplugin-vue-components": "^0.24.1",
-    "vite": "^5.4.0",
-    "vite-plugin-vue-inspector": "^4.0.0"
-  },
-  "peerDependencies": {
-    "element-plus": "^2.11.2",
-    "vue": "^3.3.0"
-  },
-  "peerDependenciesMeta": {
-    "element-plus": {
-      "optional": true
-    }
-  },
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
-  },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/daboluoxigua/npm-mc-markets-ui.git"
-  },
-  "bugs": {
-    "url": "https://gitee.com/daboluoxigua/npm-mc-markets-ui/issues"
-  },
-  "homepage": "https://gitee.com/daboluoxigua/npm-mc-markets-ui#readme",
-  "publishConfig": {
-    "access": "public"
+    "url": "https://gitee.com/daboluoxigua/mc-ui.git"
   }
 }
