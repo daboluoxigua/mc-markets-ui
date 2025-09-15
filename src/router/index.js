@@ -20,8 +20,17 @@ import MessagePage from '@/pages/MessagePage.vue'
 import NotificationPage from '@/pages/NotificationPage.vue'
 import DatePickerPage from '@/pages/DatePickerPage.vue'
 import EmptyPage from '@/pages/EmptyPage.vue'
+import ColorPage from '@/pages/ColorPage.vue'
 
 const routes = [
+  {
+    path: '/color',
+    name: 'Color',
+    component: ColorPage,
+    meta: {
+      title: '颜色'
+    }
+  },
   {
     path: '/',
     redirect: '/icons'

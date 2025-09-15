@@ -6,14 +6,14 @@
     <section class="color-section">
       <h2 class="section-title">基础色 (Basic Colors)</h2>
       <div class="color-grid">
-        <div class="color-item">
+        <div class="color-item" @click="copyToClipboard('--all-base-white')">
           <div class="color-swatch white"></div>
           <div class="color-info">
             <span class="color-name">White</span>
             <span class="color-value">--all-base-white</span>
           </div>
         </div>
-        <div class="color-item">
+        <div class="color-item" @click="copyToClipboard('--all-base-black')">
           <div class="color-swatch black"></div>
           <div class="color-info">
             <span class="color-name">Black</span>
@@ -27,7 +27,7 @@
     <section class="color-section">
       <h2 class="section-title">灰色系 (Grayscale)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in grayColors" :key="index" class="color-item">
+        <div v-for="(color, index) in grayColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -41,7 +41,7 @@
     <section class="color-section">
       <h2 class="section-title">品牌色 (Brand Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in brandColors" :key="index" class="color-item">
+        <div v-for="(color, index) in brandColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -55,7 +55,7 @@
     <section class="color-section">
       <h2 class="section-title">辅助色 (Auxiliary Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in auxiliaryColors" :key="index" class="color-item">
+        <div v-for="(color, index) in auxiliaryColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -69,7 +69,7 @@
     <section class="color-section">
       <h2 class="section-title">错误色 (Error Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in errorColors" :key="index" class="color-item">
+        <div v-for="(color, index) in errorColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -83,7 +83,7 @@
     <section class="color-section">
       <h2 class="section-title">警告色 (Warning Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in warningColors" :key="index" class="color-item">
+        <div v-for="(color, index) in warningColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -97,7 +97,7 @@
     <section class="color-section">
       <h2 class="section-title">成功色 (Success Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in successColors" :key="index" class="color-item">
+        <div v-for="(color, index) in successColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -111,6 +111,56 @@
 
 <script setup>
 import { ref } from 'vue'
+
+// 复制功能
+const copyToClipboard = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text)
+    // 显示成功提示
+    showCopySuccess(text)
+  } catch (err) {
+    console.error('复制失败:', err)
+    // 降级方案：使用传统方法
+    const textArea = document.createElement('textarea')
+    textArea.value = text
+    document.body.appendChild(textArea)
+    textArea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textArea)
+    showCopySuccess(text)
+  }
+}
+
+// 显示复制成功提示
+const showCopySuccess = (text) => {
+  // 创建临时提示元素
+  const toast = document.createElement('div')
+  toast.textContent = `已复制: ${text}`
+  toast.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--all-green-5);
+    color: var(--all-gray-1);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+  `
+  
+  document.body.appendChild(toast)
+  
+  // 2秒后移除提示
+  setTimeout(() => {
+    toast.style.opacity = '0'
+    setTimeout(() => {
+      document.body.removeChild(toast)
+    }, 300)
+  }, 2000)
+}
 
 // 灰色系颜色数据
 const grayColors = ref([
@@ -238,11 +288,28 @@ const successColors = ref([
   padding: 12px;
   border: 1px solid var(--all-gray-6);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  position: relative;
 }
 
 .color-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.color-item:hover::after {
+  content: '点击复制';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--all-gray-1);
+  color: var(--all-gray-10);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0.9;
 }
 
 .color-swatch {
