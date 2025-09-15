@@ -21,8 +21,13 @@ import MSelect from './components/Select/select.vue'
 import MCheckbox from './components/Checkbox/Checkbox.vue'
 import MCheckboxGroup from './components/CheckboxGroup/CheckboxGroup.vue'
 import MCheckboxButton from './components/CheckboxButton/CheckboxButton.vue'
+import MPagination from './components/Pagination/Pagination.vue'
+import MRadio from './components/Radio/Radio.vue'
+import MRadioGroup from './components/RadioGroup/RadioGroup.vue'
+import MRadioButton from './components/RadioButton/RadioButton.vue'
+import MSwitch from './components/Switch/Switch.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -63,7 +68,7 @@ Object.entries(ElementPlusComponents).forEach(([key, value]) => {
 })
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch }
 export const mFns = { ...exportedFns }
 
 // 导出转换后的 Element Plus 组件
