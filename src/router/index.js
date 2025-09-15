@@ -14,6 +14,7 @@ import SwitchPage from '@/pages/SwitchPage.vue'
 import TagPage from '@/pages/TagPage.vue'
 import AlertPage from '@/pages/AlertPage.vue'
 import DialogPage from '@/pages/DialogPage.vue'
+import NotificationPage from '@/pages/NotificationPage.vue'
 
 const routes = [
   {
@@ -122,6 +123,14 @@ const routes = [
     component: DialogPage,
     meta: {
       title: 'Dialog 对话框'
+    }
+  },
+  {
+    path: '/notification',
+    name: 'Notification',
+    component: NotificationPage,
+    meta: {
+      title: 'Notification 通知'
     }
   }
 ]

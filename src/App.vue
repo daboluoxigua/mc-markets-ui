@@ -63,7 +63,8 @@ const handleMenuSelect = (path) => {
 }
 
 .demo-header {
-  background: var(--el-color-primary);
+  background: var(--el-fill-color-lighter);
+  border-bottom: 1px solid var(--el-border-color-lighter);
   color: white;
   padding: 0 20px;
   display: flex;
@@ -80,7 +81,7 @@ const handleMenuSelect = (path) => {
 .header-content h1 {
   margin: 0;
   font-size: 24px;
-  color: var(--text-quaternary);
+  color: var(--el-text-color-regular);
 }
 
 .header-actions {

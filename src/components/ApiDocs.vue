@@ -222,7 +222,7 @@ const hasSubTags = computed(() => {
   text-align: left;
   font-weight: 600;
   font-size: 12px;
-  border-bottom: 2px solid var(--el-border-color);
+  border-bottom: 1px solid var(--el-border-color-lighter);
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.5px;
