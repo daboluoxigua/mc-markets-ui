@@ -16,6 +16,7 @@ import AlertPage from '@/pages/AlertPage.vue'
 import DialogPage from '@/pages/DialogPage.vue'
 import FormPage from '@/pages/FormPage.vue'
 import TablePage from '@/pages/TablePage.vue'
+import NotificationPage from '@/pages/NotificationPage.vue'
 
 const routes = [
   {
@@ -140,6 +141,14 @@ const routes = [
     component: TablePage,
     meta: {
       title: 'Table 表格'
+    }
+  },
+  {
+    path: '/notification',
+    name: 'Notification',
+    component: NotificationPage,
+    meta: {
+      title: 'Notification 通知'
     }
   }
 ]
