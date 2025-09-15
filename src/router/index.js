@@ -11,6 +11,7 @@ import SelectPage from '@/pages/selectPage.vue'
 import CheckboxPage from '@/pages/CheckboxPage.vue'
 import RadioPage from '@/pages/RadioPage.vue'
 import SwitchPage from '@/pages/SwitchPage.vue'
+import AlertPage from '@/pages/AlertPage.vue'
 
 const routes = [
   {
@@ -95,6 +96,14 @@ const routes = [
     component: SwitchPage,
     meta: {
       title: 'Switch 开关'
+    }
+  },
+  {
+    path: '/alert',
+    name: 'Alert',
+    component: AlertPage,
+    meta: {
+      title: 'Alert 提示'
     }
   }
 ]
