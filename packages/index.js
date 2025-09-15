@@ -30,8 +30,9 @@ import MTag from './components/Tag/Tag.vue'
 import MAlert from './components/Alert/Alert.vue'
 import MDialog from './components/Dialog/Dialog.vue'
 import MNotification from './components/Notification/Notification.vue'
+import MTable from './components/Table/Table.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -109,19 +110,49 @@ Object.entries(ElementPlusComponents).forEach(([key, value]) => {
 })
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect,  MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable }
 
-// 导出转换后的 Element Plus 组件
-export const {
-  MOption,
-  MTable,
-  MTableColumn,
-  MFormItem: MFormItemEl,
-  MInput: MInputEl,
-  MSelect: MSelectEl,
-  MIcon: MIconEl
-} = convertedComponents
+
 export const mFns = { ...exportedFns }
 
 // 导出转换后的 Element Plus 组件
 export const mComponents = { ...convertedComponents }
+
+// 导出常用的 Element Plus 组件
+export const MOption = convertedComponents.MOption
+export const MTableColumn = convertedComponents.MTableColumn
+export const MOptionGroup = convertedComponents.MOptionGroup
+export const MButtonGroup = convertedComponents.MButtonGroup
+export const MBreadcrumb = convertedComponents.MBreadcrumb
+export const MBreadcrumbItem = convertedComponents.MBreadcrumbItem
+export const MCarousel = convertedComponents.MCarousel
+export const MCarouselItem = convertedComponents.MCarouselItem
+export const MCascader = convertedComponents.MCascader
+export const MCascaderPanel = convertedComponents.MCascaderPanel
+export const MCheckTag = convertedComponents.MCheckTag
+export const MCalendar = convertedComponents.MCalendar
+export const MDatePicker = convertedComponents.MDatePicker
+export const MTimePicker = convertedComponents.MTimePicker
+export const MDateTimePicker = convertedComponents.MDateTimePicker
+export const MColorPicker = convertedComponents.MColorPicker
+export const MTransfer = convertedComponents.MTransfer
+export const MTree = convertedComponents.MTree
+export const MTreeSelect = convertedComponents.MTreeSelect
+export const MUpload = convertedComponents.MUpload
+export const MImage = convertedComponents.MImage
+export const MImageViewer = convertedComponents.MImageViewer
+export const MBacktop = convertedComponents.MBacktop
+export const MInfiniteScroll = convertedComponents.MInfiniteScroll
+export const MAffix = convertedComponents.MAffix
+export const MScrollbar = convertedComponents.MScrollbar
+export const MEmpty = convertedComponents.MEmpty
+export const MResult = convertedComponents.MResult
+export const MSkeleton = convertedComponents.MSkeleton
+export const MLoading = convertedComponents.MLoading
+export const MSpinner = convertedComponents.MSpinner
+export const MProgress = convertedComponents.MProgress
+export const MBadge = convertedComponents.MBadge
+export const MAvatar = convertedComponents.MAvatar
+export const MImagePreview = convertedComponents.MImagePreview
+export const MTeleport = convertedComponents.MTeleport
+export const MConfigProvider = convertedComponents.MConfigProvider
