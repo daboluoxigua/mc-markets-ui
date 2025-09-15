@@ -1,29 +1,51 @@
 <template>
   <div class="table-page">
     <!-- 基础表格 -->
-    <DemoSection title="基础表格">
-      <m-table :data="tableData" style="width: 100%">
-        <m-table-column prop="date" label="日期" width="180" />
-        <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
-      </m-table>
-    </DemoSection>
-
-    <!-- 带斑马纹表格 -->
-    <DemoSection title="带斑马纹表格">
-      <m-table :data="tableData" stripe style="width: 100%">
-        <m-table-column prop="date" label="日期" width="180" />
-        <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
-      </m-table>
-    </DemoSection>
-
-    <!-- 带边框表格 -->
-    <DemoSection title="带边框表格">
-      <m-table :data="tableData" border style="width: 100%">
-        <m-table-column prop="date" label="日期" width="180" />
-        <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
+    <DemoSection title="Tag和Button组合表格">
+      <m-table :data="tagButtonTableData" style="width: 100%">
+        <m-table-column prop="id" label="ID" width="80" />
+        <m-table-column prop="name" label="姓名"/>
+        <m-table-column prop="department" label="部门"/>
+        <m-table-column prop="status" label="状态">
+          <template #default="scope">
+            <m-tag 
+              :type="getStatusType(scope.row.status)"
+            >
+              {{ scope.row.status }}
+            </m-tag>
+          </template>
+        </m-table-column>
+        <m-table-column prop="level" label="等级" width="120">
+          <template #default="scope">
+            <m-tag 
+              :type="getLevelType(scope.row.level)"
+            >
+              {{ scope.row.level }}
+            </m-tag>
+          </template>
+        </m-table-column>
+        <m-table-column label="操作" align="right" width="200" fixed="right">
+          <template #default="scope">
+            <m-button
+              type="text"
+              @click="handleView(scope.$index, scope.row)"
+            >
+              查看
+            </m-button>
+            <m-button
+              type="text"
+              @click="handleEdit(scope.$index, scope.row)"
+            >
+              编辑
+            </m-button>
+            <m-button
+              type="text"
+              @click="handleDelete(scope.$index, scope.row)"
+            >
+              删除
+            </m-button>
+          </template>
+        </m-table-column>
       </m-table>
     </DemoSection>
 
@@ -36,7 +58,7 @@
       >
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
+        <m-table-column prop="address" label="地址" align="right" />
       </m-table>
     </DemoSection>
 
@@ -45,7 +67,7 @@
       <m-table :data="tableData" height="250" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
+        <m-table-column prop="address" label="地址" align="right" />
       </m-table>
     </DemoSection>
 
@@ -60,7 +82,7 @@
         <m-table-column type="selection" width="55" />
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
+        <m-table-column prop="address" label="地址" align="right" />
       </m-table>
       <div style="margin-top: 20px">
         <m-button @click="toggleSelection([tableData[1], tableData[2]])">
@@ -75,7 +97,7 @@
       <m-table :data="tableData" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" sortable />
         <m-table-column prop="name" label="姓名" width="180" sortable />
-        <m-table-column prop="address" label="地址" />
+        <m-table-column prop="address" label="地址" align="right" />
       </m-table>
     </DemoSection>
 
@@ -87,6 +109,7 @@
         <m-table-column
           prop="address"
           label="地址"
+          align="right"
           :filters="[
             { text: '上海', value: '上海' },
             { text: '北京', value: '北京' },
@@ -101,8 +124,8 @@
       <m-table :data="tableData" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
-        <m-table-column label="操作">
+        <m-table-column prop="address" label="地址" align="right" />
+        <m-table-column label="操作" align="right">
           <template #default="scope">
             <m-button
               size="small"
@@ -133,16 +156,17 @@
         </m-table-column>
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" />
+        <m-table-column prop="address" label="地址" align="right" />
       </m-table>
     </DemoSection>
+    
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
-
+import { MTable } from '@mc-markets/ui';
 // 表格数据
 const tableData = reactive([
   {
@@ -172,6 +196,45 @@ const tableData = reactive([
     address: '上海市普陀区金沙江路 1518 弄',
     status: '正常',
     city: '上海'
+  }
+])
+
+// Tag和Button组合表格数据
+const tagButtonTableData = reactive([
+  {
+    id: 1,
+    name: '张三',
+    department: '技术部',
+    status: '在线',
+    level: '高级'
+  },
+  {
+    id: 2,
+    name: '李四',
+    department: '产品部',
+    status: '离线',
+    level: '中级'
+  },
+  {
+    id: 3,
+    name: '王五',
+    department: '设计部',
+    status: '忙碌',
+    level: '初级'
+  },
+  {
+    id: 4,
+    name: '赵六',
+    department: '运营部',
+    status: '在线',
+    level: '高级'
+  },
+  {
+    id: 5,
+    name: '钱七',
+    department: '市场部',
+    status: '离线',
+    level: '中级'
   }
 ])
 
@@ -208,12 +271,35 @@ const filterHandler = (value, row, column) => {
   return row[property] === value
 }
 
+// Tag和Button组合表格相关方法
+const getStatusType = (status) => {
+  const statusMap = {
+    '在线': 'success',
+    '离线': 'info',
+    '忙碌': 'warning'
+  }
+  return statusMap[status] || 'info'
+}
+
+const getLevelType = (level) => {
+  const levelMap = {
+    '高级': 'danger',
+    '中级': 'warning',
+    '初级': 'success'
+  }
+  return levelMap[level] || 'info'
+}
+
+const handleView = (index, row) => {
+  console.log('查看:', index, row)
+}
+
 const handleEdit = (index, row) => {
-  console.log(index, row)
+  console.log('编辑:', index, row)
 }
 
 const handleDelete = (index, row) => {
-  console.log(index, row)
+  console.log('删除:', index, row)
 }
 </script>
 

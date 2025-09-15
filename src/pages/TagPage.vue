@@ -303,10 +303,8 @@
 import { ref, nextTick } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
-import { MTag, MInput, MButton, mFns } from "@mc-markets/ui";
+import { MTag, MInput, MButton, MMessage } from "@mc-markets/ui";
 
-// 使用转换后的函数
-const { mMessage: ElMessage } = mFns;
 
 // 响应式数据
 const tags = ref([

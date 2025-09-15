@@ -327,10 +327,7 @@
 import { ref } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
-import { MButton, MIcon, mFns } from "@mc-markets/ui";
-
-// 使用转换后的函数
-const { mMessage: ElMessage, mMessageBox: ElMessageBox, mNotification: ElNotification } = mFns;
+import { MButton, MIcon } from "@mc-markets/ui";
 
 // 响应式数据
 const loading = ref(true);
