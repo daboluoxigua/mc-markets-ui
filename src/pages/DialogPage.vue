@@ -352,7 +352,7 @@
 import { ref, reactive } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
-import { MButton, MDialog, MTable, MTableColumn, MForm, MFormItem, MInput, MSelect, MOption, MIcon } from "@mc-markets/ui";
+import { MButton, MDialog, MTable, MTableColumn, MForm, MFormItem, MInput, MSelect, MIcon } from "@mc-markets/ui";
 import { CircleCloseFilled } from '@element-plus/icons-vue';
 import { ElMessageBox } from 'element-plus';
 

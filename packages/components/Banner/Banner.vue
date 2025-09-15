@@ -6,14 +6,14 @@
       `m-banner--${type}`,
       {
         'm-banner--closable': closable,
-        'm-banner--with-icon': icon || $slots.icon
+        'm-banner--with-icon': icon || slots.icon
       }
     ]"
     :style="bannerStyle"
   >
     <div class="m-banner__content">
       <!-- 图标插槽 -->
-      <div v-if="icon || $slots.icon" class="m-banner__icon">
+      <div v-if="icon || slots.icon" class="m-banner__icon">
         <slot name="icon">
           <m-icon :name="icon" :size="iconSize" />
         </slot>
@@ -33,8 +33,11 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, useSlots } from 'vue'
 import MIcon from '../Icon/Icon.vue'
+
+// 获取插槽
+const slots = useSlots()
 
 // 定义 props
 const props = defineProps({
@@ -171,6 +174,11 @@ watch(internalVisible, (newVal) => {
       handleClose()
     }, props.duration)
   }
+})
+
+// 定义组件名称
+defineOptions({
+  name: 'MBanner'
 })
 
 // 暴露方法给父组件

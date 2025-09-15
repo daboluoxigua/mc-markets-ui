@@ -173,10 +173,11 @@
 import { ref } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
 import ApiDocs from '@/components/ApiDocs.vue'
-import { MMessage } from '@mc-markets/ui'
+import { MMessage, MBanner } from '@mc-markets/ui'
 
 // 响应式数据
 const showBanner = ref(true)
+
 
 // API 文档数据
 const bannerApiProps = [
