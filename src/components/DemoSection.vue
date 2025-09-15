@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { computed, h, resolveComponent } from 'vue'
+import { computed, h, resolveComponent, getCurrentInstance } from 'vue'
 import CodeToggle from './CodeToggle.vue'
 
 // 定义 props
@@ -27,85 +27,6 @@ const props = defineProps({
 
 // 定义 slots
 const slots = defineSlots()
-
-// Element Plus 组件映射表
-const elementPlusMapping = {
-  'm-input': 'ElInput',
-  'm-button': 'ElButton',
-  'm-card': 'ElCard',
-  'm-form': 'ElForm',
-  'm-form-item': 'ElFormItem',
-  'm-select': 'ElSelect',
-  'm-option': 'ElOption',
-  'm-date-picker': 'ElDatePicker',
-  'm-time-picker': 'ElTimePicker',
-  'm-table': 'ElTable',
-  'm-table-column': 'ElTableColumn',
-  'm-pagination': 'ElPagination',
-  'm-dialog': 'ElDialog',
-  'm-drawer': 'ElDrawer',
-  'm-popover': 'ElPopover',
-  'm-tooltip': 'ElTooltip',
-  'm-dropdown': 'ElDropdown',
-  'm-dropdown-menu': 'ElDropdownMenu',
-  'm-dropdown-item': 'ElDropdownItem',
-  'm-menu': 'ElMenu',
-  'm-menu-item': 'ElMenuItem',
-  'm-submenu': 'ElSubMenu',
-  'm-tabs': 'ElTabs',
-  'm-tab-pane': 'ElTabPane',
-  'm-steps': 'ElSteps',
-  'm-step': 'ElStep',
-  'm-breadcrumb': 'ElBreadcrumb',
-  'm-breadcrumb-item': 'ElBreadcrumbItem',
-  'm-alert': 'ElAlert',
-  'm-notification': 'ElNotification',
-  'm-message': 'ElMessage',
-  'm-message-box': 'ElMessageBox',
-  'm-loading': 'ElLoading',
-  'm-infinite-scroll': 'ElInfiniteScroll',
-  'm-image': 'ElImage',
-  'm-avatar': 'ElAvatar',
-  'm-badge': 'ElBadge',
-  'm-tag': 'ElTag',
-  'm-progress': 'ElProgress',
-  'm-skeleton': 'ElSkeleton',
-  'm-empty': 'ElEmpty',
-  'm-descriptions': 'ElDescriptions',
-  'm-descriptions-item': 'ElDescriptionsItem',
-  'm-result': 'ElResult',
-  'm-statistic': 'ElStatistic',
-  'm-timeline': 'ElTimeline',
-  'm-timeline-item': 'ElTimelineItem',
-  'm-carousel': 'ElCarousel',
-  'm-carousel-item': 'ElCarouselItem',
-  'm-collapse': 'ElCollapse',
-  'm-collapse-item': 'ElCollapseItem',
-  'm-divider': 'ElDivider',
-  'm-link': 'ElLink',
-  'm-text': 'ElText',
-  'm-space': 'ElSpace',
-  'm-affix': 'ElAffix',
-  'm-backtop': 'ElBacktop',
-  'm-page-header': 'ElPageHeader',
-  'm-radio': 'ElRadio',
-  'm-radio-group': 'ElRadioGroup',
-  'm-radio-button': 'ElRadioButton',
-  'm-checkbox': 'ElCheckbox',
-  'm-checkbox-group': 'ElCheckboxGroup',
-  'm-checkbox-button': 'ElCheckboxButton',
-  'm-switch': 'ElSwitch',
-  'm-slider': 'ElSlider',
-  'm-rate': 'ElRate',
-  'm-color-picker': 'ElColorPicker',
-  'm-transfer': 'ElTransfer',
-  'm-tree': 'ElTree',
-  'm-tree-select': 'ElTreeSelect',
-  'm-cascader': 'ElCascader',
-  'm-upload': 'ElUpload',
-  'm-upload-dragger': 'ElUploadDragger',
-  'm-upload-list': 'ElUploadList'
-}
 
 // 解析模板字符串并创建 VNode
 const parseTemplate = (template) => {
@@ -160,6 +81,7 @@ const parseTemplate = (template) => {
         const component = resolveComponent(tagName)
         return h(component, props, children)
       } catch (e) {
+        console.warn(`[DemoSection] 解析组件 ${tagName} 失败:`, e)
         // 如果不是组件，创建普通元素
         return h(tagName, props, children)
       }
@@ -173,7 +95,11 @@ const parseTemplate = (template) => {
 
 // 计算渲染的模板
 const renderedTemplate = computed(() => {
-  const slotContent = slots.default?.()
+  if (!slots.default) {
+    return null
+  }
+  
+  const slotContent = slots.default()
   
   if (!slotContent || slotContent.length === 0) {
     return null

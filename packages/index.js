@@ -13,8 +13,12 @@ import * as ElementPlusComponents from 'element-plus'
 import MIcon from './components/Icon/Icon.vue'
 import MButton from './components/Button/Button.vue'
 import MCard from './components/Card/Card.vue'
+import MInput from './components/Input/Input.vue'
+import MForm from './components/Form/Form.vue'
+import MFormItem from './components/FormItem/FormItem.vue'
+import MTooltip from './components/Tooltip/Tooltip.vue'
 
-const components = [MIcon, MButton, MCard]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -55,7 +59,7 @@ Object.entries(ElementPlusComponents).forEach(([key, value]) => {
 })
 
 export default { install }
-export { MIcon, MButton, MCard }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip }
 export const mFns = { ...exportedFns }
 
 // 导出转换后的 Element Plus 组件
