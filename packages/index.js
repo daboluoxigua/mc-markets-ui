@@ -27,9 +27,11 @@ import MTag from './components/Tag/Tag.vue'
 import MAlert from './components/Alert/Alert.vue'
 import MDialog from './components/Dialog/Dialog.vue'
 import MNotification from './components/Notification/Notification.vue'
+import MDatePicker from './components/DatePicker/DatePicker.vue'
+import MEmpty from './components/Empty/Empty.vue'
 import MTable from './components/Table/Table.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect,  MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -94,7 +96,7 @@ const install = (app) => {
 }
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable }
 
 // 手动导出常用的 Element Plus 函数（只导出函数，不导出组件）
 export const MMessage = ElementPlusComponents.ElMessage
@@ -116,7 +118,6 @@ export const MCascader = convertedComponents.MCascader
 export const MCascaderPanel = convertedComponents.MCascaderPanel
 export const MCheckTag = convertedComponents.MCheckTag
 export const MCalendar = convertedComponents.MCalendar
-export const MDatePicker = convertedComponents.MDatePicker
 export const MTimePicker = convertedComponents.MTimePicker
 export const MDateTimePicker = convertedComponents.MDateTimePicker
 export const MColorPicker = convertedComponents.MColorPicker
@@ -130,7 +131,6 @@ export const MBacktop = convertedComponents.MBacktop
 export const MInfiniteScroll = convertedComponents.MInfiniteScroll
 export const MAffix = convertedComponents.MAffix
 export const MScrollbar = convertedComponents.MScrollbar
-export const MEmpty = convertedComponents.MEmpty
 export const MResult = convertedComponents.MResult
 export const MSkeleton = convertedComponents.MSkeleton
 export const MLoading = convertedComponents.MLoading
