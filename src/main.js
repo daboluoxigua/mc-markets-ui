@@ -5,7 +5,7 @@ import router from './router'
 // 使用开发环境的组件库
 import mcMarketsUI from '@mc-markets/ui'
 import '@mc-markets/ui/styles/index.scss'
-import '@mc-markets/ui/styles/font/iconfont.scss'
+import '@mc-markets/ui/styles/font/iconfont.css'
 import { setTheme } from './utils/theme'
 
 const app = createApp(App)

@@ -34,16 +34,16 @@ function registerElementPlus(app) {
 }
 
 const install = (app) => {
-  // 注册自定义组件
+  // 先注册转换后的 Element Plus 组件
+  registerElementPlus(app)
+  
+  // 然后注册自定义组件（覆盖同名的 Element Plus 组件）
   components.forEach(component => {
     if (component && component.name && typeof component.name === 'string') {
       const name = component.name.replace(/^M/, 'm-').toLowerCase()
       app.component(name, component)
     }
   })
-  
-  // 注册转换后的 Element Plus 组件
-  registerElementPlus(app)
 }
 
 // 自动导出 Element Plus 函数

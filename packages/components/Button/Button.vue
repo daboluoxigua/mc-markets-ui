@@ -8,6 +8,6 @@
 
 <script setup>
 defineOptions({
-  name: 'MCButton'
+  name: 'MButton'
 })
 </script>

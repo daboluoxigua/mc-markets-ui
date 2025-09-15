@@ -8,6 +8,6 @@
 
 <script setup>
 defineOptions({
-  name: 'MCCard'
+  name: 'MCard'
 })
 </script>

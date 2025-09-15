@@ -110,7 +110,7 @@
         </div>
         <div class="doc-item">
           <m-button circle>
-            <el-icon><Search /></el-icon>
+            <m-icon name="search" />
           </m-button>
           <span>Circle</span>
         </div>
@@ -130,7 +130,7 @@
         </div>
         <div class="doc-item">
           <m-button type="primary" circle>
-            <el-icon><Edit /></el-icon>
+            <m-icon name="square-pen" />
           </m-button>
           <span>Circle</span>
         </div>
@@ -231,24 +231,39 @@
     <DemoSection title="图标按钮">
       <div class="doc-grid">
         <div class="doc-item">
-          <m-button type="primary" :icon="Search"> 搜索 </m-button>
+          <m-button type="primary">
+            <m-icon name="search" />
+            搜索
+          </m-button>
           <span>Search</span>
         </div>
         <div class="doc-item">
-          <m-button :icon="Edit"> 编辑 </m-button>
+          <m-button>
+            <m-icon name="square-pen" />
+            编辑
+          </m-button>
           <span>Edit</span>
         </div>
         <div class="doc-item">
-          <m-button :icon="Delete"> 删除 </m-button>
+          <m-button>
+            <m-icon name="linear-trash" />
+            删除
+          </m-button>
           <span>Delete</span>
         </div>
         <div class="doc-item">
-          <m-button :icon="Download"> 下载 </m-button>
-          <span>Download</span>
+          <m-button>
+            <m-icon name="copy" />
+            复制
+          </m-button>
+          <span>Copy</span>
         </div>
         <div class="doc-item">
-          <m-button :icon="Upload"> 上传 </m-button>
-          <span>Upload</span>
+          <m-button>
+            <m-icon name="plus" />
+            添加
+          </m-button>
+          <span>Add</span>
         </div>
       </div>
     </DemoSection>
@@ -256,11 +271,20 @@
     <!-- 按钮组 -->
     <DemoSection title="按钮组">
       <div class="doc-item">
-        <el-button-group>
-          <m-button type="primary" :icon="Edit">编辑</m-button>
-          <m-button type="success" :icon="Check">保存</m-button>
-          <m-button type="danger" :icon="Close">取消</m-button>
-        </el-button-group>
+        <m-button-group>
+          <m-button type="primary">
+            <m-icon name="square-pen" />
+            编辑
+          </m-button>
+          <m-button type="success">
+            <m-icon name="check" />
+            保存
+          </m-button>
+          <m-button type="danger">
+            <m-icon name="lucide-x" />
+            取消
+          </m-button>
+        </m-button-group>
         <span>Actions</span>
       </div>
     </DemoSection>
@@ -340,18 +364,7 @@
 import { ref } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
-import { MButton, mFns } from "@mc-markets/ui";
-import {
-  Search,
-  Edit,
-  Delete,
-  Download,
-  Upload,
-  ArrowLeft,
-  ArrowRight,
-  Check,
-  Close,
-} from "@element-plus/icons-vue";
+import { MButton, MIcon, mFns } from "@mc-markets/ui";
 
 // 使用转换后的函数
 const { mMessage: ElMessage, mMessageBox: ElMessageBox, mNotification: ElNotification } = mFns;

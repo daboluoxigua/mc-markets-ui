@@ -12,6 +12,11 @@
 <script setup>
 import { computed } from 'vue'
 
+// 定义组件名
+defineOptions({
+  name: 'MIcon'
+})
+
 const props = defineProps({
   name: {
     type: String,
