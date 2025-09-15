@@ -5,7 +5,10 @@ import IconsPage from '@/pages/IconsPage.vue'
 import ButtonPage from '@/pages/ButtonPage.vue'
 import CardPage from '@/pages/CardPage.vue'
 import TooltipPage from '@/pages/TooltipPage.vue'
+import PaginationPage from '@/pages/PaginationPage.vue'
 import InputPage from '@/pages/InputPage.vue'
+import RadioPage from '@/pages/RadioPage.vue'
+import SwitchPage from '@/pages/SwitchPage.vue'
 
 const routes = [
   {
@@ -45,11 +48,35 @@ const routes = [
     }
   },
   {
+    path: '/pagination',
+    name: 'Pagination',
+    component: PaginationPage,
+    meta: {
+      title: 'Pagination 分页'
+    }
+  },
+  {
     path: '/input',
     name: 'Input',
     component: InputPage,
     meta: {
       title: 'Input 输入框'
+    }
+  },
+  {
+    path: '/radio',
+    name: 'Radio',
+    component: RadioPage,
+    meta: {
+      title: 'Radio 单选框'
+    }
+  },
+  {
+    path: '/switch',
+    name: 'Switch',
+    component: SwitchPage,
+    meta: {
+      title: 'Switch 开关'
     }
   }
 ]
