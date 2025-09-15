@@ -4,6 +4,7 @@
     <DemoSection title="基础使用">
       <div class="demo-container">
         <m-banner content="这是一个基础的 Banner 组件" />
+        <m-banner type="info" content="点击右侧的 X 关闭按钮可以关闭这个 Banner" @close="handleClose('基础 Banner')" />
       </div>
     </DemoSection>
 
