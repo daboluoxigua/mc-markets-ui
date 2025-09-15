@@ -44,17 +44,16 @@ try {
     console.log('💡 Gitee仓库URL应该类似: https://gitee.com/username/repository.git');
   }
 
-  // 5. 检查是否有pages分支
+  // 5. 切换到master分支
+  console.log('📝 切换到master分支...');
   try {
-    execSync('git show-ref --verify --quiet refs/heads/pages', { stdio: 'pipe' });
-    console.log('✅ 找到pages分支');
+    execSync('git checkout master', { stdio: 'inherit' });
   } catch (error) {
-    console.log('📝 创建pages分支...');
-    execSync('git checkout --orphan pages', { stdio: 'inherit' });
-    execSync('git rm -rf .', { stdio: 'inherit' });
+    console.log('📝 创建master分支...');
+    execSync('git checkout --orphan master', { stdio: 'inherit' });
   }
 
-  // 6. 复制文件到pages分支
+  // 6. 复制文件到master分支
   console.log('📋 复制演示文件...');
   
   // 复制所有文件
@@ -95,13 +94,13 @@ try {
   writeFileSync('package.json', JSON.stringify(giteePagesConfig, null, 2));
 
   // 8. 添加并提交文件
-  console.log('💾 提交文件到pages分支...');
+  console.log('💾 提交文件到master分支...');
   execSync('git add .', { stdio: 'inherit' });
   execSync('git commit -m "Deploy demo to Gitee Pages"', { stdio: 'inherit' });
 
   // 9. 推送到远程仓库
   console.log('🌐 推送到Gitee...');
-  execSync('git push origin pages', { stdio: 'inherit' });
+  execSync('git push origin master', { stdio: 'inherit' });
 
   console.log('\n✅ 部署完成！');
   console.log('🌐 您的演示将在以下地址访问:');

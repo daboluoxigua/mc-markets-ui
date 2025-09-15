@@ -33,5 +33,5 @@ jobs:
         gitee-username: ${{ secrets.GITEE_USERNAME }}
         gitee-password: ${{ secrets.GITEE_PASSWORD }}
         gitee-repo: ${{ secrets.GITEE_REPO }}
-        branch: pages
+        branch: master
         directory: dist-demo

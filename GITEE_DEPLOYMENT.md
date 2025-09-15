@@ -55,9 +55,9 @@ git remote add origin https://gitee.com/您的用户名/仓库名.git
    - 验证当前目录是Git仓库
    - 检查远程仓库配置
 
-3. **创建pages分支**
-   - 创建或切换到 `pages` 分支
-   - 清理旧文件
+3. **切换到master分支**
+   - 切换到 `master` 分支
+   - 如果不存在则创建
 
 4. **复制构建文件**
    - 将 `dist-demo/` 内容复制到根目录
@@ -65,7 +65,7 @@ git remote add origin https://gitee.com/您的用户名/仓库名.git
 
 5. **提交并推送**
    - 添加所有文件到Git
-   - 提交到 `pages` 分支
+   - 提交到 `master` 分支
    - 推送到Gitee远程仓库
 
 ## 启用Gitee Pages
@@ -78,7 +78,7 @@ git remote add origin https://gitee.com/您的用户名/仓库名.git
 
 1. 登录Gitee，进入您的仓库
 2. 点击 `服务` → `Gitee Pages`
-3. 选择 `pages` 分支
+3. 选择 `master` 分支
 4. 点击 `启动` 按钮
 
 ## 访问演示
@@ -113,6 +113,8 @@ https://您的用户名.gitee.io/仓库名
 // 在 scripts/deploy-gitee.js 中修改
 execSync('git checkout --orphan gh-pages', { stdio: 'inherit' });
 ```
+
+**注意**: 当前配置使用 `master` 分支直接部署，这是最简化的部署方式。
 
 ### 自定义域名
 

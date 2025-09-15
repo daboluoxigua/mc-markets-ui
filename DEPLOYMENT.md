@@ -36,7 +36,7 @@ npm run deploy:gitee:build
 
 这个命令会：
 1. 自动构建演示文件
-2. 创建或切换到 `pages` 分支
+2. 切换到 `master` 分支
 3. 将构建文件推送到Gitee
 4. 自动启用Gitee Pages
 
@@ -52,9 +52,8 @@ npm run deploy:gitee:build
 # 1. 构建演示
 npm run build:demo
 
-# 2. 切换到pages分支
-git checkout --orphan pages
-git rm -rf .
+# 2. 切换到master分支
+git checkout master
 
 # 3. 复制构建文件
 cp -r dist-demo/* .
@@ -62,7 +61,7 @@ cp -r dist-demo/* .
 # 4. 提交并推送
 git add .
 git commit -m "Deploy demo to Gitee Pages"
-git push origin pages
+git push origin master
 ```
 
 ## 部署到其他平台
