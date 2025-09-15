@@ -33,11 +33,35 @@ const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, M
 const convertedComponents = {}
 
 function registerElementPlus(app) {
+  // 获取已注册的自定义组件名称
+  const customComponentNames = components.map(comp => {
+    if (comp && comp.name && typeof comp.name === 'string') {
+      let name = comp.name.toLowerCase()
+      const nameMap = {
+        'mcheckboxgroup': 'm-checkbox-group',
+        'mcheckboxbutton': 'm-checkbox-button',
+        'mradiogroup': 'm-radio-group',
+        'mradiobutton': 'm-radio-button',
+        'mformitem': 'm-form-item',
+        'moptiongroup': 'm-option-group'
+      }
+      return nameMap[name] || name.replace(/^m/, 'm-')
+    }
+    return null
+  }).filter(Boolean)
+  
   Object.entries(ElementPlusComponents).forEach(([key, comp]) => {
     if (comp && comp.name && typeof comp.name === 'string' && comp.name.startsWith('El')) {
-      // 将 ElButton 转换为 m-button
-      const mName = comp.name.replace(/^El/, 'm-').toLowerCase()
-      app.component(mName, comp)
+      // 将 ElOptionGroup 转换为 m-option-group
+      const mName = 'm-' + comp.name.slice(2).replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
+      
+      // 只注册没有被自定义组件覆盖的Element Plus组件
+      if (!customComponentNames.includes(mName)) {
+        // 检查组件是否已经注册，避免重复注册警告
+        if (!app._context.components[mName]) {
+          app.component(mName, comp)
+        }
+      }
       
       // 存储转换后的组件用于导出
       const exportName = 'M' + comp.name.slice(2) // ElButton -> MButton
@@ -47,16 +71,29 @@ function registerElementPlus(app) {
 }
 
 const install = (app) => {
-  // 先注册转换后的 Element Plus 组件
-  registerElementPlus(app)
-  
-  // 然后注册自定义组件（覆盖同名的 Element Plus 组件）
+  // 先注册自定义组件
   components.forEach(component => {
     if (component && component.name && typeof component.name === 'string') {
-      const name = component.name.replace(/^M/, 'm-').toLowerCase()
+      // 将 MCheckboxGroup 转换为 m-checkbox-group
+      let name = component.name.toLowerCase()
+      // 处理特定的组件名称映射
+      const nameMap = {
+        'mcheckboxgroup': 'm-checkbox-group',
+        'mcheckboxbutton': 'm-checkbox-button',
+        'mradiogroup': 'm-radio-group',
+        'mradiobutton': 'm-radio-button',
+        'mformitem': 'm-form-item',
+        'moptiongroup': 'm-option-group'
+      }
+      name = nameMap[name] || name.replace(/^m/, 'm-')
+      
+      // 直接注册自定义组件，覆盖Element Plus组件
       app.component(name, component)
     }
   })
+  
+  // 然后注册转换后的 Element Plus 组件（只注册没有自定义组件覆盖的）
+  registerElementPlus(app)
 }
 
 // 自动导出 Element Plus 函数
