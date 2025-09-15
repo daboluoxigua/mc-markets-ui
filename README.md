@@ -27,18 +27,23 @@ npm run build
 npm run build:demo
 ```
 
-## 📦 演示部署
+## 📦 演示打包
 
-### Gitee Pages（推荐）
+### 构建静态HTML
 
 ```bash
-# 一键部署到Gitee Pages（直接部署到master分支）
-npm run deploy:gitee:build
+# 构建演示为静态HTML文件
+npm run build:demo
 ```
+
+构建完成后，所有文件将输出到 `dist-demo/` 目录，可以直接在浏览器中打开 `dist-demo/index.html`。
 
 ### 本地预览
 
 ```bash
+# 构建并直接在浏览器中打开
+npm run open:demo
+
 # 使用内置服务器
 npm run serve:local
 
@@ -48,8 +53,7 @@ npm run preview:demo
 
 ## 📚 文档
 
-- [部署指南](DEPLOYMENT.md) - 详细的部署说明
-- [Gitee部署指南](GITEE_DEPLOYMENT.md) - Gitee Pages专用指南
+- [部署指南](DEPLOYMENT.md) - 详细的打包和部署说明
 
 ## 🛠️ 可用命令
 
@@ -63,8 +67,7 @@ npm run preview:demo
 | `npm run preview:demo` | 使用Vite预览演示 |
 | `npm run serve:local` | 本地预览演示（内置服务器） |
 | `npm run start:demo` | 构建并启动本地演示服务器 |
-| `npm run deploy:gitee` | 部署到Gitee Pages（需先构建） |
-| `npm run deploy:gitee:build` | 构建并部署到Gitee Pages |
+| `npm run open:demo` | 构建并直接在浏览器中打开演示 |
 | `npm run clean:demo` | 清理演示构建文件 |
 | `npm run test:static` | 测试静态访问配置 |
 
@@ -84,11 +87,13 @@ npm run preview:demo
 └── scripts/           # 部署脚本
 ```
 
-## 🌐 在线演示
+## 🌐 使用方式
 
-部署后可通过以下地址访问演示：
+构建后的演示文件位于 `dist-demo/` 目录，可以：
 
-- **Gitee Pages**: `https://您的用户名.gitee.io/仓库名`
+1. **直接打开**: 双击 `dist-demo/index.html` 在浏览器中打开
+2. **本地服务器**: 使用 `npm run serve:local` 启动本地服务器
+3. **分发**: 将 `dist-demo/` 目录复制到任何地方使用
 
 ## 📄 许可证
 

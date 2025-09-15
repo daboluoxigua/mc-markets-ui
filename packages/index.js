@@ -30,8 +30,10 @@ import MNotification from './components/Notification/Notification.vue'
 import MDatePicker from './components/DatePicker/DatePicker.vue'
 import MEmpty from './components/Empty/Empty.vue'
 import MTable from './components/Table/Table.vue'
+import MOption from './components/Option/Option.vue'
+import MOptionGroup from './components/OptionGroup/OptionGroup.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MOption, MOptionGroup]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -96,7 +98,7 @@ const install = (app) => {
 }
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MOption, MOptionGroup }
 
 // 手动导出常用的 Element Plus 函数（只导出函数，不导出组件）
 export const MMessage = ElementPlusComponents.ElMessage
@@ -106,9 +108,7 @@ export const MMessageBox = ElementPlusComponents.ElMessageBox
 export const mComponents = { ...convertedComponents }
 
 // 导出常用的 Element Plus 组件
-export const MOption = convertedComponents.MOption
 export const MTableColumn = convertedComponents.MTableColumn
-export const MOptionGroup = convertedComponents.MOptionGroup
 export const MButtonGroup = convertedComponents.MButtonGroup
 export const MBreadcrumb = convertedComponents.MBreadcrumb
 export const MBreadcrumbItem = convertedComponents.MBreadcrumbItem

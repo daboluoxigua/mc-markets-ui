@@ -97,7 +97,7 @@ defineOptions({
     &.is-disabled {
       --el-button-disabled-text-color: var(--text-quaternary) !important;
       background-color: color-mix(in srgb, var(--bg-brand) 50%, transparent);
-      border-color: color-mix(in srgb, var(--bg-brand) 50%, transparent);
+      border-color: transparent;
     }
   }
 

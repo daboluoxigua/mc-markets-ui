@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import path from "path";
 import createVitePlugins from "./vite/plugins";
 
-// 演示专用配置
+// 演示站点配置
 export default defineConfig({
   plugins: [
     ...createVitePlugins(),
@@ -23,47 +23,26 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: "dist-demo", // 演示输出目录
-    assetsDir: "assets", // 静态资源目录
-    sourcemap: false, // 生产环境不生成sourcemap
-    minify: 'terser', // 使用terser压缩
-    // 设置基础路径为空，支持静态托管和本地文件运行
-    base: './',
-    // SPA模式配置
+    outDir: "demo-dist", // 演示站点输出目录
+    assetsDir: "assets",
+    sourcemap: false,
+    minify: 'terser',
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, "src/index.html"), // 演示入口文件
-        '404': path.resolve(__dirname, "src/404.html") // 404页面
-      },
       output: {
-        // 静态资源文件名格式
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
-          if (/\.(css)$/.test(assetInfo.name)) {
-            return `assets/css/[name]-[hash].${ext}`;
-          }
-          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name)) {
-            return `assets/images/[name]-[hash].${ext}`;
-          }
-          if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
-            return `assets/fonts/[name]-[hash].${ext}`;
-          }
-          return `assets/[name]-[hash].${ext}`;
+        manualChunks: {
+          'vue-vendor': ['vue', 'vue-router'],
+          'element-vendor': ['element-plus'],
+          'ui-vendor': ['@mc-markets/ui']
         }
       }
     },
-    // 构建优化
+    // 优化构建
     terserOptions: {
       compress: {
-        drop_console: true, // 移除console
-        drop_debugger: true, // 移除debugger
-      },
-    },
-    // 构建大小警告限制
-    chunkSizeWarningLimit: 1000,
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
   },
   resolve: {
     alias: {
@@ -72,10 +51,10 @@ export default defineConfig({
       "@mc-markets/ui": fileURLToPath(new URL("./packages", import.meta.url))
     },
   },
-  // 预览服务器配置
-  preview: {
-    port: 4173,
-    open: true,
-    cors: true
+  // 演示站点特定配置
+  base: './',
+  define: {
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: false
   }
 });
