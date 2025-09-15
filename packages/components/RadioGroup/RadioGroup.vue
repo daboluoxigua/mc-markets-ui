@@ -1,5 +1,5 @@
 <template>
-  <el-radio-group v-bind="mergedAttrs" :popper-class="computedPopperClass">
+  <el-radio-group v-bind="mergedAttrs" :popper-class="computedPopperClass" class="m-radio-group">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>

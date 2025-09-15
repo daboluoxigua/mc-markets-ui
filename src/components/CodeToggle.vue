@@ -1,9 +1,9 @@
 <template>
   <div class="code-toggle">
     <div class="demo-actions">
-      <el-button type="primary" class="demo-toggle-btn" @click="toggle">
+      <m-button type="primary" class="demo-toggle-btn" @click="toggle">
         {{ isVisible ? "隐藏代码" : "显示代码" }}
-      </el-button>
+      </m-button>
     </div>
     <div v-if="isVisible" class="demo-code">
       <button

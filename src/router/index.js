@@ -11,6 +11,7 @@ import SelectPage from '@/pages/selectPage.vue'
 import CheckboxPage from '@/pages/CheckboxPage.vue'
 import RadioPage from '@/pages/RadioPage.vue'
 import SwitchPage from '@/pages/SwitchPage.vue'
+import TagPage from '@/pages/TagPage.vue'
 
 const routes = [
   {
@@ -95,6 +96,14 @@ const routes = [
     component: SwitchPage,
     meta: {
       title: 'Switch 开关'
+    }
+  },
+  {
+    path: '/tag',
+    name: 'Tag',
+    component: TagPage,
+    meta: {
+      title: 'Tag 标签'
     }
   }
 ]

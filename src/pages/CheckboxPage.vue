@@ -4,16 +4,8 @@
     <DemoSection title="基础用法">
       <div class="doc-grid">
         <div class="doc-item">
-          <m-checkbox v-model="checked1" label="Option 1" size="large" />
-          <span>大尺寸</span>
-        </div>
-        <div class="doc-item">
           <m-checkbox v-model="checked2" label="Option 2" />
           <span>默认尺寸</span>
-        </div>
-        <div class="doc-item">
-          <m-checkbox v-model="checked3" label="Option 3" size="small" />
-          <span>小尺寸</span>
         </div>
       </div>
     </DemoSection>
@@ -54,7 +46,7 @@
     </DemoSection>
 
     <!-- Options 属性 -->
-    <DemoSection title="Options 属性">
+    <DemoSection title="Options 属性" :columns="1">
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="checkListOptions" :options="options" />
@@ -64,7 +56,7 @@
     </DemoSection>
 
     <!-- 中间状态 -->
-    <DemoSection title="中间状态">
+    <DemoSection title="中间状态" :columns="1">
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox
@@ -88,7 +80,7 @@
     </DemoSection>
 
     <!-- 可选项目数量的限制 -->
-    <DemoSection title="可选项目数量的限制">
+    <DemoSection title="可选项目数量的限制" :columns="1">
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="checkedCitiesLimit" :min="1" :max="2">
@@ -102,7 +94,7 @@
     </DemoSection>
 
     <!-- 按钮样式 -->
-    <DemoSection title="按钮样式">
+    <DemoSection title="按钮样式" :columns="1">
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="buttonCheckList">
@@ -118,7 +110,7 @@
     </DemoSection>
 
     <!-- 带有边框 -->
-    <DemoSection title="带有边框">
+    <DemoSection title="带有边框" :columns="1">
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="borderCheckList">

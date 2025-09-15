@@ -2,8 +2,6 @@
   <el-checkbox-group 
     v-bind="$attrs" 
     class="m-checkbox-group"
-    :model-value="modelValue"
-    @update:model-value="$emit('update:model-value', $event)"
   >
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
@@ -13,16 +11,13 @@
 
 <script setup>
 defineOptions({
-  name: 'MCheckboxGroup',
-  inheritAttrs: false
+  name: 'MCheckboxGroup'
 })
-
-defineProps({
-  modelValue: {
-    type: Array,
-    default: () => []
-  }
-})
-
-defineEmits(['update:model-value'])
 </script>
+
+<style lang="scss">
+// CheckboxGroup 组件样式 - 使用 m-checkbox-group 类名隔离样式
+.m-checkbox-group {
+  // 自定义样式可以在这里添加
+}
+</style>

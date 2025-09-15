@@ -1,5 +1,5 @@
 <template>
-  <el-radio-button v-bind="mergedAttrs">
+  <el-radio-button v-bind="mergedAttrs" class="m-radio-button">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>

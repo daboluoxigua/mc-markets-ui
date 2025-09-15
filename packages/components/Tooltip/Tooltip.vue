@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip v-bind="mergedAttrs" :popper-class="computedPopperClass">
+  <el-tooltip v-bind="mergedAttrs" :popper-class="computedPopperClass" class="m-tooltip">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -63,6 +63,13 @@ const mergedAttrs = computed(() => {
       background-color: #fff !important;
       border-color: #fff !important;
     }
+  }
+}
+
+:deep(.el-popper) {
+  &.is-light {
+    background: var(--bg-tertiary-hover);
+    border-color: var(--border-primary);
   }
 }
 </style>

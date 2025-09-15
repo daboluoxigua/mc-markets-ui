@@ -2,8 +2,6 @@
   <el-checkbox-button 
     v-bind="$attrs" 
     class="m-checkbox-button"
-    :model-value="modelValue"
-    @update:model-value="$emit('update:model-value', $event)"
   >
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
@@ -16,13 +14,11 @@ defineOptions({
   name: 'MCheckboxButton',
   inheritAttrs: false
 })
-
-defineProps({
-  modelValue: {
-    type: [Boolean, String, Number, Array],
-    default: false
-  }
-})
-
-defineEmits(['update:model-value'])
 </script>
+
+<style lang="scss">
+// CheckboxButton 组件样式 - 使用更具体的选择器确保样式优先级
+.m-checkbox-button.el-checkbox-button {
+  --el-checkbox-button-checked-text-color: var(--bg-tertiary-hover);
+}
+</style>

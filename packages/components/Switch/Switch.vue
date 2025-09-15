@@ -1,5 +1,5 @@
 <template>
-  <el-switch v-bind="mergedAttrs" :popper-class="computedPopperClass">
+  <el-switch v-bind="mergedAttrs" :popper-class="computedPopperClass" class="m-switch">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
