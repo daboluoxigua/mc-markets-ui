@@ -1,0 +1,10 @@
+{
+  "name": "@mc-markets/ui Demo",
+  "description": "Vue 3 组件库演示",
+  "version": "1.0.0",
+  "author": "chenyu",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/daboluoxigua/mc-ui.git"
+  }
+}
