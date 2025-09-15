@@ -13,3 +13,36 @@
 @use './variables.scss';
 // 导入 Element Plus 基础样式
 // @import 'element-plus/dist/index.css';
+
+
+
+// 全局样式
+
+// 下拉菜单样式 - 全局样式
+.el-select-dropdown {
+  padding: 12px;
+}
+
+.el-select-dropdown__list {
+  padding: 0;
+}
+
+.el-select-dropdown__item {
+  padding: 0px 12px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 6px;
+  font-size: var(--font-size-text-sm);
+  color: var(--text-primary);
+  
+  &:hover,
+  &.is-hovering {
+    background: var(--all-alphe-white-6, #FFFFFF0F);
+  }
+}
+
+.el-select-dropdown__header {
+  border: none;
+  padding: 0;
+  padding-bottom: 4px;
+}

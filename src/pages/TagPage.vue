@@ -4,10 +4,6 @@
     <DemoSection title="基础用法">
       <div class="doc-grid">
         <div class="doc-item">
-          <m-tag type="primary">Tag 1</m-tag>
-          <span>Primary</span>
-        </div>
-        <div class="doc-item">
           <m-tag type="success">Tag 2</m-tag>
           <span>Success</span>
         </div>
@@ -16,8 +12,8 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <m-tag type="warning">Tag 4</m-tag>
-          <span>Warning</span>
+          <m-tag type="primary">Tag 4</m-tag>
+          <span>primary</span>
         </div>
         <div class="doc-item">
           <m-tag type="danger">Tag 5</m-tag>
@@ -31,7 +27,7 @@
       <div class="doc-grid">
         <div class="doc-item">
           <m-tag v-for="tag in tags" :key="tag.name" closable :type="tag.type" @close="handleClose(tag)">
-            {{ tag.name }}
+            {{ tag.label }}
           </m-tag>
           <span>Closable Tags</span>
         </div>
@@ -47,6 +43,7 @@
               v-for="tag in dynamicTags"
               :key="tag"
               closable
+              type="primary"
               :disable-transitions="false"
               @close="handleDynamicClose(tag)"
             >
@@ -206,7 +203,7 @@
             <el-check-tag :checked="checked3" type="info" @change="onChange3">
               Tag 3
             </el-check-tag>
-            <el-check-tag :checked="checked4" type="warning" @change="onChange4">
+            <el-check-tag :checked="checked4" type="primary" @change="onChange4">
               Tag 4
             </el-check-tag>
             <el-check-tag :checked="checked5" type="danger" @change="onChange5">
@@ -248,28 +245,6 @@
         <div class="doc-item">
           <m-tag color="#909399">灰色标签</m-tag>
           <span>Gray Tag</span>
-        </div>
-      </div>
-    </DemoSection>
-
-    <!-- 边框描边 -->
-    <DemoSection title="边框描边">
-      <div class="doc-grid">
-        <div class="doc-item">
-          <m-tag type="primary" hit>有边框描边</m-tag>
-          <span>Hit Border</span>
-        </div>
-        <div class="doc-item">
-          <m-tag type="success" hit>成功标签</m-tag>
-          <span>Success Hit</span>
-        </div>
-        <div class="doc-item">
-          <m-tag type="warning" hit>警告标签</m-tag>
-          <span>Warning Hit</span>
-        </div>
-        <div class="doc-item">
-          <m-tag type="danger" hit>危险标签</m-tag>
-          <span>Danger Hit</span>
         </div>
       </div>
     </DemoSection>
@@ -335,11 +310,10 @@ const { mMessage: ElMessage } = mFns;
 
 // 响应式数据
 const tags = ref([
-  { name: 'Tag 1', type: 'primary' },
-  { name: 'Tag 2', type: 'success' },
-  { name: 'Tag 3', type: 'info' },
-  { name: 'Tag 4', type: 'warning' },
-  { name: 'Tag 5', type: 'danger' },
+  { type: 'info', label: 'Tag 1' },
+  { type: 'danger', label: 'Tag 2' },
+  { type: 'primary', label: 'Tag 3' },
+  { type: 'success', label: 'Tag 4' },
 ]);
 
 const dynamicTags = ref(['Tag 1', 'Tag 2', 'Tag 3']);
@@ -348,11 +322,10 @@ const inputValue = ref('');
 const inputRef = ref();
 
 const themeItems = ref([
-  { type: 'primary', label: 'Tag 1' },
-  { type: 'success', label: 'Tag 2' },
-  { type: 'info', label: 'Tag 3' },
-  { type: 'warning', label: 'Tag 4' },
-  { type: 'danger', label: 'Tag 5' },
+  { type: 'info', label: 'Tag 1' },
+  { type: 'danger', label: 'Tag 2' },
+  { type: 'primary', label: 'Tag 3' },
+  { type: 'success', label: 'Tag 4' },
 ]);
 
 // CheckTag 状态
@@ -370,7 +343,7 @@ const tagApiProps = [
     name: "type",
     type: "enum",
     default: "primary",
-    description: "Tag 的类型，可选值：primary / success / info / warning / danger",
+    description: "Tag 的类型，可选值：success / info / primary / danger",
   },
   {
     name: "closable",
@@ -453,7 +426,7 @@ const checkTagApiProps = [
     name: "type",
     type: "enum",
     default: "primary",
-    description: "CheckTag 类型，可选值：primary / success / info / warning / danger",
+    description: "CheckTag 类型，可选值：primary / success / info / primary / danger",
   },
 ];
 
@@ -560,12 +533,6 @@ const onChange6 = (status) => {
     transition: all 0.3s ease;
   }
 
-  .doc-item span {
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--el-text-color-regular);
-    text-align: center;
-  }
 
   .tag-container {
     display: flex;
