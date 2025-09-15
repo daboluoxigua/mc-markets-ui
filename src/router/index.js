@@ -15,6 +15,8 @@ import TagPage from '@/pages/TagPage.vue'
 import AlertPage from '@/pages/AlertPage.vue'
 import DialogPage from '@/pages/DialogPage.vue'
 import NotificationPage from '@/pages/NotificationPage.vue'
+import DatePickerPage from '@/pages/DatePickerPage.vue'
+import EmptyPage from '@/pages/EmptyPage.vue'
 
 const routes = [
   {
@@ -131,6 +133,22 @@ const routes = [
     component: NotificationPage,
     meta: {
       title: 'Notification 通知'
+    }
+  },
+  {
+    path: '/datepicker',
+    name: 'DatePicker',
+    component: DatePickerPage,
+    meta: {
+      title: 'DatePicker 日期选择器'
+    }
+  },
+  {
+    path: '/empty',
+    name: 'Empty',
+    component: EmptyPage,
+    meta: {
+      title: 'Empty 空状态'
     }
   }
 ]

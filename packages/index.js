@@ -30,8 +30,10 @@ import MTag from './components/Tag/Tag.vue'
 import MAlert from './components/Alert/Alert.vue'
 import MDialog from './components/Dialog/Dialog.vue'
 import MNotification from './components/Notification/Notification.vue'
+import MDatePicker from './components/DatePicker/DatePicker.vue'
+import MEmpty from './components/Empty/Empty.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -109,7 +111,7 @@ Object.entries(ElementPlusComponents).forEach(([key, value]) => {
 })
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty }
 
 // 导出转换后的 Element Plus 组件
 export const {
