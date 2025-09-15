@@ -122,38 +122,6 @@
       </div>
     </DemoSection>
 
-    <!-- 尺寸和过滤 -->
-    <DemoSection title="尺寸和过滤">
-      <div class="doc-grid">
-        <div class="doc-item">
-          <m-select v-model="value" placeholder="大尺寸" size="large">
-            <m-option label="选项一" value="option1"></m-option>
-            <m-option label="选项二" value="option2"></m-option>
-            <m-option label="选项三" value="option3"></m-option>
-          </m-select>
-          <span>大尺寸</span>
-        </div>
-        <div class="doc-item">
-          <m-select v-model="value" placeholder="小尺寸" size="small">
-            <m-option label="选项一" value="option1"></m-option>
-            <m-option label="选项二" value="option2"></m-option>
-            <m-option label="选项三" value="option3"></m-option>
-          </m-select>
-          <span>小尺寸</span>
-        </div>
-        <div class="doc-item">
-          <m-select v-model="value" placeholder="可过滤" filterable>
-            <m-option label="选项一" value="option1"></m-option>
-            <m-option label="选项二" value="option2"></m-option>
-            <m-option label="选项三" value="option3"></m-option>
-            <m-option label="选项四" value="option4"></m-option>
-            <m-option label="选项五" value="option5"></m-option>
-          </m-select>
-          <span>可过滤</span>
-        </div>
-      </div>
-    </DemoSection>
-
     <!-- API 文档 -->
     <ApiDocs
       title="Select API"

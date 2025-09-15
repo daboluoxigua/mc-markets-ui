@@ -18,9 +18,6 @@ import MForm from './components/Form/Form.vue'
 import MFormItem from './components/FormItem/FormItem.vue'
 import MTooltip from './components/Tooltip/Tooltip.vue'
 import MSelect from './components/Select/select.vue'
-import MCheckbox from './components/Checkbox/Checkbox.vue'
-import MCheckboxGroup from './components/CheckboxGroup/CheckboxGroup.vue'
-import MCheckboxButton from './components/CheckboxButton/CheckboxButton.vue'
 import MPagination from './components/Pagination/Pagination.vue'
 import MRadio from './components/Radio/Radio.vue'
 import MRadioGroup from './components/RadioGroup/RadioGroup.vue'
@@ -32,7 +29,7 @@ import MDialog from './components/Dialog/Dialog.vue'
 import MNotification from './components/Notification/Notification.vue'
 import MTable from './components/Table/Table.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect,  MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -43,8 +40,6 @@ function registerElementPlus(app) {
     if (comp && comp.name && typeof comp.name === 'string') {
       let name = comp.name.toLowerCase()
       const nameMap = {
-        'mcheckboxgroup': 'm-checkbox-group',
-        'mcheckboxbutton': 'm-checkbox-button',
         'mradiogroup': 'm-radio-group',
         'mradiobutton': 'm-radio-button',
         'mformitem': 'm-form-item',
@@ -79,12 +74,9 @@ const install = (app) => {
   // 先注册自定义组件
   components.forEach(component => {
     if (component && component.name && typeof component.name === 'string') {
-      // 将 MCheckboxGroup 转换为 m-checkbox-group
       let name = component.name.toLowerCase()
       // 处理特定的组件名称映射
       const nameMap = {
-        'mcheckboxgroup': 'm-checkbox-group',
-        'mcheckboxbutton': 'm-checkbox-button',
         'mradiogroup': 'm-radio-group',
         'mradiobutton': 'm-radio-button',
         'mformitem': 'm-form-item',
@@ -101,19 +93,12 @@ const install = (app) => {
   registerElementPlus(app)
 }
 
-// 自动导出 Element Plus 函数
-const exportedFns = {}
-Object.entries(ElementPlusComponents).forEach(([key, value]) => {
-  if (typeof value === 'function' && key.startsWith('El')) {
-    exportedFns['m' + key.slice(2)] = value
-  }
-})
-
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect,  MCheckbox, MCheckboxGroup, MCheckboxButton, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MTable }
 
-
-export const mFns = { ...exportedFns }
+// 手动导出常用的 Element Plus 函数（只导出函数，不导出组件）
+export const MMessage = ElementPlusComponents.ElMessage
+export const MMessageBox = ElementPlusComponents.ElMessageBox
 
 // 导出转换后的 Element Plus 组件
 export const mComponents = { ...convertedComponents }
