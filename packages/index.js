@@ -17,8 +17,12 @@ import MInput from './components/Input/Input.vue'
 import MForm from './components/Form/Form.vue'
 import MFormItem from './components/FormItem/FormItem.vue'
 import MTooltip from './components/Tooltip/Tooltip.vue'
+import MSelect from './components/Select/select.vue'
+import MCheckbox from './components/Checkbox/Checkbox.vue'
+import MCheckboxGroup from './components/CheckboxGroup/CheckboxGroup.vue'
+import MCheckboxButton from './components/CheckboxButton/CheckboxButton.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -59,7 +63,7 @@ Object.entries(ElementPlusComponents).forEach(([key, value]) => {
 })
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MCheckbox, MCheckboxGroup, MCheckboxButton }
 export const mFns = { ...exportedFns }
 
 // 导出转换后的 Element Plus 组件

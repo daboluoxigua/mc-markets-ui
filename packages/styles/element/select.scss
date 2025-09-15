@@ -1,5 +1,8 @@
 .el-select__wrapper{
   padding: 4px 16px;
+  &.is-disabled{
+    background: var(--bg-tertiary-hover);
+  }
 }
 .el-select-dropdown{
   padding: 12px;
@@ -9,8 +12,8 @@
 }
 .el-select-dropdown__item{
   padding:0px 12px;
-  height: 40px;
-  line-height: 40px;
+  height: 36px;
+  line-height: 36px;
   border-radius: 6px;
   font-size: var(--font-size-text-sm);
   color: var(--text-primary);

@@ -22,32 +22,14 @@
       <div class="doc-grid">
         <div class="doc-item">
           <m-input v-model="value" placeholder="请输入内容">
-            <template #prepend>
-              <m-icon name="search" />
+            <template #prefix>
+              <m-icon name="search" size="24"/>
             </template>
-            <template #append>
-              <m-button>获取验证码</m-button>
+            <template #suffix>
+              <m-button type="text">获取验证码</m-button>
             </template>
           </m-input>
           <span>基础输入框</span>
-        </div>
-      </div>
-    </DemoSection>
-
-    <!-- 不同尺寸 -->
-    <DemoSection title="不同尺寸">
-      <div class="doc-grid">
-        <div class="doc-item">
-          <m-input v-model="value" placeholder="大尺寸" size="large"></m-input>
-          <span>大尺寸</span>
-        </div>
-        <div class="doc-item">
-          <m-input v-model="value" placeholder="默认尺寸"></m-input>
-          <span>默认尺寸</span>
-        </div>
-        <div class="doc-item">
-          <m-input v-model="value" placeholder="小尺寸" size="small"></m-input>
-          <span>小尺寸</span>
         </div>
       </div>
     </DemoSection>

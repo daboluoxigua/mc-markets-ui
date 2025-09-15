@@ -6,6 +6,8 @@ import ButtonPage from '@/pages/ButtonPage.vue'
 import CardPage from '@/pages/CardPage.vue'
 import TooltipPage from '@/pages/TooltipPage.vue'
 import InputPage from '@/pages/InputPage.vue'
+import SelectPage from '@/pages/selectPage.vue'
+import CheckboxPage from '@/pages/CheckboxPage.vue'
 
 const routes = [
   {
@@ -50,6 +52,22 @@ const routes = [
     component: InputPage,
     meta: {
       title: 'Input 输入框'
+    }
+  },
+  {
+    path: '/select',
+    name: 'Select',
+    component: SelectPage,
+    meta: {
+      title: 'Select 选择器'
+    }
+  },
+  {
+    path: '/checkbox',
+    name: 'Checkbox',
+    component: CheckboxPage,
+    meta: {
+      title: 'Checkbox 多选框'
     }
   }
 ]
