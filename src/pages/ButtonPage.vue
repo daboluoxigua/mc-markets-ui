@@ -1,8 +1,8 @@
 <template>
   <div class="button-page">
     <!-- 基础按钮类型 -->
-    <DemoSection title="基础按钮类型">{{  
-      `<div class="doc-grid">
+    <DemoSection title="基础按钮类型">
+      <div class="doc-grid">
         <div class="doc-item">
           <m-button>默认按钮</m-button>
           <span>Default</span>
@@ -11,8 +11,7 @@
           <m-button type="primary">主要按钮</m-button>
           <span>Primary</span>
         </div>
-      </div>`
-      }}
+      </div>
     </DemoSection>
     <!-- Plain 按钮 -->
     <DemoSection title="Plain 按钮">
@@ -24,26 +23,6 @@
         <div class="doc-item">
           <m-button plain disabled>禁用状态</m-button>
           <span>Disabled</span>
-        </div>
-        <div class="doc-item">
-          <m-button type="primary" plain>Primary</m-button>
-          <span>Primary</span>
-        </div>
-        <div class="doc-item">
-          <m-button type="success" plain>Success</m-button>
-          <span>Success</span>
-        </div>
-        <div class="doc-item">
-          <m-button type="info" plain>Info</m-button>
-          <span>Info</span>
-        </div>
-        <div class="doc-item">
-          <m-button type="warning" plain>Warning</m-button>
-          <span>Warning</span>
-        </div>
-        <div class="doc-item">
-          <m-button type="danger" plain>Danger</m-button>
-          <span>Danger</span>
         </div>
       </div>
     </DemoSection>
@@ -216,35 +195,35 @@
       <div class="doc-grid">
         <div class="doc-item">
           <m-button type="primary">
-            <m-icon name="search" />
+            <m-icon name="search" style="margin-right: 4px;"/>
             搜索
           </m-button>
           <span>Search</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="square-pen" />
+            <m-icon name="square-pen"  style="margin-right: 4px;"/>
             编辑
           </m-button>
           <span>Edit</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="linear-trash" />
+            <m-icon name="linear-trash" style="margin-right: 4px;"/>
             删除
           </m-button>
           <span>Delete</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="copy" />
+            <m-icon name="copy" style="margin-right: 4px;"/>
             复制
           </m-button>
           <span>Copy</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="plus" />
+            <m-icon name="plus" style="margin-right: 4px;"/>
             添加
           </m-button>
           <span>Add</span>
@@ -257,15 +236,15 @@
       <div class="doc-item">
         <m-button-group>
           <m-button type="primary">
-            <m-icon name="square-pen" />
+            <m-icon name="square-pen" style="margin-right: 4px;"/>
             编辑
           </m-button>
           <m-button type="success">
-            <m-icon name="check" />
+            <m-icon name="check" style="margin-right: 4px;"/>
             保存
           </m-button>
           <m-button type="danger">
-            <m-icon name="lucide-x" />
+            <m-icon name="lucide-x" style="margin-right: 4px;"/>
             取消
           </m-button>
         </m-button-group>
@@ -619,7 +598,7 @@ const handleNotification = () => {
 .button-page {
   .doc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     gap: 20px;
     margin-bottom: 20px;
   }
@@ -723,7 +702,7 @@ const handleNotification = () => {
   /* 响应式设计 */
   @media (max-width: 1200px) {
     .doc-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(180px, auto));
       gap: 16px;
     }
   }
@@ -734,7 +713,7 @@ const handleNotification = () => {
     }
 
     .doc-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(150px, auto));
       gap: 12px;
     }
 

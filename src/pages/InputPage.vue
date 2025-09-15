@@ -17,6 +17,22 @@
         </div>
       </div>
     </DemoSection>
+    <!-- 图标和按钮 -->
+    <DemoSection title="图标和按钮" :columns="2">
+      <div class="doc-grid">
+        <div class="doc-item">
+          <m-input v-model="value" placeholder="请输入内容">
+            <template #prepend>
+              <m-icon name="search" />
+            </template>
+            <template #append>
+              <m-button>获取验证码</m-button>
+            </template>
+          </m-input>
+          <span>基础输入框</span>
+        </div>
+      </div>
+    </DemoSection>
 
     <!-- 不同尺寸 -->
     <DemoSection title="不同尺寸">
@@ -252,12 +268,6 @@ const inputApiExposes = [
 
 <style scoped lang="scss">
 .input-page {
-  .doc-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
-  }
 
   .doc-item {
     display: flex;
@@ -278,21 +288,9 @@ const inputApiExposes = [
   }
 
   /* 响应式设计 */
-  @media (max-width: 1200px) {
-    .doc-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-  }
-
   @media (max-width: 768px) {
     .input-page {
       padding: 16px;
-    }
-
-    .doc-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
     }
 
     .doc-item {
@@ -303,11 +301,6 @@ const inputApiExposes = [
   @media (max-width: 480px) {
     .input-page {
       padding: 12px;
-    }
-
-    .doc-grid {
-      grid-template-columns: 1fr;
-      gap: 10px;
     }
 
     .doc-item {

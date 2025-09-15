@@ -372,7 +372,7 @@ const copyIconClass = async (className) => {
 .icons-page {
   .doc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
     gap: 20px;
     margin-bottom: 20px;
   }
@@ -543,24 +543,24 @@ const copyIconClass = async (className) => {
   /* 响应式设计 */
   @media (max-width: 1200px) {
     .doc-grid {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, auto));
       gap: 16px;
     }
 
     .all-icons-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, auto));
       gap: 12px;
     }
   }
 
   @media (max-width: 768px) {
     .doc-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, auto));
       gap: 12px;
     }
 
     .all-icons-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(120px, auto));
       gap: 10px;
     }
 
@@ -585,7 +585,7 @@ const copyIconClass = async (className) => {
 
   @media (max-width: 480px) {
     .doc-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(120px, auto));
       gap: 8px;
     }
 

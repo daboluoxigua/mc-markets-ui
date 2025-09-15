@@ -585,7 +585,7 @@ const tooltipApiExposes = [
 
   .doc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     gap: 20px;
     margin-bottom: 20px;
     overflow: hidden; // 防止网格内容溢出
@@ -637,7 +637,7 @@ const tooltipApiExposes = [
   /* 响应式设计 */
   @media (max-width: 1200px) {
     .doc-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(180px, auto));
       gap: 16px;
     }
   }
@@ -652,7 +652,7 @@ const tooltipApiExposes = [
     }
 
     .doc-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(150px, auto));
       gap: 12px;
     }
 
