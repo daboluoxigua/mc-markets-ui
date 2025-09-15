@@ -12,6 +12,7 @@ import CheckboxPage from '@/pages/CheckboxPage.vue'
 import RadioPage from '@/pages/RadioPage.vue'
 import SwitchPage from '@/pages/SwitchPage.vue'
 import AlertPage from '@/pages/AlertPage.vue'
+import DialogPage from '@/pages/DialogPage.vue'
 
 const routes = [
   {
@@ -104,6 +105,14 @@ const routes = [
     component: AlertPage,
     meta: {
       title: 'Alert 提示'
+    }
+  },
+  {
+    path: '/dialog',
+    name: 'Dialog',
+    component: DialogPage,
+    meta: {
+      title: 'Dialog 对话框'
     }
   }
 ]

@@ -1,13 +1,13 @@
-gu'an'wuanw<template>
-  <el-alert v-bind="$attrs">
+<template>
+  <el-dialog v-bind="$attrs">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
-  </el-alert>
+  </el-dialog>
 </template>
 
 <script setup>
 defineOptions({
-  name: 'MAlert'
+  name: 'MDialog'
 })
 </script>
