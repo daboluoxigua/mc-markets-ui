@@ -6,12 +6,11 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.0.43
+ * @version 1.0.44
  */
 
 import * as ElementPlusComponents from 'element-plus'
 // 导入样式文件
-import './styles/index.scss'
 import MIcon from './components/Icon/Icon.vue'
 import MButton from './components/Button/Button.vue'
 import MCard from './components/Card/Card.vue'

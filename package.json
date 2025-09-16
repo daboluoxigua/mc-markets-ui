@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.0.43",
+  "version": "1.0.44",
   "type": "module",
   "author": "chenyu",
   "description": "Vue 3 组件库，基于 Element Plus 的自定义组件",
@@ -85,12 +85,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/daboluoxigua/npm-mc-markets-ui.git"
+    "url": "https://gitee.com/daboluoxigua/mc-ui.git"
   },
   "bugs": {
-    "url": "https://gitee.com/daboluoxigua/npm-mc-markets-ui/issues"
+    "url": "https://gitee.com/daboluoxigua/mc-ui/issues"
   },
-  "homepage": "https://gitee.com/daboluoxigua/npm-mc-markets-ui#readme",
+  "homepage": "https://gitee.com/daboluoxigua/mc-ui#readme",
   "publishConfig": {
     "access": "public"
   }
