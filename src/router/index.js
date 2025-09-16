@@ -22,6 +22,7 @@ import DatePickerPage from '@/pages/DatePickerPage.vue'
 import EmptyPage from '@/pages/EmptyPage.vue'
 import BannerPage from '@/pages/BannerPage.vue'
 import ColorPage from '@/pages/ColorPage.vue'
+import TabsPage from '@/pages/TabsPage.vue'
 
 const routes = [
   {
@@ -194,6 +195,14 @@ const routes = [
     component: BannerPage,
     meta: {
       title: 'Banner 横幅'
+    }
+  },
+  {
+    path: '/tabs',
+    name: 'Tabs',
+    component: TabsPage,
+    meta: {
+      title: 'Tabs 标签页'
     }
   }
 ]

@@ -3,36 +3,6 @@
     <!-- 基础使用 -->
     <DemoSection title="基础使用">
       <div class="demo-container">
-        <m-banner content="这是一个基础的 Banner 组件" />
-        <m-banner type="info" content="点击右侧的 X 关闭按钮可以关闭这个 Banner" @close="handleClose('基础 Banner')" />
-      </div>
-    </DemoSection>
-
-    <!-- 不同类型 -->
-    <DemoSection title="不同类型">
-      <div class="demo-container">
-        <div class="demo-item">
-          <h4>信息类型</h4>
-          <m-banner type="info" content="这是一条信息提示" />
-        </div>
-        <div class="demo-item">
-          <h4>成功类型</h4>
-          <m-banner type="success" content="操作成功完成" />
-        </div>
-        <div class="demo-item">
-          <h4>警告类型</h4>
-          <m-banner type="warning" content="请注意相关事项" />
-        </div>
-        <div class="demo-item">
-          <h4>错误类型</h4>
-          <m-banner type="error" content="操作失败，请重试" />
-        </div>
-      </div>
-    </DemoSection>
-
-    <!-- 可关闭 -->
-    <DemoSection title="可关闭">
-      <div class="demo-container">
         <div class="demo-item">
           <h4>可关闭</h4>
           <m-banner 
@@ -53,27 +23,6 @@
       </div>
     </DemoSection>
 
-    <!-- 自定义图标 -->
-    <DemoSection title="自定义图标">
-      <div class="demo-container">
-        <div class="demo-item">
-          <h4>自定义图标</h4>
-          <m-banner 
-            type="info" 
-            icon="star-filled" 
-            content="使用自定义图标" 
-          />
-        </div>
-        <div class="demo-item">
-          <h4>图标插槽</h4>
-          <m-banner type="success" content="使用插槽自定义图标">
-            <template #icon>
-              <m-icon name="heart" color="#ff6b6b" />
-            </template>
-          </m-banner>
-        </div>
-      </div>
-    </DemoSection>
 
     <!-- 自定义样式 -->
     <DemoSection title="自定义样式">
@@ -87,51 +36,9 @@
             text-color="#1e40af"
           />
         </div>
-        <div class="demo-item">
-          <h4>自定义圆角</h4>
-          <m-banner 
-            type="warning" 
-            content="自定义圆角的 Banner" 
-            border-radius="20px"
-          />
-        </div>
-        <div class="demo-item">
-          <h4>自定义内边距</h4>
-          <m-banner 
-            type="error" 
-            content="自定义内边距的 Banner" 
-            padding="20px"
-          />
-        </div>
       </div>
     </DemoSection>
 
-    <!-- 自动关闭 -->
-    <DemoSection title="自动关闭">
-      <div class="demo-container">
-        <div class="demo-item">
-          <h4>3秒后自动关闭</h4>
-          <m-banner 
-            type="success" 
-            content="这个 Banner 会在 3 秒后自动关闭" 
-            :duration="3000"
-            @close="handleClose('自动关闭 Banner')"
-          />
-        </div>
-        <div class="demo-item">
-          <h4>手动控制显示</h4>
-          <m-banner 
-            v-model:visible="showBanner"
-            type="info" 
-            content="可以通过 v-model:visible 控制显示隐藏" 
-          />
-          <div class="button-group">
-            <m-button @click="showBanner = true">显示 Banner</m-button>
-            <m-button @click="showBanner = false">隐藏 Banner</m-button>
-          </div>
-        </div>
-      </div>
-    </DemoSection>
 
     <!-- 复杂内容 -->
     <DemoSection title="复杂内容">
@@ -171,13 +78,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
 import ApiDocs from '@/components/ApiDocs.vue'
 import { MMessage, MBanner } from '@mc-markets/ui'
 
-// 响应式数据
-const showBanner = ref(true)
 
 
 // API 文档数据
@@ -187,12 +91,6 @@ const bannerApiProps = [
     type: 'string',
     default: "''",
     description: '横幅内容文本'
-  },
-  {
-    name: 'type',
-    type: 'string',
-    default: "'info'",
-    description: '横幅类型：info(信息) / success(成功) / warning(警告) / error(错误)'
   },
   {
     name: 'closable',
@@ -205,24 +103,6 @@ const bannerApiProps = [
     type: 'boolean',
     default: 'true',
     description: '是否显示横幅，支持 v-model:visible'
-  },
-  {
-    name: 'icon',
-    type: 'string',
-    default: "''",
-    description: '自定义图标名称，不设置时使用默认图标'
-  },
-  {
-    name: 'iconSize',
-    type: 'string | number',
-    default: "'16px'",
-    description: '图标大小'
-  },
-  {
-    name: 'closeIconSize',
-    type: 'string | number',
-    default: "'14px'",
-    description: '关闭图标大小'
   },
   {
     name: 'backgroundColor',
@@ -242,24 +122,6 @@ const bannerApiProps = [
     default: "''",
     description: '自定义边框颜色，会覆盖默认的类型样式'
   },
-  {
-    name: 'borderRadius',
-    type: 'string | number',
-    default: "'4px'",
-    description: '圆角大小'
-  },
-  {
-    name: 'padding',
-    type: 'string | number',
-    default: "'12px 16px'",
-    description: '内边距'
-  },
-  {
-    name: 'duration',
-    type: 'number',
-    default: '0',
-    description: '自动关闭时间（毫秒），0 表示不自动关闭'
-  }
 ]
 
 const bannerApiEvents = [
@@ -281,36 +143,12 @@ const bannerApiCssClasses = [
     description: '横幅根元素样式类'
   },
   {
-    name: '.m-banner--info',
-    description: '信息类型横幅样式类'
-  },
-  {
-    name: '.m-banner--success',
-    description: '成功类型横幅样式类'
-  },
-  {
-    name: '.m-banner--warning',
-    description: '警告类型横幅样式类'
-  },
-  {
-    name: '.m-banner--error',
-    description: '错误类型横幅样式类'
-  },
-  {
     name: '.m-banner--closable',
     description: '可关闭横幅样式类'
   },
   {
-    name: '.m-banner--with-icon',
-    description: '带图标横幅样式类'
-  },
-  {
     name: '.m-banner__content',
     description: '横幅内容容器样式类'
-  },
-  {
-    name: '.m-banner__icon',
-    description: '横幅图标样式类'
   },
   {
     name: '.m-banner__text',
