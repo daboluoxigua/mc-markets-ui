@@ -16,18 +16,18 @@
 
 
 
-// 全局样式
+// 全局样式 - 使用较低优先级，避免覆盖组件样式
 
-// 下拉菜单样式 - 全局样式
-.el-select-dropdown {
+// 下拉菜单样式 - 全局样式（仅在组件未定义时生效）
+.el-select-dropdown:not(.m-select-dropdown) {
   padding: 12px;
 }
 
-.el-select-dropdown__list {
+.el-select-dropdown__list:not(.m-select-dropdown__list) {
   padding: 0;
 }
 
-.el-select-dropdown__item {
+.el-select-dropdown__item:not(.m-select-dropdown__item) {
   padding: 0px 12px;
   height: 36px;
   line-height: 36px;
@@ -41,20 +41,22 @@
   }
 }
 
-.el-select-dropdown__header {
+.el-select-dropdown__header:not(.m-select-dropdown__header) {
   border: none;
   padding: 0;
   padding-bottom: 4px;
 }
 
-
-.el-checkbox {
+// Checkbox 样式 - 仅在组件未定义时生效
+.el-checkbox:not(.m-checkbox) {
   --el-checkbox-checked-icon-color: #000;
   --el-checkbox-input-height: 20px;
   --el-checkbox-input-width: 20px;
   --el-checkbox-input-border: 2px solid var(--icon-tertiary);
 }
 
-.el-checkbox .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
+.el-checkbox:not(.m-checkbox) .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
   top: 7px;
 }
+
+// 组件样式现在在各个组件文件中定义，确保样式模块化

@@ -6,10 +6,12 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.0.39
+ * @version 1.0.43
  */
 
 import * as ElementPlusComponents from 'element-plus'
+// 导入样式文件
+import './styles/index.scss'
 import MIcon from './components/Icon/Icon.vue'
 import MButton from './components/Button/Button.vue'
 import MCard from './components/Card/Card.vue'
@@ -18,6 +20,8 @@ import MForm from './components/Form/Form.vue'
 import MFormItem from './components/FormItem/FormItem.vue'
 import MTooltip from './components/Tooltip/Tooltip.vue'
 import MSelect from './components/Select/select.vue'
+import MOption from './components/Option/Option.vue'
+import MOptionGroup from './components/OptionGroup/OptionGroup.vue'
 import MPagination from './components/Pagination/Pagination.vue'
 import MRadio from './components/Radio/Radio.vue'
 import MRadioGroup from './components/RadioGroup/RadioGroup.vue'
@@ -34,7 +38,7 @@ import MBanner from './components/Banner/Banner.vue'
 import MTabs from './components/Tabs/Tabs.vue'
 import MTabPane from './components/Tabs/TabPane.vue'
 
-const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MBanner, MTabs, MTabPane]
+const components = [MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MBanner, MTabs, MTabPane]
 
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
@@ -99,7 +103,7 @@ const install = (app) => {
 }
 
 export default { install }
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MBanner, MTabs, MTabPane }
+export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MBanner }
 
 // 手动导出常用的 Element Plus 函数（只导出函数，不导出组件）
 export const MMessage = ElementPlusComponents.ElMessage
