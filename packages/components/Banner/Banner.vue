@@ -26,7 +26,7 @@
       
       <!-- 关闭按钮 -->
       <div v-if="closable" class="m-banner__close" @click="handleClose">
-        <m-icon name="close" :size="closeIconSize" />
+        <m-icon name="lucide-x" :size="closeIconSize" />
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@ const props = defineProps({
   // 关闭图标大小
   closeIconSize: {
     type: [String, Number],
-    default: '14px'
+    default: '16px'
   },
   // 自定义背景色
   backgroundColor: {
@@ -91,16 +91,6 @@ const props = defineProps({
   borderColor: {
     type: String,
     default: ''
-  },
-  // 圆角大小
-  borderRadius: {
-    type: [String, Number],
-    default: '4px'
-  },
-  // 内边距
-  padding: {
-    type: [String, Number],
-    default: '12px 16px'
   },
   // 持续时间（毫秒），0 表示不自动关闭
   duration: {
@@ -132,16 +122,6 @@ const bannerStyle = computed(() => {
   }
   if (props.borderColor) {
     style.borderColor = props.borderColor
-  }
-  if (props.borderRadius) {
-    style.borderRadius = typeof props.borderRadius === 'number' 
-      ? `${props.borderRadius}px` 
-      : props.borderRadius
-  }
-  if (props.padding) {
-    style.padding = typeof props.padding === 'number' 
-      ? `${props.padding}px` 
-      : props.padding
   }
   
   return style
@@ -197,6 +177,7 @@ defineExpose({
   border: 1px solid;
   font-size: 14px;
   line-height: 1.5;
+  padding: 10px;
   transition: all 0.3s ease;
 
   &__content {
@@ -224,13 +205,17 @@ defineExpose({
     justify-content: center;
     margin-left: 8px;
     cursor: pointer;
-    padding: 2px;
-    border-radius: 2px;
+    padding: 4px;
+    border-radius: 3px;
     transition: background-color 0.2s ease;
     flex-shrink: 0;
+    min-width: 20px;
+    min-height: 20px;
+    opacity: 0.7;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.1);
+      opacity: 1;
     }
   }
 
@@ -272,13 +257,6 @@ defineExpose({
 
     .m-banner__close:hover {
       background-color: rgba(255, 77, 79, 0.1);
-    }
-  }
-
-  // 可关闭样式
-  &--closable {
-    .m-banner__content {
-      padding-right: 32px;
     }
   }
 
