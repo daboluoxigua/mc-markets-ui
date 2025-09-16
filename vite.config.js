@@ -21,10 +21,17 @@ export default ({ command }) => {
         scss: {
           silenceDeprecations: ['legacy-js-api']
         }
+      },
+      // 确保组件样式优先级
+      postcss: {
+        plugins: [
+          // 可以在这里添加PostCSS插件来优化样式优先级
+        ]
       }
     },
     build: {
       outDir: "dist", //输出文件名称
+      cssCodeSplit: false, // 将所有CSS提取到一个文件中
       lib: {
         entry: path.resolve(__dirname, "./packages/index.js"), //指定组件编译入口文件
         name: "McProUILibrary",
