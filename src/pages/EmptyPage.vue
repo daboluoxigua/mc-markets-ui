@@ -10,12 +10,77 @@
       </div>
     </DemoSection>
 
-    <!-- 自定义图片 -->
-    <DemoSection title="自定义图片">
+    <!-- 所有预设图片 -->
+    <DemoSection title="所有预设图片">
       <div class="example-empty-block">
-        <div class="example-demonstration">通过 image 属性传入图片 URL。</div>
+        <div class="example-demonstration">共16种预设图片类型，通过 image 属性使用。默认为 orders。</div>
         <div class="empty-demo-container">
-          <m-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" />
+          <div class="empty-grid">
+            <div class="empty-item">
+              <m-empty image="404" description="页面未找到" />
+              <div class="empty-label">404</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="billing" description="暂无账单" />
+              <div class="empty-label">billing</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="cart" description="购物车为空" />
+              <div class="empty-label">cart</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="comments" description="暂无评论" />
+              <div class="empty-label">comments</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="dashboard" description="仪表盘为空" />
+              <div class="empty-label">dashboard</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="files" description="暂无文件" />
+              <div class="empty-label">files</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="inbox" description="收件箱为空" />
+              <div class="empty-label">inbox</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="location" description="未找到位置" />
+              <div class="empty-label">location</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="network" description="网络错误" />
+              <div class="empty-label">network</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="notifications" description="暂无通知" />
+              <div class="empty-label">notifications</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="orders" description="暂无订单" />
+              <div class="empty-label">orders (默认)</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="records" description="暂无记录" />
+              <div class="empty-label">records</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="session" description="会话已过期" />
+              <div class="empty-label">session</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="subscription" description="暂无订阅" />
+              <div class="empty-label">subscription</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="todo" description="暂无待办事项" />
+              <div class="empty-label">todo</div>
+            </div>
+            <div class="empty-item">
+              <m-empty image="wishlist" description="愿望清单为空" />
+              <div class="empty-label">wishlist</div>
+            </div>
+          </div>
         </div>
       </div>
     </DemoSection>
@@ -36,7 +101,7 @@
         <div class="example-demonstration">使用默认插槽来自定义底部内容。</div>
         <div class="empty-demo-container">
           <m-empty>
-            <el-button type="primary">按钮</el-button>
+            <m-button type="primary">按钮</m-button>
           </m-empty>
         </div>
       </div>
@@ -48,16 +113,6 @@
         <div class="example-demonstration">通过 description 属性来自定义描述内容。</div>
         <div class="empty-demo-container">
           <m-empty description="描述文字" />
-        </div>
-      </div>
-    </DemoSection>
-
-    <!-- 无描述 -->
-    <DemoSection title="无描述">
-      <div class="example-empty-block">
-        <div class="example-demonstration">通过 description 属性设置为空字符串来隐藏描述。</div>
-        <div class="empty-demo-container">
-          <m-empty description="" />
         </div>
       </div>
     </DemoSection>
@@ -79,13 +134,14 @@ import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { MEmpty } from "@mc-markets/ui";
 
-// Empty API 文档数据 - 严格按照 Element Plus 2.11.2 规范
+// Empty API 文档数据 - 扩展版本
 const emptyApiProps = [
   {
     name: "image",
     type: "string",
-    default: "''",
-    description: "图片地址"
+    default: "'orders'",
+    description: "图片地址或预设图片名称",
+    values: ["404", "billing", "cart", "comments", "dashboard", "files", "inbox", "location", "network", "notifications", "orders", "records", "session", "subscription", "todo", "wishlist"]
   },
   {
     name: "image-size",
@@ -133,6 +189,63 @@ const emptyApiSlots = [
     align-items: center;
     min-height: 200px;
     border-radius: 4px;
+  }
+
+  .empty-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .empty-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .empty-label {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+
+  /* 响应式设计 */
+  @media (max-width: 1024px) {
+    .empty-grid {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 900px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .empty-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 600px;
+      gap: 15px;
+    }
+    
+    .empty-page {
+      padding: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .empty-grid {
+      grid-template-columns: 1fr;
+      max-width: 300px;
+      gap: 10px;
+    }
+    
+    .empty-page {
+      padding: 12px;
+    }
   }
 }
 </style>

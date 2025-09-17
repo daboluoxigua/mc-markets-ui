@@ -5,11 +5,6 @@
       <div class="example-switch-block">
         <div class="example-demonstration">绑定 v-model 到一个 Boolean 类型的变量。 可以使用 --el-switch-on-color 属性与 --el-switch-off-color 属性来设置开关的背景色。</div>
         <m-switch v-model="switch1" />
-        <m-switch 
-          v-model="switch2" 
-          class="ml-2" 
-          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" 
-        />
       </div>
     </DemoSection>
 
@@ -28,15 +23,10 @@
     <!-- 文字描述 -->
     <DemoSection title="文字描述">
       <div class="example-switch-block">
-        <div class="example-demonstration">使用 active-text 属性与 inactive-text 属性来设置开关的文字描述。 使用 inline-prompt 属性来控制文本是否显示在点内。</div>
         <m-switch v-model="switch6" class="mb-2" active-text="Pay by month" inactive-text="Pay by year" />
         <br />
-        <m-switch v-model="switch7" class="mb-2" style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" active-text="Pay by month" inactive-text="Pay by year" />
-        <br />
         <m-switch v-model="switch8" inline-prompt active-text="是" inactive-text="否" />
-        <m-switch v-model="switch9" class="ml-2" inline-prompt style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" active-text="Y" inactive-text="N" />
-        <m-switch v-model="switch10" class="ml-2" width="60" inline-prompt active-text="超出省略" inactive-text="超出省略" />
-        <m-switch v-model="switch11" class="ml-2" inline-prompt style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" active-text="完整展示多个内容" inactive-text="多个内容" />
+        <div class="example-demonstration">使用 active-text 属性与 inactive-text 属性来设置开关的文字描述。 使用 inline-prompt 属性来控制文本是否显示在点内。</div>
       </div>
     </DemoSection>
 

@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { computed, useAttrs } from 'vue'
+import { useClassName } from "@packages/hooks/useClassName.js"
 
 defineOptions({
   name: 'MRadioButton'
@@ -21,32 +21,15 @@ const props = defineProps({
   }
 })
 
-// 获取attrs
-const attrs = useAttrs()
-
-// 计算popper-class，合并默认类名和外部传入的类名
-const computedPopperClass = computed(() => {
-  const defaultPopperClass = 'mc-radio-button-popper'
-  
-  if (attrs.popperClass) {
-    return `${defaultPopperClass} ${attrs.popperClass}`.trim()
-  }
-  
-  return defaultPopperClass
-})
-
-// 合并其他属性（排除popperClass）
-const mergedAttrs = computed(() => {
-  const { popperClass, ...otherAttrs } = attrs
-  return otherAttrs
-})
+// 使用类名 Hook
+const { mergedAttrs, className: popperClass } = useClassName('mc-radio-button-popper')
 </script>
 
 <style lang="scss">
 // RadioButton popper-class 样式
-.mc-radio-button-popper {
-  // 自定义单选框按钮样式可以在这里添加
-}
+// .mc-radio-button-popper {
+//   自定义单选框按钮样式可以在这里添加
+// }
 
 // 自定义主题示例
 .mc-radio-button-custom {

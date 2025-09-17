@@ -1,5 +1,5 @@
 <template>
-  <el-switch v-bind="mergedAttrs" :popper-class="computedPopperClass" class="m-switch">
+  <el-switch v-bind="mergedAttrs" :popper-class="popperClass" class="m-switch">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { computed, useAttrs } from 'vue'
+import { useClassName } from "@packages/hooks/useClassName.js"
 
 defineOptions({
   name: 'MSwitch'
@@ -21,32 +21,15 @@ const props = defineProps({
   }
 })
 
-// 获取attrs
-const attrs = useAttrs()
-
-// 计算popper-class，合并默认类名和外部传入的类名
-const computedPopperClass = computed(() => {
-  const defaultPopperClass = 'mc-switch-popper'
-  
-  if (attrs.popperClass) {
-    return `${defaultPopperClass} ${attrs.popperClass}`.trim()
-  }
-  
-  return defaultPopperClass
-})
-
-// 合并其他属性（排除popperClass）
-const mergedAttrs = computed(() => {
-  const { popperClass, ...otherAttrs } = attrs
-  return otherAttrs
-})
+// 使用类名 Hook
+const { mergedAttrs, className: popperClass } = useClassName('mc-switch-popper')
 </script>
 
 <style lang="scss">
 // Switch popper-class 样式
-.mc-switch-popper {
-  // 自定义开关样式可以在这里添加
-}
+// .mc-switch-popper {
+//   自定义开关样式可以在这里添加
+// }
 
 // 自定义主题示例
 .mc-switch-custom {

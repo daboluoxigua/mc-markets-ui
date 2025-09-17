@@ -31,21 +31,6 @@
       </div>
     </DemoSection>
 
-    <!-- 小型分页 -->
-    <DemoSection title="小型分页">
-      <div class="example-pagination-block">
-        <div class="example-demonstration">通过size更改大小 这是个 small的例子</div>
-        <m-pagination size="small" layout="prev, pager, next" :total="50" />
-        <m-pagination
-          size="small"
-          background
-          layout="prev, pager, next"
-          :total="50"
-          class="mt-4"
-        />
-      </div>
-    </DemoSection>
-
     <!-- 当只有一页时隐藏分页 -->
     <DemoSection title="当只有一页时隐藏分页">
       <div class="example-pagination-block">

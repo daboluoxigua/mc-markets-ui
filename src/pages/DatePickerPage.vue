@@ -99,7 +99,7 @@
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 slot 可以自定义输入框的内容。</div>
         <div class="datepicker-demo-container">
-          <m-date-picker v-model="value7" placeholder="Pick a day">
+          <m-date-picker v-model="value7" type="date" placeholder="Pick a day">
             <template #default="{ cellValue, cell }">
               <div class="cell" :class="{ current: cell && cell.type === 'current' }">
                 <span class="text">{{ cell ? cell.text : cellValue }}</span>
@@ -175,7 +175,7 @@
         <div class="datepicker-demo-container">
           <m-date-picker
             v-model="value12"
-            type="quarter"
+            type="month"
             placeholder="Pick a quarter"
           />
         </div>
@@ -189,7 +189,7 @@
         <div class="datepicker-demo-container">
           <m-date-picker
             v-model="value13"
-            type="time"
+            type="datetime"
             placeholder="Pick a time"
           />
         </div>
@@ -268,30 +268,30 @@ const disabledDate = (time) => {
   return time.getTime() > Date.now()
 };
 
-// DatePicker API 文档数据 - 严格按照 Element Plus 2.11.2 规范
+// DatePicker API 文档数据 - 严格按照 Element Plus 官方文档
 const datePickerApiProps = [
   {
     name: "model-value / v-model",
-    type: "Date / [Date, Date] / [Date] / string / number / [string, string] / [string]",
+    type: "number / string / object",
     default: "—",
-    description: "绑定值"
+    description: "绑定值，如果是数组，长度应为 2"
   },
   {
     name: "readonly",
     type: "boolean",
     default: "false",
-    description: "完全只读"
+    description: "是否只读"
   },
   {
     name: "disabled",
     type: "boolean",
     default: "false",
-    description: "禁用"
+    description: "是否禁用"
   },
   {
     name: "size",
     type: "enum",
-    default: "default",
+    default: "—",
     description: "输入框尺寸",
     values: ["large", "default", "small"]
   },
@@ -299,7 +299,7 @@ const datePickerApiProps = [
     name: "editable",
     type: "boolean",
     default: "true",
-    description: "文本框可输入"
+    description: "文本框是否可输入"
   },
   {
     name: "clearable",
@@ -330,7 +330,7 @@ const datePickerApiProps = [
     type: "enum",
     default: "date",
     description: "显示类型",
-    values: ["year", "month", "date", "dates", "week", "datetime", "datetimerange", "daterange", "monthrange", "quarter", "time"]
+    values: ["year", "years", "month", "months", "date", "dates", "week", "datetime", "datetimerange", "daterange", "monthrange", "yearrange"]
   },
   {
     name: "format",
@@ -339,28 +339,58 @@ const datePickerApiProps = [
     description: "显示在输入框中的格式"
   },
   {
+    name: "popper-class",
+    type: "string",
+    default: "—",
+    description: "DatePicker 下拉框的类名"
+  },
+  {
+    name: "popper-options",
+    type: "object",
+    default: "{}",
+    description: "自定义 popper 选项，更多请参考 popper.js"
+  },
+  {
+    name: "range-separator",
+    type: "string",
+    default: "'-'",
+    description: "选择范围时的分隔符"
+  },
+  {
+    name: "default-value",
+    type: "Date / string / number",
+    default: "—",
+    description: "可选，选择器打开时默认显示的时间"
+  },
+  {
+    name: "default-time",
+    type: "Date / string / number / Array",
+    default: "—",
+    description: "范围选择时选中日期所使用的当日内具体时刻"
+  },
+  {
     name: "value-format",
     type: "string",
     default: "—",
-    description: "可选，绑定值的格式。 不指定则绑定值为 Date 对象"
+    description: "可选，绑定值的格式。不指定则绑定值为 Date 对象"
   },
   {
     name: "id",
-    type: "string / [string, string]",
+    type: "string / object",
     default: "—",
     description: "等价于原生 input id 属性"
   },
   {
     name: "name",
-    type: "string",
-    default: "—",
+    type: "string / object",
+    default: "''",
     description: "等价于原生 input name 属性"
   },
   {
     name: "unlink-panels",
     type: "boolean",
     default: "false",
-    description: "在范围选择器里取消两个日期面板的联动"
+    description: "在范围选择器里取消两个日期面板之间的联动"
   },
   {
     name: "prefix-icon",

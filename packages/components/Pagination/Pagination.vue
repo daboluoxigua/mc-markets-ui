@@ -14,9 +14,10 @@ defineOptions({
 </script>
 
 <style lang="scss">
-// Pagination 组件样式 - 使用 m-pagination 类名隔离样式
 .m-pagination {
-  // 自定义样式可以在这里添加
+  &.is-background .el-pager li.is-active{
+    color: var(--text-quaternary) !important;
+  }
 }
 </style>
 
