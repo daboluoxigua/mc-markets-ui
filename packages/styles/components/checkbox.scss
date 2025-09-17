@@ -1,0 +1,10 @@
+.el-checkbox {
+  --el-checkbox-checked-icon-color: #000;
+  --el-checkbox-input-height: 20px;
+  --el-checkbox-input-width: 20px;
+  --el-checkbox-input-border: 2px solid var(--icon-tertiary);
+}
+
+.el-checkbox .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
+  top: 7px;
+}

@@ -12,7 +12,7 @@ defineOptions({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // Button 组件样式 - 使用高优先级选择器确保不被全局样式覆盖
 .m-button.el-button {
   --el-button-font-weight: 600;
