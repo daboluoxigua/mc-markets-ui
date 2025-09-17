@@ -1,62 +1,98 @@
 /**
- * @mc-markets/ui - 样式入口文件
+ * @mc-markets/ui - Element Plus 主题变量配置
  * 
- * 统一导出所有样式文件，包括：
- * - Element Plus 主题定制
- * - 自定义 CSS 变量
- * - 图标字体
- * 
- * 注意：组件样式已迁移到各自的组件文件中
+ * 基于 Element Plus 官方主题定制指南
+ * @see https://element-plus.org/zh-CN/guide/theming.html
  */
 
-// 导入 Element Plus 主题定制（包含所有 CSS 变量）
-@use './variables.scss';
-// 导入 Element Plus 基础样式
-// @import 'element-plus/dist/index.css';
+// 导入所有 Element Plus 样式
+// 自定义 Element Plus 变量
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // 自定义颜色变量
+  $colors: (
+    'primary': (
+      'base': #FFD905,
+    ),
+    'success': (
+      'base': #34A88B ,
+    ),
+    'warning': (
+      'base': #FFA61F,
+    ),
+    'danger': (
+      'base': #f14654,
+    ),
+    'info': (
+      'base': #585660,
+    ),
+  ),
+  $text-color: (
+    'primary': #303133,
+    'regular': red,
+    'secondary': #909399,
+    'placeholder': #C0C4CC,
+  ),
+  // 自定义字体大小
+  $font-size: (
+    'extra-large': 20px,
+    'large': 18px,
+    'medium': 16px,
+    'base': 14px,
+    'small': 12px,
+    'extra-small': 10px,
+  ),
+  // 自定义圆角
+  $border-radius: (
+    'base': 8px,
+    'small': 4px,
+    'round': 20px,
+    'circle': 100%,
+  ),
+  $border-color-hover:var(--text-brand),
+  // 自定义阴影
+  $box-shadow: (
+    'base': (
+      0 2px 4px rgba(0, 0, 0, 0.12),
+      0 0 6px rgba(0, 0, 0, 0.04)
+    ),
+    'light': (
+      0 2px 12px 0 rgba(0, 0, 0, 0.1)
+    ),
+    'lighter': (
+      0 2px 12px 0 rgba(0, 0, 0, 0.06)
+    ),
+    'dark': (
+      0 2px 4px rgba(0, 0, 0, 0.12),
+      0 0 6px rgba(0, 0, 0, 0.12)
+    ),
+  ),
+  $common-component-size: (
+    'large': 40px,
+    'default': 48px,
+    'small': 40px,
+  )
+);
+@use "element-plus/theme-chalk/src/index.scss" as *;
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss';
+
+// 导入项目变量
+@use './variables/border-mode.css';
+@use './variables/color-modes-dark.css';
+@use './variables/primitives-style.css';
+@use './variables/radius-mode.css';
+@use './variables/spacing-mode.css';
+@use './variables/typography-desktop.css';
+
+// 导入组件样式
+@use './components/select.scss';
+@use './components/checkbox.scss';
 
 
+html.dark{
+  --el-text-color-regular: var(--text-white);
+  --el-disabled-border-color:rgba(255, 255, 255, 0);
+  --el-border-color-light:var(--border-primary);
+  --el-popover-border-radius:8px;
 
-// 全局样式 - 使用较低优先级，避免覆盖组件样式
-
-// 下拉菜单样式 - 全局样式（仅在组件未定义时生效）
-.el-select-dropdown:not(.m-select-dropdown) {
-  padding: 12px;
+  --el-text-color-placeholder:var(--text-tertiary);
 }
-
-.el-select-dropdown__list:not(.m-select-dropdown__list) {
-  padding: 0;
-}
-
-.el-select-dropdown__item:not(.m-select-dropdown__item) {
-  padding: 0px 12px;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 6px;
-  font-size: var(--font-size-text-sm);
-  color: var(--text-primary);
-  
-  &:hover,
-  &.is-hovering {
-    background: var(--all-alphe-white-6, #FFFFFF0F);
-  }
-}
-
-.el-select-dropdown__header:not(.m-select-dropdown__header) {
-  border: none;
-  padding: 0;
-  padding-bottom: 4px;
-}
-
-// Checkbox 样式 - 仅在组件未定义时生效
-.el-checkbox:not(.m-checkbox) {
-  --el-checkbox-checked-icon-color: #000;
-  --el-checkbox-input-height: 20px;
-  --el-checkbox-input-width: 20px;
-  --el-checkbox-input-border: 2px solid var(--icon-tertiary);
-}
-
-.el-checkbox:not(.m-checkbox) .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
-  top: 7px;
-}
-
-// 组件样式现在在各个组件文件中定义，确保样式模块化
