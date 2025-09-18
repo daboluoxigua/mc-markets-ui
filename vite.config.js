@@ -2,14 +2,24 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import path from "path";
 import createVitePlugins from "./vite/plugins";
+import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
-export default ({ command }) => {
+export default ({ command, mode }) => {
   const isDev = command === 'serve'
+  const isLib = mode === 'lib'
   
   return defineConfig({
     plugins: [
       ...createVitePlugins(),
+      ...(isLib ? [
+        dts({
+          insertTypesEntry: true,
+          copyDtsFiles: true,
+          include: ["packages/**/*"],
+          exclude: ["src/**/*", "**/*.stories.*", "**/*.test.*"],
+        })
+      ] : [])
     ],
     server: {
       hmr: {
@@ -19,34 +29,82 @@ export default ({ command }) => {
     css: {
       preprocessorOptions: {
         scss: {
-          silenceDeprecations: ['legacy-js-api']
+          silenceDeprecations: ['legacy-js-api'],
+          // 确保自定义样式优先级
+          additionalData: `
+            // 提高自定义样式优先级
+            @use "sass:math";
+            @use "sass:map";
+            @use "sass:list";
+          `
         }
       },
       // 确保组件样式优先级
       postcss: {
         plugins: [
-          // 可以在这里添加PostCSS插件来优化样式优先级
+          // 增加样式优先级的 PostCSS 插件
+          {
+            postcssPlugin: 'increase-specificity',
+            Rule(rule) {
+              // 为自定义样式增加权重
+              if (rule.selector && rule.selector.includes('.el-')) {
+                rule.selector = rule.selector
+                  .split(',')
+                  .map(selector => {
+                    const trimmed = selector.trim();
+                    // 为 Element Plus 选择器增加权重
+                    if (trimmed.startsWith('.el-')) {
+                      return `.mc-ui-override ${trimmed}`;
+                    }
+                    return trimmed;
+                  })
+                  .join(', ');
+              }
+            }
+          }
         ]
       }
     },
-    build: {
-      outDir: "dist", //输出文件名称
-      cssCodeSplit: false, // 将所有CSS提取到一个文件中
+    build: isLib ? {
+      outDir: "dist",
+      cssCodeSplit: false,
+      sourcemap: true,
+      minify: 'esbuild',
       lib: {
-        entry: path.resolve(__dirname, "./packages/index.js"), //指定组件编译入口文件
-        name: "McProUILibrary",
-        fileName: 'index.js',
-        formats: ['es'], // 只生成 ES 模块格式
-      }, //库编译模式配置
-      rollupOptions: {
-        // 确保外部化处理那些你不想打包进库的依赖
-        external: ["vue", "element-plus"],
-        output: {
-          format: 'es',
-          entryFileNames: 'index.js',
+        entry: {
+          index: path.resolve(__dirname, "./packages/index.js"),
         },
-      }, // rollup打包配置
-    },
+        name: "McMarketsUI",
+        formats: ['es', 'cjs'],
+      },
+      rollupOptions: {
+        external: [
+          'vue',
+          'element-plus',
+          /^vue\/.*/,
+          /^element-plus\/.*/
+        ],
+        output: [
+          {
+            format: 'es',
+            entryFileNames: '[name].mjs',
+            chunkFileNames: '[name]-[hash].mjs',
+            assetFileNames: '[name].[ext]',
+            exports: 'named',
+            preserveModules: false,
+          },
+          {
+            format: 'cjs',
+            entryFileNames: '[name].cjs',
+            chunkFileNames: '[name]-[hash].cjs',
+            assetFileNames: '[name].[ext]',
+            exports: 'named',
+          }
+        ],
+      },
+      target: 'es2015',
+      reportCompressedSize: false,
+    } : undefined,
 
     resolve: {
       alias: {

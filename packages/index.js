@@ -6,7 +6,7 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.0.64
+ * @version 1.0.67
  */
 
 import * as ElementPlusComponents from 'element-plus'
@@ -80,6 +80,13 @@ function registerElementPlus(app) {
 }
 
 const install = (app) => {
+  // 应用全局样式覆盖
+  if (typeof window !== 'undefined') {
+    import('./utils/styleUtils.js').then(({ applyGlobalOverride }) => {
+      applyGlobalOverride();
+    });
+  }
+  
   // 先注册自定义组件
   components.forEach(component => {
     if (component && component.name && typeof component.name === 'string') {
@@ -104,6 +111,15 @@ const install = (app) => {
 
 export default { install }
 export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane }
+
+// 导出样式工具函数
+export { 
+  addOverrideClass, 
+  addComponentOverride, 
+  applyGlobalOverride, 
+  forceRefreshStyles,
+  createOverrideComponent 
+} from './utils/styleUtils.js'
 
 // 手动导出常用的 Element Plus 函数（只导出函数，不导出组件）
 export const MMessage = ElementPlusComponents.ElMessage

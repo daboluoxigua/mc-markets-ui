@@ -1,0 +1,234 @@
+/**
+ * Element Plus 样式强制覆盖文件
+ * 通过 !important 和高权重选择器确保完全覆盖
+ */
+
+// 全局覆盖包装器
+.mc-ui-override {
+  // Button 组件完全覆盖
+  .el-button {
+    --el-button-font-weight: 600 !important;
+    --el-button-border-color: var(--bg-quaternary) !important;
+    --el-button-bg-color: var(--bg-quaternary) !important;
+    --el-button-text-color: var(--text-primary) !important;
+    height: 40px !important;
+    padding: 8px 16px !important;
+    border-radius: var(--border-radius-base, 8px) !important;
+    
+    &.el-button--large {
+      height: 48px !important;
+      padding: 12px 20px !important;
+    }
+    
+    &.el-button--small {
+      height: 32px !important;
+      padding: 5px 12px !important;
+    }
+    
+    &.el-button--primary {
+      background-color: var(--bg-brand) !important;
+      border-color: var(--bg-brand) !important;
+      color: var(--text-quaternary) !important;
+      
+      &:hover {
+        background-color: var(--bg-brand-hover) !important;
+        border-color: var(--bg-brand-hover) !important;
+      }
+    }
+  }
+  
+  // Input 组件完全覆盖
+  .el-input {
+    .el-input__wrapper {
+      padding: 1px 16px !important;
+      border-radius: var(--border-radius-base, 8px) !important;
+      background-color: var(--bg-secondary, #fff) !important;
+      border-color: var(--border-primary, #dcdfe6) !important;
+      
+      &:hover {
+        border-color: var(--border-brand-hover) !important;
+      }
+      
+      &.is-focus {
+        border-color: var(--border-brand) !important;
+        box-shadow: 0 0 0 2px var(--bg-brand-secondary) !important;
+      }
+    }
+  }
+  
+  // Select 组件完全覆盖
+  .el-select {
+    .el-select__wrapper {
+      padding: 4px 16px !important;
+      min-height: var(--el-component-size) !important;
+      border-radius: var(--border-radius-base, 8px) !important;
+      
+      &.is-disabled {
+        background: var(--bg-tertiary-hover) !important;
+      }
+    }
+    
+    &.solid .el-select__wrapper {
+      background: var(--bg-tertiary-hover) !important;
+      border-color: var(--bg-tertiary-hover) !important;
+    }
+  }
+  
+  // Table 组件完全覆盖
+  .el-table {
+    --el-table-header-bg-color: var(--bg-quaternary) !important;
+    --el-table-row-hover-bg-color: var(--bg-tertiary-hover) !important;
+    --el-table-border-color: transparent !important;
+    --el-table-header-text-color: var(--text-tertiary) !important;
+    --el-table-tr-bg-color: transparent !important;
+    
+    border: none !important;
+    border-radius: 8px !important;
+    
+    .el-table__cell {
+      border: none !important;
+      padding: 18px 0px !important;
+    }
+    
+    thead .el-table__cell {
+      padding: 8px 0px !important;
+      font-weight: 500 !important;
+    }
+    
+    .cell {
+      padding: 0 16px !important;
+      line-height: 20px !important;
+    }
+  }
+  
+  // Dialog 组件完全覆盖
+  .el-dialog {
+    border-radius: var(--border-radius-base, 8px) !important;
+    background: var(--bg-primary, #fff) !important;
+    
+    .el-dialog__header {
+      padding: 24px 24px 16px !important;
+      border-bottom: 1px solid var(--border-secondary) !important;
+    }
+    
+    .el-dialog__body {
+      padding: 24px !important;
+    }
+    
+    .el-dialog__footer {
+      padding: 16px 24px 24px !important;
+      border-top: 1px solid var(--border-secondary) !important;
+    }
+  }
+  
+  // Form 组件完全覆盖
+  .el-form {
+    .el-form-item {
+      margin-bottom: 20px !important;
+    }
+    
+    .el-form-item__label {
+      color: var(--text-primary) !important;
+      height: var(--el-component-size) !important;
+      line-height: var(--el-component-size) !important;
+    }
+    
+    &.el-form--label-top .el-form-item__label {
+      height: 20px !important;
+      line-height: 20px !important;
+    }
+  }
+  
+  // Pagination 组件完全覆盖
+  .el-pagination {
+    .el-pagination__item,
+    .btn-prev,
+    .btn-next {
+      border-radius: var(--border-radius-base, 8px) !important;
+      background: var(--bg-secondary, #fff) !important;
+      border: 1px solid var(--border-primary) !important;
+      
+      &:hover {
+        background: var(--bg-tertiary-hover) !important;
+        border-color: var(--border-brand-hover) !important;
+      }
+      
+      &.is-active {
+        background: var(--bg-brand) !important;
+        border-color: var(--bg-brand) !important;
+        color: var(--text-quaternary) !important;
+      }
+    }
+  }
+  
+  // Tabs 组件完全覆盖
+  .el-tabs {
+    .el-tabs__nav-wrap::after {
+      display: none !important;
+    }
+    
+    .el-tabs__item {
+      padding: 12px 16px !important;
+      color: var(--text-secondary) !important;
+      border: none !important;
+      
+      &.is-active {
+        color: var(--text-brand) !important;
+        border-bottom: 2px solid var(--bg-brand) !important;
+      }
+      
+      &:hover {
+        color: var(--text-brand-hover) !important;
+      }
+    }
+  }
+}
+
+// 全局强制覆盖（最高优先级）
+body .mc-ui-override {
+  // 确保所有 Element Plus 组件都被覆盖
+  [class*="el-"] {
+    font-family: var(--font-family-base, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+  }
+}
+
+// 深度选择器覆盖（用于 Popper 等全局组件）
+:global(.el-popper) {
+  border-radius: var(--border-radius-base, 8px) !important;
+  border-color: var(--border-primary) !important;
+  background: var(--bg-primary, #fff) !important;
+  box-shadow: var(--box-shadow-light, 0 2px 12px 0 rgba(0, 0, 0, 0.1)) !important;
+}
+
+:global(.el-select-dropdown) {
+  padding: 12px !important;
+  border-radius: var(--border-radius-base, 8px) !important;
+  
+  .el-select-dropdown__item {
+    padding: 0px 12px !important;
+    height: 36px !important;
+    line-height: 36px !important;
+    border-radius: 6px !important;
+    color: var(--text-primary) !important;
+    
+    &:hover,
+    &.is-hovering {
+      background: var(--bg-tertiary-hover, rgba(255, 255, 255, 0.06)) !important;
+    }
+  }
+}
+
+:global(.el-message) {
+  border-radius: var(--border-radius-base, 8px) !important;
+  background: var(--bg-primary, #fff) !important;
+  border-color: var(--border-primary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--box-shadow-light) !important;
+}
+
+:global(.el-notification) {
+  border-radius: var(--border-radius-base, 8px) !important;
+  background: var(--bg-primary, #fff) !important;
+  border-color: var(--border-primary) !important;
+  box-shadow: var(--box-shadow-light) !important;
+}
