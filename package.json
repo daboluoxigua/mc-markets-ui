@@ -1,31 +1,24 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.0.65",
+  "version": "1.0.66",
   "type": "module",
   "author": "chenyu",
   "description": "Vue 3 组件库，基于 Element Plus 的自定义组件",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "packages/index.js",
+  "module": "packages/index.js",
   "exports": {
-    ".": {
-      "import": "./packages/index.js",
-      "require": "./packages/index.js"
-    },
+    ".": "./packages/index.js",
     "./styles/index": "./packages/styles/index.scss",
-    "./styles/font": "./packages/styles/font/iconfont.css",
-    "./element-plus": {
-      "import": "./node_modules/element-plus/dist/index.full.mjs",
-      "require": "./node_modules/element-plus/dist/index.full.js"
-    },
-    "./element-plus/style": "./node_modules/element-plus/dist/index.css",
-    "./element-plus/styles": "./node_modules/element-plus/dist/index.css"
+    "./styles/font": "./packages/styles/font/iconfont.css"
   },
   "files": [
-    "dist",
+    "packages/index.js",
+    "packages/components",
     "packages/styles",
-    "README.md",
-    "node_modules/element-plus/dist"
+    "packages/hooks",
+    "packages/utils",
+    "README.md"
   ],
   "keywords": [
     "vue3",
@@ -45,6 +38,7 @@
     "preview:demo": "vite preview --config vite.config.demo.js --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx --fix",
     "format": "prettier --write .",
+    "test": "vitest",
     "test:coverage": "vitest --coverage",
     "prepublishOnly": "npm run build",
     "publish:lib": "node publish.js"
