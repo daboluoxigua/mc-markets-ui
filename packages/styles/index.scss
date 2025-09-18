@@ -1,3 +1,5 @@
+
+@use "element-plus/theme-chalk/src/index.scss" as *;
 // 导入项目变量
 @use './variables/border-mode.css';
 @use './variables/color-modes-dark.css';
