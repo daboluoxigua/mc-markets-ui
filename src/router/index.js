@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 // 导入页面组件
 import IconsPage from '@/pages/IconsPage.vue'
 import ButtonPage from '@/pages/ButtonPage.vue'
-import CardPage from '@/pages/CardPage.vue'
 import TooltipPage from '@/pages/TooltipPage.vue'
 import PaginationPage from '@/pages/PaginationPage.vue'
 import InputPage from '@/pages/InputPage.vue'
@@ -18,6 +17,7 @@ import FormPage from '@/pages/FormPage.vue'
 import TablePage from '@/pages/TablePage.vue'
 import MessagePage from '@/pages/MessagePage.vue'
 import NotificationPage from '@/pages/NotificationPage.vue'
+import NotifiMessagePage from '@/pages/NotifiMessagePage.vue'
 import DatePickerPage from '@/pages/DatePickerPage.vue'
 import EmptyPage from '@/pages/EmptyPage.vue'
 import BannerPage from '@/pages/BannerPage.vue'
@@ -51,14 +51,6 @@ const routes = [
     component: ButtonPage,
     meta: {
       title: 'Button 按钮'
-    }
-  },
-  {
-    path: '/card',
-    name: 'Card',
-    component: CardPage,
-    meta: {
-      title: 'Card 卡片'
     }
   },
   {
@@ -171,6 +163,14 @@ const routes = [
     component: NotificationPage,
     meta: {
       title: 'Notification 通知'
+    }
+  },
+  {
+    path: '/notifi-message',
+    name: 'NotifiMessage',
+    component: NotifiMessagePage,
+    meta: {
+      title: 'NotifiMessage 通知消息'
     }
   },
   {

@@ -18,11 +18,8 @@
     <!-- 不同类型的通知 -->
     <DemoSection title="不同类型的通知">
       <div class="example-notification-block">
-        <div class="example-demonstration">我们提供了五种不同类型的提醒框：primary、success、warning、info 和 error。Element Plus 为 Notification 组件准备了5种通知类型：primary、success、warning、info、error。 他们可以设置 type 字段来修改，除上述的四个值之外的值会被忽略。 同时，我们也为 Notification 的各种 type 注册了单独的方法，可以在不传入 type 字段的情况下直接调用。 primary 已被添加到2.9.11。</div>
+        <div class="example-demonstration">我们提供了四种不同类型的通知：success、warning、info 和 error。</div>
         <div class="notification-demo-container">
-          <m-button plain @click="openPrimary">
-            Primary
-          </m-button>
           <m-button plain @click="open3">
             Success
           </m-button>
@@ -38,6 +35,7 @@
         </div>
       </div>
     </DemoSection>
+
 
     <!-- 自定义消息弹出的位置 -->
     <DemoSection title="自定义消息弹出的位置">
@@ -213,6 +211,7 @@ const open6 = () => {
     type: 'error',
   });
 };
+
 
 const open7 = () => {
   ElNotification({
@@ -440,12 +439,15 @@ const notificationApiMethods = [
       margin-left: 10px;
     }
   }
+}
+
 
   /* 响应式设计 */
   @media (max-width: 768px) {
     .notification-page {
       padding: 16px;
     }
+
   }
 
   @media (max-width: 480px) {
@@ -453,5 +455,4 @@ const notificationApiMethods = [
       padding: 12px;
     }
   }
-}
 </style>
