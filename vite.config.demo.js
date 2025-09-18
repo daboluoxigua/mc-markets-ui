@@ -26,7 +26,7 @@ export default defineConfig({
     outDir: "demo-dist", // 演示站点输出目录
     assetsDir: "assets",
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild', // 使用 esbuild 进行压缩，更快且无需额外依赖
     rollupOptions: {
       output: {
         manualChunks: {
@@ -36,13 +36,12 @@ export default defineConfig({
         }
       }
     },
-    // 优化构建
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    }
+    // esbuild 压缩配置
+    esbuild: {
+      drop: ['console', 'debugger']
+    },
+    // 复制 public 目录下的文件
+    copyPublicDir: true
   },
   resolve: {
     alias: {
@@ -52,7 +51,7 @@ export default defineConfig({
     },
   },
   // 演示站点特定配置
-  base: './',
+  base: '/mc-markets-ui/',
   define: {
     __VUE_OPTIONS_API__: true,
     __VUE_PROD_DEVTOOLS__: false
