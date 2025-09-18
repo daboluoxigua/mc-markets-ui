@@ -5,9 +5,7 @@
       <div class="example-alert-block">
         <div class="example-demonstration">Alert 组件不属于浮层元素，不会自动消失或关闭。</div>
         <div class="alert-demo-container">
-          <m-alert title="Primary alert" type="primary" />
           <m-alert title="Success alert" type="success" />
-          <m-alert title="Info alert" type="info" />
           <m-alert title="Warning alert" type="warning" />
           <m-alert title="Error alert" type="error" />
         </div>
@@ -19,9 +17,7 @@
       <div class="example-alert-block">
         <div class="example-demonstration">Alert 组件提供了两个不同的主题：light 和 dark。通过设置 effect 属性来改变主题，默认为 light。</div>
         <div class="alert-demo-container">
-          <m-alert title="Primary alert" type="primary" effect="dark" />
           <m-alert title="Success alert" type="success" effect="dark" />
-          <m-alert title="Info alert" type="info" effect="dark" />
           <m-alert title="Warning alert" type="warning" effect="dark" />
           <m-alert title="Error alert" type="error" effect="dark" />
         </div>
@@ -34,7 +30,7 @@
         <div class="example-demonstration">你可以自定义关闭按钮为文字或其他符号。你可以设置 Alert 组件是否为可关闭状态， 关闭按钮的内容以及关闭时的回调函数同样可以定制。</div>
         <div class="alert-demo-container">
           <m-alert title="Unclosable alert" type="success" :closable="false" />
-          <m-alert title="Customized close text" type="info" close-text="Gotcha" />
+          <m-alert title="Customized close text" type="success" close-text="Gotcha" />
           <m-alert title="Alert with callback" type="warning" @close="handleClose" />
         </div>
       </div>
@@ -45,9 +41,7 @@
       <div class="example-alert-block">
         <div class="example-demonstration">你可以通过为 Alert 组件添加图标来提高可读性。通过设置 show-icon 属性来显示 Alert 的 icon，这能更有效地向用户展示你的显示意图。 或者你可以使用 icon slot 自定义 icon 内容。</div>
         <div class="alert-demo-container">
-          <m-alert title="Primary alert" type="primary" show-icon />
           <m-alert title="Success alert" type="success" show-icon />
-          <m-alert title="Info alert" type="info" show-icon />
           <m-alert title="Warning alert" type="warning" show-icon />
           <m-alert title="Error alert" type="error" show-icon />
           <m-alert title="Error alert with custom icon" type="error" show-icon>
@@ -59,14 +53,76 @@
       </div>
     </DemoSection>
 
+    <!-- 自定义颜色 -->
+    <DemoSection title="自定义颜色">
+      <div class="example-alert-block">
+        <div class="example-demonstration">不同类型的 Alert 使用不同的背景色和文字颜色，提供更好的视觉区分。</div>
+        <div class="alert-demo-container">
+          <div class="color-demo-grid">
+            <div class="color-demo-item">
+              <m-alert title="Success Alert" type="success" description="背景色: all-green-10, 文字色: all-green-4" />
+              <div class="color-info">
+                <span class="color-label">Success</span>
+                <div class="color-details">
+                  <div class="color-bg" style="background-color: var(--all-green-10)"></div>
+                  <div class="color-text" style="color: var(--all-green-4)">all-green-4</div>
+                </div>
+              </div>
+            </div>
+            <div class="color-demo-item">
+              <m-alert title="Warning Alert" type="warning" description="背景色: all-orange-10, 文字色: text-warning-primary" />
+              <div class="color-info">
+                <span class="color-label">Warning</span>
+                <div class="color-details">
+                  <div class="color-bg" style="background-color: var(--all-orange-10)"></div>
+                  <div class="color-text" style="color: var(--text-warning-primary)">text-warning-primary</div>
+                </div>
+              </div>
+            </div>
+            <div class="color-demo-item">
+              <m-alert title="Error Alert" type="error" description="背景色: all-red-10, 文字色: text-error-primary" />
+              <div class="color-info">
+                <span class="color-label">Error</span>
+                <div class="color-details">
+                  <div class="color-bg" style="background-color: var(--all-red-10)"></div>
+                  <div class="color-text" style="color: var(--text-error-primary)">text-error-primary</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </DemoSection>
+
+    <!-- 自定义图标 -->
+    <DemoSection title="自定义图标">
+      <div class="example-alert-block">
+        <div class="example-demonstration">默认情况下，Alert 组件使用自定义图标替代 Element Plus 默认图标。你可以通过 use-custom-icon 属性控制是否使用自定义图标。</div>
+        <div class="alert-demo-container">
+          <div class="alert-demo-row">
+            <div class="alert-demo-column">
+              <h4>自定义图标 (默认)</h4>
+              <m-alert title="Success alert" type="success" show-icon />
+              <m-alert title="Warning alert" type="warning" show-icon />
+              <m-alert title="Error alert" type="error" show-icon />
+            </div>
+            <div class="alert-demo-column">
+              <h4>Element Plus 默认图标</h4>
+              <m-alert title="Success alert" type="success" show-icon :use-custom-icon="false" />
+              <m-alert title="Warning alert" type="warning" show-icon :use-custom-icon="false" />
+              <m-alert title="Error alert" type="error" show-icon :use-custom-icon="false" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </DemoSection>
+
     <!-- 文字居中 -->
     <DemoSection title="文字居中">
       <div class="example-alert-block">
         <div class="example-demonstration">使用 center 属性来让文字水平居中。</div>
         <div class="alert-demo-container">
-          <m-alert title="Primary alert" type="primary" center show-icon />
           <m-alert title="Success alert" type="success" center show-icon />
-          <m-alert title="Info alert" type="info" center show-icon />
           <m-alert title="Warning alert" type="warning" center show-icon />
           <m-alert title="Error alert" type="error" center show-icon />
         </div>
@@ -93,20 +149,8 @@
         <div class="example-demonstration">在最后, 这是一个带有图标和描述的例子。</div>
         <div class="alert-demo-container">
           <m-alert
-            title="Primary alert"
-            type="primary"
-            description="More text description"
-            show-icon
-          />
-          <m-alert
             title="Success alert"
             type="success"
-            description="More text description"
-            show-icon
-          />
-          <m-alert
-            title="Info alert"
-            type="info"
             description="More text description"
             show-icon
           />
@@ -132,19 +176,19 @@
         <div class="example-demonstration">在最后, 这是一个延迟属性的例子。</div>
         <div class="alert-demo-container">
           <m-alert
-            title="Primary alert that appearance after 5000 milliseconds"
-            type="primary"
+            title="Success alert that appearance after 5000 milliseconds"
+            type="success"
             :show-after="5000"
             @open="handleOpen"
           />
           <m-alert
-            title="Success alert that disappear after 5000 milliseconds"
-            type="success"
+            title="Warning alert that disappear after 5000 milliseconds"
+            type="warning"
             :hide-after="5000"
           />
           <m-alert
-            title="Info alert that in 5000 milliseconds to be hidden"
-            type="info"
+            title="Error alert that in 5000 milliseconds to be hidden"
+            type="error"
             :closable="false"
             :auto-close="5000"
           />
@@ -192,9 +236,9 @@ const alertApiProps = [
   {
     name: "type",
     type: "enum",
-    default: "info",
+    default: "success",
     description: "Alert 类型。",
-    values: ["primary", "success", "info", "warning", "error"]
+    values: ["success", "warning", "error"]
   },
   {
     name: "description",
@@ -225,6 +269,12 @@ const alertApiProps = [
     type: "boolean",
     default: "false",
     description: "是否显示类型图标"
+  },
+  {
+    name: "use-custom-icon",
+    type: "boolean",
+    default: "true",
+    description: "是否使用自定义图标"
   },
   {
     name: "effect",
@@ -307,12 +357,77 @@ const alertApiSlots = [
         margin: 0;
       }
     }
+
+    .alert-demo-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 20px;
+
+      .alert-demo-column {
+        flex: 1;
+        
+        h4 {
+          margin: 0 0 16px 0;
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text-primary);
+        }
+      }
+    }
+
+    .color-demo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .color-demo-item {
+      .color-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 12px;
+        padding: 8px 12px;
+        background: var(--bg-secondary);
+        border-radius: 4px;
+        font-size: 12px;
+
+        .color-label {
+          font-weight: 600;
+          color: var(--text-primary);
+        }
+
+        .color-details {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .color-bg {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            border: 1px solid var(--border-primary);
+          }
+
+          .color-text {
+            font-family: monospace;
+            font-size: 11px;
+          }
+        }
+      }
+    }
   }
 
   /* 响应式设计 */
   @media (max-width: 768px) {
     .alert-page {
       padding: 16px;
+    }
+
+    .alert-demo-row {
+      flex-direction: column;
+      gap: 20px;
     }
   }
 

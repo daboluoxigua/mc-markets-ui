@@ -34,7 +34,7 @@ const { mergedAttrs, className: popperClass } = useClassName(
     border-radius: 6px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     .current,
-    .today:not(.in-range),
+    // .today:not(.in-range),
     .start-date,
     .end-date {
       .el-date-table-cell {
