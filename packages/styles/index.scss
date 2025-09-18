@@ -90,8 +90,6 @@
 @use './components/form.scss';
 @use './components/tabs.scss';
 
-// 导入强制覆盖样式（必须放在最后以确保最高优先级）
-@use './components/override.scss';
 
 
 html.dark{
