@@ -1,79 +1,3 @@
-/**
- * @mc-markets/ui - Element Plus 主题变量配置
- * 
- * 基于 Element Plus 官方主题定制指南
- * @see https://element-plus.org/zh-CN/guide/theming.html
- */
-
-// 导入所有 Element Plus 样式
-@forward 'element-plus/theme-chalk/src/common/var.scss' with (
-  // 自定义颜色变量
-  $colors: (
-    'primary': (
-      'base': #FFD905,
-    ),
-    'success': (
-      'base': #34A88B ,
-    ),
-    'warning': (
-      'base': #FFA61F,
-    ),
-    'danger': (
-      'base': #f14654,
-    ),
-    'info': (
-      'base': #585660,
-    ),
-  ),
-  $text-color: (
-    'primary': #303133,
-    'regular': red,
-    'secondary': #909399,
-    'placeholder': #C0C4CC,
-  ),
-  // 自定义字体大小
-  $font-size: (
-    'extra-large': 20px,
-    'large': 18px,
-    'medium': 16px,
-    'base': 14px,
-    'small': 12px,
-    'extra-small': 10px,
-  ),
-  // 自定义圆角
-  $border-radius: (
-    'base': 8px,
-    'small': 4px,
-    'round': 20px,
-    'circle': 100%,
-  ),
-  $border-color-hover:var(--text-brand),
-  // 自定义阴影
-  $box-shadow: (
-    'base': (
-      0 2px 4px rgba(0, 0, 0, 0.12),
-      0 0 6px rgba(0, 0, 0, 0.04)
-    ),
-    'light': (
-      0 2px 12px 0 rgba(0, 0, 0, 0.1)
-    ),
-    'lighter': (
-      0 2px 12px 0 rgba(0, 0, 0, 0.06)
-    ),
-    'dark': (
-      0 2px 4px rgba(0, 0, 0, 0.12),
-      0 0 6px rgba(0, 0, 0, 0.12)
-    ),
-  ),
-  $common-component-size: (
-    'large': 40px,
-    'default': 48px,
-    'small': 40px,
-  )
-);
-@use "element-plus/theme-chalk/src/index.scss" as *;
-@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
-
 // 导入项目变量
 @use './variables/border-mode.css';
 @use './variables/color-modes-dark.css';
@@ -89,6 +13,131 @@
 @use './components/table.scss';
 @use './components/form.scss';
 @use './components/tabs.scss';
+
+:root {
+    --el-color-white: #ffffff;
+    --el-color-black: #000000;
+    --el-color-primary-rgb: 255, 217, 5;
+    --el-color-success-rgb: 52, 168, 139;
+    --el-color-warning-rgb: 255, 166, 31;
+    --el-color-danger-rgb: 241, 70, 84;
+    --el-color-error-rgb: 245, 108, 108;
+    --el-color-info-rgb: 88, 86, 96;
+    --el-font-size-extra-large: 20px;
+    --el-font-size-large: 18px;
+    --el-font-size-medium: 16px;
+    --el-font-size-base: 14px;
+    --el-font-size-small: 12px;
+    --el-font-size-extra-small: 10px;
+    --el-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+    --el-font-weight-primary: 500;
+    --el-font-line-height-primary: 24px;
+    --el-index-normal: 1;
+    --el-index-top: 1000;
+    --el-index-popper: 2000;
+    --el-border-radius-base: 8px;
+    --el-border-radius-small: 4px;
+    --el-border-radius-round: 20px;
+    --el-border-radius-circle: 100%;
+    --el-transition-duration: 0.3s;
+    --el-transition-duration-fast: 0.2s;
+    --el-transition-function-ease-in-out-bezier: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --el-transition-function-fast-bezier: cubic-bezier(0.23, 1, 0.32, 1);
+    --el-transition-all: all var(--el-transition-duration) var(--el-transition-function-ease-in-out-bezier);
+    --el-transition-fade: opacity var(--el-transition-duration) var(--el-transition-function-fast-bezier);
+    --el-transition-md-fade: transform var(--el-transition-duration) var(--el-transition-function-fast-bezier), opacity var(--el-transition-duration) var(--el-transition-function-fast-bezier);
+    --el-transition-fade-linear: opacity var(--el-transition-duration-fast) linear;
+    --el-transition-border: border-color var(--el-transition-duration-fast) var(--el-transition-function-ease-in-out-bezier);
+    --el-transition-box-shadow: box-shadow var(--el-transition-duration-fast) var(--el-transition-function-ease-in-out-bezier);
+    --el-transition-color: color var(--el-transition-duration-fast) var(--el-transition-function-ease-in-out-bezier);
+    --el-component-size-large: 40px;
+    --el-component-size: 48px;
+    --el-component-size-small: 40px;
+}
+
+:root {
+    color-scheme: dark;
+    --el-color-primary: #FFD905;
+    --el-color-primary-light-3: rgb(185, 158, 10);
+    --el-color-primary-light-5: rgb(138, 119, 13);
+    --el-color-primary-light-7: rgb(91, 79, 16);
+    --el-color-primary-light-8: rgb(67, 59, 17);
+    --el-color-primary-light-9: rgb(43, 40, 19);
+    --el-color-primary-dark-2: rgb(255, 225, 55);
+    --el-color-success: #34A88B;
+    --el-color-success-light-3: rgb(42, 124, 103);
+    --el-color-success-light-5: rgb(36, 94, 80);
+    --el-color-success-light-7: rgb(30, 64, 56);
+    --el-color-success-light-8: rgb(26, 50, 44);
+    --el-color-success-light-9: rgb(23, 35, 32);
+    --el-color-success-dark-2: rgb(93, 185, 162);
+    --el-color-warning: #FFA61F;
+    --el-color-warning-light-3: rgb(185, 122, 28);
+    --el-color-warning-light-5: rgb(138, 93, 26);
+    --el-color-warning-light-7: rgb(91, 64, 23);
+    --el-color-warning-light-8: rgb(67, 49, 22);
+    --el-color-warning-light-9: rgb(43, 35, 21);
+    --el-color-warning-dark-2: rgb(255, 184, 76);
+    --el-color-danger: #f14654;
+    --el-color-danger-light-3: rgb(175, 55, 65);
+    --el-color-danger-light-5: rgb(131, 45, 52);
+    --el-color-danger-light-7: rgb(86, 35, 39);
+    --el-color-danger-light-8: rgb(64, 30, 33);
+    --el-color-danger-light-9: rgb(42, 25, 26);
+    --el-color-danger-dark-2: rgb(244, 107, 118);
+    --el-color-error: #f56c6c;
+    --el-color-error-light-3: rgb(178, 82, 82);
+    --el-color-error-light-5: rgb(133, 64, 64);
+    --el-color-error-light-7: rgb(88, 46, 46);
+    --el-color-error-light-8: rgb(65, 38, 38);
+    --el-color-error-light-9: rgb(42, 29, 29);
+    --el-color-error-dark-2: rgb(247, 137, 137);
+    --el-color-info: #585660;
+    --el-color-info-light-3: rgb(68, 66, 73);
+    --el-color-info-light-5: rgb(54, 53, 58);
+    --el-color-info-light-7: rgb(40, 40, 43);
+    --el-color-info-light-8: rgb(34, 33, 35);
+    --el-color-info-light-9: rgb(27, 27, 28);
+    --el-color-info-dark-2: rgb(121, 120, 128);
+    --el-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72);
+    --el-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, 0.72);
+    --el-box-shadow-lighter: 0px 0px 6px rgba(0, 0, 0, 0.72);
+    --el-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, 0.72), 0px 12px 32px #000000, 0px 8px 16px -8px #000000;
+    --el-bg-color-page: #0a0a0a;
+    --el-bg-color: #141414;
+    --el-bg-color-overlay: #1d1e1f;
+    --el-text-color-primary: #E5EAF3;
+    --el-text-color-regular: #CFD3DC;
+    --el-text-color-secondary: #A3A6AD;
+    --el-text-color-placeholder: #8D9095;
+    --el-text-color-disabled: #6C6E72;
+    --el-border-color-darker: #636466;
+    --el-border-color-dark: #58585B;
+    --el-border-color: #4C4D4F;
+    --el-border-color-light: #414243;
+    --el-border-color-lighter: #363637;
+    --el-border-color-extra-light: #2B2B2C;
+    --el-fill-color-darker: #424243;
+    --el-fill-color-dark: #39393A;
+    --el-fill-color: #303030;
+    --el-fill-color-light: #262727;
+    --el-fill-color-lighter: #1D1D1D;
+    --el-fill-color-extra-light: #191919;
+    --el-fill-color-blank: transparent;
+    --el-mask-color: rgba(0, 0, 0, 0.8);
+    --el-mask-color-extra-light: rgba(0, 0, 0, 0.3);
+
+    --el-text-color-regular: var(--text-white);
+    --el-disabled-border-color: rgba(255, 255, 255, 0);
+    --el-border-color-light: var(--border-primary);
+    --el-popover-border-radius: 8px;
+    --el-text-color-placeholder: var(--text-tertiary);
+    --el-border-radius-base: 8px;
+}
+
+
+
+
 
 
 html.dark{
