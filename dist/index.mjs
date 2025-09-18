@@ -22,22 +22,22 @@ var z = (t, e) => {
 var Y = (t, e, o) => new Promise((s, a) => {
   var n = (d) => {
     try {
-      l(o.next(d));
+      i(o.next(d));
     } catch (v) {
       a(v);
     }
   }, r = (d) => {
     try {
-      l(o.throw(d));
+      i(o.throw(d));
     } catch (v) {
       a(v);
     }
-  }, l = (d) => d.done ? s(d.value) : Promise.resolve(d.value).then(n, r);
-  l((o = o.apply(t, e)).next());
+  }, i = (d) => d.done ? s(d.value) : Promise.resolve(d.value).then(n, r);
+  i((o = o.apply(t, e)).next());
 });
 import * as q from "element-plus";
-import { computed as h, createElementBlock as $, openBlock as i, mergeProps as M, renderSlot as m, createBlock as _, createSlots as g, renderList as b, withCtx as p, useAttrs as G, unref as k, normalizeProps as F, guardReactiveProps as U, createElementVNode as C, mergeModels as K, useModel as ne, createVNode as E, ref as L, Teleport as ae, TransitionGroup as re, Fragment as x, normalizeClass as I, createCommentVNode as w, toDisplayString as V, resolveDynamicComponent as le, useSlots as W, watch as R, normalizeStyle as ie, createTextVNode as ce, provide as ue, withModifiers as me, inject as pe, onMounted as de, onUnmounted as fe, withDirectives as _e, vShow as be } from "vue";
-import { ElButton as ge, ElInput as Me, ElForm as $e, ElFormItem as ve, ElTooltip as he, ElSelect as ye, ElOption as Ce, ElOptionGroup as ke, ElPagination as Se, ElRadio as Te, ElRadioGroup as Be, ElRadioButton as we, ElSwitch as Oe, ElTag as Ee, ElAlert as Ie, ElDialog as Pe, ElNotification as Ne, ElDatePicker as je, ElEmpty as Ae, ElTable as ze, ElTableColumn as Le } from "element-plus/es";
+import { computed as h, createElementBlock as $, openBlock as l, mergeProps as M, renderSlot as m, createBlock as _, createSlots as g, renderList as b, withCtx as p, useAttrs as G, unref as k, normalizeProps as F, guardReactiveProps as U, createElementVNode as C, mergeModels as K, useModel as ne, createVNode as E, ref as L, Teleport as ae, TransitionGroup as re, Fragment as x, normalizeClass as I, createCommentVNode as w, toDisplayString as V, resolveDynamicComponent as ie, useSlots as W, watch as R, normalizeStyle as le, createTextVNode as ce, provide as ue, withModifiers as me, inject as pe, onMounted as de, onUnmounted as fe, withDirectives as _e, vShow as be } from "vue";
+import { ElButton as ge, ElInput as Me, ElForm as $e, ElFormItem as ve, ElTooltip as he, ElSelect as ye, ElOption as Ce, ElOptionGroup as ke, ElPagination as Se, ElRadio as Te, ElRadioGroup as Be, ElRadioButton as we, ElSwitch as Oe, ElTag as Ee, ElAlert as Ie, ElDialog as Ne, ElNotification as Pe, ElDatePicker as je, ElEmpty as Ae, ElTable as ze, ElTableColumn as Le } from "element-plus/es";
 import "element-plus/es/components/base/style/index";
 import "element-plus/es/components/button/style/index";
 import "element-plus/es/components/input/style/index";
@@ -106,29 +106,29 @@ const O = (t, e) => {
   emits: ["click"],
   setup(t, { emit: e }) {
     const o = t, s = e, a = h(() => {
-      const l = ["iconfont"];
-      return o.name && l.push(`${o.prefix}-${o.name}`), o.spin && l.push("icon-spin"), o.pulse && l.push("icon-pulse"), o.flip && l.push(`icon-flip-${o.flip}`), l;
+      const i = ["iconfont"];
+      return o.name && i.push(`${o.prefix}-${o.name}`), o.spin && i.push("icon-spin"), o.pulse && i.push("icon-pulse"), o.flip && i.push(`icon-flip-${o.flip}`), i;
     }), n = h(() => {
-      const l = {};
-      return o.size && (typeof o.size == "number" ? l.fontSize = `${o.size}px` : l.fontSize = o.size), o.color && (l.color = o.color), o.rotate !== 0 && (l.transform = `rotate(${o.rotate}deg)`), l;
-    }), r = (l) => {
-      s("click", l);
+      const i = {};
+      return o.size && (typeof o.size == "number" ? i.fontSize = `${o.size}px` : i.fontSize = o.size), o.color && (i.color = o.color), o.rotate !== 0 && (i.transform = `rotate(${o.rotate}deg)`), i;
+    }), r = (i) => {
+      s("click", i);
     };
-    return (l, d) => (i(), $("i", M({
+    return (i, d) => (l(), $("i", M({
       class: a.value,
       style: n.value
-    }, l.$attrs, { onClick: r }), [
-      m(l.$slots, "default", {}, void 0, !0)
+    }, i.$attrs, { onClick: r }), [
+      m(i.$slots, "default", {}, void 0, !0)
     ], 16));
   }
-}), P = /* @__PURE__ */ O(Ve, [["__scopeId", "data-v-90f84c9e"]]), Re = /* @__PURE__ */ Object.assign({
+}), N = /* @__PURE__ */ O(Ve, [["__scopeId", "data-v-90f84c9e"]]), Re = /* @__PURE__ */ Object.assign({
   name: "MButton"
 }, {
   __name: "Button",
   setup(t) {
     return (e, o) => {
       const s = ge;
-      return i(), _(s, M(e.$attrs, { class: "m-button" }), g({ _: 2 }, [
+      return l(), _(s, M(e.$attrs, { class: "m-button" }), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -145,7 +145,7 @@ const O = (t, e) => {
   setup(t) {
     return (e, o) => {
       const s = Me;
-      return i(), _(s, M(e.$attrs, {
+      return l(), _(s, M(e.$attrs, {
         class: ["m-input", { solid: e.$attrs.styleType === "solid" }]
       }), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
@@ -164,7 +164,7 @@ const O = (t, e) => {
   setup(t) {
     return (e, o) => {
       const s = $e;
-      return i(), _(s, M(e.$attrs, { class: "m-form" }), g({ _: 2 }, [
+      return l(), _(s, M(e.$attrs, { class: "m-form" }), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -181,7 +181,7 @@ const O = (t, e) => {
   setup(t) {
     return (e, o) => {
       const s = ve;
-      return i(), _(s, M(e.$attrs, { class: "m-form-item" }), g({ _: 2 }, [
+      return l(), _(s, M(e.$attrs, { class: "m-form-item" }), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -197,7 +197,7 @@ const O = (t, e) => {
     delete o[s];
   }), o;
 };
-function N(t, e = "popperClass") {
+function P(t, e = "popperClass") {
   const o = G(), s = h(() => We(o, e)), a = h(() => qe(t, o[e]));
   return {
     mergedAttrs: s,
@@ -215,14 +215,14 @@ const Ze = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e, className: o } = N("mc-tooltip-popper");
+    const { mergedAttrs: e, className: o } = P("mc-tooltip-popper");
     return (s, a) => {
       const n = he;
-      return i(), _(n, M(k(e), { "popper-class": k(o) }), g({ _: 2 }, [
-        b(s.$slots, (r, l) => ({
-          name: l,
+      return l(), _(n, M(k(e), { "popper-class": k(o) }), g({ _: 2 }, [
+        b(s.$slots, (r, i) => ({
+          name: i,
           fn: p(() => [
-            m(s.$slots, l)
+            m(s.$slots, i)
           ])
         }))
       ]), 1040, ["popper-class"]);
@@ -235,7 +235,7 @@ const Ze = /* @__PURE__ */ Object.assign({
   setup(t) {
     return (e, o) => {
       const s = ye;
-      return i(), _(s, M({
+      return l(), _(s, M({
         class: ["m-select2", { solid: e.$attrs.styleType === "solid" }],
         "show-arrow": !1
       }, e.$attrs), g({ _: 2 }, [
@@ -255,7 +255,7 @@ const Ze = /* @__PURE__ */ Object.assign({
   setup(t) {
     return (e, o) => {
       const s = Ce;
-      return i(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
+      return l(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -272,7 +272,7 @@ const Ze = /* @__PURE__ */ Object.assign({
   setup(t) {
     return (e, o) => {
       const s = ke;
-      return i(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
+      return l(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -289,7 +289,7 @@ const Ze = /* @__PURE__ */ Object.assign({
   setup(t) {
     return (e, o) => {
       const s = Se;
-      return i(), _(s, M(e.$attrs, { class: "m-pagination" }), g({ _: 2 }, [
+      return l(), _(s, M(e.$attrs, { class: "m-pagination" }), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -310,10 +310,10 @@ const Ze = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e } = N("mc-radio-popper");
+    const { mergedAttrs: e } = P("mc-radio-popper");
     return (o, s) => {
       const a = Te;
-      return i(), _(a, M(k(e), { class: "m-radio" }), g({ _: 2 }, [
+      return l(), _(a, M(k(e), { class: "m-radio" }), g({ _: 2 }, [
         b(o.$slots, (n, r) => ({
           name: r,
           fn: p(() => [
@@ -343,11 +343,11 @@ const Ze = /* @__PURE__ */ Object.assign({
     });
     return (a, n) => {
       const r = Be;
-      return i(), _(r, M(s.value, {
+      return l(), _(r, M(s.value, {
         "popper-class": o.value,
         class: "m-radio-group"
       }), g({ _: 2 }, [
-        b(a.$slots, (l, d) => ({
+        b(a.$slots, (i, d) => ({
           name: d,
           fn: p(() => [
             m(a.$slots, d)
@@ -367,10 +367,10 @@ const Ze = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e } = N("mc-radio-button-popper");
+    const { mergedAttrs: e } = P("mc-radio-button-popper");
     return (o, s) => {
       const a = we;
-      return i(), _(a, M(k(e), { class: "m-radio-button" }), g({ _: 2 }, [
+      return l(), _(a, M(k(e), { class: "m-radio-button" }), g({ _: 2 }, [
         b(o.$slots, (n, r) => ({
           name: r,
           fn: p(() => [
@@ -391,17 +391,17 @@ const Ze = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e, className: o } = N("mc-switch-popper");
+    const { mergedAttrs: e, className: o } = P("mc-switch-popper");
     return (s, a) => {
       const n = Oe;
-      return i(), _(n, M(k(e), {
+      return l(), _(n, M(k(e), {
         "popper-class": k(o),
         class: "m-switch"
       }), g({ _: 2 }, [
-        b(s.$slots, (r, l) => ({
-          name: l,
+        b(s.$slots, (r, i) => ({
+          name: i,
           fn: p(() => [
-            m(s.$slots, l)
+            m(s.$slots, i)
           ])
         }))
       ]), 1040, ["popper-class"]);
@@ -414,7 +414,7 @@ const Ze = /* @__PURE__ */ Object.assign({
   setup(t) {
     return (e, o) => {
       const s = Ee;
-      return i(), _(s, M(e.$attrs, { class: "m-tag" }), g({ _: 2 }, [
+      return l(), _(s, M(e.$attrs, { class: "m-tag" }), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -440,15 +440,15 @@ const Ze = /* @__PURE__ */ Object.assign({
   },
   setup(t) {
     const e = t, o = G(), s = h(() => {
-      const l = o, { useCustomIcon: n } = l, r = z(l, ["useCustomIcon"]);
+      const i = o, { useCustomIcon: n } = i, r = z(i, ["useCustomIcon"]);
       return A(T({}, r), {
         type: e.type
         // 确保 type 属性正确传递给 el-alert
       });
     }), a = h(() => e.useCustomIcon ? `/images/alert/alert-${e.type}.png` : null);
     return (n, r) => {
-      const l = Ie;
-      return i(), _(l, M(s.value, { class: "mc-alert" }), g({ _: 2 }, [
+      const i = Ie;
+      return l(), _(i, M(s.value, { class: "mc-alert" }), g({ _: 2 }, [
         a.value ? {
           name: "icon",
           fn: p(() => [
@@ -505,8 +505,8 @@ const Ze = /* @__PURE__ */ Object.assign({
   setup(t, { emit: e }) {
     const o = ne(t, "modelValue");
     return (s, a) => {
-      const n = Pe;
-      return i(), $("div", null, [
+      const n = Ne;
+      return l(), $("div", null, [
         E(n, M({
           modelValue: o.value,
           "onUpdate:modelValue": a[0] || (a[0] = (r) => o.value = r),
@@ -526,8 +526,8 @@ const Ze = /* @__PURE__ */ Object.assign({
         }, [
           s.$slots.header ? {
             name: "header",
-            fn: p(({ close: r, titleId: l, titleClass: d }) => [
-              m(s.$slots, "header", F(U({ close: r, titleId: l, titleClass: d })))
+            fn: p(({ close: r, titleId: i, titleClass: d }) => [
+              m(s.$slots, "header", F(U({ close: r, titleId: i, titleClass: d })))
             ]),
             key: "0"
           } : void 0,
@@ -542,13 +542,13 @@ const Ze = /* @__PURE__ */ Object.assign({
       ]);
     };
   }
-}), lt = {
+}), it = {
   name: "MNotification"
 };
-function it(t, e, o, s, a, n) {
-  const r = Ne;
-  return i(), _(r, M(t.$attrs, { class: "mc-notification" }), g({ _: 2 }, [
-    b(t.$slots, (l, d) => ({
+function lt(t, e, o, s, a, n) {
+  const r = Pe;
+  return l(), _(r, M(t.$attrs, { class: "mc-notification" }), g({ _: 2 }, [
+    b(t.$slots, (i, d) => ({
       name: d,
       fn: p(() => [
         m(t.$slots, d)
@@ -556,7 +556,7 @@ function it(t, e, o, s, a, n) {
     }))
   ]), 1040);
 }
-const ct = /* @__PURE__ */ O(lt, [["render", it]]), B = L([]);
+const ct = /* @__PURE__ */ O(it, [["render", lt]]), B = L([]);
 let ut = 0;
 const vs = {
   // 默认配置
@@ -614,14 +614,14 @@ const vs = {
   class: "notification-action"
 }, gt = ["onClick"];
 function Mt(t, e, o, s, a, n) {
-  return i(), _(ae, { to: "body" }, [
+  return l(), _(ae, { to: "body" }, [
     E(re, {
       name: "notification",
       tag: "div",
       class: "notification-container"
     }, {
       default: p(() => [
-        (i(!0), $(x, null, b(s.notifications, (r) => (i(), $("div", {
+        (l(!0), $(x, null, b(s.notifications, (r) => (l(), $("div", {
           key: r.id,
           class: I([
             "custom-notification",
@@ -637,14 +637,14 @@ function Mt(t, e, o, s, a, n) {
           C("div", dt, [
             C("div", ft, V(r.title), 1),
             C("div", _t, V(r.message), 1),
-            r.slotContent ? (i(), $("div", bt, [
-              (i(), _(le(r.slotContent)))
+            r.slotContent ? (l(), $("div", bt, [
+              (l(), _(ie(r.slotContent)))
             ])) : w("", !0)
           ]),
-          r.showClose ? (i(), $("button", {
+          r.showClose ? (l(), $("button", {
             key: 0,
             class: "notification-close",
-            onClick: (l) => s.closeNotification(r.id)
+            onClick: (i) => s.closeNotification(r.id)
           }, " × ", 8, gt)) : w("", !0)
         ], 2))), 128))
       ]),
@@ -663,17 +663,17 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
     }
   },
   setup(t) {
-    const { mergedAttrs: e, className: o } = N(
+    const { mergedAttrs: e, className: o } = P(
       "mc-datepicker-popper",
       "popperClass"
     );
     return (s, a) => {
       const n = je;
-      return i(), _(n, M(k(e), { "popper-class": k(o) }), g({ _: 2 }, [
-        b(s.$slots, (r, l) => ({
-          name: l,
+      return l(), _(n, M(k(e), { "popper-class": k(o) }), g({ _: 2 }, [
+        b(s.$slots, (r, i) => ({
+          name: i,
           fn: p(() => [
-            m(s.$slots, l)
+            m(s.$slots, i)
           ])
         }))
       ]), 1040, ["popper-class"]);
@@ -708,15 +708,15 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
   },
   setup(t) {
     const e = t, o = G(), s = h(() => {
-      const l = o, { image: n } = l;
-      return z(l, ["image"]);
+      const i = o, { image: n } = i;
+      return z(i, ["image"]);
     }), a = h(() => {
       const { image: n } = e;
       return n.includes("/") || n.includes("http") ? n : `/images/empty/${n}.png`;
     });
     return (n, r) => {
-      const l = Ae;
-      return i(), _(l, M(s.value, { image: a.value }), g({ _: 2 }, [
+      const i = Ae;
+      return l(), _(i, M(s.value, { image: a.value }), g({ _: 2 }, [
         b(n.$slots, (d, v) => ({
           name: v,
           fn: p(() => [
@@ -733,7 +733,7 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
   setup(t) {
     return (e, o) => {
       const s = ze;
-      return i(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
+      return l(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -750,7 +750,7 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
   setup(t) {
     return (e, o) => {
       const s = Le;
-      return i(), _(s, M(e.$attrs, { class: "m-table-column" }), g({ _: 2 }, [
+      return l(), _(s, M(e.$attrs, { class: "m-table-column" }), g({ _: 2 }, [
         b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
@@ -831,7 +831,7 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
     R(() => a.visible, (u) => {
       r.value = u;
     });
-    const l = h(() => {
+    const i = h(() => {
       const u = {};
       return a.backgroundColor && (u.backgroundColor = a.backgroundColor), a.textColor && (u.color = a.textColor), a.borderColor && (u.borderColor = a.borderColor), u;
     }), d = {
@@ -850,7 +850,7 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
       }, a.duration);
     }), e({
       close: v
-    }), (u, y) => t.visible ? (i(), $("div", {
+    }), (u, y) => t.visible ? (l(), $("div", {
       key: 0,
       class: I(["m-banner", [
         `m-banner--${t.type}`,
@@ -859,12 +859,12 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
           "m-banner--with-icon": t.icon || k(s).icon
         }
       ]]),
-      style: ie(l.value)
+      style: le(i.value)
     }, [
       C("div", Tt, [
-        t.icon || k(s).icon ? (i(), $("div", Bt, [
+        t.icon || k(s).icon ? (l(), $("div", Bt, [
           m(u.$slots, "icon", {}, () => [
-            E(P, {
+            E(N, {
               name: t.icon,
               size: t.iconSize
             }, null, 8, ["name", "size"])
@@ -875,12 +875,12 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
             ce(V(t.content), 1)
           ], !0)
         ]),
-        t.closable ? (i(), $("div", {
+        t.closable ? (l(), $("div", {
           key: 1,
           class: "m-banner__close",
           onClick: v
         }, [
-          E(P, {
+          E(N, {
             name: "lucide-x",
             size: t.closeIconSize
           }, null, 8, ["size"])
@@ -888,7 +888,7 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
       ])
     ], 6)) : w("", !0);
   }
-}), Et = /* @__PURE__ */ O(Ot, [["__scopeId", "data-v-00c80323"]]), It = { class: "m-tabs__header" }, Pt = { class: "m-tabs__nav" }, Nt = ["onClick"], jt = { class: "m-tabs__item-text" }, At = { key: 1 }, zt = ["onClick"], Lt = { class: "m-tabs__content" }, Vt = {
+}), Et = /* @__PURE__ */ O(Ot, [["__scopeId", "data-v-00c80323"]]), It = { class: "m-tabs__header" }, Nt = { class: "m-tabs__nav" }, Pt = ["onClick"], jt = { class: "m-tabs__item-text" }, At = { key: 1 }, zt = ["onClick"], Lt = { class: "m-tabs__content" }, Vt = {
   __name: "Tabs",
   props: {
     // 当前激活的标签页
@@ -953,7 +953,7 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
         y >= 0 && n.value.splice(y, 1);
       }
     });
-    const l = (u, y) => Y(this, null, function* () {
+    const i = (u, y) => Y(this, null, function* () {
       if (u.disabled) return;
       const f = u.name || y;
       if (r.value !== f) {
@@ -973,14 +973,14 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
     };
     return e({
       activeName: h(() => r.value)
-    }), (u, y) => (i(), $("div", {
+    }), (u, y) => (l(), $("div", {
       class: I(["m-tabs", [`m-tabs--${t.type}`, `m-tabs--${t.tabPosition}`]])
     }, [
       C("div", It, [
-        C("div", Pt, [
-          (i(!0), $(x, null, b(n.value, (f, S) => {
+        C("div", Nt, [
+          (l(!0), $(x, null, b(n.value, (f, S) => {
             var H;
-            return i(), $("div", {
+            return l(), $("div", {
               key: f.name || S,
               class: I([
                 "m-tabs__item",
@@ -990,29 +990,29 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
                   "m-tabs__item--closable": f.closable
                 }
               ]),
-              onClick: (ee) => l(f, S)
+              onClick: (ee) => i(f, S)
             }, [
               C("span", jt, [
-                (H = f.$slots) != null && H.label ? m(u.$slots, `tab-${f.name || S}`, { key: 0 }, void 0, !0) : (i(), $("span", At, V(f.label), 1))
+                (H = f.$slots) != null && H.label ? m(u.$slots, `tab-${f.name || S}`, { key: 0 }, void 0, !0) : (l(), $("span", At, V(f.label), 1))
               ]),
-              f.closable ? (i(), $("span", {
+              f.closable ? (l(), $("span", {
                 key: 0,
                 class: "m-tabs__item-close",
                 onClick: me((ee) => d(f, S), ["stop"])
               }, [
-                E(P, {
+                E(N, {
                   name: "lucide-x",
                   size: 12
                 })
               ], 8, zt)) : w("", !0)
-            ], 10, Nt);
+            ], 10, Pt);
           }), 128)),
-          t.addable || t.editable ? (i(), $("div", {
+          t.addable || t.editable ? (l(), $("div", {
             key: 0,
             class: "m-tabs__item m-tabs__item--add",
             onClick: v
           }, [
-            E(P, {
+            E(N, {
               name: "plus",
               size: 12
             })
@@ -1070,7 +1070,7 @@ const $t = /* @__PURE__ */ O(pt, [["render", Mt]]), vt = /* @__PURE__ */ Object.
       }
     }), fe(() => {
       s && s.unregisterTab(e.name);
-    }), (n, r) => _e((i(), $("div", {
+    }), (n, r) => _e((l(), $("div", {
       class: I(["m-tab-pane", {
         "m-tab-pane--active": a.value,
         "m-tab-pane--disabled": t.disabled
@@ -1132,7 +1132,7 @@ const Zt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   applyGlobalOverride: Ut,
   createOverrideComponent: Wt,
   forceRefreshStyles: qt
-}, Symbol.toStringTag, { value: "Module" })), Z = [P, De, Ge, Fe, Ue, Ze, He, Je, Qe, Xe, Ye, Ke, xe, et, tt, at, rt, ct, $t, vt, Ct, kt, St, Et, Rt, Gt], c = {};
+}, Symbol.toStringTag, { value: "Module" })), Z = [N, De, Ge, Fe, Ue, Ze, He, Je, Qe, Xe, Ye, Ke, xe, et, tt, at, rt, ct, $t, vt, Ct, kt, St, Et, Rt, Gt], c = {};
 function Ht(t) {
   const e = Z.map((o) => {
     if (o && o.name && typeof o.name == "string") {
@@ -1148,10 +1148,10 @@ function Ht(t) {
     }
     return null;
   }).filter(Boolean);
-  console.log("🔧 自定义组件列表:", e), Object.entries(q).forEach(([o, s]) => {
+  Object.entries(q).forEach(([o, s]) => {
     if (s && s.name && typeof s.name == "string" && s.name.startsWith("El")) {
       const a = "m-" + s.name.slice(2).replace(/([A-Z])/g, "-$1").toLowerCase().replace(/^-/, "");
-      e.includes(a) ? console.log(`🎯 自定义组件覆盖: ${a} (使用自定义组件)`) : t._context.components[a] ? console.log(`⚠️  组件 ${a} 已存在，跳过注册`) : (t.component(a, s), console.log(`✅ 注册 Element Plus 组件: ${a}`));
+      e.includes(a) || t._context.components[a] || t.component(a, s);
       const n = "M" + s.name.slice(2);
       c[n] = s;
     }
@@ -1170,9 +1170,9 @@ const Jt = (t) => {
         moptiongroup: "m-option-group",
         mtabs: "m-tabs",
         mtabpane: "m-tab-pane"
-      }[o] || o.replace(/^m/, "m-"), t.component(o, e), console.log(`🎯 注册自定义组件: ${o} (${e.name})`);
+      }[o] || o.replace(/^m/, "m-"), t.component(o, e);
     }
-  }), Ht(t), console.log("✅ @mc-markets/ui 组件库安装完成!");
+  }), Ht(t);
 };
 function hs(t) {
   const e = Object.keys(t._context.components || {}), o = Z.map((s) => {
@@ -1197,7 +1197,7 @@ function hs(t) {
     )
   };
 }
-const ys = { install: Jt }, Cs = q.ElMessage, ks = q.ElMessageBox, Ss = T({}, c), Ts = c.MButtonGroup, Bs = c.MBreadcrumb, ws = c.MBreadcrumbItem, Os = c.MCarousel, Es = c.MCarouselItem, Is = c.MCascader, Ps = c.MCascaderPanel, Ns = c.MCheckTag, js = c.MCalendar, As = c.MTimePicker, zs = c.MDateTimePicker, Ls = c.MColorPicker, Vs = c.MTransfer, Rs = c.MTree, Ds = c.MTreeSelect, Gs = c.MUpload, Fs = c.MImage, Us = c.MImageViewer, qs = c.MBacktop, Ws = c.MInfiniteScroll, Zs = c.MAffix, Hs = c.MScrollbar, Js = c.MResult, Qs = c.MSkeleton, Xs = c.MLoading, Ys = c.MSpinner, Ks = c.MProgress, xs = c.MBadge, eo = c.MAvatar, to = c.MImagePreview, so = c.MTeleport, oo = c.MConfigProvider;
+const ys = { install: Jt }, Cs = q.ElMessage, ks = q.ElMessageBox, Ss = T({}, c), Ts = c.MButtonGroup, Bs = c.MBreadcrumb, ws = c.MBreadcrumbItem, Os = c.MCarousel, Es = c.MCarouselItem, Is = c.MCascader, Ns = c.MCascaderPanel, Ps = c.MCheckTag, js = c.MCalendar, As = c.MTimePicker, zs = c.MDateTimePicker, Ls = c.MColorPicker, Vs = c.MTransfer, Rs = c.MTree, Ds = c.MTreeSelect, Gs = c.MUpload, Fs = c.MImage, Us = c.MImageViewer, qs = c.MBacktop, Ws = c.MInfiniteScroll, Zs = c.MAffix, Hs = c.MScrollbar, Js = c.MResult, Qs = c.MSkeleton, Xs = c.MLoading, Ys = c.MSpinner, Ks = c.MProgress, xs = c.MBadge, eo = c.MAvatar, to = c.MImagePreview, so = c.MTeleport, oo = c.MConfigProvider;
 export {
   Zs as MAffix,
   at as MAlert,
@@ -1213,8 +1213,8 @@ export {
   Os as MCarousel,
   Es as MCarouselItem,
   Is as MCascader,
-  Ps as MCascaderPanel,
-  Ns as MCheckTag,
+  Ns as MCascaderPanel,
+  Ps as MCheckTag,
   Ls as MColorPicker,
   oo as MConfigProvider,
   vt as MDatePicker,
@@ -1223,7 +1223,7 @@ export {
   Ct as MEmpty,
   Fe as MForm,
   Ue as MFormItem,
-  P as MIcon,
+  N as MIcon,
   Fs as MImage,
   to as MImagePreview,
   Us as MImageViewer,

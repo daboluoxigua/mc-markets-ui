@@ -12,14 +12,5 @@ defineOptions({
 })
 </script>
 <style lang="scss">
-// Input 组件样式 - 使用更具体的选择器确保样式优先级
-.m-input.el-input {
-  &.solid {
-    --el-border-color: var(--bg-tertiary-hover);
-    
-    .el-input__wrapper {
-      background: var(--all-alphe-white-6);
-    }
-  }
-}
+
 </style>

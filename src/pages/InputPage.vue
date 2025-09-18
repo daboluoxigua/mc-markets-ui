@@ -31,6 +31,17 @@
           </m-input>
           <span>基础输入框</span>
         </div>
+        <div class="doc-item">
+          <m-input v-model="value" placeholder="请输入内容">
+            <template #append>
+              <m-icon name="search" size="24"/>
+            </template>
+            <template #suffix>
+              <m-button type="text">获取验证码</m-button>
+            </template>
+          </m-input>
+          <span>基础输入框</span>
+        </div>
       </div>
     </DemoSection>
 

@@ -49,22 +49,6 @@
   ),
   $border-color-hover:var(--text-brand),
   // 自定义阴影
-  $box-shadow: (
-    'base': (
-      0 2px 4px rgba(0, 0, 0, 0.12),
-      0 0 6px rgba(0, 0, 0, 0.04)
-    ),
-    'light': (
-      0 2px 12px 0 rgba(0, 0, 0, 0.1)
-    ),
-    'lighter': (
-      0 2px 12px 0 rgba(0, 0, 0, 0.06)
-    ),
-    'dark': (
-      0 2px 4px rgba(0, 0, 0, 0.12),
-      0 0 6px rgba(0, 0, 0, 0.12)
-    ),
-  ),
   $common-component-size: (
     'large': 40px,
     'default': 48px,
@@ -90,6 +74,7 @@
 @use './components/form.scss';
 @use './components/tabs.scss';
 @use './components/dialog.scss';
+@use './components/input.scss';
 
 
 
@@ -102,4 +87,8 @@ html.dark{
   --el-text-color-placeholder:var(--text-tertiary);
   --el-border-radius-base:8px;
   --el-border-color-hover:var(--text-brand);
+
+  --el-component-size-large: 58px;
+  --el-component-size: 48px;
+  --el-component-size-small: 32px;
 }
