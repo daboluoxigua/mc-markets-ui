@@ -84,12 +84,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/daboluoxigua/mc-ui.git"
+    "url": "https://github.com/daboluoxigua/mc-markets-ui.git"
   },
   "bugs": {
-    "url": "https://gitee.com/daboluoxigua/mc-ui/issues"
+    "url": "https://github.com/daboluoxigua/mc-markets-ui/issues"
   },
-  "homepage": "https://gitee.com/daboluoxigua/mc-ui#readme",
+  "homepage": "https://daboluoxigua.github.io/mc-markets-ui/",
   "publishConfig": {
     "access": "public"
   }

@@ -1,6 +1,12 @@
-# @mc-markets/ui Demo
+# @mc-markets/ui 
 
-Vue 3 组件库演示
+Vue 3 组件库，基于 Element Plus 的自定义组件
+
+## 📖 在线演示
+
+🌐 **演示地址**: [https://daboluoxigua.github.io/mc-markets-ui/](https://daboluoxigua.github.io/mc-markets-ui/)
+
+演示站点通过 GitHub Actions 自动构建和部署，展示了所有组件的使用方法和效果。
 
 ## 🚀 快速开始
 
@@ -51,9 +57,34 @@ npm run serve:local
 npm run preview:demo
 ```
 
+## 🚀 部署说明
+
+### GitHub Pages 自动部署
+
+项目配置了 GitHub Actions 工作流，当代码推送到 `master` 分支时会自动：
+
+1. 安装项目依赖
+2. 构建演示站点 (`npm run build:demo`)
+3. 部署到 GitHub Pages
+
+部署配置文件位于 `.github/workflows/static.yml`。
+
+### 手动部署
+
+如需手动部署演示站点：
+
+```bash
+# 构建演示站点
+npm run build:demo
+
+# 构建输出位于 demo-dist/ 目录
+# 可以将此目录内容部署到任何静态托管服务
+```
+
 ## 📚 文档
 
-- [部署指南](DEPLOYMENT.md) - 详细的打包和部署说明
+- 演示站点: [https://daboluoxigua.github.io/mc-markets-ui/](https://daboluoxigua.github.io/mc-markets-ui/)
+- GitHub 仓库: [https://github.com/daboluoxigua/mc-markets-ui](https://github.com/daboluoxigua/mc-markets-ui)
 
 ## 🛠️ 可用命令
 
