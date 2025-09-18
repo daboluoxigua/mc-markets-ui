@@ -39,7 +39,9 @@ export default defineConfig({
     // esbuild 压缩配置
     esbuild: {
       drop: ['console', 'debugger']
-    }
+    },
+    // 复制 public 目录下的文件
+    copyPublicDir: true
   },
   resolve: {
     alias: {
