@@ -10,6 +10,16 @@ Vue 3 组件库，基于 Element Plus 的自定义组件
 
 ## 🚀 快速开始
 
+### 安装
+```bash
+
+# 生成凭证
+git config --global credential.https://gitlab.mc-markets.com.username 用户名
+
+# 安装依赖
+npm install git+https://gitlab.mc-markets.com/lty/mcmarkets-ui.git#master
+```
+
 ### 开发模式
 
 ```bash
