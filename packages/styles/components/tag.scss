@@ -16,6 +16,7 @@
         transparent
       );
       --el-tag-text-color: var(--text-warning-primary);
+      --el-tag-hover-color: var(--text-warning-primary);
     }
     &.el-tag--success {
       --el-tag-bg-color: color-mix(

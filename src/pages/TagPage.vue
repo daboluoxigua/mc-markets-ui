@@ -181,47 +181,6 @@
       </div>
     </DemoSection>
 
-    <!-- 可选中的标签 -->
-    <DemoSection title="可选中的标签">
-      <div class="doc-grid">
-        <div class="doc-item">
-          <div class="theme-container">
-            <el-check-tag checked>Checked</el-check-tag>
-            <el-check-tag :checked="checked" @change="onChange">Toggle me</el-check-tag>
-            <el-check-tag disabled>Disabled</el-check-tag>
-          </div>
-          <span>Check Tags</span>
-        </div>
-        <div class="doc-item">
-          <div class="theme-container">
-            <el-check-tag :checked="checked1" type="primary" @change="onChange1">
-              Tag 1
-            </el-check-tag>
-            <el-check-tag :checked="checked2" type="success" @change="onChange2">
-              Tag 2
-            </el-check-tag>
-            <el-check-tag :checked="checked3" type="info" @change="onChange3">
-              Tag 3
-            </el-check-tag>
-            <el-check-tag :checked="checked4" type="primary" @change="onChange4">
-              Tag 4
-            </el-check-tag>
-            <el-check-tag :checked="checked5" type="danger" @change="onChange5">
-              Tag 5
-            </el-check-tag>
-            <el-check-tag
-              :checked="checked6"
-              disabled
-              type="success"
-              @change="onChange6"
-            >
-              Tag 6
-            </el-check-tag>
-          </div>
-          <span>Colored Check Tags</span>
-        </div>
-      </div>
-    </DemoSection>
 
     <!-- 自定义颜色 -->
     <DemoSection title="自定义颜色">
