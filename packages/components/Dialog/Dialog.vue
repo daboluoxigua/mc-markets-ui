@@ -10,7 +10,7 @@
       v-bind="$attrs"
       class="m-dialog"
       header-class="m-header"
-    >测试组
+    >
       <template v-if="$slots.header" #header="{ close, titleId, titleClass }">
         <slot name="header" v-bind="{ close, titleId, titleClass }"></slot>
       </template>
