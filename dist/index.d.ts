@@ -1,6 +1,5 @@
 import { default as MIcon } from './components/Icon/Icon.vue';
 import { default as MButton } from './components/Button/Button.vue';
-import { default as MCard } from './components/Card/Card.vue';
 import { default as MInput } from './components/Input/Input.vue';
 import { default as MForm } from './components/Form/Form.vue';
 import { default as MFormItem } from './components/FormItem/FormItem.vue';
@@ -15,6 +14,7 @@ import { default as MTag } from './components/Tag/Tag.vue';
 import { default as MAlert } from './components/Alert/Alert.vue';
 import { default as MDialog } from './components/Dialog/Dialog.vue';
 import { default as MNotification } from './components/Notification/Notification.vue';
+import { default as MNotifiMessage, NotifiMessage } from './components/NotifiMessage/NotifiMessage.vue';
 import { default as MDatePicker } from './components/DatePicker/DatePicker.vue';
 import { default as MEmpty } from './components/Empty/Empty.vue';
 import { default as MTable } from './components/Table/Table.vue';
@@ -22,6 +22,11 @@ import { default as MTableColumn } from './components/Table/TableColumn.vue';
 import { default as MBanner } from './components/Banner/Banner.vue';
 import { default as MTabs } from './components/Tabs/Tabs.vue';
 import { default as MTabPane } from './components/Tabs/TabPane.vue';
+export function checkComponentRegistration(app: any): {
+    registered: string[];
+    custom: any[];
+    conflicts: string[];
+};
 declare namespace _default {
     export { install };
 }
@@ -71,6 +76,6 @@ export const MTeleport: any;
 export const MConfigProvider: any;
 declare function install(app: any): void;
 import * as ElementPlusComponents from 'element-plus';
-export { MIcon, MButton, MCard, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane };
+export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, NotifiMessage };
 export { addOverrideClass, addComponentOverride, applyGlobalOverride, forceRefreshStyles, createOverrideComponent } from './utils/styleUtils.js';
 //# sourceMappingURL=index.d.ts.map

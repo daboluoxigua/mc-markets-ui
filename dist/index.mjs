@@ -1,46 +1,45 @@
-var ee = Object.defineProperty, te = Object.defineProperties;
-var se = Object.getOwnPropertyDescriptors;
-var N = Object.getOwnPropertySymbols;
-var W = Object.prototype.hasOwnProperty, Z = Object.prototype.propertyIsEnumerable;
-var q = (t, e, o) => e in t ? ee(t, e, { enumerable: !0, configurable: !0, writable: !0, value: o }) : t[e] = o, j = (t, e) => {
+var se = Object.defineProperty, oe = Object.defineProperties;
+var ne = Object.getOwnPropertyDescriptors;
+var j = Object.getOwnPropertySymbols;
+var Q = Object.prototype.hasOwnProperty, X = Object.prototype.propertyIsEnumerable;
+var J = (t, e, o) => e in t ? se(t, e, { enumerable: !0, configurable: !0, writable: !0, value: o }) : t[e] = o, T = (t, e) => {
   for (var o in e || (e = {}))
-    W.call(e, o) && q(t, o, e[o]);
-  if (N)
-    for (var o of N(e))
-      Z.call(e, o) && q(t, o, e[o]);
+    Q.call(e, o) && J(t, o, e[o]);
+  if (j)
+    for (var o of j(e))
+      X.call(e, o) && J(t, o, e[o]);
   return t;
-}, H = (t, e) => te(t, se(e));
-var V = (t, e) => {
+}, A = (t, e) => oe(t, ne(e));
+var z = (t, e) => {
   var o = {};
   for (var s in t)
-    W.call(t, s) && e.indexOf(s) < 0 && (o[s] = t[s]);
-  if (t != null && N)
-    for (var s of N(t))
-      e.indexOf(s) < 0 && Z.call(t, s) && (o[s] = t[s]);
+    Q.call(t, s) && e.indexOf(s) < 0 && (o[s] = t[s]);
+  if (t != null && j)
+    for (var s of j(t))
+      e.indexOf(s) < 0 && X.call(t, s) && (o[s] = t[s]);
   return o;
 };
-var J = (t, e, o) => new Promise((s, a) => {
-  var n = (g) => {
+var Y = (t, e, o) => new Promise((s, a) => {
+  var n = (d) => {
     try {
-      l(o.next(g));
-    } catch ($) {
-      a($);
+      l(o.next(d));
+    } catch (v) {
+      a(v);
     }
-  }, r = (g) => {
+  }, r = (d) => {
     try {
-      l(o.throw(g));
-    } catch ($) {
-      a($);
+      l(o.throw(d));
+    } catch (v) {
+      a(v);
     }
-  }, l = (g) => g.done ? s(g.value) : Promise.resolve(g.value).then(n, r);
+  }, l = (d) => d.done ? s(d.value) : Promise.resolve(d.value).then(n, r);
   l((o = o.apply(t, e)).next());
 });
-import * as D from "element-plus";
-import { computed as y, createElementBlock as h, openBlock as c, mergeProps as M, renderSlot as m, createBlock as b, createSlots as _, renderList as f, withCtx as p, useAttrs as F, unref as C, normalizeProps as T, guardReactiveProps as B, mergeModels as Q, useModel as oe, createVNode as O, createTextVNode as X, useSlots as G, ref as R, watch as A, createCommentVNode as E, normalizeStyle as ne, normalizeClass as z, createElementVNode as k, toDisplayString as Y, provide as ae, Fragment as re, withModifiers as le, inject as ie, onMounted as ce, onUnmounted as ue, withDirectives as me, vShow as pe } from "vue";
-import { ElButton as de, ElCard as _e, ElInput as fe, ElForm as be, ElFormItem as ge, ElTooltip as Me, ElSelect as $e, ElOption as ve, ElOptionGroup as he, ElPagination as ye, ElRadio as Ce, ElRadioGroup as Se, ElRadioButton as ke, ElSwitch as Te, ElTag as Be, ElAlert as Ee, ElDialog as Oe, ElNotification as Pe, ElDatePicker as we, ElEmpty as Ie, ElTable as Ne, ElTableColumn as je } from "element-plus/es";
+import * as q from "element-plus";
+import { computed as h, createElementBlock as M, openBlock as i, mergeProps as $, renderSlot as m, createBlock as _, createSlots as g, renderList as b, withCtx as p, useAttrs as G, unref as k, normalizeProps as F, guardReactiveProps as U, createElementVNode as C, mergeModels as K, useModel as ae, createVNode as O, createTextVNode as x, ref as L, Teleport as re, TransitionGroup as le, Fragment as ee, normalizeClass as I, createCommentVNode as w, toDisplayString as V, resolveDynamicComponent as ie, useSlots as W, watch as R, normalizeStyle as ce, provide as ue, withModifiers as me, inject as pe, onMounted as de, onUnmounted as fe, withDirectives as _e, vShow as be } from "vue";
+import { ElButton as ge, ElInput as $e, ElForm as Me, ElFormItem as ve, ElTooltip as he, ElSelect as ye, ElOption as Ce, ElOptionGroup as ke, ElPagination as Se, ElRadio as Te, ElRadioGroup as Be, ElRadioButton as we, ElSwitch as Ee, ElTag as Oe, ElAlert as Ie, ElDialog as Pe, ElNotification as Ne, ElDatePicker as je, ElEmpty as Ae, ElTable as ze, ElTableColumn as Le } from "element-plus/es";
 import "element-plus/es/components/base/style/index";
 import "element-plus/es/components/button/style/index";
-import "element-plus/es/components/card/style/index";
 import "element-plus/es/components/input/style/index";
 import "element-plus/es/components/form/style/index";
 import "element-plus/es/components/form-item/style/index";
@@ -61,12 +60,12 @@ import "element-plus/es/components/date-picker/style/index";
 import "element-plus/es/components/empty/style/index";
 import "element-plus/es/components/table/style/index";
 import "element-plus/es/components/table-column/style/index";
-const w = (t, e) => {
+const E = (t, e) => {
   const o = t.__vccOpts || t;
   for (const [s, a] of e)
     o[s] = a;
   return o;
-}, Ae = /* @__PURE__ */ Object.assign({
+}, Ve = /* @__PURE__ */ Object.assign({
   name: "MIcon"
 }, {
   __name: "Icon",
@@ -106,31 +105,31 @@ const w = (t, e) => {
   },
   emits: ["click"],
   setup(t, { emit: e }) {
-    const o = t, s = e, a = y(() => {
+    const o = t, s = e, a = h(() => {
       const l = ["iconfont"];
       return o.name && l.push(`${o.prefix}-${o.name}`), o.spin && l.push("icon-spin"), o.pulse && l.push("icon-pulse"), o.flip && l.push(`icon-flip-${o.flip}`), l;
-    }), n = y(() => {
+    }), n = h(() => {
       const l = {};
       return o.size && (typeof o.size == "number" ? l.fontSize = `${o.size}px` : l.fontSize = o.size), o.color && (l.color = o.color), o.rotate !== 0 && (l.transform = `rotate(${o.rotate}deg)`), l;
     }), r = (l) => {
       s("click", l);
     };
-    return (l, g) => (c(), h("i", M({
+    return (l, d) => (i(), M("i", $({
       class: a.value,
       style: n.value
     }, l.$attrs, { onClick: r }), [
       m(l.$slots, "default", {}, void 0, !0)
     ], 16));
   }
-}), P = /* @__PURE__ */ w(Ae, [["__scopeId", "data-v-90f84c9e"]]), ze = /* @__PURE__ */ Object.assign({
+}), P = /* @__PURE__ */ E(Ve, [["__scopeId", "data-v-90f84c9e"]]), Re = /* @__PURE__ */ Object.assign({
   name: "MButton"
 }, {
   __name: "Button",
   setup(t) {
     return (e, o) => {
-      const s = de;
-      return c(), b(s, M(e.$attrs, { class: "m-button" }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      const s = ge;
+      return i(), _(s, $(e.$attrs, { class: "m-button" }), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n, {}, void 0, !0)
@@ -139,34 +138,17 @@ const w = (t, e) => {
       ]), 1040);
     };
   }
-}), Le = /* @__PURE__ */ w(ze, [["__scopeId", "data-v-9c99add1"]]), Ve = /* @__PURE__ */ Object.assign({
-  name: "MCard"
-}, {
-  __name: "Card",
-  setup(t) {
-    return (e, o) => {
-      const s = _e;
-      return c(), b(s, M(e.$attrs, { class: "m-card" }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
-          name: n,
-          fn: p(() => [
-            m(e.$slots, n)
-          ])
-        }))
-      ]), 1040);
-    };
-  }
-}), Re = /* @__PURE__ */ Object.assign({
+}), De = /* @__PURE__ */ E(Re, [["__scopeId", "data-v-9c99add1"]]), Ge = /* @__PURE__ */ Object.assign({
   name: "MInput"
 }, {
   __name: "Input",
   setup(t) {
     return (e, o) => {
-      const s = fe;
-      return c(), b(s, M(e.$attrs, {
+      const s = $e;
+      return i(), _(s, $(e.$attrs, {
         class: ["m-input", { solid: e.$attrs.styleType === "solid" }]
-      }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      }), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -175,15 +157,15 @@ const w = (t, e) => {
       ]), 1040, ["class"]);
     };
   }
-}), De = /* @__PURE__ */ Object.assign({
+}), Fe = /* @__PURE__ */ Object.assign({
   name: "MForm"
 }, {
   __name: "Form",
   setup(t) {
     return (e, o) => {
-      const s = be;
-      return c(), b(s, M(e.$attrs, { class: "m-form" }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      const s = Me;
+      return i(), _(s, $(e.$attrs, { class: "m-form" }), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -192,15 +174,15 @@ const w = (t, e) => {
       ]), 1040);
     };
   }
-}), Fe = /* @__PURE__ */ Object.assign({
+}), Ue = /* @__PURE__ */ Object.assign({
   name: "MFormItem"
 }, {
   __name: "FormItem",
   setup(t) {
     return (e, o) => {
-      const s = ge;
-      return c(), b(s, M(e.$attrs, { class: "m-form-item" }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      const s = ve;
+      return i(), _(s, $(e.$attrs, { class: "m-form-item" }), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -209,20 +191,20 @@ const w = (t, e) => {
       ]), 1040);
     };
   }
-}), Ge = (...t) => t.filter(Boolean).join(" "), Ue = (t, ...e) => {
-  const o = j({}, t);
+}), qe = (...t) => t.filter(Boolean).join(" "), We = (t, ...e) => {
+  const o = T({}, t);
   return e.forEach((s) => {
     delete o[s];
   }), o;
 };
-function I(t, e = "popperClass") {
-  const o = F(), s = y(() => Ue(o, e)), a = y(() => Ge(t, o[e]));
+function N(t, e = "popperClass") {
+  const o = G(), s = h(() => We(o, e)), a = h(() => qe(t, o[e]));
   return {
     mergedAttrs: s,
     className: a
   };
 }
-const qe = /* @__PURE__ */ Object.assign({
+const Ze = /* @__PURE__ */ Object.assign({
   name: "MTooltip"
 }, {
   __name: "Tooltip",
@@ -233,11 +215,11 @@ const qe = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e, className: o } = I("mc-tooltip-popper");
+    const { mergedAttrs: e, className: o } = N("mc-tooltip-popper");
     return (s, a) => {
-      const n = Me;
-      return c(), b(n, M(C(e), { "popper-class": C(o) }), _({ _: 2 }, [
-        f(s.$slots, (r, l) => ({
+      const n = he;
+      return i(), _(n, $(k(e), { "popper-class": k(o) }), g({ _: 2 }, [
+        b(s.$slots, (r, l) => ({
           name: l,
           fn: p(() => [
             m(s.$slots, l)
@@ -246,18 +228,18 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040, ["popper-class"]);
     };
   }
-}), We = /* @__PURE__ */ Object.assign({
+}), He = /* @__PURE__ */ Object.assign({
   name: "MSelect"
 }, {
   __name: "Select",
   setup(t) {
     return (e, o) => {
-      const s = $e;
-      return c(), b(s, M({
+      const s = ye;
+      return i(), _(s, $({
         class: ["m-select2", { solid: e.$attrs.styleType === "solid" }],
         "show-arrow": !1
-      }, e.$attrs), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      }, e.$attrs), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -266,49 +248,15 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040, ["class"]);
     };
   }
-}), Ze = /* @__PURE__ */ Object.assign({
+}), Je = /* @__PURE__ */ Object.assign({
   name: "MOption"
 }, {
   __name: "Option",
   setup(t) {
     return (e, o) => {
-      const s = ve;
-      return c(), b(s, T(B(e.$attrs)), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
-          name: n,
-          fn: p(() => [
-            m(e.$slots, n)
-          ])
-        }))
-      ]), 1040);
-    };
-  }
-}), He = /* @__PURE__ */ Object.assign({
-  name: "MOptionGroup"
-}, {
-  __name: "OptionGroup",
-  setup(t) {
-    return (e, o) => {
-      const s = he;
-      return c(), b(s, T(B(e.$attrs)), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
-          name: n,
-          fn: p(() => [
-            m(e.$slots, n)
-          ])
-        }))
-      ]), 1040);
-    };
-  }
-}), Je = /* @__PURE__ */ Object.assign({
-  name: "MPagination"
-}, {
-  __name: "Pagination",
-  setup(t) {
-    return (e, o) => {
-      const s = ye;
-      return c(), b(s, M(e.$attrs, { class: "m-pagination" }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      const s = Ce;
+      return i(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -318,6 +266,40 @@ const qe = /* @__PURE__ */ Object.assign({
     };
   }
 }), Qe = /* @__PURE__ */ Object.assign({
+  name: "MOptionGroup"
+}, {
+  __name: "OptionGroup",
+  setup(t) {
+    return (e, o) => {
+      const s = ke;
+      return i(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
+          name: n,
+          fn: p(() => [
+            m(e.$slots, n)
+          ])
+        }))
+      ]), 1040);
+    };
+  }
+}), Xe = /* @__PURE__ */ Object.assign({
+  name: "MPagination"
+}, {
+  __name: "Pagination",
+  setup(t) {
+    return (e, o) => {
+      const s = Se;
+      return i(), _(s, $(e.$attrs, { class: "m-pagination" }), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
+          name: n,
+          fn: p(() => [
+            m(e.$slots, n)
+          ])
+        }))
+      ]), 1040);
+    };
+  }
+}), Ye = /* @__PURE__ */ Object.assign({
   name: "MRadio"
 }, {
   __name: "Radio",
@@ -328,11 +310,11 @@ const qe = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e } = I("mc-radio-popper");
+    const { mergedAttrs: e } = N("mc-radio-popper");
     return (o, s) => {
-      const a = Ce;
-      return c(), b(a, M(C(e), { class: "m-radio" }), _({ _: 2 }, [
-        f(o.$slots, (n, r) => ({
+      const a = Te;
+      return i(), _(a, $(k(e), { class: "m-radio" }), g({ _: 2 }, [
+        b(o.$slots, (n, r) => ({
           name: r,
           fn: p(() => [
             m(o.$slots, r)
@@ -341,7 +323,7 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040);
     };
   }
-}), Xe = /* @__PURE__ */ Object.assign({
+}), Ke = /* @__PURE__ */ Object.assign({
   name: "MRadioGroup"
 }, {
   __name: "RadioGroup",
@@ -352,29 +334,29 @@ const qe = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const e = F(), o = y(() => {
+    const e = G(), o = h(() => {
       const a = "mc-radio-group-popper";
       return e.popperClass ? `${a} ${e.popperClass}`.trim() : a;
-    }), s = y(() => {
+    }), s = h(() => {
       const r = e, { popperClass: a } = r;
-      return V(r, ["popperClass"]);
+      return z(r, ["popperClass"]);
     });
     return (a, n) => {
-      const r = Se;
-      return c(), b(r, M(s.value, {
+      const r = Be;
+      return i(), _(r, $(s.value, {
         "popper-class": o.value,
         class: "m-radio-group"
-      }), _({ _: 2 }, [
-        f(a.$slots, (l, g) => ({
-          name: g,
+      }), g({ _: 2 }, [
+        b(a.$slots, (l, d) => ({
+          name: d,
           fn: p(() => [
-            m(a.$slots, g)
+            m(a.$slots, d)
           ])
         }))
       ]), 1040, ["popper-class"]);
     };
   }
-}), Ye = /* @__PURE__ */ Object.assign({
+}), xe = /* @__PURE__ */ Object.assign({
   name: "MRadioButton"
 }, {
   __name: "RadioButton",
@@ -385,11 +367,11 @@ const qe = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e } = I("mc-radio-button-popper");
+    const { mergedAttrs: e } = N("mc-radio-button-popper");
     return (o, s) => {
-      const a = ke;
-      return c(), b(a, M(C(e), { class: "m-radio-button" }), _({ _: 2 }, [
-        f(o.$slots, (n, r) => ({
+      const a = we;
+      return i(), _(a, $(k(e), { class: "m-radio-button" }), g({ _: 2 }, [
+        b(o.$slots, (n, r) => ({
           name: r,
           fn: p(() => [
             m(o.$slots, r)
@@ -398,7 +380,7 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040);
     };
   }
-}), Ke = /* @__PURE__ */ Object.assign({
+}), et = /* @__PURE__ */ Object.assign({
   name: "MSwitch"
 }, {
   __name: "Switch",
@@ -409,14 +391,14 @@ const qe = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e, className: o } = I("mc-switch-popper");
+    const { mergedAttrs: e, className: o } = N("mc-switch-popper");
     return (s, a) => {
-      const n = Te;
-      return c(), b(n, M(C(e), {
-        "popper-class": C(o),
+      const n = Ee;
+      return i(), _(n, $(k(e), {
+        "popper-class": k(o),
         class: "m-switch"
-      }), _({ _: 2 }, [
-        f(s.$slots, (r, l) => ({
+      }), g({ _: 2 }, [
+        b(s.$slots, (r, l) => ({
           name: l,
           fn: p(() => [
             m(s.$slots, l)
@@ -425,15 +407,15 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040, ["popper-class"]);
     };
   }
-}), xe = /* @__PURE__ */ Object.assign({
+}), tt = /* @__PURE__ */ Object.assign({
   name: "MTag"
 }, {
   __name: "Tag",
   setup(t) {
     return (e, o) => {
-      const s = Be;
-      return c(), b(s, M(e.$attrs, { class: "m-tag" }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      const s = Oe;
+      return i(), _(s, $(e.$attrs, { class: "m-tag" }), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -442,26 +424,54 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040);
     };
   }
-}), et = /* @__PURE__ */ Object.assign({
+}), st = ["src", "alt"], ot = ["success", "warning", "error"], nt = {
   name: "MAlert"
-}, {
-  __name: "Alert",
+}, at = /* @__PURE__ */ Object.assign(nt, {
+  props: {
+    type: {
+      type: String,
+      default: "success",
+      validator: (t) => ot.includes(t)
+    },
+    useCustomIcon: {
+      type: Boolean,
+      default: !0
+    }
+  },
   setup(t) {
-    return (e, o) => {
-      const s = Ee;
-      return c(), b(s, T(B(e.$attrs)), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
-          name: n,
+    const e = t, o = G(), s = h(() => {
+      const l = o, { useCustomIcon: n } = l, r = z(l, ["useCustomIcon"]);
+      return A(T({}, r), {
+        type: e.type
+        // 确保 type 属性正确传递给 el-alert
+      });
+    }), a = h(() => e.useCustomIcon ? `/images/alert/alert-${e.type}.png` : null);
+    return (n, r) => {
+      const l = Ie;
+      return i(), _(l, $(s.value, { class: "mc-alert" }), g({ _: 2 }, [
+        a.value ? {
+          name: "icon",
           fn: p(() => [
-            m(e.$slots, n)
+            C("img", {
+              src: a.value,
+              alt: `${t.type} icon`,
+              class: "mc-alert-icon"
+            }, null, 8, st)
+          ]),
+          key: "0"
+        } : void 0,
+        b(n.$slots, (d, v) => ({
+          name: v,
+          fn: p(() => [
+            m(n.$slots, v)
           ])
         }))
       ]), 1040);
     };
   }
-}), tt = {
+}), rt = {
   __name: "Dialog",
-  props: /* @__PURE__ */ Q({
+  props: /* @__PURE__ */ K({
     width: {
       type: String,
       default: "440px"
@@ -489,13 +499,13 @@ const qe = /* @__PURE__ */ Object.assign({
     },
     modelModifiers: {}
   }),
-  emits: /* @__PURE__ */ Q(["close"], ["update:modelValue"]),
+  emits: /* @__PURE__ */ K(["close"], ["update:modelValue"]),
   setup(t, { emit: e }) {
-    const o = oe(t, "modelValue");
+    const o = ae(t, "modelValue");
     return (s, a) => {
-      const n = Oe;
-      return c(), h("div", null, [
-        O(n, M({
+      const n = Pe;
+      return i(), M("div", null, [
+        O(n, $({
           modelValue: o.value,
           "onUpdate:modelValue": a[0] || (a[0] = (r) => o.value = r),
           width: t.width,
@@ -506,17 +516,17 @@ const qe = /* @__PURE__ */ Object.assign({
         }, s.$attrs, {
           class: "m-dialog",
           "header-class": "m-header"
-        }), _({
+        }), g({
           default: p(() => [
-            a[1] || (a[1] = X("测试组 ", -1)),
+            a[1] || (a[1] = x("测试组 ", -1)),
             m(s.$slots, "default")
           ]),
           _: 2
         }, [
           s.$slots.header ? {
             name: "header",
-            fn: p(({ close: r, titleId: l, titleClass: g }) => [
-              m(s.$slots, "header", T(B({ close: r, titleId: l, titleClass: g })))
+            fn: p(({ close: r, titleId: l, titleClass: d }) => [
+              m(s.$slots, "header", F(U({ close: r, titleId: l, titleClass: d })))
             ]),
             key: "0"
           } : void 0,
@@ -531,24 +541,117 @@ const qe = /* @__PURE__ */ Object.assign({
       ]);
     };
   }
-}, st = /* @__PURE__ */ Object.assign({
+}, lt = {
   name: "MNotification"
-}, {
-  __name: "Notification",
-  setup(t) {
-    return (e, o) => {
-      const s = Pe;
-      return c(), b(s, T(B(e.$attrs)), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
-          name: n,
-          fn: p(() => [
-            m(e.$slots, n)
-          ])
-        }))
-      ]), 1040);
+};
+function it(t, e, o, s, a, n) {
+  const r = Ne;
+  return i(), _(r, $(t.$attrs, { class: "mc-notification" }), g({ _: 2 }, [
+    b(t.$slots, (l, d) => ({
+      name: d,
+      fn: p(() => [
+        m(t.$slots, d)
+      ])
+    }))
+  ]), 1040);
+}
+const ct = /* @__PURE__ */ E(lt, [["render", it]]), B = L([]);
+let ut = 0;
+const vs = {
+  // 默认配置
+  defaultOptions: {
+    title: "",
+    message: "",
+    duration: 4500,
+    position: "top-right",
+    showClose: !0,
+    offset: 20
+  },
+  // 显示通知
+  show(t = {}) {
+    const e = A(T(T({}, this.defaultOptions), t), {
+      id: ++ut
+    });
+    return B.value.push(e), e.duration > 0 && setTimeout(() => {
+      this.close(e.id);
+    }, e.duration), {
+      close: () => this.close(e.id)
+    };
+  },
+  // 关闭指定通知
+  close(t) {
+    const e = B.value.findIndex((o) => o.id === t);
+    e > -1 && B.value.splice(e, 1);
+  },
+  // 关闭所有通知
+  closeAll() {
+    B.value = [];
+  },
+  // 便捷方法
+  success(t = {}) {
+    return this.show(t);
+  },
+  warning(t = {}) {
+    return this.show(t);
+  },
+  error(t = {}) {
+    return this.show(t);
+  }
+}, mt = (t) => {
+  const e = B.value.findIndex((o) => o.id === t);
+  e > -1 && B.value.splice(e, 1);
+}, pt = {
+  name: "MNotifiMessage",
+  setup() {
+    return {
+      notifications: B,
+      closeNotification: mt
     };
   }
-}), ot = /* @__PURE__ */ Object.assign({
+}, dt = { class: "notification-content" }, ft = { class: "notification-title" }, _t = { class: "notification-message" }, bt = {
+  key: 0,
+  class: "notification-action"
+}, gt = ["onClick"];
+function $t(t, e, o, s, a, n) {
+  return i(), _(re, { to: "body" }, [
+    O(le, {
+      name: "notification",
+      tag: "div",
+      class: "notification-container"
+    }, {
+      default: p(() => [
+        (i(!0), M(ee, null, b(s.notifications, (r) => (i(), M("div", {
+          key: r.id,
+          class: I([
+            "custom-notification",
+            `notification-${r.position}`
+          ])
+        }, [
+          e[0] || (e[0] = C("div", { class: "notification-icon" }, [
+            C("img", {
+              src: "https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/MCImages/userCenter/icon-quota-tip.png",
+              alt: "notification icon"
+            })
+          ], -1)),
+          C("div", dt, [
+            C("div", ft, V(r.title), 1),
+            C("div", _t, V(r.message), 1),
+            r.slotContent ? (i(), M("div", bt, [
+              (i(), _(ie(r.slotContent)))
+            ])) : w("", !0)
+          ]),
+          r.showClose ? (i(), M("button", {
+            key: 0,
+            class: "notification-close",
+            onClick: (l) => s.closeNotification(r.id)
+          }, " × ", 8, gt)) : w("", !0)
+        ], 2))), 128))
+      ]),
+      _: 1
+    })
+  ]);
+}
+const Mt = /* @__PURE__ */ E(pt, [["render", $t]]), vt = /* @__PURE__ */ Object.assign({
   name: "MDatePicker"
 }, {
   __name: "DatePicker",
@@ -559,14 +662,14 @@ const qe = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const { mergedAttrs: e, className: o } = I(
+    const { mergedAttrs: e, className: o } = N(
       "mc-datepicker-popper",
       "popperClass"
     );
     return (s, a) => {
-      const n = we;
-      return c(), b(n, M(C(e), { "popper-class": C(o) }), _({ _: 2 }, [
-        f(s.$slots, (r, l) => ({
+      const n = je;
+      return i(), _(n, $(k(e), { "popper-class": k(o) }), g({ _: 2 }, [
+        b(s.$slots, (r, l) => ({
           name: l,
           fn: p(() => [
             m(s.$slots, l)
@@ -575,7 +678,7 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040, ["popper-class"]);
     };
   }
-}), nt = [
+}), ht = [
   "404",
   "billing",
   "cart",
@@ -592,45 +695,45 @@ const qe = /* @__PURE__ */ Object.assign({
   "subscription",
   "todo",
   "wishlist"
-], at = {
+], yt = {
   name: "MEmpty"
-}, rt = /* @__PURE__ */ Object.assign(at, {
+}, Ct = /* @__PURE__ */ Object.assign(yt, {
   props: {
     image: {
       type: String,
       default: "orders",
-      validator: (t) => t.includes("/") || t.includes("http") ? !0 : nt.includes(t)
+      validator: (t) => t.includes("/") || t.includes("http") ? !0 : ht.includes(t)
     }
   },
   setup(t) {
-    const e = t, o = F(), s = y(() => {
+    const e = t, o = G(), s = h(() => {
       const l = o, { image: n } = l;
-      return V(l, ["image"]);
-    }), a = y(() => {
+      return z(l, ["image"]);
+    }), a = h(() => {
       const { image: n } = e;
       return n.includes("/") || n.includes("http") ? n : `/images/empty/${n}.png`;
     });
     return (n, r) => {
-      const l = Ie;
-      return c(), b(l, M(s.value, { image: a.value }), _({ _: 2 }, [
-        f(n.$slots, (g, $) => ({
-          name: $,
+      const l = Ae;
+      return i(), _(l, $(s.value, { image: a.value }), g({ _: 2 }, [
+        b(n.$slots, (d, v) => ({
+          name: v,
           fn: p(() => [
-            m(n.$slots, $)
+            m(n.$slots, v)
           ])
         }))
       ]), 1040, ["image"]);
     };
   }
-}), lt = /* @__PURE__ */ Object.assign({
+}), kt = /* @__PURE__ */ Object.assign({
   name: "MTable"
 }, {
   __name: "Table",
   setup(t) {
     return (e, o) => {
-      const s = Ne;
-      return c(), b(s, T(B(e.$attrs)), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      const s = ze;
+      return i(), _(s, F(U(e.$attrs)), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -639,15 +742,15 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040);
     };
   }
-}), it = /* @__PURE__ */ Object.assign({
+}), St = /* @__PURE__ */ Object.assign({
   name: "MTableColumn"
 }, {
   __name: "TableColumn",
   setup(t) {
     return (e, o) => {
-      const s = je;
-      return c(), b(s, M(e.$attrs, { class: "m-table-column" }), _({ _: 2 }, [
-        f(e.$slots, (a, n) => ({
+      const s = Le;
+      return i(), _(s, $(e.$attrs, { class: "m-table-column" }), g({ _: 2 }, [
+        b(e.$slots, (a, n) => ({
           name: n,
           fn: p(() => [
             m(e.$slots, n)
@@ -656,10 +759,10 @@ const qe = /* @__PURE__ */ Object.assign({
       ]), 1040);
     };
   }
-}), ct = { class: "m-banner__content" }, ut = {
+}), Tt = { class: "m-banner__content" }, Bt = {
   key: 0,
   class: "m-banner__icon"
-}, mt = { class: "m-banner__text" }, pt = /* @__PURE__ */ Object.assign({
+}, wt = { class: "m-banner__text" }, Et = /* @__PURE__ */ Object.assign({
   name: "MBanner"
 }, {
   __name: "Banner",
@@ -723,68 +826,68 @@ const qe = /* @__PURE__ */ Object.assign({
   },
   emits: ["close", "update:visible"],
   setup(t, { expose: e, emit: o }) {
-    const s = G(), a = t, n = o, r = R(a.visible);
-    A(() => a.visible, (u) => {
+    const s = W(), a = t, n = o, r = L(a.visible);
+    R(() => a.visible, (u) => {
       r.value = u;
     });
-    const l = y(() => {
+    const l = h(() => {
       const u = {};
       return a.backgroundColor && (u.backgroundColor = a.backgroundColor), a.textColor && (u.color = a.textColor), a.borderColor && (u.borderColor = a.borderColor), u;
-    }), g = {
+    }), d = {
       info: "info",
       success: "check-circle",
       warning: "warning",
       error: "close-circle"
     };
-    y(() => a.icon || g[a.type]);
-    const $ = () => {
+    h(() => a.icon || d[a.type]);
+    const v = () => {
       r.value = !1, n("update:visible", !1), n("close");
     };
-    return A(r, (u) => {
+    return R(r, (u) => {
       u && a.duration > 0 && setTimeout(() => {
-        $();
+        v();
       }, a.duration);
     }), e({
-      close: $
-    }), (u, v) => t.visible ? (c(), h("div", {
+      close: v
+    }), (u, y) => t.visible ? (i(), M("div", {
       key: 0,
-      class: z(["m-banner", [
+      class: I(["m-banner", [
         `m-banner--${t.type}`,
         {
           "m-banner--closable": t.closable,
-          "m-banner--with-icon": t.icon || C(s).icon
+          "m-banner--with-icon": t.icon || k(s).icon
         }
       ]]),
-      style: ne(l.value)
+      style: ce(l.value)
     }, [
-      k("div", ct, [
-        t.icon || C(s).icon ? (c(), h("div", ut, [
+      C("div", Tt, [
+        t.icon || k(s).icon ? (i(), M("div", Bt, [
           m(u.$slots, "icon", {}, () => [
             O(P, {
               name: t.icon,
               size: t.iconSize
             }, null, 8, ["name", "size"])
           ], !0)
-        ])) : E("", !0),
-        k("div", mt, [
+        ])) : w("", !0),
+        C("div", wt, [
           m(u.$slots, "default", {}, () => [
-            X(Y(t.content), 1)
+            x(V(t.content), 1)
           ], !0)
         ]),
-        t.closable ? (c(), h("div", {
+        t.closable ? (i(), M("div", {
           key: 1,
           class: "m-banner__close",
-          onClick: $
+          onClick: v
         }, [
           O(P, {
             name: "lucide-x",
             size: t.closeIconSize
           }, null, 8, ["size"])
-        ])) : E("", !0)
+        ])) : w("", !0)
       ])
-    ], 6)) : E("", !0);
+    ], 6)) : w("", !0);
   }
-}), dt = /* @__PURE__ */ w(pt, [["__scopeId", "data-v-00c80323"]]), _t = { class: "m-tabs__header" }, ft = { class: "m-tabs__nav" }, bt = ["onClick"], gt = { class: "m-tabs__item-text" }, Mt = { key: 1 }, $t = ["onClick"], vt = { class: "m-tabs__content" }, ht = {
+}), Ot = /* @__PURE__ */ E(Et, [["__scopeId", "data-v-00c80323"]]), It = { class: "m-tabs__header" }, Pt = { class: "m-tabs__nav" }, Nt = ["onClick"], jt = { class: "m-tabs__item-text" }, At = { key: 1 }, zt = ["onClick"], Lt = { class: "m-tabs__content" }, Vt = {
   __name: "Tabs",
   props: {
     // 当前激活的标签页
@@ -833,94 +936,94 @@ const qe = /* @__PURE__ */ Object.assign({
   emits: ["update:modelValue", "tab-click", "tab-change", "tab-remove", "tab-add", "edit"],
   setup(t, { expose: e, emit: o }) {
     const s = t, a = o;
-    G();
-    const n = R([]), r = R(s.modelValue);
-    A(() => s.modelValue, (u) => {
+    W();
+    const n = L([]), r = L(s.modelValue);
+    R(() => s.modelValue, (u) => {
       r.value = u;
-    }), A(r, (u) => {
+    }), R(r, (u) => {
       a("update:modelValue", u), a("tab-change", u);
-    }), ae("tabsContext", {
+    }), ue("tabsContext", {
       registerTab: (u) => {
-        const v = n.value.findIndex((d) => d.name === u.name);
-        v >= 0 ? n.value[v] = u : n.value.push(u), !r.value && n.value.length > 0 && (r.value = n.value[0].name || 0);
+        const y = n.value.findIndex((f) => f.name === u.name);
+        y >= 0 ? n.value[y] = u : n.value.push(u), !r.value && n.value.length > 0 && (r.value = n.value[0].name || 0);
       },
       unregisterTab: (u) => {
-        const v = n.value.findIndex((d) => d.name === u);
-        v >= 0 && n.value.splice(v, 1);
+        const y = n.value.findIndex((f) => f.name === u);
+        y >= 0 && n.value.splice(y, 1);
       }
     });
-    const l = (u, v) => J(this, null, function* () {
+    const l = (u, y) => Y(this, null, function* () {
       if (u.disabled) return;
-      const d = u.name || v;
-      if (r.value !== d) {
+      const f = u.name || y;
+      if (r.value !== f) {
         if (s.beforeLeave)
           try {
-            if ((yield s.beforeLeave(r.value, d)) === !1) return;
+            if ((yield s.beforeLeave(r.value, f)) === !1) return;
           } catch (S) {
             return;
           }
-        r.value = d, a("tab-click", { name: d, index: v, disabled: u.disabled });
+        r.value = f, a("tab-click", { name: f, index: y, disabled: u.disabled });
       }
-    }), g = (u, v) => {
-      const d = u.name || v;
-      a("tab-remove", d), a("edit", d, "remove");
-    }, $ = () => {
+    }), d = (u, y) => {
+      const f = u.name || y;
+      a("tab-remove", f), a("edit", f, "remove");
+    }, v = () => {
       a("tab-add"), a("edit", "", "add");
     };
     return e({
-      activeName: y(() => r.value)
-    }), (u, v) => (c(), h("div", {
-      class: z(["m-tabs", [`m-tabs--${t.type}`, `m-tabs--${t.tabPosition}`]])
+      activeName: h(() => r.value)
+    }), (u, y) => (i(), M("div", {
+      class: I(["m-tabs", [`m-tabs--${t.type}`, `m-tabs--${t.tabPosition}`]])
     }, [
-      k("div", _t, [
-        k("div", ft, [
-          (c(!0), h(re, null, f(n.value, (d, S) => {
-            var U;
-            return c(), h("div", {
-              key: d.name || S,
-              class: z([
+      C("div", It, [
+        C("div", Pt, [
+          (i(!0), M(ee, null, b(n.value, (f, S) => {
+            var H;
+            return i(), M("div", {
+              key: f.name || S,
+              class: I([
                 "m-tabs__item",
                 {
-                  "m-tabs__item--active": r.value === (d.name || S),
-                  "m-tabs__item--disabled": d.disabled,
-                  "m-tabs__item--closable": d.closable
+                  "m-tabs__item--active": r.value === (f.name || S),
+                  "m-tabs__item--disabled": f.disabled,
+                  "m-tabs__item--closable": f.closable
                 }
               ]),
-              onClick: (x) => l(d, S)
+              onClick: (te) => l(f, S)
             }, [
-              k("span", gt, [
-                (U = d.$slots) != null && U.label ? m(u.$slots, `tab-${d.name || S}`, { key: 0 }, void 0, !0) : (c(), h("span", Mt, Y(d.label), 1))
+              C("span", jt, [
+                (H = f.$slots) != null && H.label ? m(u.$slots, `tab-${f.name || S}`, { key: 0 }, void 0, !0) : (i(), M("span", At, V(f.label), 1))
               ]),
-              d.closable ? (c(), h("span", {
+              f.closable ? (i(), M("span", {
                 key: 0,
                 class: "m-tabs__item-close",
-                onClick: le((x) => g(d, S), ["stop"])
+                onClick: me((te) => d(f, S), ["stop"])
               }, [
                 O(P, {
                   name: "lucide-x",
                   size: 12
                 })
-              ], 8, $t)) : E("", !0)
-            ], 10, bt);
+              ], 8, zt)) : w("", !0)
+            ], 10, Nt);
           }), 128)),
-          t.addable || t.editable ? (c(), h("div", {
+          t.addable || t.editable ? (i(), M("div", {
             key: 0,
             class: "m-tabs__item m-tabs__item--add",
-            onClick: $
+            onClick: v
           }, [
             O(P, {
               name: "plus",
               size: 12
             })
-          ])) : E("", !0)
+          ])) : w("", !0)
         ])
       ]),
-      k("div", vt, [
+      C("div", Lt, [
         m(u.$slots, "default", {}, void 0, !0)
       ])
     ], 2));
   }
-}, yt = /* @__PURE__ */ w(ht, [["__scopeId", "data-v-23508d30"]]), Ct = /* @__PURE__ */ Object.assign({
+}, Rt = /* @__PURE__ */ E(Vt, [["__scopeId", "data-v-23508d30"]]), Dt = /* @__PURE__ */ Object.assign({
   name: "MTabPane"
 }, {
   __name: "TabPane",
@@ -952,8 +1055,8 @@ const qe = /* @__PURE__ */ Object.assign({
     }
   },
   setup(t) {
-    const e = t, o = G(), s = ie("tabsContext"), a = y(() => s ? s.activeName === (e.name || s.tabIndex) : !1);
-    return ce(() => {
+    const e = t, o = W(), s = pe("tabsContext"), a = h(() => s ? s.activeName === (e.name || s.tabIndex) : !1);
+    return de(() => {
       if (s) {
         const n = {
           name: e.name,
@@ -964,27 +1067,27 @@ const qe = /* @__PURE__ */ Object.assign({
         };
         s.registerTab(n);
       }
-    }), ue(() => {
+    }), fe(() => {
       s && s.unregisterTab(e.name);
-    }), (n, r) => me((c(), h("div", {
-      class: z(["m-tab-pane", {
+    }), (n, r) => _e((i(), M("div", {
+      class: I(["m-tab-pane", {
         "m-tab-pane--active": a.value,
         "m-tab-pane--disabled": t.disabled
       }])
     }, [
       m(n.$slots, "default", {}, void 0, !0)
     ], 2)), [
-      [pe, a.value]
+      [be, a.value]
     ]);
   }
-}), St = /* @__PURE__ */ w(Ct, [["__scopeId", "data-v-722bb248"]]);
-function L(t) {
+}), Gt = /* @__PURE__ */ E(Dt, [["__scopeId", "data-v-722bb248"]]);
+function D(t) {
   t && t.classList && t.classList.add("mc-ui-override");
 }
-function kt(t) {
-  t && t.$el && L(t.$el);
+function Ft(t) {
+  t && t.$el && D(t.$el);
 }
-function Tt() {
+function Ut() {
   typeof document != "undefined" && (document.body.classList.add("mc-ui-override"), new MutationObserver((e) => {
     e.forEach((o) => {
       o.addedNodes.forEach((s) => {
@@ -1005,132 +1108,162 @@ function Tt() {
     subtree: !0
   }));
 }
-function Bt(t = '[class*="el-"]') {
+function qt(t = '[class*="el-"]') {
   typeof document != "undefined" && document.querySelectorAll(t).forEach((o) => {
     const s = o.closest(".mc-ui-override") || o.parentElement;
     s && !s.classList.contains("mc-ui-override") && s.classList.add("mc-ui-override");
   });
 }
-function Et(t) {
-  return H(j({}, t), {
+function Wt(t) {
+  return A(T({}, t), {
     mounted() {
-      L(this.$el), t.mounted && t.mounted.call(this);
+      D(this.$el), t.mounted && t.mounted.call(this);
     },
     updated() {
-      L(this.$el), t.updated && t.updated.call(this);
+      D(this.$el), t.updated && t.updated.call(this);
     }
   });
 }
-const Ot = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Zt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  addComponentOverride: kt,
-  addOverrideClass: L,
-  applyGlobalOverride: Tt,
-  createOverrideComponent: Et,
-  forceRefreshStyles: Bt
-}, Symbol.toStringTag, { value: "Module" })), K = [P, Le, Ve, Re, De, Fe, qe, We, Ze, He, Je, Qe, Xe, Ye, Ke, xe, et, tt, st, ot, rt, lt, it, dt, yt, St], i = {};
-function Pt(t) {
-  const e = K.map((o) => {
+  addComponentOverride: Ft,
+  addOverrideClass: D,
+  applyGlobalOverride: Ut,
+  createOverrideComponent: Wt,
+  forceRefreshStyles: qt
+}, Symbol.toStringTag, { value: "Module" })), Z = [P, De, Ge, Fe, Ue, Ze, He, Je, Qe, Xe, Ye, Ke, xe, et, tt, at, rt, ct, Mt, vt, Ct, kt, St, Ot, Rt, Gt], c = {};
+function Ht(t) {
+  const e = Z.map((o) => {
     if (o && o.name && typeof o.name == "string") {
       let s = o.name.toLowerCase();
       return {
         mradiogroup: "m-radio-group",
         mradiobutton: "m-radio-button",
         mformitem: "m-form-item",
-        moptiongroup: "m-option-group"
+        moptiongroup: "m-option-group",
+        mtabs: "m-tabs",
+        mtabpane: "m-tab-pane"
       }[s] || s.replace(/^m/, "m-");
     }
     return null;
   }).filter(Boolean);
-  Object.entries(D).forEach(([o, s]) => {
+  console.log("🔧 自定义组件列表:", e), Object.entries(q).forEach(([o, s]) => {
     if (s && s.name && typeof s.name == "string" && s.name.startsWith("El")) {
       const a = "m-" + s.name.slice(2).replace(/([A-Z])/g, "-$1").toLowerCase().replace(/^-/, "");
-      e.includes(a) || t._context.components[a] || t.component(a, s);
+      e.includes(a) ? console.log(`🎯 自定义组件覆盖: ${a} (使用自定义组件)`) : t._context.components[a] ? console.log(`⚠️  组件 ${a} 已存在，跳过注册`) : (t.component(a, s), console.log(`✅ 注册 Element Plus 组件: ${a}`));
       const n = "M" + s.name.slice(2);
-      i[n] = s;
+      c[n] = s;
     }
   });
 }
-const wt = (t) => {
-  typeof window != "undefined" && Promise.resolve().then(() => Ot).then(({ applyGlobalOverride: e }) => {
+const Jt = (t) => {
+  typeof window != "undefined" && Promise.resolve().then(() => Zt).then(({ applyGlobalOverride: e }) => {
     e();
-  }), K.forEach((e) => {
+  }), console.log("🚀 开始安装 @mc-markets/ui 组件库..."), Z.forEach((e) => {
     if (e && e.name && typeof e.name == "string") {
       let o = e.name.toLowerCase();
       o = {
         mradiogroup: "m-radio-group",
         mradiobutton: "m-radio-button",
         mformitem: "m-form-item",
-        moptiongroup: "m-option-group"
-      }[o] || o.replace(/^m/, "m-"), t.component(o, e);
+        moptiongroup: "m-option-group",
+        mtabs: "m-tabs",
+        mtabpane: "m-tab-pane"
+      }[o] || o.replace(/^m/, "m-"), t.component(o, e), console.log(`🎯 注册自定义组件: ${o} (${e.name})`);
     }
-  }), Pt(t);
-}, ns = { install: wt }, as = D.ElMessage, rs = D.ElMessageBox, ls = j({}, i), is = i.MButtonGroup, cs = i.MBreadcrumb, us = i.MBreadcrumbItem, ms = i.MCarousel, ps = i.MCarouselItem, ds = i.MCascader, _s = i.MCascaderPanel, fs = i.MCheckTag, bs = i.MCalendar, gs = i.MTimePicker, Ms = i.MDateTimePicker, $s = i.MColorPicker, vs = i.MTransfer, hs = i.MTree, ys = i.MTreeSelect, Cs = i.MUpload, Ss = i.MImage, ks = i.MImageViewer, Ts = i.MBacktop, Bs = i.MInfiniteScroll, Es = i.MAffix, Os = i.MScrollbar, Ps = i.MResult, ws = i.MSkeleton, Is = i.MLoading, Ns = i.MSpinner, js = i.MProgress, As = i.MBadge, zs = i.MAvatar, Ls = i.MImagePreview, Vs = i.MTeleport, Rs = i.MConfigProvider;
+  }), Ht(t), console.log("✅ @mc-markets/ui 组件库安装完成!");
+};
+function hs(t) {
+  const e = Object.keys(t._context.components || {}), o = Z.map((s) => {
+    if (s && s.name && typeof s.name == "string") {
+      let a = s.name.toLowerCase();
+      return {
+        mradiogroup: "m-radio-group",
+        mradiobutton: "m-radio-button",
+        mformitem: "m-form-item",
+        moptiongroup: "m-option-group",
+        mtabs: "m-tabs",
+        mtabpane: "m-tab-pane"
+      }[a] || a.replace(/^m/, "m-");
+    }
+    return null;
+  }).filter(Boolean);
+  return console.log("📊 组件注册状态报告:"), console.log("已注册的组件:", e.filter((s) => s.startsWith("m-"))), console.log("自定义组件:", o), {
+    registered: e,
+    custom: o,
+    conflicts: e.filter(
+      (s) => s.startsWith("m-") && o.includes(s)
+    )
+  };
+}
+const ys = { install: Jt }, Cs = q.ElMessage, ks = q.ElMessageBox, Ss = T({}, c), Ts = c.MButtonGroup, Bs = c.MBreadcrumb, ws = c.MBreadcrumbItem, Es = c.MCarousel, Os = c.MCarouselItem, Is = c.MCascader, Ps = c.MCascaderPanel, Ns = c.MCheckTag, js = c.MCalendar, As = c.MTimePicker, zs = c.MDateTimePicker, Ls = c.MColorPicker, Vs = c.MTransfer, Rs = c.MTree, Ds = c.MTreeSelect, Gs = c.MUpload, Fs = c.MImage, Us = c.MImageViewer, qs = c.MBacktop, Ws = c.MInfiniteScroll, Zs = c.MAffix, Hs = c.MScrollbar, Js = c.MResult, Qs = c.MSkeleton, Xs = c.MLoading, Ys = c.MSpinner, Ks = c.MProgress, xs = c.MBadge, eo = c.MAvatar, to = c.MImagePreview, so = c.MTeleport, oo = c.MConfigProvider;
 export {
-  Es as MAffix,
-  et as MAlert,
-  zs as MAvatar,
-  Ts as MBacktop,
-  As as MBadge,
-  dt as MBanner,
-  cs as MBreadcrumb,
-  us as MBreadcrumbItem,
-  Le as MButton,
-  is as MButtonGroup,
-  bs as MCalendar,
-  Ve as MCard,
-  ms as MCarousel,
-  ps as MCarouselItem,
-  ds as MCascader,
-  _s as MCascaderPanel,
-  fs as MCheckTag,
-  $s as MColorPicker,
-  Rs as MConfigProvider,
-  ot as MDatePicker,
-  Ms as MDateTimePicker,
-  tt as MDialog,
-  rt as MEmpty,
-  De as MForm,
-  Fe as MFormItem,
+  Zs as MAffix,
+  at as MAlert,
+  eo as MAvatar,
+  qs as MBacktop,
+  xs as MBadge,
+  Ot as MBanner,
+  Bs as MBreadcrumb,
+  ws as MBreadcrumbItem,
+  De as MButton,
+  Ts as MButtonGroup,
+  js as MCalendar,
+  Es as MCarousel,
+  Os as MCarouselItem,
+  Is as MCascader,
+  Ps as MCascaderPanel,
+  Ns as MCheckTag,
+  Ls as MColorPicker,
+  oo as MConfigProvider,
+  vt as MDatePicker,
+  zs as MDateTimePicker,
+  rt as MDialog,
+  Ct as MEmpty,
+  Fe as MForm,
+  Ue as MFormItem,
   P as MIcon,
-  Ss as MImage,
-  Ls as MImagePreview,
-  ks as MImageViewer,
-  Bs as MInfiniteScroll,
-  Re as MInput,
-  Is as MLoading,
-  as as MMessage,
-  rs as MMessageBox,
-  st as MNotification,
-  Je as MPagination,
-  js as MProgress,
-  Qe as MRadio,
-  Ye as MRadioButton,
-  Xe as MRadioGroup,
-  Ps as MResult,
-  Os as MScrollbar,
-  We as MSelect,
-  ws as MSkeleton,
-  Ns as MSpinner,
-  Ke as MSwitch,
-  St as MTabPane,
-  lt as MTable,
-  it as MTableColumn,
-  yt as MTabs,
-  xe as MTag,
-  Vs as MTeleport,
-  gs as MTimePicker,
-  qe as MTooltip,
-  vs as MTransfer,
-  hs as MTree,
-  ys as MTreeSelect,
-  Cs as MUpload,
-  kt as addComponentOverride,
-  L as addOverrideClass,
-  Tt as applyGlobalOverride,
-  Et as createOverrideComponent,
-  ns as default,
-  Bt as forceRefreshStyles,
-  ls as mComponents
+  Fs as MImage,
+  to as MImagePreview,
+  Us as MImageViewer,
+  Ws as MInfiniteScroll,
+  Ge as MInput,
+  Xs as MLoading,
+  Cs as MMessage,
+  ks as MMessageBox,
+  Mt as MNotifiMessage,
+  ct as MNotification,
+  Xe as MPagination,
+  Ks as MProgress,
+  Ye as MRadio,
+  xe as MRadioButton,
+  Ke as MRadioGroup,
+  Js as MResult,
+  Hs as MScrollbar,
+  He as MSelect,
+  Qs as MSkeleton,
+  Ys as MSpinner,
+  et as MSwitch,
+  Gt as MTabPane,
+  kt as MTable,
+  St as MTableColumn,
+  Rt as MTabs,
+  tt as MTag,
+  so as MTeleport,
+  As as MTimePicker,
+  Ze as MTooltip,
+  Vs as MTransfer,
+  Rs as MTree,
+  Ds as MTreeSelect,
+  Gs as MUpload,
+  vs as NotifiMessage,
+  Ft as addComponentOverride,
+  D as addOverrideClass,
+  Ut as applyGlobalOverride,
+  hs as checkComponentRegistration,
+  Wt as createOverrideComponent,
+  ys as default,
+  qt as forceRefreshStyles,
+  Ss as mComponents
 };
 //# sourceMappingURL=index.mjs.map
