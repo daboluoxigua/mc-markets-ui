@@ -53,7 +53,7 @@ const iconUrl = computed(() => {
     return null
   }
   
-  return `/images/alert/alert-${props.type}.png`
+  return `https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/mc-ui/alert/alert-${props.type}.png`
 })
 </script>
 
