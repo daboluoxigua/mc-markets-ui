@@ -6,7 +6,6 @@
  */
 
 // 导入所有 Element Plus 样式
-// 自定义 Element Plus 变量
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   // 自定义颜色变量
   $colors: (
@@ -73,7 +72,7 @@
   )
 );
 @use "element-plus/theme-chalk/src/index.scss" as *;
-@use 'element-plus/theme-chalk/src/dark/css-vars.scss';
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
 
 // 导入项目变量
 @use './variables/border-mode.css';
