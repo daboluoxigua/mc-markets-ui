@@ -18645,7 +18645,7 @@ const dE = /* @__PURE__ */ Object.assign({
   props: /* @__PURE__ */ Gs({
     width: {
       type: String,
-      default: "480px"
+      default: "440px"
     },
     center: {
       type: Boolean,
@@ -18711,7 +18711,7 @@ const dE = /* @__PURE__ */ Object.assign({
       ]);
     };
   }
-}, _E = /* @__PURE__ */ Wa(SE, [["__scopeId", "data-v-32a93b97"]]), kE = /* @__PURE__ */ Object.assign({
+}, _E = /* @__PURE__ */ Wa(SE, [["__scopeId", "data-v-99d5b546"]]), kE = /* @__PURE__ */ Object.assign({
   name: "MNotification"
 }, {
   __name: "Notification",
