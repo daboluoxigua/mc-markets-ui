@@ -23,6 +23,9 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'MDialog'
+})
 const props = defineProps({
   width: {
     type: String,
