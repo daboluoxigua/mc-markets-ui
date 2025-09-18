@@ -52,7 +52,7 @@ export default defineConfig({
     },
   },
   // 演示站点特定配置
-  base: './',
+  base: '/mc-markets-ui/',
   define: {
     __VUE_OPTIONS_API__: true,
     __VUE_PROD_DEVTOOLS__: false
