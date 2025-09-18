@@ -26,7 +26,7 @@
 const props = defineProps({
   width: {
     type: String,
-    default: '480px'
+    default: '440px'
   },
   center: {
     type: Boolean,
@@ -58,6 +58,7 @@ const dialogVisible = defineModel('modelValue', {
   --el-dialog-padding-primary:24px;
   --el-dialog-title-font-size:24px;
   --el-dialog-border-radius:16px;
+  --el-dialog-bg-color:var(--bg-tertiary);
 }
 
 :deep(.m-header) {
@@ -92,5 +93,10 @@ const dialogVisible = defineModel('modelValue', {
   }
 }
 
-
+:deep(.el-dialog__footer) {
+  display: flex;
+  >.el-button{
+    flex: 1;
+  }
+}
 </style>

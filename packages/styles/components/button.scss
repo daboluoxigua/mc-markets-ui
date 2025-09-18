@@ -1,7 +1,7 @@
 .el-button {
   --el-button-font-weight: 600;
-  --el-button-border-color: var(--bg-tertiary-hover);
-  --el-button-bg-color: var(--bg-tertiary-hover);
+  --el-button-border-color: var(--bg-quaternary);
+  --el-button-bg-color: var(--bg-quaternary);
   --el-button-text-color: var(--text-primary);
   --el-button-disabled-text-color: var(--text-quaternary);
   --el-button-disabled-bg-color: color-mix(
@@ -12,7 +12,7 @@
   --el-button-disabled-border-color: var(--el-button-disabled-bg-color);
   --el-button-divide-border-color: rgba(255, 255, 255, 0.5);
   --el-button-hover-text-color: var(--text-primary);
-  --el-button-hover-bg-color: var(--bg-tertiary);
+  --el-button-hover-bg-color: var(--bg-tertiary-hover);
   --el-button-hover-border-color: var(--bg-tertiary);
   --el-button-active-text-color: var(--text-primary);
   --el-button-active-border-color: var(--bg-tertiary);
