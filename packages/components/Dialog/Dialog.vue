@@ -23,6 +23,9 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'MDialog'
+})
 const props = defineProps({
   width: {
     type: String,
@@ -54,49 +57,5 @@ const dialogVisible = defineModel('modelValue', {
 </script>
 
 <style scoped lang="scss">
-:deep(.m-dialog) {
-  --el-dialog-padding-primary:24px;
-  --el-dialog-title-font-size:24px;
-  --el-dialog-border-radius:16px;
-  --el-dialog-bg-color:var(--bg-tertiary);
-}
 
-:deep(.m-header) {
-  padding-bottom: 24px;
-  padding-right: 0;
-
-  .el-dialog__title {
-    line-height: 32px;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .el-dialog__headerbtn {
-    width: 24px;
-    height: 24px;
-    right: 22px;
-    top: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .el-dialog__close {
-      font-size: 20px;
-      color: var(--icon-tertiary);
-    }
-
-    &:hover{
-      .el-dialog__close{
-        color: var(--bg-brand-hover);
-      }
-    }
-  }
-}
-
-:deep(.el-dialog__footer) {
-  display: flex;
-  >.el-button{
-    flex: 1;
-  }
-}
 </style>

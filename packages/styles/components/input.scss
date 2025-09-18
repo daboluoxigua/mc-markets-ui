@@ -1,0 +1,14 @@
+.mc-ui-override {
+  .el-input {
+    &.solid {
+      --el-border-color: var(--bg-tertiary-hover);
+
+      .el-input__wrapper {
+        background: var(--all-alphe-white-6);
+      }
+    }
+  }
+  .el-input__wrapper {
+    padding: 1px 16px;
+  }
+}

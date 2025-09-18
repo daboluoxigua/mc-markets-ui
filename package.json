@@ -1,34 +1,30 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.0.57",
+  "version": "1.0.75",
   "type": "module",
   "author": "chenyu",
   "description": "Vue 3 组件库，基于 Element Plus 的自定义组件",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     },
-    "./style": "./dist/index.js.css",
-    "./styles": "./dist/index.js.css",
-    "./dist/style.css": "./dist/index.js.css",
     "./styles/index": "./packages/styles/index.scss",
     "./styles/font": "./packages/styles/font/iconfont.css",
-    "./element-plus": {
-      "import": "./node_modules/element-plus/dist/index.full.mjs",
-      "require": "./node_modules/element-plus/dist/index.full.js"
-    },
-    "./element-plus/style": "./node_modules/element-plus/dist/index.css",
-    "./element-plus/styles": "./node_modules/element-plus/dist/index.css"
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
     "packages/styles",
-    "README.md",
-    "node_modules/element-plus/dist"
+    "packages/components",
+    "packages/hooks",
+    "packages/utils",
+    "README.md"
   ],
   "keywords": [
     "vue3",
@@ -42,12 +38,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --config vite.config.demo.js",
-    "build": "vite build",
+    "build": "node scripts/build.js",
+    "build:clean": "rimraf dist",
     "build:demo": "vite build --config vite.config.demo.js",
     "preview": "vite preview",
     "preview:demo": "vite preview --config vite.config.demo.js --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx --fix",
     "format": "prettier --write .",
+    "test": "vitest",
     "test:coverage": "vitest --coverage",
     "prepublishOnly": "npm run build",
     "publish:lib": "node publish.js"
@@ -64,10 +62,13 @@
     "prettier": "^2.8.8",
     "rimraf": "^5.0.0",
     "sass": "^1.92.1",
+    "typescript": "^5.9.2",
     "unplugin-auto-import": "^0.15.3",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^5.4.0",
-    "vite-plugin-vue-inspector": "^4.0.0"
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-vue-inspector": "^4.0.0",
+    "vue-tsc": "^1.8.27"
   },
   "peerDependencies": {
     "element-plus": "^2.11.2",

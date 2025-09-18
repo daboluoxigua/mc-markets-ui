@@ -6,7 +6,6 @@
  */
 
 // 导入所有 Element Plus 样式
-// 自定义 Element Plus 变量
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   // 自定义颜色变量
   $colors: (
@@ -50,22 +49,6 @@
   ),
   $border-color-hover:var(--text-brand),
   // 自定义阴影
-  $box-shadow: (
-    'base': (
-      0 2px 4px rgba(0, 0, 0, 0.12),
-      0 0 6px rgba(0, 0, 0, 0.04)
-    ),
-    'light': (
-      0 2px 12px 0 rgba(0, 0, 0, 0.1)
-    ),
-    'lighter': (
-      0 2px 12px 0 rgba(0, 0, 0, 0.06)
-    ),
-    'dark': (
-      0 2px 4px rgba(0, 0, 0, 0.12),
-      0 0 6px rgba(0, 0, 0, 0.12)
-    ),
-  ),
   $common-component-size: (
     'large': 40px,
     'default': 48px,
@@ -73,7 +56,7 @@
   )
 );
 @use "element-plus/theme-chalk/src/index.scss" as *;
-@use 'element-plus/theme-chalk/src/dark/css-vars.scss';
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
 
 // 导入项目变量
 @use './variables/border-mode.css';
@@ -90,6 +73,10 @@
 @use './components/table.scss';
 @use './components/form.scss';
 @use './components/tabs.scss';
+@use './components/dialog.scss';
+@use './components/input.scss';
+@use './components/tag.scss';
+
 
 
 html.dark{
@@ -99,4 +86,10 @@ html.dark{
   --el-popover-border-radius:8px;
 
   --el-text-color-placeholder:var(--text-tertiary);
+  --el-border-radius-base:8px;
+  --el-border-color-hover:var(--text-brand);
+
+  --el-component-size-large: 58px;
+  --el-component-size: 48px;
+  --el-component-size-small: 32px;
 }

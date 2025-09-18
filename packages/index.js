@@ -6,7 +6,7 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.0.57
+ * @version 1.0.75
  */
 
 import * as ElementPlusComponents from 'element-plus'
@@ -53,12 +53,15 @@ function registerElementPlus(app) {
         'mradiogroup': 'm-radio-group',
         'mradiobutton': 'm-radio-button',
         'mformitem': 'm-form-item',
-        'moptiongroup': 'm-option-group'
+        'moptiongroup': 'm-option-group',
+        'mtabs': 'm-tabs',
+        'mtabpane': 'm-tab-pane'
       }
       return nameMap[name] || name.replace(/^m/, 'm-')
     }
     return null
   }).filter(Boolean)
+
   
   Object.entries(ElementPlusComponents).forEach(([key, comp]) => {
     if (comp && comp.name && typeof comp.name === 'string' && comp.name.startsWith('El')) {
@@ -70,7 +73,9 @@ function registerElementPlus(app) {
         // 检查组件是否已经注册，避免重复注册警告
         if (!app._context.components[mName]) {
           app.component(mName, comp)
+        } else {
         }
+      } else {
       }
       
       // 存储转换后的组件用于导出
@@ -81,7 +86,16 @@ function registerElementPlus(app) {
 }
 
 const install = (app) => {
-  // 先注册自定义组件
+  // 应用全局样式覆盖
+  if (typeof window !== 'undefined') {
+    import('./utils/styleUtils.js').then(({ applyGlobalOverride }) => {
+      applyGlobalOverride();
+    });
+  }
+  
+  console.log('🚀 开始安装 @mc-markets/ui 组件库...')
+  
+  // 先注册自定义组件 - 确保优先级
   components.forEach(component => {
     if (component && component.name && typeof component.name === 'string') {
       let name = component.name.toLowerCase()
@@ -90,11 +104,13 @@ const install = (app) => {
         'mradiogroup': 'm-radio-group',
         'mradiobutton': 'm-radio-button',
         'mformitem': 'm-form-item',
-        'moptiongroup': 'm-option-group'
+        'moptiongroup': 'm-option-group',
+        'mtabs': 'm-tabs',
+        'mtabpane': 'm-tab-pane'
       }
       name = nameMap[name] || name.replace(/^m/, 'm-')
       
-      // 直接注册自定义组件，覆盖Element Plus组件
+      // 强制注册自定义组件，确保覆盖任何已存在的组件
       app.component(name, component)
     }
   })
@@ -103,8 +119,49 @@ const install = (app) => {
   registerElementPlus(app)
 }
 
+// 工具函数：检查组件注册状态
+export function checkComponentRegistration(app) {
+  const registeredComponents = Object.keys(app._context.components || {})
+  const customComponents = components.map(comp => {
+    if (comp && comp.name && typeof comp.name === 'string') {
+      let name = comp.name.toLowerCase()
+      const nameMap = {
+        'mradiogroup': 'm-radio-group',
+        'mradiobutton': 'm-radio-button',
+        'mformitem': 'm-form-item',
+        'moptiongroup': 'm-option-group',
+        'mtabs': 'm-tabs',
+        'mtabpane': 'm-tab-pane'
+      }
+      return nameMap[name] || name.replace(/^m/, 'm-')
+    }
+    return null
+  }).filter(Boolean)
+  
+  console.log('📊 组件注册状态报告:')
+  console.log('已注册的组件:', registeredComponents.filter(name => name.startsWith('m-')))
+  console.log('自定义组件:', customComponents)
+  
+  return {
+    registered: registeredComponents,
+    custom: customComponents,
+    conflicts: registeredComponents.filter(name => 
+      name.startsWith('m-') && customComponents.includes(name)
+    )
+  }
+}
+
 export default { install }
 export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane }
+
+// 导出样式工具函数
+export { 
+  addOverrideClass, 
+  addComponentOverride, 
+  applyGlobalOverride, 
+  forceRefreshStyles,
+  createOverrideComponent 
+} from './utils/styleUtils.js'
 
 // 手动导出常用的 Element Plus 函数（只导出函数，不导出组件）
 export const MMessageBox = ElementPlusComponents.ElMessageBox
