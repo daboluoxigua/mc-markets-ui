@@ -68,6 +68,19 @@ const iconUrl = computed(() => {
   .el-alert__close-btn{
     top: 50%;
     transform: translateY(-50%);
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.1);
+    }
   }
   // Error 类型样式
   &.el-alert--error.is-light {

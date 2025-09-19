@@ -41,6 +41,42 @@ import MTabPane from './components/Tabs/TabPane.vue'
 
 const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane]
 
+// 全局组件配置 - 需要自动创建实例的组件
+const globalInstanceComponents = [
+  { id: 'global-message-container', component: MMessage },
+  { id: 'global-notification-container', component: MNotifiMessage }
+]
+
+// 创建单个全局组件实例
+async function createGlobalComponent({ id, component }) {
+  try {
+    // 检查是否已存在，避免重复创建
+    if (document.getElementById(id)) return
+    
+    const { createApp, h } = await import('vue')
+    
+    // 创建容器
+    const container = document.createElement('div')
+    container.id = id
+    document.body.appendChild(container)
+    
+    // 创建并挂载 Vue 应用
+    const app = createApp({
+      render: () => h(component)
+    })
+    
+    app.mount(`#${id}`)
+  } catch (error) {
+    console.warn(`Failed to create global component ${id}:`, error)
+  }
+}
+
+// 创建所有全局组件实例
+async function createGlobalComponents() {
+  const promises = globalInstanceComponents.map(createGlobalComponent)
+  await Promise.all(promises)
+}
+
 // 存储转换后的 Element Plus 组件
 const convertedComponents = {}
 
@@ -117,6 +153,11 @@ const install = (app) => {
   
   // 然后注册转换后的 Element Plus 组件（只注册没有自定义组件覆盖的）
   registerElementPlus(app)
+  
+  // 自动创建全局组件实例
+  if (typeof window !== 'undefined') {
+    createGlobalComponents()
+  }
 }
 
 // 工具函数：检查组件注册状态

@@ -19,23 +19,6 @@
       </div>
     </DemoSection>
 
-    <!-- Plain 样式 -->
-    <DemoSection title="Plain 样式">
-      <div class="doc-grid">
-        <div class="doc-item">
-          <m-button @click="openSuccessPlain">Success Plain</m-button>
-          <span>Success Plain</span>
-        </div>
-        <div class="doc-item">
-          <m-button @click="openWarningPlain">Warning Plain</m-button>
-          <span>Warning Plain</span>
-        </div>
-        <div class="doc-item">
-          <m-button @click="openErrorPlain">Error Plain</m-button>
-          <span>Error Plain</span>
-        </div>
-      </div>
-    </DemoSection>
 
     <!-- 可关闭的消息提示 -->
     <DemoSection title="可关闭的消息提示">
@@ -217,27 +200,6 @@ const openError = () => {
   Message.error('糟糕，这是一条错误消息');
 };
 
-// Plain 样式
-const openSuccessPlain = () => {
-  Message.success({
-    message: '恭喜，这是一条成功消息',
-    plain: true,
-  });
-};
-
-const openWarningPlain = () => {
-  Message.warning({
-    message: '警告，这是一条警告消息',
-    plain: true,
-  });
-};
-
-const openErrorPlain = () => {
-  Message.error({
-    message: '糟糕，这是一条错误消息',
-    plain: true,
-  });
-};
 
 // 可关闭的消息提示
 const openCloseable = () => {
@@ -464,12 +426,6 @@ const messageApiProps = [
     default: "success",
     description: "消息类型，可选值：success / warning / error",
     values: ["success", "warning", "error"]
-  },
-  {
-    name: "plain",
-    type: "boolean",
-    default: "false",
-    description: "是否纯色",
   },
   {
     name: "icon",

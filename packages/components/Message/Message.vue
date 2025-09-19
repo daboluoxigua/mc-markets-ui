@@ -209,8 +209,8 @@ export { Message }
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 380px;
-  max-width: 500px;
+  min-width: 200px;
+  max-width: 320px;
   padding: 12px 16px;
   border-radius: 8px;
   display: flex;
@@ -304,16 +304,25 @@ export { Message }
   .message-content {
     flex: 1;
     line-height: 1.4;
+    position: relative;
     
     .message-repeat {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.8);
-      color: #333;
-      font-size: 12px;
-      padding: 2px 6px;
-      border-radius: 10px;
-      margin-left: 8px;
-      font-weight: 500;
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #666;
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      border-radius: 8px;
+      border: 2px solid white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
   }
   
@@ -324,24 +333,36 @@ export { Message }
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 0;
+    justify-content: center;
+    padding: 4px;
     margin-left: 8px;
     opacity: 0.6;
     transition: opacity 0.2s ease;
+    font-size: 24px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: var(--icon-tertiary, #999);
     
     &:hover {
       opacity: 1;
+      background: rgba(0, 0, 0, 0.1);
     }
   }
   
-  // 不同类型的样式 - 参考 Alert 组件
+  // 不同类型的样式 - 统一使用 bg-tertiary-hover 背景
   &.message-success {
-    background-color: var(--all-green-10, #f0f9ff);
+    background-color: var(--bg-tertiary-hover, #f5f5f5);
     color: var(--all-green-4, #67c23a);
-    border: 1px solid var(--all-green-10, #f0f9ff);
+    border: 1px solid var(--bg-tertiary-hover, #f5f5f5);
     
     .message-icon {
       color: var(--all-green-4, #67c23a);
+    }
+    
+    .message-repeat {
+      background: var(--all-green-4, #67c23a);
+      border-color: var(--all-green-4, #67c23a);
     }
     
     &.message-plain {
@@ -356,12 +377,17 @@ export { Message }
   }
   
   &.message-warning {
-    background-color: var(--all-orange-10, #fdf6ec);
+    background-color: var(--bg-tertiary-hover, #f5f5f5);
     color: var(--text-warning-primary, #e6a23c);
-    border: 1px solid var(--all-orange-10, #fdf6ec);
+    border: 1px solid var(--bg-tertiary-hover, #f5f5f5);
     
     .message-icon {
       color: var(--text-warning-primary, #e6a23c);
+    }
+    
+    .message-repeat {
+      background: var(--text-warning-primary, #e6a23c);
+      border-color: var(--text-warning-primary, #e6a23c);
     }
     
     &.message-plain {
@@ -376,12 +402,17 @@ export { Message }
   }
   
   &.message-error {
-    background-color: var(--all-red-10, #fef0f0);
+    background-color: var(--bg-tertiary-hover, #f5f5f5);
     color: var(--text-error-primary, #f56c6c);
-    border: 1px solid var(--all-red-10, #fef0f0);
+    border: 1px solid var(--bg-tertiary-hover, #f5f5f5);
     
     .message-icon {
       color: var(--text-error-primary, #f56c6c);
+    }
+    
+    .message-repeat {
+      background: var(--text-error-primary, #f56c6c);
+      border-color: var(--text-error-primary, #f56c6c);
     }
     
     &.message-plain {

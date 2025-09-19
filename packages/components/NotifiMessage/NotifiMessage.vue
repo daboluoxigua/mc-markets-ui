@@ -237,23 +237,24 @@ export { NotifiMessage }
     position: absolute;
     top: 12px;
     right: 12px;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     border: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.6);
+    background: transparent;
+    color: var(--icon-tertiary, #999);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1;
-    transition: all 0.2s ease;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
     
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: rgba(255, 255, 255, 0.9);
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.1);
     }
   }
 }
