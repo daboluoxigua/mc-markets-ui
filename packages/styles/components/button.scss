@@ -35,6 +35,7 @@
       &.is-disabled {
         background-color: transparent;
         border-color: color-mix(in srgb, var(--bg-brand) 50%, transparent);
+        color: var(--el-button-hover-text-color);
       }
     }
 
