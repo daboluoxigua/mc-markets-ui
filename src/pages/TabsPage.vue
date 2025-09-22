@@ -1,7 +1,27 @@
 <template>
   <div class="tabs-page">
     <!-- 基础使用 -->
-    <DemoSection title="基础使用">
+    <DemoSection 
+      title="基础使用"
+      code="<template>
+  <m-tabs v-model='activeName' @tab-click='handleTabClick'>
+    <m-tab-pane label='User' name='first'>User 内容</m-tab-pane>
+    <m-tab-pane label='Config' name='second'>Config 内容</m-tab-pane>
+    <m-tab-pane label='Role' name='third'>Role 内容</m-tab-pane>
+    <m-tab-pane label='Task' name='fourth'>Task 内容</m-tab-pane>
+  </m-tabs>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const activeName = ref('first');
+
+const handleTabClick = (tab, event) => {
+  console.log(tab, event);
+};
+</script>"
+    >
       <div class="demo-container">
         <m-tabs v-model="activeName" @tab-click="handleTabClick">
           <m-tab-pane label="User" name="first">User 内容</m-tab-pane>
@@ -13,7 +33,10 @@
     </DemoSection>
 
     <!-- 卡片风格 -->
-    <DemoSection title="卡片风格的标签">
+    <DemoSection 
+      title="卡片风格的标签"
+      code="<m-tabs v-model='activeName2' type='card' @tab-click='handleTabClick'><m-tab-pane label='User' name='first'>User</m-tab-pane><m-tab-pane label='Config' name='second'>Config</m-tab-pane><m-tab-pane label='Role' name='third'>Role</m-tab-pane></m-tabs>"
+    >
       <div class="demo-container">
         <m-tabs v-model="activeName2" type="card" @tab-click="handleTabClick">
           <m-tab-pane label="User" name="first">User 内容</m-tab-pane>
@@ -25,7 +48,10 @@
     </DemoSection>
 
     <!-- 带边框的卡片风格 -->
-    <DemoSection title="带边框的卡片风格">
+    <DemoSection 
+      title="带边框的卡片风格"
+      code="<m-tabs v-model='activeName3' type='border-card'><m-tab-pane label='User' name='first'>User 内容</m-tab-pane></m-tabs>"
+    >
       <div class="demo-container">
         <m-tabs v-model="activeName3" type="border-card">
           <m-tab-pane label="User" name="first">User 内容</m-tab-pane>
@@ -37,7 +63,10 @@
     </DemoSection>
 
     <!-- 标签位置 -->
-    <DemoSection title="标签位置">
+    <DemoSection 
+      title="标签位置"
+      code="<m-tabs v-model='activeName4' :tab-position='tabPosition'><m-tab-pane label='User' name='first'>User 内容</m-tab-pane></m-tabs>"
+    >
       <div class="demo-container">
         <div class="position-controls">
           <m-radio-group v-model="tabPosition" @change="handlePositionChange">
@@ -57,7 +86,10 @@
     </DemoSection>
 
     <!-- 自定义标签内容 -->
-    <DemoSection title="自定义标签内容">
+    <DemoSection 
+      title="自定义标签内容"
+      code="<m-tabs v-model='activeName5' type='border-card'><m-tab-pane name='route'><template #label><span><m-icon name='map-pin' />Route</span></template></m-tab-pane></m-tabs>"
+    >
       <div class="demo-container">
         <m-tabs v-model="activeName5" type="border-card">
           <m-tab-pane name="route">
@@ -77,7 +109,10 @@
     </DemoSection>
 
     <!-- 可关闭的标签 -->
-    <DemoSection title="可关闭的标签">
+    <DemoSection 
+      title="可关闭的标签"
+      code="<m-tabs v-model='editableTabsValue' type='card' closable @tab-remove='removeTab'><m-tab-pane label='Tab 1' name='1' closable>Tab 1 内容</m-tab-pane></m-tabs>"
+    >
       <div class="demo-container">
         <m-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
           <m-tab-pane
@@ -94,7 +129,10 @@
     </DemoSection>
 
     <!-- 动态增减标签 -->
-    <DemoSection title="动态增减标签">
+    <DemoSection 
+      title="动态增减标签"
+      code="<m-button @click='addTab'>添加标签</m-button><m-tabs v-model='editableTabsValue2' type='card' closable @tab-remove='removeTab2'><m-tab-pane label='Tab 1' name='1'>Tab 1 内容</m-tab-pane></m-tabs>"
+    >
       <div class="demo-container">
         <div class="button-group">
           <m-button size="small" @click="addTab(editableTabsValue2)">添加标签</m-button>
@@ -119,7 +157,10 @@
     </DemoSection>
 
     <!-- 禁用标签 -->
-    <DemoSection title="禁用标签">
+    <DemoSection 
+      title="禁用标签"
+      code="<m-tabs v-model='activeName6'><m-tab-pane label='User' name='first'>User 内容</m-tab-pane><m-tab-pane label='Config' name='second' disabled>Config 内容（禁用）</m-tab-pane></m-tabs>"
+    >
       <div class="demo-container">
         <m-tabs v-model="activeName6">
           <m-tab-pane label="User" name="first">User 内容</m-tab-pane>

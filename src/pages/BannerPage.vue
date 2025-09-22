@@ -1,7 +1,28 @@
 <template>
   <div class="banner-page">
     <!-- 基础使用 -->
-    <DemoSection title="基础使用">
+    <DemoSection 
+      title="基础使用"
+      code="<template>
+  <m-banner 
+    type='info' 
+    content='点击右侧的 X 可以关闭这个 Banner' 
+    :closable='true' 
+    @close='handleClose' 
+  />
+  <m-banner 
+    type='warning' 
+    content='这个 Banner 无法关闭' 
+    :closable='false' 
+  />
+</template>
+
+<script setup>
+const handleClose = (message) => {
+  console.log('Banner 已关闭:', message);
+};
+</script>"
+    >
       <div class="demo-container">
         <div class="demo-item">
           <h4>可关闭</h4>
@@ -25,7 +46,10 @@
 
 
     <!-- 自定义样式 -->
-    <DemoSection title="自定义样式">
+    <DemoSection 
+      title="自定义样式"
+      code="<m-banner content='自定义背景色的 Banner' background-color='#f0f9ff' border-color='#3b82f6' text-color='#1e40af' />"
+    >
       <div class="demo-container">
         <div class="demo-item">
           <h4>自定义背景色</h4>
@@ -41,7 +65,10 @@
 
 
     <!-- 复杂内容 -->
-    <DemoSection title="复杂内容">
+    <DemoSection 
+      title="复杂内容"
+      code="<m-banner type='warning'><strong>重要提示：</strong>系统将在 <em>30 分钟</em> 后进行维护，请及时保存您的工作。</m-banner>"
+    >
       <div class="demo-container">
         <div class="demo-item">
           <h4>HTML 内容</h4>

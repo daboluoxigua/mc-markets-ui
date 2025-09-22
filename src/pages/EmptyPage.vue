@@ -1,7 +1,10 @@
 <template>
   <div class="empty-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<m-empty />"
+    >
       <div class="example-empty-block">
         <div class="example-demonstration">空状态时的展示占位图。</div>
         <div class="empty-demo-container">
@@ -11,7 +14,13 @@
     </DemoSection>
 
     <!-- 所有预设图片 -->
-    <DemoSection title="所有预设图片">
+    <DemoSection 
+      title="所有预设图片"
+      code="<m-empty image='404' description='页面未找到' />
+<m-empty image='network' description='网络错误' />
+<m-empty image='search' description='搜索无结果' />
+<m-empty image='orders' description='暂无订单' />"
+    >
       <div class="example-empty-block">
         <div class="example-demonstration">共16种预设图片类型，通过 image 属性使用。默认为 orders。</div>
         <div class="empty-demo-container">
@@ -86,7 +95,10 @@
     </DemoSection>
 
     <!-- 图片尺寸 -->
-    <DemoSection title="图片尺寸">
+    <DemoSection 
+      title="图片尺寸"
+      code="<m-empty image='network' :image-size='200' description='网络错误' />"
+    >
       <div class="example-empty-block">
         <div class="example-demonstration">通过 image-size 属性控制图片大小。</div>
         <div class="empty-demo-container">
@@ -96,7 +108,12 @@
     </DemoSection>
 
     <!-- 底部内容 -->
-    <DemoSection title="底部内容">
+    <DemoSection 
+      title="底部内容"
+      code="<m-empty description='描述文字'>
+  <m-button type='primary'>按钮</m-button>
+</m-empty>"
+    >
       <div class="example-empty-block">
         <div class="example-demonstration">使用默认插槽来自定义底部内容。</div>
         <div class="empty-demo-container">
@@ -108,7 +125,14 @@
     </DemoSection>
 
     <!-- 自定义描述 -->
-    <DemoSection title="自定义描述">
+    <DemoSection 
+      title="自定义描述"
+      code="<m-empty>
+  <template #description>
+    <span>自定义 <a href='#'>描述文字</a></span>
+  </template>
+</m-empty>"
+    >
       <div class="example-empty-block">
         <div class="example-demonstration">通过 description 属性来自定义描述内容。</div>
         <div class="empty-demo-container">

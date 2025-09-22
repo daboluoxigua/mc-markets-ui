@@ -1,7 +1,13 @@
 <template>
   <div class="tag-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<m-tag type='success'>Tag 2</m-tag>
+<m-tag type='info'>Tag 3</m-tag>
+<m-tag type='primary'>Tag 4</m-tag>
+<m-tag type='danger'>Tag 5</m-tag>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tag type="success">Tag 2</m-tag>
@@ -23,7 +29,11 @@
     </DemoSection>
 
     <!-- 可移除标签 -->
-    <DemoSection title="可移除标签" :columns="1">
+    <DemoSection 
+      title="可移除标签" 
+      :columns="1"
+      :code="removableTagCode"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tag v-for="tag in tags" :key="tag.name" closable :type="tag.type" @close="handleClose(tag)">
@@ -35,7 +45,10 @@
     </DemoSection>
 
     <!-- 动态编辑标签 -->
-    <DemoSection title="动态编辑标签">
+    <DemoSection 
+      title="动态编辑标签"
+      :code="dynamicTagCode"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <div class="tag-container">
@@ -68,7 +81,12 @@
     </DemoSection>
 
     <!-- 不同尺寸 -->
-    <DemoSection title="不同尺寸">
+    <DemoSection 
+      title="不同尺寸"
+      code="<m-tag size='large' type='primary'>Large</m-tag>
+<m-tag type='primary'>Default</m-tag>
+<m-tag size='small' type='primary'>Small</m-tag>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tag size="large" type="primary">Large</m-tag>
@@ -86,7 +104,18 @@
     </DemoSection>
 
     <!-- 主题 -->
-    <DemoSection title="主题">
+    <DemoSection 
+      title="主题"
+      code="<m-tag v-for='item in themeItems' :key='item.label' :type='item.type' effect='dark'>
+  {{ item.label }}
+</m-tag>
+<m-tag v-for='item in themeItems' :key='item.label' :type='item.type' effect='light'>
+  {{ item.label }}
+</m-tag>
+<m-tag v-for='item in themeItems' :key='item.label' :type='item.type' effect='plain'>
+  {{ item.label }}
+</m-tag>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <div class="theme-container">
@@ -134,7 +163,18 @@
     </DemoSection>
 
     <!-- 圆形标签 -->
-    <DemoSection title="圆形标签">
+    <DemoSection 
+      title="圆形标签"
+      code="<m-tag v-for='item in themeItems' :key='item.label' :type='item.type' effect='dark' round>
+  {{ item.label }}
+</m-tag>
+<m-tag v-for='item in themeItems' :key='item.label' :type='item.type' effect='light' round>
+  {{ item.label }}
+</m-tag>
+<m-tag v-for='item in themeItems' :key='item.label' :type='item.type' effect='plain' round>
+  {{ item.label }}
+</m-tag>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <div class="theme-container">
@@ -183,7 +223,14 @@
 
 
     <!-- 自定义颜色 -->
-    <DemoSection title="自定义颜色">
+    <DemoSection 
+      title="自定义颜色"
+      code="<m-tag color='#626aef'>自定义颜色</m-tag>
+<m-tag color='#f56c6c'>红色标签</m-tag>
+<m-tag color='#67c23a'>绿色标签</m-tag>
+<m-tag color='#e6a23c'>橙色标签</m-tag>
+<m-tag color='#909399'>灰色标签</m-tag>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tag color="#626aef">自定义颜色</m-tag>
@@ -209,7 +256,11 @@
     </DemoSection>
 
     <!-- 禁用渐变动画 -->
-    <DemoSection title="禁用渐变动画">
+    <DemoSection 
+      title="禁用渐变动画"
+      code="<m-tag closable type='primary'>默认动画</m-tag>
+<m-tag closable :disable-transitions='true' type='success'>禁用动画</m-tag>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tag closable type="primary">默认动画</m-tag>
@@ -223,7 +274,10 @@
     </DemoSection>
 
     <!-- 交互演示 -->
-    <DemoSection title="交互演示">
+    <DemoSection 
+      title="交互演示"
+      :code="interactiveTagCode"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tag type="primary" @click="handleClick">点击事件</m-tag>
@@ -263,6 +317,13 @@ import { ref, nextTick } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { MTag, MInput, MButton, MMessage } from "@mc-markets/ui";
+
+// 代码示例
+const removableTagCode = "<m-tag v-for='tag in tags' :key='tag.name' closable :type='tag.type' @close='handleClose(tag)'>{{ tag.label }}</m-tag>";
+
+const dynamicTagCode = "<m-tag v-for='tag in dynamicTags' :key='tag' closable type='primary' @close='handleDynamicClose(tag)'>{{ tag }}</m-tag>";
+
+const interactiveTagCode = "<m-tag type='primary' @click='handleClick'>点击事件</m-tag><m-tag closable type='success' @close='handleCloseEvent'>关闭事件</m-tag>";
 
 
 // 响应式数据

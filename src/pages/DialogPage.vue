@@ -1,7 +1,10 @@
 <template>
   <div class="dialog-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<m-button plain @click='dialogVisible = true'>Click to open the Dialog</m-button> <m-dialog v-model='dialogVisible' title='Tips'><span>This is a message</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           Dialog 弹出一个对话框，适合需要定制性更大的场景。需要设置 model-value
@@ -33,7 +36,10 @@
     </DemoSection>
 
     <!-- 自定义内容 -->
-    <DemoSection title="自定义内容">
+    <DemoSection 
+      title="自定义内容"
+      code="<m-button plain @click='dialogTableVisible = true'>Open a Table nested Dialog</m-button> <m-button plain @click='dialogFormVisible = true'>Open a Form nested Dialog</m-button>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           对话框的内容可以是任何东西，甚至是一个表格或表单。 此示例显示如何在
@@ -95,7 +101,10 @@
     </DemoSection>
 
     <!-- 自定义头部 -->
-    <DemoSection title="自定义头部">
+    <DemoSection 
+      title="自定义头部"
+      code="<m-dialog v-model='customHeaderVisible' :show-close='false'><template #header='{ close, titleId, titleClass }'><h4 :id='titleId' :class='titleClass'>This is a custom header!</h4></template><span>This is a message</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           header 可用于自定义显示标题的区域。
@@ -130,7 +139,10 @@
     </DemoSection>
 
     <!-- 嵌套的对话框 -->
-    <DemoSection title="嵌套的对话框">
+    <DemoSection 
+      title="嵌套的对话框"
+      code="<m-dialog v-model='outerVisible' title='Outer Dialog'><m-dialog v-model='innerVisible' title='Inner Dialog' append-to-body /></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           如果需要在一个 Dialog 内部嵌套另一个 Dialog，需要使用 append-to-body
@@ -162,7 +174,10 @@
     </DemoSection>
 
     <!-- 内容居中 -->
-    <DemoSection title="内容居中">
+    <DemoSection 
+      title="内容居中"
+      code="<m-dialog v-model='centerDialogVisible' title='Warning' center><span>It should be noted that the content will not be aligned to center by default</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           通过设置 center 属性可以让 Dialog 的 header 和 footer 部分居中排列。
@@ -196,7 +211,10 @@
     </DemoSection>
 
     <!-- 居中对话框 -->
-    <DemoSection title="居中对话框">
+    <DemoSection 
+      title="居中对话框"
+      code="<m-dialog v-model='alignCenterDialogVisible' title='Warning' align-center><span>It should be noted that the content will not be aligned to center by default</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           通过设置 align-center 属性可以让 Dialog 水平垂直对齐对话框。
@@ -235,7 +253,10 @@
     </DemoSection>
 
     <!-- 关闭时销毁 -->
-    <DemoSection title="关闭时销毁">
+    <DemoSection 
+      title="关闭时销毁"
+      code="<m-dialog v-model='destroyOnCloseVisible' title='Notice' destroy-on-close><span>Notice: before destroy</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           当需要重新渲染 Dialog 内容时，可以设置 destroy-on-close 属性。
@@ -268,7 +289,10 @@
     </DemoSection>
 
     <!-- 可拖拽对话框 -->
-    <DemoSection title="可拖拽对话框">
+    <DemoSection 
+      title="可拖拽对话框"
+      code="<m-dialog v-model='draggableVisible' title='Notice' draggable><span>Notice: draggable dialog</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           通过设置 draggable 属性可以让 Dialog 变为可拖拽的。
@@ -299,7 +323,10 @@
     </DemoSection>
 
     <!-- 全屏 -->
-    <DemoSection title="全屏">
+    <DemoSection 
+      title="全屏"
+      code="<m-dialog v-model='fullscreenVisible' title='Notice' fullscreen><span>Notice: fullscreen dialog</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           通过设置 fullscreen 属性可以让 Dialog 变为全屏的。
@@ -325,7 +352,10 @@
     </DemoSection>
 
     <!-- 模态框 -->
-    <DemoSection title="模态框">
+    <DemoSection 
+      title="模态框"
+      code="<m-dialog v-model='modalVisible' title='Notice' :modal='false'><span>Notice: no modal</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           通过设置 modal 属性可以控制是否需要遮罩层。
@@ -356,7 +386,10 @@
     </DemoSection>
 
     <!-- 自定义动画 2.10.5 -->
-    <DemoSection title="自定义动画 2.10.5">
+    <DemoSection 
+      title="自定义动画 2.10.5"
+      code="<m-dialog v-model='customTransitionVisible' title='Notice' transition='dialog-fade'><span>Notice: custom transition</span></m-dialog>"
+    >
       <div class="example-dialog-block">
         <div class="example-demonstration">
           通过设置 transition 属性可以自定义对话框的动画效果。

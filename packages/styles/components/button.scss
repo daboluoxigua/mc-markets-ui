@@ -98,6 +98,22 @@
       background-color: var(--el-button-hover-bg-color);
     }
 
+    &.is-text,&.is-link{
+      color: var(--text-brand);
+      border: 0 solid transparent;
+      background-color: transparent;
+      &:hover {
+        color: var(--text-brand-hover);
+        border: 0 solid transparent;
+        background-color: transparent;
+      }
+      &.is-disabled {
+        color: color-mix(in srgb, var(--bg-brand) 50%, transparent);
+        border: 0 solid transparent;
+        background-color: transparent;
+      }
+    }
+
     [class*="el-icon"] + span {
       margin-left: 5px;
     }

@@ -1,7 +1,11 @@
 <template>
   <div class="button-page">
     <!-- 基础按钮类型 -->
-    <DemoSection title="基础按钮类型">
+    <DemoSection 
+      title="基础按钮类型"
+      code="<m-button>默认按钮</m-button>
+<m-button type='primary'>主要按钮</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button>默认按钮</m-button>
@@ -14,7 +18,11 @@
       </div>
     </DemoSection>
     <!-- Plain 按钮 -->
-    <DemoSection title="Plain 按钮">
+    <DemoSection 
+      title="Plain 按钮"
+      code="<m-button plain>Plain</m-button>
+<m-button plain disabled>禁用状态</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button plain>Plain</m-button>
@@ -27,7 +35,12 @@
       </div>
     </DemoSection>
     <!-- 按钮尺寸 -->
-    <DemoSection title="按钮尺寸">
+    <DemoSection 
+      title="按钮尺寸"
+      code="<m-button size='large' type='primary'>大按钮</m-button>
+<m-button type='primary'>默认按钮</m-button>
+<m-button size='small' type='primary'>小按钮</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button size="large" type="primary">大按钮</m-button>
@@ -45,7 +58,10 @@
     </DemoSection>
 
     <!-- 按钮状态 -->
-    <DemoSection title="按钮状态">
+    <DemoSection 
+      title="按钮状态"
+      :code="buttonStateCode"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button type="primary" disabled>禁用状态</m-button>
@@ -81,7 +97,14 @@
     </DemoSection>
 
     <!-- 按钮形状 -->
-    <DemoSection title="按钮形状">
+    <DemoSection 
+      title="按钮形状"
+      code="<m-button type='primary'>默认形状</m-button>
+<m-button type='primary' round>圆角按钮</m-button>
+<m-button type='primary' circle>
+  <m-icon name='square-pen' />
+</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button type="primary">默认形状</m-button>
@@ -101,67 +124,45 @@
     </DemoSection>
 
     <!-- 文字按钮 -->
-    <DemoSection title="文字按钮">
+    <DemoSection 
+      title="文字按钮"
+      code="<m-button text>默认文字按钮</m-button> <m-button text disabled>禁用文字按钮</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button text>默认文字按钮</m-button>
           <span>Default Text</span>
         </div>
         <div class="doc-item">
-          <m-button text type="primary">主要文字按钮</m-button>
-          <span>Primary Text</span>
-        </div>
-        <div class="doc-item">
-          <m-button text type="success">成功文字按钮</m-button>
-          <span>Success Text</span>
-        </div>
-        <div class="doc-item">
-          <m-button text type="warning">警告文字按钮</m-button>
-          <span>Warning Text</span>
-        </div>
-        <div class="doc-item">
-          <m-button text type="danger">危险文字按钮</m-button>
-          <span>Danger Text</span>
-        </div>
-        <div class="doc-item">
-          <m-button text type="info">信息文字按钮</m-button>
-          <span>Info Text</span>
+          <m-button text disabled>禁用文字按钮</m-button>
+          <span>Disabled Text</span>
         </div>
       </div>
     </DemoSection>
 
     <!-- 链接按钮 -->
-    <DemoSection title="链接按钮">
+    <DemoSection 
+      title="链接按钮"
+      code="<m-button link>默认链接按钮</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button link>默认链接按钮</m-button>
           <span>Default Link</span>
         </div>
-        <div class="doc-item">
-          <m-button link type="primary">主要链接按钮</m-button>
-          <span>Primary Link</span>
-        </div>
-        <div class="doc-item">
-          <m-button link type="success">成功链接按钮</m-button>
-          <span>Success Link</span>
-        </div>
-        <div class="doc-item">
-          <m-button link type="warning">警告链接按钮</m-button>
-          <span>Warning Link</span>
-        </div>
-        <div class="doc-item">
-          <m-button link type="danger">危险链接按钮</m-button>
-          <span>Danger Link</span>
-        </div>
-        <div class="doc-item">
-          <m-button link type="info">信息链接按钮</m-button>
-          <span>Info Link</span>
-        </div>
       </div>
     </DemoSection>
 
     <!-- 自定义颜色按钮 -->
-    <DemoSection title="自定义颜色按钮">
+    <DemoSection 
+      title="自定义颜色按钮"
+      code="<m-button color='#626aef'>自定义颜色</m-button>
+<m-button color='#626aef' plain>自定义颜色 Plain</m-button>
+<m-button color='#f56c6c'>红色按钮</m-button>
+<m-button color='#67c23a'>绿色按钮</m-button>
+<m-button color='#e6a23c'>橙色按钮</m-button>
+<m-button color='#909399'>灰色按钮</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button color="#626aef">自定义颜色</m-button>
@@ -191,39 +192,53 @@
     </DemoSection>
 
     <!-- 图标按钮 -->
-    <DemoSection title="图标按钮">
+    <DemoSection 
+      title="图标按钮"
+      code="<m-button type='primary'>
+  <m-icon name='search' style='margin-right: 4px;'/>
+  搜索
+</m-button>
+<m-button>
+  <m-icon name='square-pen' style='margin-right: 4px;'/>
+  编辑
+</m-button>
+<m-button>
+  <m-icon name='linear-trash' style='margin-right: 4px;'/>
+  删除
+</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button type="primary">
-            <m-icon name="search" style="margin-right: 4px;"/>
+            <m-icon name="search" style="margin-right: 4px" />
             搜索
           </m-button>
           <span>Search</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="square-pen"  style="margin-right: 4px;"/>
+            <m-icon name="square-pen" style="margin-right: 4px" />
             编辑
           </m-button>
           <span>Edit</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="linear-trash" style="margin-right: 4px;"/>
+            <m-icon name="linear-trash" style="margin-right: 4px" />
             删除
           </m-button>
           <span>Delete</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="copy" style="margin-right: 4px;"/>
+            <m-icon name="copy" style="margin-right: 4px" />
             复制
           </m-button>
           <span>Copy</span>
         </div>
         <div class="doc-item">
           <m-button>
-            <m-icon name="plus" style="margin-right: 4px;"/>
+            <m-icon name="plus" style="margin-right: 4px" />
             添加
           </m-button>
           <span>Add</span>
@@ -232,19 +247,35 @@
     </DemoSection>
 
     <!-- 按钮组 -->
-    <DemoSection title="按钮组">
+    <DemoSection 
+      title="按钮组"
+      code="<m-button-group>
+  <m-button type='primary'>
+    <m-icon name='square-pen' style='margin-right: 4px;'/>
+    编辑
+  </m-button>
+  <m-button type='success'>
+    <m-icon name='check' style='margin-right: 4px;'/>
+    保存
+  </m-button>
+  <m-button type='danger'>
+    <m-icon name='lucide-x' style='margin-right: 4px;'/>
+    取消
+  </m-button>
+</m-button-group>"
+    >
       <div class="doc-item">
         <m-button-group>
           <m-button type="primary">
-            <m-icon name="square-pen" style="margin-right: 4px;"/>
+            <m-icon name="square-pen" style="margin-right: 4px" />
             编辑
           </m-button>
           <m-button type="success">
-            <m-icon name="check" style="margin-right: 4px;"/>
+            <m-icon name="check" style="margin-right: 4px" />
             保存
           </m-button>
           <m-button type="danger">
-            <m-icon name="lucide-x" style="margin-right: 4px;"/>
+            <m-icon name="lucide-x" style="margin-right: 4px" />
             取消
           </m-button>
         </m-button-group>
@@ -253,7 +284,10 @@
     </DemoSection>
 
     <!-- 交互演示 -->
-    <DemoSection title="交互演示">
+    <DemoSection 
+      title="交互演示"
+      code="<m-button type='primary' @click='handleClick'>点击事件</m-button><m-button type='success' @click='handleConfirm'>确认对话框</m-button><m-button type='warning' @click='handleAlert'>警告提示</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button type="primary" @click="handleClick">点击事件</m-button>
@@ -279,7 +313,10 @@
     </DemoSection>
 
     <!-- 自定义样式按钮 -->
-    <DemoSection title="自定义样式按钮">
+    <DemoSection 
+      title="自定义样式按钮"
+      code="<m-button class='custom-button gradient-button'>渐变按钮</m-button><m-button class='custom-button shadow-button'>阴影按钮</m-button><m-button class='custom-button neon-button'>霓虹按钮</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button class="custom-button gradient-button">渐变按钮</m-button>
@@ -329,6 +366,9 @@ import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { MButton, MIcon } from "@mc-markets/ui";
 
+// 代码示例
+const buttonStateCode = "<m-button type='primary' :loading='loading' @click='handleLoading'>{{ loading ? '加载中...' : '点击加载' }}</m-button><m-button :disabled='disabled' @click='handleDisabled'>{{ disabled ? '已禁用' : '可点击' }}</m-button>";
+
 // 响应式数据
 const loading = ref(true);
 const disabled = ref(false);
@@ -345,7 +385,8 @@ const buttonApiProps = [
     name: "type",
     type: "enum",
     default: "-",
-    description: "按钮类型，在设置color时，后者优先。可选值：primary / success / warning / danger / info / text",
+    description:
+      "按钮类型，在设置color时，后者优先。可选值：primary / success / warning / danger / info / text",
   },
   {
     name: "plain",
@@ -423,13 +464,15 @@ const buttonApiProps = [
     name: "auto-insert-space",
     type: "boolean",
     default: "false",
-    description: "两个中文字符之间自动插入空格(仅当文本长度为 2 且所有字符均为中文时才生效)",
+    description:
+      "两个中文字符之间自动插入空格(仅当文本长度为 2 且所有字符均为中文时才生效)",
   },
   {
     name: "color",
     type: "string",
     default: "-",
-    description: "自定义按钮颜色, 并自动计算 hover 和 active 触发后的颜色（beta）",
+    description:
+      "自定义按钮颜色, 并自动计算 hover 和 active 触发后的颜色（beta）",
   },
   {
     name: "dark",
@@ -511,16 +554,17 @@ const buttonGroupApiProps = [
     name: "size",
     type: "enum",
     default: "-",
-    description: "用于控制该按钮组内按钮的大小，可选值：large / default / small",
+    description:
+      "用于控制该按钮组内按钮的大小，可选值：large / default / small",
   },
   {
     name: "type",
     type: "enum",
     default: "-",
-    description: "用于控制该按钮组内按钮的类型，可选值：primary / success / warning / danger / info / text",
+    description:
+      "用于控制该按钮组内按钮的类型，可选值：primary / success / warning / danger / info / text",
   },
 ];
-
 
 const buttonGroupApiSlots = [
   {
@@ -529,7 +573,6 @@ const buttonGroupApiSlots = [
     subTags: "Button",
   },
 ];
-
 
 // 方法
 const handleLoading = () => {

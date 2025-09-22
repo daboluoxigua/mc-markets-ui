@@ -1,19 +1,32 @@
 <template>
   <div class="alert-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
-      <div class="example-alert-block">
-        <div class="example-demonstration">Alert 组件不属于浮层元素，不会自动消失或关闭。</div>
-        <div class="alert-demo-container">
-          <m-alert title="Success alert" type="success" />
-          <m-alert title="Warning alert" type="warning" />
-          <m-alert title="Error alert" type="error" />
+    <DemoSection 
+      title="基础用法"
+      code="<m-alert title='Success alert' type='success' />
+<m-alert title='Warning alert' type='warning' />
+<m-alert title='Error alert' type='error' />"
+    >
+      <template #default>
+        <div class="example-alert-block">
+          <div class="example-demonstration">Alert 组件不属于浮层元素，不会自动消失或关闭。</div>
+          <div class="alert-demo-container">
+            <m-alert title="Success alert" type="success" />
+            <m-alert title="Warning alert" type="warning" />
+            <m-alert title="Error alert" type="error" />
+          </div>
         </div>
-      </div>
+      </template>
+      
     </DemoSection>
 
     <!-- 主题 -->
-    <DemoSection title="主题">
+    <DemoSection 
+      title="主题"
+      code="<m-alert title='Success alert' type='success' effect='dark' />
+<m-alert title='Warning alert' type='warning' effect='dark' />
+<m-alert title='Error alert' type='error' effect='dark' />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">Alert 组件提供了两个不同的主题：light 和 dark。通过设置 effect 属性来改变主题，默认为 light。</div>
         <div class="alert-demo-container">
@@ -25,7 +38,20 @@
     </DemoSection>
 
     <!-- 自定义关闭按钮 -->
-    <DemoSection title="自定义关闭按钮">
+    <DemoSection 
+      title="自定义关闭按钮"
+      code="<template>
+  <m-alert title='Unclosable alert' type='success' :closable='false' />
+  <m-alert title='Customized close text' type='success' close-text='Gotcha' />
+  <m-alert title='Alert with callback' type='warning' @close='handleClose' />
+</template>
+
+<script setup>
+const handleClose = () => {
+  console.log('Alert 已关闭');
+};
+</script>"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">你可以自定义关闭按钮为文字或其他符号。你可以设置 Alert 组件是否为可关闭状态， 关闭按钮的内容以及关闭时的回调函数同样可以定制。</div>
         <div class="alert-demo-container">
@@ -37,7 +63,12 @@
     </DemoSection>
 
     <!-- 使用图标 -->
-    <DemoSection title="使用图标">
+    <DemoSection 
+      title="使用图标"
+      code="<m-alert title='Success alert' type='success' show-icon />
+<m-alert title='Warning alert' type='warning' show-icon />
+<m-alert title='Error alert' type='error' show-icon />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">你可以通过为 Alert 组件添加图标来提高可读性。通过设置 show-icon 属性来显示 Alert 的 icon，这能更有效地向用户展示你的显示意图。 或者你可以使用 icon slot 自定义 icon 内容。</div>
         <div class="alert-demo-container">
@@ -54,7 +85,11 @@
     </DemoSection>
 
     <!-- 自定义颜色 -->
-    <DemoSection title="自定义颜色">
+    <DemoSection 
+      title="自定义颜色"
+      code="<m-alert title='Success Alert' type='success' description='背景色: all-green-10, 文字色: all-green-4' />
+<m-alert title='Warning Alert' type='warning' description='背景色: all-orange-10, 文字色: text-warning-primary' />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">不同类型的 Alert 使用不同的背景色和文字颜色，提供更好的视觉区分。</div>
         <div class="alert-demo-container">
@@ -95,7 +130,11 @@
     </DemoSection>
 
     <!-- 自定义图标 -->
-    <DemoSection title="自定义图标">
+    <DemoSection 
+      title="自定义图标"
+      code="<m-alert title='Success alert' type='success' show-icon />
+<m-alert title='Success alert' type='success' show-icon :use-custom-icon='false' />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">默认情况下，Alert 组件使用自定义图标替代 Element Plus 默认图标。你可以通过 use-custom-icon 属性控制是否使用自定义图标。</div>
         <div class="alert-demo-container">
@@ -118,7 +157,11 @@
     </DemoSection>
 
     <!-- 文字居中 -->
-    <DemoSection title="文字居中">
+    <DemoSection 
+      title="文字居中"
+      code="<m-alert title='Success alert' type='success' center show-icon />
+<m-alert title='Warning alert' type='warning' center show-icon />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">使用 center 属性来让文字水平居中。</div>
         <div class="alert-demo-container">
@@ -130,7 +173,10 @@
     </DemoSection>
 
     <!-- 文字描述 -->
-    <DemoSection title="文字描述">
+    <DemoSection 
+      title="文字描述"
+      code="<m-alert title='With description' type='success' description='This is a description.' />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">为 Alert 组件添加一个更加详细的描述来使用户了解更多信息。除了必填的 title 属性外，你可以设置 description 属性来帮助你更好地介绍，我们称之为辅助性文字。 辅助性文字只能存放文本内容，当内容超出长度限制时会自动换行显示。</div>
         <div class="alert-demo-container">
@@ -144,7 +190,11 @@
     </DemoSection>
 
     <!-- 带图标和描述 -->
-    <DemoSection title="带图标和描述">
+    <DemoSection 
+      title="带图标和描述"
+      code="<m-alert title='Success alert' type='success' description='More text description' show-icon />
+<m-alert title='Warning alert' type='warning' description='More text description' show-icon />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">在最后, 这是一个带有图标和描述的例子。</div>
         <div class="alert-demo-container">
@@ -171,7 +221,11 @@
     </DemoSection>
 
     <!-- 延迟属性 2.10.0 -->
-    <DemoSection title="延迟属性 2.10.0">
+    <DemoSection 
+      title="延迟属性 2.10.0"
+      code="<m-alert title='Success alert that appearance after 5000 milliseconds' type='success' :show-after='5000' />
+<m-alert title='Warning alert that disappear after 5000 milliseconds' type='warning' :hide-after='5000' />"
+    >
       <div class="example-alert-block">
         <div class="example-demonstration">在最后, 这是一个延迟属性的例子。</div>
         <div class="alert-demo-container">

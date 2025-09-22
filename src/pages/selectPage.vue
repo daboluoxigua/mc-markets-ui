@@ -1,7 +1,22 @@
 <template>
   <div class="select-page">
     <!-- 基础选择器 -->
-    <DemoSection title="基础选择器">
+    <DemoSection 
+      title="基础选择器"
+      code="<template>
+  <m-select v-model='value' placeholder='请选择'>
+    <m-option label='选项一' value='option1'></m-option>
+    <m-option label='选项二' value='option2'></m-option>
+    <m-option label='选项三' value='option3'></m-option>
+  </m-select>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
+</script>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-select v-model="value" placeholder="请选择">
@@ -48,7 +63,10 @@
       </div>
     </DemoSection>
     <!-- 实心选择器 -->
-    <DemoSection title="实心选择器 styleType='solid' size='small'">
+    <DemoSection 
+      title="实心选择器 styleType='solid' size='small'"
+      code="<m-select v-model='value' styleType='solid' size='small' placeholder='请选择'><m-option label='选项一' value='option1' /></m-select>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-select v-model="value" styleType="solid" size="small" placeholder="请选择">
@@ -95,7 +113,11 @@
       </div>
     </DemoSection>
     <!-- 多选和分组 -->
-    <DemoSection title="多选和分组" :columns="2">
+    <DemoSection 
+      title="多选和分组" 
+      :columns="2"
+      code="<m-select v-model='multipleValue' multiple><m-option label='选项一' value='option1' /></m-select>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-select v-model="multipleValue" placeholder="请选择多个选项" multiple>

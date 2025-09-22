@@ -1,7 +1,18 @@
 <template>
   <div class="checkbox-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<template>
+  <m-checkbox v-model='checked2' label='Option 2' />
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const checked2 = ref(false);
+</script>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox v-model="checked2" label="Option 2" />
@@ -11,7 +22,11 @@
     </DemoSection>
 
     <!-- 禁用状态 -->
-    <DemoSection title="禁用状态">
+    <DemoSection 
+      title="禁用状态"
+      code="<m-checkbox v-model='disabledChecked1' disabled>Disabled</m-checkbox>
+<m-checkbox v-model='disabledChecked2' disabled>Disabled</m-checkbox>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox v-model="disabledChecked1" disabled>Disabled</m-checkbox>
@@ -29,7 +44,11 @@
     </DemoSection>
 
     <!-- 多选框组 -->
-    <DemoSection title="多选框组" :columns="1">
+    <DemoSection 
+      title="多选框组" 
+      :columns="1"
+      code="<m-checkbox-group v-model='checkList'><m-checkbox label='Option A' value='Value A' /><m-checkbox label='Option B' value='Value B' /></m-checkbox-group>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="checkList">
@@ -46,7 +65,11 @@
     </DemoSection>
 
     <!-- Options 属性 -->
-    <DemoSection title="Options 属性" :columns="1">
+    <DemoSection 
+      title="Options 属性" 
+      :columns="1"
+      code="<m-checkbox-group v-model='checkListOptions' :options='options' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="checkListOptions" :options="options" />
@@ -56,7 +79,11 @@
     </DemoSection>
 
     <!-- 中间状态 -->
-    <DemoSection title="中间状态" :columns="1">
+    <DemoSection 
+      title="中间状态" 
+      :columns="1"
+      code="<m-checkbox v-model='checkAll' :indeterminate='isIndeterminate' @change='handleCheckAllChange'>Check all</m-checkbox>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox
@@ -80,7 +107,11 @@
     </DemoSection>
 
     <!-- 可选项目数量的限制 -->
-    <DemoSection title="可选项目数量的限制" :columns="1">
+    <DemoSection 
+      title="可选项目数量的限制" 
+      :columns="1"
+      code="<m-checkbox-group v-model='checkedCitiesLimit' :min='1' :max='2'><m-checkbox label='选项' value='选项' /></m-checkbox-group>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="checkedCitiesLimit" :min="1" :max="2">
@@ -94,7 +125,11 @@
     </DemoSection>
 
     <!-- 按钮样式 -->
-    <DemoSection title="按钮样式" :columns="1">
+    <DemoSection 
+      title="按钮样式" 
+      :columns="1"
+      code="<m-checkbox-group v-model='buttonCheckList'><m-checkbox-button label='Option A' value='Value A' /><m-checkbox-button label='Option B' value='Value B' /></m-checkbox-group>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="buttonCheckList">
@@ -110,7 +145,11 @@
     </DemoSection>
 
     <!-- 带有边框 -->
-    <DemoSection title="带有边框" :columns="1">
+    <DemoSection 
+      title="带有边框" 
+      :columns="1"
+      code="<m-checkbox-group v-model='borderCheckList'><m-checkbox label='Option A' value='Value A' border /><m-checkbox label='Option B' value='Value B' border /></m-checkbox-group>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-checkbox-group v-model="borderCheckList">

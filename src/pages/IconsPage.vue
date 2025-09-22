@@ -1,7 +1,13 @@
 <template>
   <div class="icons-page">
     <!-- 基础使用 -->
-    <DemoSection title="基础使用">
+    <DemoSection 
+      title="基础使用"
+      code="<m-icon name='home-filled' />
+<m-icon name='user-round' />
+<m-icon name='search' />
+<m-icon name='star-filled' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-icon name="home-filled" />
@@ -23,7 +29,13 @@
     </DemoSection>
 
     <!-- 不同大小 -->
-    <DemoSection title="不同大小">
+    <DemoSection 
+      title="不同大小"
+      code="<m-icon name='home-filled' :size='16' />
+<m-icon name='home-filled' :size='24' />
+<m-icon name='home-filled' :size='32' />
+<m-icon name='home-filled' size='2rem' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-icon name="home-filled" :size="16" />
@@ -45,7 +57,12 @@
     </DemoSection>
 
     <!-- 不同颜色 -->
-    <DemoSection title="不同颜色">
+    <DemoSection 
+      title="不同颜色"
+      code="<m-icon name='star-filled' color='#ff6b6b' />
+<m-icon name='star-filled' color='#45b7d1' />
+<m-icon name='star-filled' color='#96ceb4' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-icon name="star-filled" color="#ff6b6b" />
@@ -67,7 +84,12 @@
     </DemoSection>
 
     <!-- 动画效果 -->
-    <DemoSection title="动画效果">
+    <DemoSection 
+      title="动画效果"
+      code="<m-icon name='refresh-cw' :spin='true' />
+<m-icon name='heart-handshake' :pulse='true' />
+<m-icon name='arrow-right-left' :rotate='45' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-icon name="refresh-cw" :spin="true" />
@@ -89,7 +111,12 @@
     </DemoSection>
 
     <!-- 翻转效果 -->
-    <DemoSection title="翻转效果">
+    <DemoSection 
+      title="翻转效果"
+      code="<m-icon name='arrow-right-left' />
+<m-icon name='arrow-right-left' flip='horizontal' />
+<m-icon name='arrow-right-left' flip='vertical' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-icon name="arrow-right-left" />
@@ -111,7 +138,11 @@
     </DemoSection>
 
     <!-- 组合效果 -->
-    <DemoSection title="组合效果">
+    <DemoSection 
+      title="组合效果"
+      code="<m-icon name='refresh-cw' :spin='true' color='#ff6b6b' :size='24' />
+<m-icon name='heart-handshake' :pulse='true' color='#4ecdc4' :size='24' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-icon name="refresh-cw" :spin="true" color="#ff6b6b" :size="24" />
@@ -140,7 +171,10 @@
     </DemoSection>
 
     <!-- 点击事件 -->
-    <DemoSection title="点击事件">
+    <DemoSection 
+      title="点击事件"
+      code="<m-icon name='home-filled' :size='24' @click='handleIconClick' />"
+    >
       <div class="doc-grid">
         <div class="doc-item clickable" @click="handleIconClick('home-filled')">
           <m-icon name="home-filled" :size="24" />
@@ -153,7 +187,11 @@
     </DemoSection>
 
     <!-- 图标搜索和展示 -->
-    <DemoSection title="图标库展示">
+    <DemoSection 
+      title="图标库展示"
+      code="<input v-model='searchKeyword' placeholder='搜索图标名称...' />
+<div v-for='icon in filteredIcons' :key='icon.name'><m-icon :name='icon.name' /></div>"
+    >
       <div class="search-container">
         <input
           v-model="searchKeyword"

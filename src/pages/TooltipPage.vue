@@ -1,7 +1,18 @@
 <template>
   <div class="tooltip-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<m-tooltip content='Top Left prompts info' placement='top-start'>
+  <m-button>top-start</m-button>
+</m-tooltip>
+<m-tooltip content='Top Center prompts info' placement='top'>
+  <m-button>top</m-button>
+</m-tooltip>
+<m-tooltip content='Top Right prompts info' placement='top-end'>
+  <m-button>top-end</m-button>
+</m-tooltip>"
+    >
       <div class="tooltip-base-box">
         <div class="row center">
           <m-tooltip
@@ -113,7 +124,10 @@
     </DemoSection>
 
     <!-- 主题 -->
-    <DemoSection title="主题">
+    <DemoSection 
+      title="主题"
+      code="<m-tooltip content='Top center' placement='top'><m-button>Dark</m-button></m-tooltip><m-tooltip content='Bottom center' placement='bottom' effect='light'><m-button>Light</m-button></m-tooltip>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tooltip content="Top center" placement="top">
@@ -132,7 +146,10 @@
 
 
     <!-- 更多内容的文字提示 -->
-    <DemoSection title="多内容的文字提示">
+    <DemoSection 
+      title="多内容的文字提示"
+      code="<m-tooltip placement='top'><template #content><span>Title</span><br />Description</template><m-button>Top center</m-button></m-tooltip>"
+    >
       <div class="doc-item">
         <m-tooltip placement="top">
           <template #content> <span style="color: #fff; font-size: 14px;">Title</span><br />Description. Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do </template>
@@ -143,7 +160,10 @@
     </DemoSection>
 
     <!-- 高级扩展 -->
-    <DemoSection title="高级扩展">
+    <DemoSection 
+      title="高级扩展"
+      code="<m-tooltip :disabled='disabled' content='click to close tooltip function' placement='bottom'><m-button @click='disabled = !disabled'>Toggle</m-button></m-tooltip>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tooltip
@@ -192,7 +212,10 @@
     </DemoSection>
 
     <!-- 显示 HTML 内容 -->
-    <DemoSection title="显示 HTML 内容">
+    <DemoSection 
+      title="显示 HTML 内容"
+      code="<m-tooltip content='<strong>This is <em>HTML</em> content</strong>' raw-content placement='top'><m-button>HTML Content</m-button></m-tooltip>"
+    >
       <div class="doc-item">
         <m-tooltip
           content="<strong>This is <em>HTML</em> content</strong>"
@@ -206,7 +229,10 @@
     </DemoSection>
 
     <!-- 单例模式 -->
-    <DemoSection title="单例模式">
+    <DemoSection 
+      title="单例模式"
+      code="<m-tooltip content='First tooltip' placement='top'><m-button>First</m-button></m-tooltip><m-tooltip content='Second tooltip' placement='top'><m-button>Second</m-button></m-tooltip>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tooltip content="First tooltip" placement="top">
@@ -230,7 +256,10 @@
     </DemoSection>
 
     <!-- 受控模式 -->
-    <DemoSection title="受控模式">
+    <DemoSection 
+      title="受控模式"
+      code="<m-tooltip v-model:visible='controlledVisible' content='This is a controlled tooltip' placement='top'><m-button>Controlled Tooltip</m-button></m-tooltip>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tooltip
@@ -252,7 +281,10 @@
     </DemoSection>
 
     <!-- 自定义动画 -->
-    <DemoSection title="自定义动画">
+    <DemoSection 
+      title="自定义动画"
+      code="<m-tooltip content='Fade animation' placement='top' transition='el-fade-in'><m-button>Fade</m-button></m-tooltip>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-tooltip
@@ -288,7 +320,10 @@
     </DemoSection>
 
     <!-- 使用 append-to -->
-    <DemoSection title="使用 append-to">
+    <DemoSection 
+      title="使用 append-to"
+      code="<m-tooltip content='This tooltip is appended to body' placement='top' :teleported='true'><m-button>Append to Body</m-button></m-tooltip>"
+    >
       <div class="doc-item">
         <m-tooltip
           content="This tooltip is appended to body"

@@ -1,7 +1,10 @@
 <template>
   <div class="table-page">
     <!-- 基础表格 -->
-    <DemoSection title="Tag和Button组合表格">
+    <DemoSection 
+      title="Tag和Button组合表格"
+      code="<m-table :data='tagButtonTableData'><m-table-column prop='name' label='姓名'/><m-table-column prop='status' label='状态'><template #default='scope'><m-tag :type='getStatusType(scope.row.status)'>{{ scope.row.status }}</m-tag></template></m-table-column></m-table>"
+    >
       <m-table :data="tagButtonTableData" style="width: 100%">
         <m-table-column prop="id" label="ID" width="80" />
         <m-table-column prop="name" label="姓名"/>
@@ -50,7 +53,19 @@
     </DemoSection>
 
     <!-- 带状态表格 -->
-    <DemoSection title="带状态表格">
+    <DemoSection 
+      title="带状态表格"
+      code="<m-table :data='tableData'>
+  <m-table-column prop='name' label='姓名' />
+  <m-table-column prop='status' label='状态'>
+    <template #default='scope'>
+      <m-tag :type='getStatusType(scope.row.status)'>
+        {{ scope.row.status }}
+      </m-tag>
+    </template>
+  </m-table-column>
+</m-table>"
+    >
       <m-table
         :data="tableData"
         style="width: 100%"
@@ -63,7 +78,10 @@
     </DemoSection>
 
     <!-- 固定表头 -->
-    <DemoSection title="固定表头">
+    <DemoSection 
+      title="固定表头"
+      code="<m-table :data='tableData' height='250' style='width: 100%'><m-table-column prop='date' label='日期' width='180' /><m-table-column prop='name' label='姓名' width='180' /><m-table-column prop='address' label='地址' /></m-table>"
+    >
       <m-table :data="tableData" height="250" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
@@ -72,7 +90,10 @@
     </DemoSection>
 
     <!-- 多选 -->
-    <DemoSection title="多选">
+    <DemoSection 
+      title="多选"
+      code="<m-table :data='tableData' @selection-change='handleSelectionChange'><m-table-column type='selection' width='55' /><m-table-column prop='date' label='日期' width='120' /><m-table-column prop='name' label='姓名' width='120' /></m-table>"
+    >
       <m-table
         ref="multipleTableRef"
         :data="tableData"
@@ -93,7 +114,10 @@
     </DemoSection>
 
     <!-- 排序 -->
-    <DemoSection title="排序">
+    <DemoSection 
+      title="排序"
+      code="<m-table :data='tableData'><m-table-column prop='date' label='日期' sortable /><m-table-column prop='name' label='姓名' sortable /></m-table>"
+    >
       <m-table :data="tableData" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" sortable />
         <m-table-column prop="name" label="姓名" width="180" sortable />
@@ -102,7 +126,10 @@
     </DemoSection>
 
     <!-- 筛选 -->
-    <DemoSection title="筛选">
+    <DemoSection 
+      title="筛选"
+      code="<m-table :data='tableData'><m-table-column prop='address' label='地址' :filters='[{ text: 上海, value: 上海 }]' :filter-method='filterHandler' /></m-table>"
+    >
       <m-table :data="tableData" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
@@ -120,7 +147,10 @@
     </DemoSection>
 
     <!-- 自定义列模板 -->
-    <DemoSection title="自定义列模板">
+    <DemoSection 
+      title="自定义列模板"
+      code="<m-table :data='tableData'><m-table-column label='操作'><template #default='scope'><m-button size='small' @click='handleEdit'>编辑</m-button></template></m-table-column></m-table>"
+    >
       <m-table :data="tableData" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
@@ -146,7 +176,10 @@
     </DemoSection>
 
     <!-- 展开行 -->
-    <DemoSection title="展开行">
+    <DemoSection 
+      title="展开行"
+      code="<m-table :data='tableData'><m-table-column type='expand'><template #default='props'><p>状态: {{ props.row.status }}</p></template></m-table-column></m-table>"
+    >
       <m-table :data="tableData" style="width: 100%">
         <m-table-column type="expand">
           <template #default="props">

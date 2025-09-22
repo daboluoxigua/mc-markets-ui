@@ -1,7 +1,20 @@
 <template>
   <div class="input-page">
     <!-- 基础输入框 -->
-    <DemoSection title="基础输入框">
+    <DemoSection 
+      title="基础输入框"
+      code="<template>
+  <m-input v-model='value' placeholder='请输入内容'></m-input>
+  <m-input v-model='value' placeholder='禁用状态' disabled></m-input>
+  <m-input v-model='value' placeholder='只读状态' readonly></m-input>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const value = ref('');
+</script>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-input v-model="value" placeholder="请输入内容"></m-input>
@@ -46,7 +59,10 @@
     </DemoSection>
 
     <!-- 带字数限制 -->
-    <DemoSection title="字数限制">
+    <DemoSection 
+      title="字数限制"
+      code="<m-input v-model='value' placeholder='最多输入10个字符' :maxlength='10' :show-word-limit='true' />"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-input 

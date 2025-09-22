@@ -1,7 +1,44 @@
 <template>
   <div class="form-page">
     <!-- 典型表单 -->
-    <DemoSection title="典型表单">
+    <DemoSection 
+      title="典型表单"
+      code="<template>
+  <m-form :model='form' label-width='auto' style='max-width: 600px'>
+    <m-form-item label='活动名称'>
+      <m-input v-model='form.name' />
+    </m-form-item>
+    <m-form-item label='活动区域'>
+      <m-select v-model='form.region' placeholder='请选择活动区域'>
+        <m-option label='区域一' value='shanghai' />
+        <m-option label='区域二' value='beijing' />
+      </m-select>
+    </m-form-item>
+    <m-form-item>
+      <m-button type='primary' @click='onSubmit'>提交</m-button>
+      <m-button @click='onReset'>重置</m-button>
+    </m-form-item>
+  </m-form>
+</template>
+
+<script setup>
+import { reactive } from 'vue';
+
+const form = reactive({
+  name: '',
+  region: '',
+});
+
+const onSubmit = () => {
+  console.log('提交表单:', form);
+};
+
+const onReset = () => {
+  form.name = '';
+  form.region = '';
+};
+</script>"
+    >
       <m-form :model="form" label-width="auto" style="max-width: 600px">
         <m-form-item label="活动名称">
           <m-input v-model="form.name" />
@@ -68,7 +105,23 @@
     </DemoSection>
 
     <!-- 行内表单 -->
-    <DemoSection title="行内表单">
+    <DemoSection 
+      title="行内表单"
+      code="<m-form :model='formInline' class='demo-form-inline'>
+  <m-form-item label='姓名'>
+    <m-input v-model='formInline.user' placeholder='姓名' />
+  </m-form-item>
+  <m-form-item label='活动区域'>
+    <m-select v-model='formInline.region' placeholder='活动区域'>
+      <m-option label='区域一' value='shanghai' />
+      <m-option label='区域二' value='beijing' />
+    </m-select>
+  </m-form-item>
+  <m-form-item>
+    <m-button type='primary' @click='onSubmit'>查询</m-button>
+  </m-form-item>
+</m-form>"
+    >
       <m-form :inline="true" :model="inlineForm" class="demo-form-inline">
         <m-form-item label="审批人">
           <m-input v-model="inlineForm.user" placeholder="审批人" />
@@ -86,7 +139,10 @@
     </DemoSection>
 
     <!-- 对齐方式 -->
-    <DemoSection title="对齐方式">
+    <DemoSection 
+      title="对齐方式"
+      code="<m-form :model='form' label-width='80px' label-position='right'><m-form-item label='姓名'><m-input v-model='form.name' /></m-form-item><m-form-item label='活动区域'><m-input v-model='form.region' /></m-form-item></m-form>"
+    >
       <div class="demo-form-alignment">
         <div class="alignment-demo">
           <h4>左对齐</h4>
@@ -136,7 +192,10 @@
     </DemoSection>
 
     <!-- 表单校验 -->
-    <DemoSection title="表单校验">
+    <DemoSection 
+      title="表单校验"
+      code="<m-form :model='ruleForm' :rules='rules' label-width='120px'><m-form-item label='活动名称' prop='name'><m-input v-model='ruleForm.name' /></m-form-item></m-form>"
+    >
       <m-form
         ref="ruleFormRef"
         :model="ruleForm"
@@ -216,7 +275,10 @@
     </DemoSection>
 
     <!-- 自定义校验规则 -->
-    <DemoSection title="自定义校验规则">
+    <DemoSection 
+      title="自定义校验规则"
+      code="<m-form :model='ruleForm2' :rules='rules2'><m-form-item label='密码' prop='pass'><m-input v-model='ruleForm2.pass' type='password' /></m-form-item></m-form>"
+    >
       <m-form
         ref="ruleFormRef2"
         :model="ruleForm2"
@@ -242,7 +304,10 @@
     </DemoSection>
 
     <!-- 尺寸控制 -->
-    <DemoSection title="尺寸控制">
+    <DemoSection 
+      title="尺寸控制"
+      code="<m-form :model='sizeForm' size='large'><m-form-item label='活动名称'><m-input v-model='sizeForm.name' /></m-form-item></m-form>"
+    >
       <div class="demo-form-size">
         <div class="size-demo">
           <h4>Large</h4>

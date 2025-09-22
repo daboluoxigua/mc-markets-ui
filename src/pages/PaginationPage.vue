@@ -1,7 +1,19 @@
 <template>
   <div class="pagination-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<template>
+  <m-pagination layout='prev, pager, next' :total='50' />
+  <m-pagination layout='prev, pager, next' :total='1000' />
+</template>
+
+<script setup>
+// 分页组件基础用法
+// total: 总条目数
+// layout: 组件布局，子组件名用逗号分隔
+</script>"
+    >
       <div class="example-pagination-block">
         <div class="example-demonstration">When you have few pages</div>
         <m-pagination layout="prev, pager, next" :total="50" />
@@ -13,7 +25,10 @@
     </DemoSection>
 
     <!-- 设置最大页码按钮数 -->
-    <DemoSection title="设置最大页码按钮数">
+    <DemoSection 
+      title="设置最大页码按钮数"
+      code="<m-pagination :page-size='20' :pager-count='11' layout='prev, pager, next' :total='1000' />"
+    >
       <div class="example-pagination-block">
         <m-pagination
           :page-size="20"
@@ -25,14 +40,20 @@
     </DemoSection>
 
     <!-- 带有背景色的分页 -->
-    <DemoSection title="带有背景色的分页">
+    <DemoSection 
+      title="带有背景色的分页"
+      code="<m-pagination background layout='prev, pager, next' :total='1000' />"
+    >
       <div class="example-pagination-block">
         <m-pagination background layout="prev, pager, next" :total="1000" />
       </div>
     </DemoSection>
 
     <!-- 当只有一页时隐藏分页 -->
-    <DemoSection title="当只有一页时隐藏分页">
+    <DemoSection 
+      title="当只有一页时隐藏分页"
+      code="<m-pagination :hide-on-single-page='true' :total='5' />"
+    >
       <div class="example-pagination-block">
         <div class="example-demonstration">
           <m-switch v-model="hideSinglePage" />
@@ -47,7 +68,10 @@
     </DemoSection>
 
     <!-- 附加功能 -->
-    <DemoSection title="附加功能">
+    <DemoSection 
+      title="附加功能"
+      code="<m-pagination layout='total, sizes, prev, pager, next, jumper' :total='400' :page-sizes='[100, 200, 300, 400]' />"
+    >
       <div class="flex items-center mb-4">
         <m-radio-group v-model="size" class="mr-4">
           <m-radio-button value="default">default</m-radio-button>

@@ -2,7 +2,30 @@
   <div class="message-page">
 
     <!-- 不同状态 -->
-    <DemoSection title="不同状态">
+    <DemoSection 
+      title="不同状态"
+      code="<template>
+  <m-button @click='openSuccess'>Success</m-button>
+  <m-button @click='openWarning'>Warning</m-button>
+  <m-button @click='openError'>Error</m-button>
+</template>
+
+<script setup>
+import { ElMessage } from 'element-plus';
+
+const openSuccess = () => {
+  ElMessage.success('这是一条成功的消息提示');
+};
+
+const openWarning = () => {
+  ElMessage.warning('这是一条警告的消息提示');
+};
+
+const openError = () => {
+  ElMessage.error('这是一条错误的消息提示');
+};
+</script>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openSuccess">Success</m-button>
@@ -21,7 +44,10 @@
 
 
     <!-- 可关闭的消息提示 -->
-    <DemoSection title="可关闭的消息提示">
+    <DemoSection 
+      title="可关闭的消息提示"
+      code="<m-button @click='openCloseable'>可关闭消息</m-button><m-button @click='openPersistent'>不自动关闭</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openCloseable">可关闭消息</m-button>
@@ -39,7 +65,10 @@
     </DemoSection>
 
     <!-- 使用 HTML 片段作为正文内容 -->
-    <DemoSection title="HTML 片段消息">
+    <DemoSection 
+      title="HTML 片段消息"
+      code="<m-button @click='openHtmlMessage'>HTML 消息</m-button><m-button @click='openRichMessage'>富文本消息</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openHtmlMessage">HTML 消息</m-button>
@@ -53,7 +82,10 @@
     </DemoSection>
 
     <!-- 分组消息合并 -->
-    <DemoSection title="分组消息合并">
+    <DemoSection 
+      title="分组消息合并"
+      code="<m-button @click='openGroupingMessage'>分组消息</m-button><m-button @click='openMultipleMessages'>多条消息</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openGroupingMessage">分组消息</m-button>
@@ -67,7 +99,10 @@
     </DemoSection>
 
     <!-- 位置控制 -->
-    <DemoSection title="位置控制">
+    <DemoSection 
+      title="位置控制"
+      code="<m-button @click='openPositionMessage'>顶部</m-button><m-button @click='openPositionMessage'>底部</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="() => openPositionMessage('top')">顶部</m-button>
@@ -97,7 +132,10 @@
     </DemoSection>
 
     <!-- 自定义图标 -->
-    <DemoSection title="自定义图标">
+    <DemoSection 
+      title="自定义图标"
+      code="<m-button @click='openCustomIcon'>自定义图标</m-button><m-button @click='openNoIcon'>无图标</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openCustomIcon">自定义图标</m-button>
@@ -111,7 +149,10 @@
     </DemoSection>
 
     <!-- 自定义样式 -->
-    <DemoSection title="自定义样式">
+    <DemoSection 
+      title="自定义样式"
+      code="<m-button @click='openCustomClass'>自定义类名</m-button><m-button @click='openCustomDuration'>自定义时长</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openCustomClass">自定义类名</m-button>
@@ -125,7 +166,10 @@
     </DemoSection>
 
     <!-- 全局方法演示 -->
-    <DemoSection title="全局方法演示">
+    <DemoSection 
+      title="全局方法演示"
+      code="<m-button @click='openGlobalMessage'>全局消息</m-button><m-button @click='closeAllMessages'>关闭所有消息</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openGlobalMessage">全局消息</m-button>
@@ -139,7 +183,10 @@
     </DemoSection>
 
     <!-- 交互演示 -->
-    <DemoSection title="交互演示">
+    <DemoSection 
+      title="交互演示"
+      code="<m-button @click='openLoadingMessage'>加载消息</m-button><m-button @click='openAsyncMessage'>异步消息</m-button>"
+    >
       <div class="doc-grid">
         <div class="doc-item">
           <m-button @click="openLoadingMessage">加载消息</m-button>

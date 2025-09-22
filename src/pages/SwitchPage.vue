@@ -1,7 +1,18 @@
 <template>
   <div class="switch-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<template>
+  <m-switch v-model='switch1' />
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const switch1 = ref(true);
+</script>"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">绑定 v-model 到一个 Boolean 类型的变量。 可以使用 --el-switch-on-color 属性与 --el-switch-off-color 属性来设置开关的背景色。</div>
         <m-switch v-model="switch1" />
@@ -9,7 +20,10 @@
     </DemoSection>
 
     <!-- 尺寸 -->
-    <DemoSection title="尺寸">
+    <DemoSection 
+      title="尺寸"
+      code="<m-switch v-model='switch3' size='large' active-text='Open' inactive-text='Close' /><m-switch v-model='switch4' active-text='Open' inactive-text='Close' />"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">设置 size 属性，接受 large 或 small</div>
         <m-switch v-model="switch3" size="large" active-text="Open" inactive-text="Close" />
@@ -21,7 +35,10 @@
     </DemoSection>
 
     <!-- 文字描述 -->
-    <DemoSection title="文字描述">
+    <DemoSection 
+      title="文字描述"
+      code="<m-switch v-model='switch6' active-text='Pay by month' inactive-text='Pay by year' /><m-switch v-model='switch8' inline-prompt active-text='是' inactive-text='否' />"
+    >
       <div class="example-switch-block">
         <m-switch v-model="switch6" class="mb-2" active-text="Pay by month" inactive-text="Pay by year" />
         <br />
@@ -31,7 +48,10 @@
     </DemoSection>
 
     <!-- 显示自定义图标 -->
-    <DemoSection title="显示自定义图标">
+    <DemoSection 
+      title="显示自定义图标"
+      code="<m-switch v-model='switch12' :active-icon='Check' :inactive-icon='Close' /><m-switch v-model='switch13' inline-prompt :active-icon='Check' :inactive-icon='Close' />"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">使用 inactive-icon 和 active-icon 属性来添加图标。 使用 inline-prompt 属性来控制图标显示在点内。</div>
         <m-switch v-model="switch12" :active-icon="Check" :inactive-icon="Close" />
@@ -41,7 +61,10 @@
     </DemoSection>
 
     <!-- 扩展的 value 类型 -->
-    <DemoSection title="扩展的 value 类型">
+    <DemoSection 
+      title="扩展的 value 类型"
+      code="<m-switch v-model='switch14' active-value='100' inactive-value='0' />"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">你可以设置 active-value 和 inactive-value 属性， 它们接受 Boolean、String 或 Number 类型的值。</div>
         <m-tooltip :content="'Switch value: ' + switch14" placement="top">
@@ -51,7 +74,10 @@
     </DemoSection>
 
     <!-- 禁用状态 -->
-    <DemoSection title="禁用状态">
+    <DemoSection 
+      title="禁用状态"
+      code="<m-switch v-model='switch15' disabled /><m-switch v-model='switch16' />"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">设置 disabled 属性，接受一个 Boolean，设置 true 即可禁用。</div>
         <m-switch v-model="switch15" disabled />
@@ -60,7 +86,10 @@
     </DemoSection>
 
     <!-- 加载状态 -->
-    <DemoSection title="加载状态">
+    <DemoSection 
+      title="加载状态"
+      code="<m-switch v-model='switch17' loading /><m-switch v-model='switch18' loading />"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">设置 loading 属性，接受一个 Boolean，设置 true 即加载中状态。</div>
         <m-switch v-model="switch17" loading />
@@ -69,7 +98,10 @@
     </DemoSection>
 
     <!-- 阻止切换 -->
-    <DemoSection title="阻止切换">
+    <DemoSection 
+      title="阻止切换"
+      code="<m-switch v-model='switch19' :loading='loading1' :before-change='beforeChange1' />"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">设置 before-change 属性，若返回 false 或者返回 Promise 且被 reject，则停止切换。</div>
         <m-switch v-model="switch19" :loading="loading1" :before-change="beforeChange1" />
@@ -78,7 +110,10 @@
     </DemoSection>
 
     <!-- 自定义动作图标 2.3.9 -->
-    <DemoSection title="自定义动作图标 2.3.9">
+    <DemoSection 
+      title="自定义动作图标 2.3.9"
+      code="<m-switch v-model='switch21' :active-action-icon='View' :inactive-action-icon='Hide' />"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">使用 inactive-action-icon 和 active-action-icon 属性来添加图标。</div>
         <m-switch v-model="switch21" :active-action-icon="View" :inactive-action-icon="Hide" />
@@ -86,7 +121,10 @@
     </DemoSection>
 
     <!-- 自定义操作图标 2.4.4 -->
-    <DemoSection title="自定义操作图标 2.4.4">
+    <DemoSection 
+      title="自定义操作图标 2.4.4"
+      code="<m-switch v-model='switch22'><template #active-action><span>T</span></template><template #inactive-action><span>F</span></template></m-switch>"
+    >
       <div class="example-switch-block">
         <div class="example-demonstration">使用 active-action 和 inactive-action 属性来添加图标。</div>
         <m-switch v-model="switch22">

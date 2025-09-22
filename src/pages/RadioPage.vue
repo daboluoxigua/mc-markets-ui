@@ -1,7 +1,33 @@
 <template>
   <div class="radio-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<template>
+  <m-radio-group v-model='radio1'>
+    <m-radio value='1' size='large'>Option 1</m-radio>
+    <m-radio value='2' size='large'>Option 2</m-radio>
+  </m-radio-group>
+  
+  <m-radio-group v-model='radio2'>
+    <m-radio value='1'>Option 1</m-radio>
+    <m-radio value='2'>Option 2</m-radio>
+  </m-radio-group>
+  
+  <m-radio-group v-model='radio3'>
+    <m-radio value='1' size='small'>Option 1</m-radio>
+    <m-radio value='2' size='small'>Option 2</m-radio>
+  </m-radio-group>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const radio1 = ref('1');
+const radio2 = ref('1');
+const radio3 = ref('1');
+</script>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">单选框不应该有太多的可选项， 如果你有很多的可选项你应该使用选择框而不是单选框。</div>
         <div class="mb-2 ml-4">
@@ -26,7 +52,10 @@
     </DemoSection>
 
     <!-- 禁用状态 -->
-    <DemoSection title="禁用状态">
+    <DemoSection 
+      title="禁用状态"
+      code="<m-radio v-model='radio4' disabled value='disabled'>Option A</m-radio><m-radio v-model='radio4' disabled value='selected and disabled'>Option B</m-radio>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">disabled 属性可以用来控制单选框的禁用状态。</div>
         <m-radio v-model="radio4" disabled value="disabled">Option A</m-radio>
@@ -35,7 +64,10 @@
     </DemoSection>
 
     <!-- 单选框组 -->
-    <DemoSection title="单选框组">
+    <DemoSection 
+      title="单选框组"
+      code="<m-radio-group v-model='radio5'><m-radio :value='3'>Option A</m-radio><m-radio :value='6'>Option B</m-radio></m-radio-group>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">适用于在多个互斥的选项中选择的场景</div>
         <m-radio-group v-model="radio5">
@@ -47,7 +79,10 @@
     </DemoSection>
 
     <!-- Options attribute 2.11.2 -->
-    <DemoSection title="Options attribute 2.11.2">
+    <DemoSection 
+      title="Options attribute 2.11.2"
+      code="<m-radio-group v-model='radio6' :options='options' />"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">Shortcut from basic el-radio-group usage. 您可以通过 props 属性自定义 options 的别名。</div>
         <m-radio-group v-model="radio6" :options="options" />
@@ -55,7 +90,10 @@
     </DemoSection>
 
     <!-- 按钮样式 -->
-    <DemoSection title="按钮样式">
+    <DemoSection 
+      title="按钮样式"
+      code="<m-radio-group v-model='radio7' size='large'><m-radio-button label='New York' value='New York' /><m-radio-button label='Washington' value='Washington' /></m-radio-group>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">你可以让单选框看起来像一个按钮一样。</div>
         <m-radio-group v-model="radio7" size="large">
@@ -86,7 +124,10 @@
     </DemoSection>
 
     <!-- 不同尺寸 -->
-    <DemoSection title="不同尺寸">
+    <DemoSection 
+      title="不同尺寸"
+      code="<m-radio-group v-model='radio7' size='large'><m-radio value='1'>Option 1</m-radio></m-radio-group><m-radio-group v-model='radio8'><m-radio value='1'>Option 1</m-radio></m-radio-group>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">单选框尺寸</div>
         <m-radio-group v-model="radio7" size="large">
@@ -124,7 +165,10 @@
     </DemoSection>
 
     <!-- 边框 -->
-    <DemoSection title="边框">
+    <DemoSection 
+      title="边框"
+      code="<m-radio-group v-model='radio13' size='large'><m-radio value='1' border>Option 1</m-radio><m-radio value='2' border>Option 2</m-radio></m-radio-group>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">单选框边框</div>
         <m-radio-group v-model="radio13" size="large">
@@ -145,7 +189,10 @@
     </DemoSection>
 
     <!-- 单选框组尺寸 -->
-    <DemoSection title="单选框组尺寸">
+    <DemoSection 
+      title="单选框组尺寸"
+      code="<m-radio-group v-model='radio16' size='large'><m-radio value='1'>Option 1</m-radio></m-radio-group>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">单选框组尺寸</div>
         <m-radio-group v-model="radio16" size="large">
@@ -166,7 +213,10 @@
     </DemoSection>
 
     <!-- 单选框组禁用 -->
-    <DemoSection title="单选框组禁用">
+    <DemoSection 
+      title="单选框组禁用"
+      code="<m-radio-group v-model='radio19' disabled><m-radio value='1'>Option 1</m-radio><m-radio value='2'>Option 2</m-radio></m-radio-group>"
+    >
       <div class="example-radio-block">
         <div class="example-demonstration">单选框组禁用</div>
         <m-radio-group v-model="radio19" disabled>

@@ -1,10 +1,18 @@
 <template>
   <div class="code-toggle">
+    <!-- 组件预览区域 -->
+    <div class="demo-preview">
+      <slot name="default"></slot>
+    </div>
+    
+    <!-- 代码展示控制区域 -->
     <div class="demo-actions">
       <m-button type="primary" class="demo-toggle-btn" @click="toggle">
         {{ isVisible ? "隐藏代码" : "显示代码" }}
       </m-button>
     </div>
+    
+    <!-- 代码展示区域 -->
     <div v-if="isVisible" class="demo-code">
       <button
         ref="copyBtnRef"
@@ -40,70 +48,61 @@ const props = defineProps({
     type: String,
     default: "html", // 默认语言为HTML
   },
+  code: {
+    type: String,
+    default: "", // 直接传入代码字符串
+  },
 });
 
-// 定义 slots
-const slots = defineSlots();
 const copyBtnRef = ref(null);
 const codeRef = ref(null);
 
 // 响应式数据
 const isVisible = ref(props.defaultVisible);
 
-// 格式化代码 - 将 VNode 转换为源代码
-const formattedCode = computed(() => {
-  const slotContent = slots.default?.();
 
-  if (!slotContent || slotContent.length === 0) {
+// 高亮代码
+const highlightedCode = computed(() => {
+  const code = props.code;
+  
+  if (!code) {
     return "";
   }
 
-  // 转换为原始代码
-  let code = "";
-  for (const vnode of slotContent) {
-    code += vnodeToSourceRaw(vnode);
-  }
-
   // 使用prettier格式化代码
+  let formattedCode = code;
   try {
     const result = prettier.format(code, {
       parser: "html",
       plugins: [parserHtml],
-      printWidth: 80,
+      printWidth: 120, // 增加行宽，减少不必要的换行
       tabWidth: 2,
       useTabs: false,
       singleQuote: true,
       trailingComma: "none",
       bracketSpacing: true,
       arrowParens: "avoid",
+      htmlWhitespaceSensitivity: "ignore", // 忽略HTML空白敏感度
+      endOfLine: "lf"
     });
     
-    // 确保返回的是字符串
-    return typeof result === 'string' ? result : code;
+    formattedCode = typeof result === 'string' ? result : code;
   } catch (error) {
     console.warn("代码格式化失败，使用原始代码:", error);
-    return code;
+    formattedCode = code;
   }
-});
 
-// 高亮代码
-const highlightedCode = computed(() => {
-  if (!formattedCode.value) return "";
-
-  // 确保 formattedCode.value 是字符串
-  const codeString = typeof formattedCode.value === 'string' ? formattedCode.value : String(formattedCode.value);
-
+  // 使用highlight.js进行代码高亮
   try {
-    // 使用highlight.js进行代码高亮和格式化
-    const result = hljs.highlight(codeString, {
+    const result = hljs.highlight(formattedCode, {
       language: props.language,
       ignoreIllegals: true,
     });
     return result.value;
   } catch (error) {
-    console.warn("代码高亮失败，使用原始代码:", error);
-    // 如果高亮失败，返回转义后的原始代码
-    return codeString
+    console.warn("代码高亮失败，使用转义后的原始代码:", error);
+    // 如果高亮失败，返回HTML转义后的原始代码
+    return formattedCode
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
@@ -112,261 +111,6 @@ const highlightedCode = computed(() => {
   }
 });
 
-// 组件名称映射表 - 将内部组件名映射回用户使用的标签名
-const componentNameMapping = {
-  'Icon': 'm-icon',
-  'Button': 'm-button',
-  'Card': 'm-card',
-  'Input': 'm-input',
-  'Form': 'm-form',
-  'FormItem': 'm-form-item',
-  'Select': 'm-select',
-  'Option': 'm-option',
-  'DatePicker': 'm-date-picker',
-  'TimePicker': 'm-time-picker',
-  'Table': 'm-table',
-  'TableColumn': 'm-table-column',
-  'Pagination': 'm-pagination',
-  'Dialog': 'm-dialog',
-  'Drawer': 'm-drawer',
-  'Popover': 'm-popover',
-  'Tooltip': 'm-tooltip',
-  'Dropdown': 'm-dropdown',
-  'DropdownMenu': 'm-dropdown-menu',
-  'DropdownItem': 'm-dropdown-item',
-  'Menu': 'm-menu',
-  'MenuItem': 'm-menu-item',
-  'SubMenu': 'm-submenu',
-  'Tabs': 'm-tabs',
-  'TabPane': 'm-tab-pane',
-  'Steps': 'm-steps',
-  'Step': 'm-step',
-  'Breadcrumb': 'm-breadcrumb',
-  'BreadcrumbItem': 'm-breadcrumb-item',
-  'Alert': 'm-alert',
-  'Notification': 'm-notification',
-  'Message': 'm-message',
-  'MessageBox': 'm-message-box',
-  'Loading': 'm-loading',
-  'InfiniteScroll': 'm-infinite-scroll',
-  'Image': 'm-image',
-  'Avatar': 'm-avatar',
-  'Badge': 'm-badge',
-  'Tag': 'm-tag',
-  'Progress': 'm-progress',
-  'Skeleton': 'm-skeleton',
-  'Empty': 'm-empty',
-  'Descriptions': 'm-descriptions',
-  'DescriptionsItem': 'm-descriptions-item',
-  'Result': 'm-result',
-  'Statistic': 'm-statistic',
-  'Timeline': 'm-timeline',
-  'TimelineItem': 'm-timeline-item',
-  'Carousel': 'm-carousel',
-  'CarouselItem': 'm-carousel-item',
-  'Collapse': 'm-collapse',
-  'CollapseItem': 'm-collapse-item',
-  'Divider': 'm-divider',
-  'Link': 'm-link',
-  'Text': 'm-text',
-  'Space': 'm-space',
-  'Affix': 'm-affix',
-  'Backtop': 'm-backtop',
-  'PageHeader': 'm-page-header',
-  'Radio': 'm-radio',
-  'RadioGroup': 'm-radio-group',
-  'RadioButton': 'm-radio-button',
-  'Checkbox': 'm-checkbox',
-  'CheckboxGroup': 'm-checkbox-group',
-  'CheckboxButton': 'm-checkbox-button',
-  'Switch': 'm-switch',
-  'Slider': 'm-slider',
-  'Rate': 'm-rate',
-  'ColorPicker': 'm-color-picker',
-  'Transfer': 'm-transfer',
-  'Tree': 'm-tree',
-  'TreeSelect': 'm-tree-select',
-  'Cascader': 'm-cascader',
-  'Upload': 'm-upload',
-  'UploadDragger': 'm-upload-dragger',
-  'UploadList': 'm-upload-list',
-  'Notification': 'm-notification',
-  'Banner': 'm-banner',
-};
-
-// 将 VNode 转换为源代码（无缩进版本）
-function vnodeToSourceRaw(vnode) {
-  if (!vnode) return "";
-
-  let result = "";
-
-  // 处理 Fragment (template 标签)
-  if (vnode.type === Symbol.for("v-fgt") || vnode.type === "template") {
-    if (vnode.children && Array.isArray(vnode.children)) {
-      for (const child of vnode.children) {
-        result += vnodeToSourceRaw(child);
-      }
-    }
-    return result;
-  }
-
-  // 处理文本节点
-  if (vnode.type === Symbol.for("v-txt") || typeof vnode.type === "symbol") {
-    const text = vnode.children || "";
-    return text;
-  }
-
-  // 处理文本内容（当children是字符串时）
-  if (typeof vnode === "string") {
-    return vnode;
-  }
-
-  // 处理Vue组件 - 显示为组件标签而不是HTML标签
-  if (typeof vnode.type === "object" && vnode.type.__name) {
-    // 这是一个Vue组件，显示为组件标签
-    // 使用映射表将内部组件名映射回用户使用的标签名
-    console.log('Component name:', vnode.type.__name);
-    const displayName = componentNameMapping[vnode.type.__name] || vnode.type.__name;
-    console.log('Mapped to:', displayName);
-    result += `<${displayName}`;
-
-    // 添加属性
-    if (vnode.props) {
-      for (const [key, value] of Object.entries(vnode.props)) {
-        if (key.startsWith("on")) continue; // 跳过事件处理器
-
-        // 处理 Vue 指令和属性
-        if (key.startsWith("v-") || key.startsWith(":")) {
-          if (typeof value === "string") {
-            result += ` ${key}="${value}"`;
-          } else if (typeof value === "function") {
-            result += ` ${key}="function"`;
-          } else {
-            result += ` ${key}="${JSON.stringify(value)}"`;
-          }
-        } else if (key === "key") {
-          result += ` :key="${value}"`;
-        } else if (key === "class" && typeof value === "object") {
-          // 处理动态 class
-          const classStr = Object.entries(value)
-            .filter(([_, condition]) => condition)
-            .map(([className, _]) => className)
-            .join(" ");
-          if (classStr) {
-            result += ` class="${classStr}"`;
-          }
-        } else if (value === true) {
-          result += ` ${key}`;
-        } else if (value !== false && value !== null && value !== undefined) {
-          result += ` ${key}="${value}"`;
-        }
-      }
-    }
-
-    // 处理子节点
-    if (vnode.children && vnode.children.length > 0) {
-      const hasTextOnly =
-        vnode.children.length === 1 &&
-        (vnode.children[0].type === Symbol.for("v-txt") ||
-          typeof vnode.children[0].type === "symbol" ||
-          typeof vnode.children[0] === "string");
-
-      if (hasTextOnly) {
-        const text =
-          typeof vnode.children[0] === "string"
-            ? vnode.children[0]
-            : vnode.children[0].children || "";
-        // 文本内容总是放在同一行
-        result += `>${text}</${displayName}>`;
-      } else {
-        result += ">\n";
-        for (const child of vnode.children) {
-          const childCode = vnodeToSourceRaw(child);
-          if (childCode.trim()) {
-            result += childCode;
-          }
-        }
-        result += `</${displayName}>`;
-      }
-    } else {
-      result += " />";
-    }
-
-    // 添加换行
-    result += "\n";
-  }
-  // 处理元素节点
-  else if (typeof vnode.type === "string") {
-    result += `<${vnode.type}`;
-
-    // 添加属性
-    if (vnode.props) {
-      for (const [key, value] of Object.entries(vnode.props)) {
-        if (key.startsWith("on")) continue; // 跳过事件处理器
-
-        // 处理 Vue 指令
-        if (key.startsWith("v-") || key.startsWith(":")) {
-          if (typeof value === "string") {
-            result += ` ${key}="${value}"`;
-          } else if (typeof value === "function") {
-            result += ` ${key}="function"`;
-          } else {
-            result += ` ${key}="${JSON.stringify(value)}"`;
-          }
-        } else if (key === "key") {
-          result += ` :key="${value}"`;
-        } else if (key === "class" && typeof value === "object") {
-          // 处理动态 class
-          const classStr = Object.entries(value)
-            .filter(([_, condition]) => condition)
-            .map(([className, _]) => className)
-            .join(" ");
-          if (classStr) {
-            result += ` class="${classStr}"`;
-          }
-        } else if (value === true) {
-          result += ` ${key}`;
-        } else if (value !== false && value !== null && value !== undefined) {
-          result += ` ${key}="${value}"`;
-        }
-      }
-    }
-
-    // 处理子节点
-    if (vnode.children && vnode.children.length > 0) {
-      const hasTextOnly =
-        vnode.children.length === 1 &&
-        (vnode.children[0].type === Symbol.for("v-txt") ||
-          typeof vnode.children[0].type === "symbol" ||
-          typeof vnode.children[0] === "string");
-
-      if (hasTextOnly) {
-        const text =
-          typeof vnode.children[0] === "string"
-            ? vnode.children[0]
-            : vnode.children[0].children || "";
-        // 文本内容总是放在同一行
-        result += `>${text}</${vnode.type}>`;
-      } else {
-        result += ">\n";
-        for (const child of vnode.children) {
-          const childCode = vnodeToSourceRaw(child);
-          if (childCode.trim()) {
-            result += childCode;
-          }
-        }
-        result += `</${vnode.type}>`;
-      }
-    } else {
-      result += " />";
-    }
-
-    // 添加换行
-    result += "\n";
-  }
-
-  return result;
-}
 
 // 方法
 const toggle = () => {
@@ -376,9 +120,8 @@ const toggle = () => {
 // 复制代码
 const copyCode = async () => {
   try {
-    // 使用原始代码（不包含高亮HTML）
-    const code = formattedCode.value;
-
+    const code = props.code;
+    
     if (!code) {
       return;
     }
@@ -386,7 +129,7 @@ const copyCode = async () => {
     // 复制到剪贴板
     await navigator.clipboard.writeText(code);
 
-    // 显示成功提示 - 使用当前组件的 ref
+    // 显示成功提示
     if (copyBtnRef.value) {
       const originalText = copyBtnRef.value.innerHTML;
       copyBtnRef.value.innerHTML =
@@ -400,9 +143,10 @@ const copyCode = async () => {
     }
   } catch (err) {
     console.error("复制失败:", err);
-    // 降级方案：使用旧版API
+    // 降级方案
+    const code = getSlotTextContent();
     const textArea = document.createElement("textarea");
-    textArea.value = formattedCode.value;
+    textArea.value = code || "";
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
@@ -414,7 +158,17 @@ const copyCode = async () => {
 <style scoped lang="scss">
 .code-toggle {
   width: 100%;
-  border-top: 1px solid var(--el-border-color-lighter);
+  border: 1px solid var(--el-border-color-lighter);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--el-bg-color);
+  box-shadow: var(--el-box-shadow-light);
+}
+
+.demo-preview {
+  padding: 20px;
+  background: var(--el-bg-color);
+  border-bottom: 1px solid var(--el-border-color-lighter);
 }
 
 .demo-actions {
@@ -422,6 +176,7 @@ const copyCode = async () => {
   background: var(--el-fill-color-lighter);
   display: flex;
   justify-content: flex-end;
+  border-top: 1px solid var(--el-border-color-lighter);
 }
 
 .demo-toggle-btn {
@@ -435,6 +190,8 @@ const copyCode = async () => {
 .demo-code {
   color: #abb2bf;
   position: relative;
+  background: #282c34;
+  border-top: 1px solid var(--el-border-color-lighter);
 }
 
 .demo-copy-btn {
@@ -467,7 +224,10 @@ const copyCode = async () => {
   overflow-x: auto;
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.6;
+  white-space: pre-wrap; /* 允许换行但保持格式化 */
+  word-wrap: break-word; /* 长单词自动换行 */
+  word-break: break-all; /* 强制换行，防止溢出 */
 }
 
 .demo-code code {
@@ -523,5 +283,35 @@ const copyCode = async () => {
 
 .demo-code code .hljs-value {
   color: #98c379;
+}
+
+/* 优化标签换行显示 */
+.demo-code code .hljs-tag {
+  display: inline-block;
+  margin-right: 2px;
+}
+
+/* 属性换行优化 */
+.demo-code code .hljs-attr {
+  margin-right: 4px;
+}
+
+/* 字符串值换行优化 */
+.demo-code code .hljs-string {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* 响应式代码显示 */
+@media (max-width: 768px) {
+  .demo-code pre {
+    padding: 15px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .demo-code code {
+    font-size: 12px;
+  }
 }
 </style>

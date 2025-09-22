@@ -1,7 +1,10 @@
 <template>
   <div class="datepicker-page">
     <!-- 基础用法 -->
-    <DemoSection title="基础用法">
+    <DemoSection 
+      title="基础用法"
+      code="<m-date-picker v-model='value1' type='date' placeholder='Pick a day' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">选择日期的基本用法。</div>
         <div class="datepicker-demo-container">
@@ -15,7 +18,10 @@
     </DemoSection>
 
     <!-- 其他日期单位 -->
-    <DemoSection title="其他日期单位">
+    <DemoSection 
+      title="其他日期单位"
+      code="<m-date-picker v-model='value2' type='datetime' placeholder='Select date and time' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 type 属性可以指定 date 和 datetime 类型，并且通过 format 属性来指定输入框的格式。</div>
         <div class="datepicker-demo-container">
@@ -29,7 +35,10 @@
     </DemoSection>
 
     <!-- 日期范围 -->
-    <DemoSection title="日期范围">
+    <DemoSection 
+      title="日期范围"
+      code="<m-date-picker v-model='value3' type='daterange' range-separator='To' start-placeholder='Start date' end-placeholder='End date' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">在选择日期范围时，默认情况下左右面板会联动。 如果希望两个面板各自独立切换当前月份，可以使用 unlink-panels 属性。</div>
         <div class="datepicker-demo-container">
@@ -45,7 +54,10 @@
     </DemoSection>
 
     <!-- 默认显示日期 -->
-    <DemoSection title="默认显示日期">
+    <DemoSection 
+      title="默认显示日期"
+      code="<m-date-picker v-model='value4' type='daterange' start-placeholder='Start Date' end-placeholder='End Date' :default-value='defaultValue' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">在选择日期范围时，进行选择后，如果进行重置操作会将日期选择器恢复到选择前的状态，此时不会触发 change 事件。 可以通过 default-value 设置默认的日期。 需要注意的是 default-value 的值需要根据 type 类型传入对应格式的值。</div>
         <div class="datepicker-demo-container">
@@ -61,7 +73,10 @@
     </DemoSection>
 
     <!-- 带快捷选项 -->
-    <DemoSection title="带快捷选项">
+    <DemoSection 
+      title="带快捷选项"
+      code="<m-date-picker v-model='value5' type='daterange' unlink-panels range-separator='To' :shortcuts='shortcuts' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">配置 shortcuts 属性可以设置快捷选项，该配置接收一个对象数组，每个对象配置如下：{ text: string, value: function }。 其中 value 必须是一个函数，返回一个日期对象。</div>
         <div class="datepicker-demo-container">
@@ -80,7 +95,10 @@
     </DemoSection>
 
     <!-- 带输入限制 -->
-    <DemoSection title="带输入限制">
+    <DemoSection 
+      title="带输入限制"
+      code="<m-date-picker v-model='value6' type='date' placeholder='Pick a day' :disabled-date='disabledDate' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 disabled-date 设置禁用状态，参数为当前日期，要求返回 Boolean。</div>
         <div class="datepicker-demo-container">
@@ -95,7 +113,10 @@
     </DemoSection>
 
     <!-- 自定义输入框 -->
-    <DemoSection title="自定义输入框">
+    <DemoSection 
+      title="自定义输入框"
+      code="<m-date-picker v-model='value7' type='date' placeholder='Pick a day'><template #default='{ cellValue, cell }'><div class='cell'><span class='text'>{{ cell ? cell.text : cellValue }}</span></div></template></m-date-picker>"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 slot 可以自定义输入框的内容。</div>
         <div class="datepicker-demo-container">
@@ -112,7 +133,10 @@
     </DemoSection>
 
     <!-- 多选日期 -->
-    <DemoSection title="多选日期">
+    <DemoSection 
+      title="多选日期"
+      code="<m-date-picker v-model='value8' type='dates' placeholder='Pick one or more dates' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 multiple 属性可以开启多选日期模式。</div>
         <div class="datepicker-demo-container">
@@ -126,7 +150,10 @@
     </DemoSection>
 
     <!-- 周选择器 -->
-    <DemoSection title="周选择器">
+    <DemoSection 
+      title="周选择器"
+      code="<m-date-picker v-model='value9' type='week' format='YYYY [W]ww' placeholder='Pick a week' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 type 属性可以指定 week 类型，并且通过 format 属性来指定输入框的格式。</div>
         <div class="datepicker-demo-container">
@@ -141,7 +168,10 @@
     </DemoSection>
 
     <!-- 月份选择器 -->
-    <DemoSection title="月份选择器">
+    <DemoSection 
+      title="月份选择器"
+      code="<m-date-picker v-model='value10' type='month' placeholder='Pick a month' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 type 属性可以指定 month 类型，并且通过 format 属性来指定输入框的格式。</div>
         <div class="datepicker-demo-container">
@@ -155,7 +185,10 @@
     </DemoSection>
 
     <!-- 年份选择器 -->
-    <DemoSection title="年份选择器">
+    <DemoSection 
+      title="年份选择器"
+      code="<m-date-picker v-model='value11' type='year' placeholder='Pick a year' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 type 属性可以指定 year 类型，并且通过 format 属性来指定输入框的格式。</div>
         <div class="datepicker-demo-container">
@@ -169,7 +202,10 @@
     </DemoSection>
 
     <!-- 季度选择器 -->
-    <DemoSection title="季度选择器">
+    <DemoSection 
+      title="季度选择器"
+      code="<m-date-picker v-model='value12' type='month' placeholder='Pick a quarter' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 type 属性可以指定 quarter 类型，并且通过 format 属性来指定输入框的格式。</div>
         <div class="datepicker-demo-container">
@@ -183,7 +219,10 @@
     </DemoSection>
 
     <!-- 时间选择器 -->
-    <DemoSection title="时间选择器">
+    <DemoSection 
+      title="时间选择器"
+      code="<m-date-picker v-model='value13' type='datetime' placeholder='Pick a time' />"
+    >
       <div class="example-datepicker-block">
         <div class="example-demonstration">通过 type 属性可以指定 time 类型，并且通过 format 属性来指定输入框的格式。</div>
         <div class="datepicker-demo-container">

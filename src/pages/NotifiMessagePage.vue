@@ -1,7 +1,10 @@
 <template>
   <div class="notifi-message-page">
     <!-- 自定义通知消息 -->
-    <DemoSection title="自定义通知消息">
+    <DemoSection 
+      title="自定义通知消息"
+      code="<m-button plain @click='showWarning'>显示自定义通知</m-button>"
+    >
       <div class="example-notification-block">
         <div class="example-demonstration">NotifiMessage 是一个完全自定义的通知组件，不依赖 Element Plus，支持自定义样式、图标和操作按钮。通过插槽机制，外部可以完全控制底部操作内容。</div>
         <div class="notification-demo-container">
@@ -13,7 +16,10 @@
     </DemoSection>
 
     <!-- 使用示例 -->
-    <DemoSection title="使用示例">
+    <DemoSection 
+      title="使用示例"
+      code="NotifiMessage.show({ title: '操作成功', message: '您的操作已成功完成！' }); NotifiMessage.success({ title: '操作成功', message: '数据保存成功！' });"
+    >
       <div class="example-notification-block">
         <div class="example-demonstration">
           <h4>基本用法</h4>
