@@ -45,8 +45,8 @@ const onReset = () => {
         </m-form-item>
         <m-form-item label="活动区域">
           <m-select v-model="form.region" placeholder="请选择活动区域">
-            <el-option label="区域一" value="shanghai" />
-            <el-option label="区域二" value="beijing" />
+            <m-option label="区域一" value="shanghai" />
+            <m-option label="区域二" value="beijing" />
           </m-select>
         </m-form-item>
         <m-form-item label="活动时间">
@@ -73,20 +73,20 @@ const onReset = () => {
           <m-switch v-model="form.delivery" />
         </m-form-item>
         <m-form-item label="活动性质">
-          <m-checkbox-group v-model="form.type">
-            <m-checkbox value="Online activities" name="type">
+          <el-checkbox-group v-model="form.type">
+            <el-checkbox value="Online activities" name="type">
               线上活动
-            </m-checkbox>
-            <m-checkbox value="Promotion activities" name="type">
+            </el-checkbox>
+            <el-checkbox value="Promotion activities" name="type">
               推广活动
-            </m-checkbox>
-            <m-checkbox value="Offline activities" name="type">
+            </el-checkbox>
+            <el-checkbox value="Offline activities" name="type">
               线下活动
-            </m-checkbox>
-            <m-checkbox value="Simple brand exposure" name="type">
+            </el-checkbox>
+            <el-checkbox value="Simple brand exposure" name="type">
               单纯品牌曝光
-            </m-checkbox>
-          </m-checkbox-group>
+            </el-checkbox>
+          </el-checkbox-group>
         </m-form-item>
         <m-form-item label="特殊资源">
           <m-radio-group v-model="form.resource">
@@ -95,7 +95,7 @@ const onReset = () => {
           </m-radio-group>
         </m-form-item>
         <m-form-item label="活动形式">
-          <el-input v-model="form.desc" type="textarea" />
+          <m-input v-model="form.desc" type="textarea" />
         </m-form-item>
         <m-form-item>
           <m-button type="primary" @click="onSubmit">创建</m-button>
@@ -128,8 +128,8 @@ const onReset = () => {
         </m-form-item>
         <m-form-item label="活动区域">
           <m-select v-model="inlineForm.region" placeholder="活动区域">
-            <el-option label="区域一" value="shanghai" />
-            <el-option label="区域二" value="beijing" />
+            <m-option label="区域一" value="shanghai" />
+            <m-option label="区域二" value="beijing" />
           </m-select>
         </m-form-item>
         <m-form-item>
@@ -152,8 +152,8 @@ const onReset = () => {
             </m-form-item>
             <m-form-item label="活动区域">
               <m-select v-model="alignmentForm.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai" />
-                <el-option label="区域二" value="beijing" />
+                <m-option label="区域一" value="shanghai" />
+                <m-option label="区域二" value="beijing" />
               </m-select>
             </m-form-item>
           </m-form>
@@ -167,8 +167,8 @@ const onReset = () => {
             </m-form-item>
             <m-form-item label="活动区域">
               <m-select v-model="alignmentForm.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai" />
-                <el-option label="区域二" value="beijing" />
+                <m-option label="区域一" value="shanghai" />
+                <m-option label="区域二" value="beijing" />
               </m-select>
             </m-form-item>
           </m-form>
@@ -182,8 +182,8 @@ const onReset = () => {
             </m-form-item>
             <m-form-item label="活动区域">
               <m-select v-model="alignmentForm.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai" />
-                <el-option label="区域二" value="beijing" />
+                <m-option label="区域一" value="shanghai" />
+                <m-option label="区域二" value="beijing" />
               </m-select>
             </m-form-item>
           </m-form>
@@ -209,8 +209,8 @@ const onReset = () => {
         </m-form-item>
         <m-form-item label="活动区域" prop="region">
           <m-select v-model="ruleForm.region" placeholder="请选择活动区域">
-            <el-option label="区域一" value="shanghai" />
-            <el-option label="区域二" value="beijing" />
+            <m-option label="区域一" value="shanghai" />
+            <m-option label="区域二" value="beijing" />
           </m-select>
         </m-form-item>
         <m-form-item label="活动时间" required>
@@ -243,20 +243,20 @@ const onReset = () => {
           <m-switch v-model="ruleForm.delivery" />
         </m-form-item>
         <m-form-item label="活动性质" prop="type">
-          <m-checkbox-group v-model="ruleForm.type">
-            <m-checkbox value="Online activities" name="type">
+          <el-checkbox-group v-model="ruleForm.type">
+            <el-checkbox value="Online activities" name="type">
               线上活动
-            </m-checkbox>
-            <m-checkbox value="Promotion activities" name="type">
+            </el-checkbox>
+            <el-checkbox value="Promotion activities" name="type">
               推广活动
-            </m-checkbox>
-            <m-checkbox value="Offline activities" name="type">
+            </el-checkbox>
+            <el-checkbox value="Offline activities" name="type">
               线下活动
-            </m-checkbox>
-            <m-checkbox value="Simple brand exposure" name="type">
+            </el-checkbox>
+            <el-checkbox value="Simple brand exposure" name="type">
               单纯品牌曝光
-            </m-checkbox>
-          </m-checkbox-group>
+            </el-checkbox>
+          </el-checkbox-group>
         </m-form-item>
         <m-form-item label="特殊资源" prop="resource">
           <m-radio-group v-model="ruleForm.resource">
@@ -265,7 +265,7 @@ const onReset = () => {
           </m-radio-group>
         </m-form-item>
         <m-form-item label="活动形式" prop="desc">
-          <el-input v-model="ruleForm.desc" type="textarea" />
+          <m-input v-model="ruleForm.desc" type="textarea" />
         </m-form-item>
         <m-form-item>
           <m-button type="primary" @click="submitForm(ruleFormRef)">创建</m-button>
@@ -317,8 +317,8 @@ const onReset = () => {
             </m-form-item>
             <m-form-item label="活动区域">
               <m-select v-model="sizeForm.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai" />
-                <el-option label="区域二" value="beijing" />
+                <m-option label="区域一" value="shanghai" />
+                <m-option label="区域二" value="beijing" />
               </m-select>
             </m-form-item>
           </m-form>
@@ -332,8 +332,8 @@ const onReset = () => {
             </m-form-item>
             <m-form-item label="活动区域">
               <m-select v-model="sizeForm.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai" />
-                <el-option label="区域二" value="beijing" />
+                <m-option label="区域一" value="shanghai" />
+                <m-option label="区域二" value="beijing" />
               </m-select>
             </m-form-item>
           </m-form>
@@ -347,8 +347,8 @@ const onReset = () => {
             </m-form-item>
             <m-form-item label="活动区域">
               <m-select v-model="sizeForm.region" placeholder="请选择活动区域">
-                <el-option label="区域一" value="shanghai" />
-                <el-option label="区域二" value="beijing" />
+                <m-option label="区域一" value="shanghai" />
+                <m-option label="区域二" value="beijing" />
               </m-select>
             </m-form-item>
           </m-form>
@@ -539,6 +539,9 @@ const resetForm2 = (formEl) => {
 .demo-form-inline {
   .m-form-item {
     margin-right: 20px;
+  }
+  :deep(.el-select) {
+    --m-input-width: 220px;
   }
 }
 

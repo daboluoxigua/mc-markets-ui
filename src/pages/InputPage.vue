@@ -39,7 +39,7 @@ const value = ref('');
               <m-icon name="search" size="24"/>
             </template>
             <template #suffix>
-              <m-button type="text">获取验证码</m-button>
+              <m-button text>获取验证码</m-button>
             </template>
           </m-input>
           <span>基础输入框</span>
@@ -50,7 +50,7 @@ const value = ref('');
               <m-icon name="search" size="24"/>
             </template>
             <template #suffix>
-              <m-button type="text">获取验证码</m-button>
+              <m-button text>获取验证码</m-button>
             </template>
           </m-input>
           <span>基础输入框</span>

@@ -49,6 +49,9 @@
     &.is-hovering {
       background: var(--all-alphe-white-6, #ffffff0f);
     }
+    &.is-selected{
+      color: var(--text-brand);
+    }
   }
 
   .el-select-dropdown__header {

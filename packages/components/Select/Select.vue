@@ -1,6 +1,6 @@
 <template>
   <el-select
-    class="m-select2"
+    class="m-select"
     :class="{ solid: $attrs.styleType === 'solid' }"
     :show-arrow="false"
     v-bind="$attrs"
