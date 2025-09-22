@@ -2,32 +2,11 @@
   <div class="color-showcase">
     <h1 class="title">MC Markets 颜色系统</h1>
     
-    <!-- 基础色 -->
+    <!-- 背景色 -->
     <section class="color-section">
-      <h2 class="section-title">基础色 (Basic Colors)</h2>
+      <h2 class="section-title">背景色 (Background Colors)</h2>
       <div class="color-grid">
-        <div class="color-item" @click="copyToClipboard('--all-base-white')">
-          <div class="color-swatch white"></div>
-          <div class="color-info">
-            <span class="color-name">White</span>
-            <span class="color-value">--all-base-white</span>
-          </div>
-        </div>
-        <div class="color-item" @click="copyToClipboard('--all-base-black')">
-          <div class="color-swatch black"></div>
-          <div class="color-info">
-            <span class="color-name">Black</span>
-            <span class="color-value">--all-base-black</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 灰色系 -->
-    <section class="color-section">
-      <h2 class="section-title">灰色系 (Grayscale)</h2>
-      <div class="color-grid">
-        <div v-for="(color, index) in grayColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
+        <div v-for="(color, index) in backgroundColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -37,11 +16,11 @@
       </div>
     </section>
 
-    <!-- 品牌色 -->
+    <!-- 文本色 -->
     <section class="color-section">
-      <h2 class="section-title">品牌色 (Brand Colors)</h2>
+      <h2 class="section-title">文本色 (Text Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in brandColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
+        <div v-for="(color, index) in textColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -51,11 +30,11 @@
       </div>
     </section>
 
-    <!-- 辅助色 -->
+    <!-- 边框色 -->
     <section class="color-section">
-      <h2 class="section-title">辅助色 (Auxiliary Colors)</h2>
+      <h2 class="section-title">边框色 (Border Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in auxiliaryColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
+        <div v-for="(color, index) in borderColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -65,11 +44,11 @@
       </div>
     </section>
 
-    <!-- 错误色 -->
+    <!-- 按钮色 -->
     <section class="color-section">
-      <h2 class="section-title">错误色 (Error Colors)</h2>
+      <h2 class="section-title">按钮色 (Button Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in errorColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
+        <div v-for="(color, index) in buttonColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -79,25 +58,11 @@
       </div>
     </section>
 
-    <!-- 警告色 -->
+    <!-- 图标色 -->
     <section class="color-section">
-      <h2 class="section-title">警告色 (Warning Colors)</h2>
+      <h2 class="section-title">图标色 (Icon Colors)</h2>
       <div class="color-grid">
-        <div v-for="(color, index) in warningColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
-          <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
-          <div class="color-info">
-            <span class="color-name">{{ color.name }}</span>
-            <span class="color-value">{{ color.cssVar }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 成功色 -->
-    <section class="color-section">
-      <h2 class="section-title">成功色 (Success Colors)</h2>
-      <div class="color-grid">
-        <div v-for="(color, index) in successColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
+        <div v-for="(color, index) in iconColors" :key="index" class="color-item" @click="copyToClipboard(color.cssVar)">
           <div class="color-swatch" :style="{ backgroundColor: color.value }"></div>
           <div class="color-info">
             <span class="color-name">{{ color.name }}</span>
@@ -162,88 +127,72 @@ const showCopySuccess = (text) => {
   }, 2000)
 }
 
-// 灰色系颜色数据
-const grayColors = ref([
-  { name: 'Gray 1', value: 'var(--all-gray-1)', cssVar: '--all-gray-1' },
-  { name: 'Gray 2', value: 'var(--all-gray-2)', cssVar: '--all-gray-2' },
-  { name: 'Gray 3', value: 'var(--all-gray-3)', cssVar: '--all-gray-3' },
-  { name: 'Gray 4', value: 'var(--all-gray-4)', cssVar: '--all-gray-4' },
-  { name: 'Gray 5 (Default)', value: 'var(--all-gray-5)', cssVar: '--all-gray-5' },
-  { name: 'Gray 6', value: 'var(--all-gray-6)', cssVar: '--all-gray-6' },
-  { name: 'Gray 7', value: 'var(--all-gray-7)', cssVar: '--all-gray-7' },
-  { name: 'Gray 8', value: 'var(--all-gray-8)', cssVar: '--all-gray-8' },
-  { name: 'Gray 9', value: 'var(--all-gray-9)', cssVar: '--all-gray-9' },
-  { name: 'Gray 10', value: 'var(--all-gray-10)', cssVar: '--all-gray-10' }
+// 背景色数据
+const backgroundColors = ref([
+  { name: 'Primary Background', value: 'var(--bg-primary)', cssVar: '--bg-primary' },
+  { name: 'Secondary Background', value: 'var(--bg-secondary)', cssVar: '--bg-secondary' },
+  { name: 'Tertiary Background', value: 'var(--bg-tertiary)', cssVar: '--bg-tertiary' },
+  { name: 'Tertiary Hover', value: 'var(--bg-tertiary-hover)', cssVar: '--bg-tertiary-hover' },
+  { name: 'Quaternary Background', value: 'var(--bg-quaternary)', cssVar: '--bg-quaternary' },
+  { name: 'White Background', value: 'var(--bg-white)', cssVar: '--bg-white' },
+  { name: 'Black Background', value: 'var(--bg-black)', cssVar: '--bg-black' },
+  { name: 'Brand Background', value: 'var(--bg-brand)', cssVar: '--bg-brand' },
+  { name: 'Brand Hover', value: 'var(--bg-brand-hover)', cssVar: '--bg-brand-hover' },
+  { name: 'Brand Secondary', value: 'var(--bg-brand-secondary)', cssVar: '--bg-brand-secondary' },
+  { name: 'Error Primary', value: 'var(--bg-error-primary)', cssVar: '--bg-error-primary' },
+  { name: 'Error Secondary', value: 'var(--bg-error-secondary)', cssVar: '--bg-error-secondary' },
+  { name: 'Error Solid', value: 'var(--bg-error-solid)', cssVar: '--bg-error-solid' },
+  { name: 'Success Primary', value: 'var(--bg-success-primary)', cssVar: '--bg-success-primary' },
+  { name: 'Success Secondary', value: 'var(--bg-success-secondary)', cssVar: '--bg-success-secondary' },
+  { name: 'Success Solid', value: 'var(--bg-success-solid)', cssVar: '--bg-success-solid' },
+  { name: 'Warning Primary', value: 'var(--bg-warning-primary)', cssVar: '--bg-warning-primary' },
+  { name: 'Warning Secondary', value: 'var(--bg-warning-secondary)', cssVar: '--bg-warning-secondary' },
+  { name: 'Warning Solid', value: 'var(--bg-warning-solid)', cssVar: '--bg-warning-solid' }
 ])
 
-// 品牌色颜色数据 (使用 yellow 色系)
-const brandColors = ref([
-  { name: 'Brand 1', value: 'var(--all-yellow-1)', cssVar: '--all-yellow-1' },
-  { name: 'Brand 2', value: 'var(--all-yellow-2)', cssVar: '--all-yellow-2' },
-  { name: 'Brand 3', value: 'var(--all-yellow-3)', cssVar: '--all-yellow-3' },
-  { name: 'Brand 4 (Default)', value: 'var(--all-yellow-4)', cssVar: '--all-yellow-4' },
-  { name: 'Brand 5', value: 'var(--all-yellow-5)', cssVar: '--all-yellow-5' },
-  { name: 'Brand 6', value: 'var(--all-yellow-6)', cssVar: '--all-yellow-6' },
-  { name: 'Brand 7', value: 'var(--all-yellow-7)', cssVar: '--all-yellow-7' },
-  { name: 'Brand 8', value: 'var(--all-yellow-8)', cssVar: '--all-yellow-8' },
-  { name: 'Brand 9', value: 'var(--all-yellow-9)', cssVar: '--all-yellow-9' },
-  { name: 'Brand 10', value: 'var(--all-yellow-10)', cssVar: '--all-yellow-10' }
+// 文本色数据
+const textColors = ref([
+  { name: 'Primary Text', value: 'var(--text-primary)', cssVar: '--text-primary' },
+  { name: 'Secondary Text', value: 'var(--text-secondary)', cssVar: '--text-secondary' },
+  { name: 'Tertiary Text', value: 'var(--text-tertiary)', cssVar: '--text-tertiary' },
+  { name: 'Tertiary Hover', value: 'var(--text-tertiary-hover)', cssVar: '--text-tertiary-hover' },
+  { name: 'Quaternary Text', value: 'var(--text-quaternary)', cssVar: '--text-quaternary' },
+  { name: 'White Text', value: 'var(--text-white)', cssVar: '--text-white' },
+  { name: 'Brand Text', value: 'var(--text-brand)', cssVar: '--text-brand' },
+  { name: 'Brand Hover', value: 'var(--text-brand-hover)', cssVar: '--text-brand-hover' },
+  { name: 'Error Primary', value: 'var(--text-error-primary)', cssVar: '--text-error-primary' },
+  { name: 'Success Primary', value: 'var(--text-success-primary)', cssVar: '--text-success-primary' },
+  { name: 'Warning Primary', value: 'var(--text-warning-primary)', cssVar: '--text-warning-primary' }
 ])
 
-// 辅助色颜色数据 (使用 forest 色系)
-const auxiliaryColors = ref([
-  { name: 'Auxiliary 1', value: 'var(--all-forest-1)', cssVar: '--all-forest-1' },
-  { name: 'Auxiliary 2', value: 'var(--all-forest-2)', cssVar: '--all-forest-2' },
-  { name: 'Auxiliary 3', value: 'var(--all-forest-3)', cssVar: '--all-forest-3' },
-  { name: 'Auxiliary 4 (Default)', value: 'var(--all-forest-4)', cssVar: '--all-forest-4' },
-  { name: 'Auxiliary 5', value: 'var(--all-forest-5)', cssVar: '--all-forest-5' },
-  { name: 'Auxiliary 6', value: 'var(--all-forest-6)', cssVar: '--all-forest-6' },
-  { name: 'Auxiliary 7', value: 'var(--all-forest-7)', cssVar: '--all-forest-7' },
-  { name: 'Auxiliary 8', value: 'var(--all-forest-8)', cssVar: '--all-forest-8' },
-  { name: 'Auxiliary 9', value: 'var(--all-forest-9)', cssVar: '--all-forest-9' },
-  { name: 'Auxiliary 10', value: 'var(--all-forest-10)', cssVar: '--all-forest-10' }
+// 边框色数据
+const borderColors = ref([
+  { name: 'Primary Border', value: 'var(--border-primary)', cssVar: '--border-primary' },
+  { name: 'Secondary Border', value: 'var(--border-secondary)', cssVar: '--border-secondary' },
+  { name: 'Tertiary Border', value: 'var(--border-tertiary)', cssVar: '--border-tertiary' },
+  { name: 'White Border', value: 'var(--border-white)', cssVar: '--border-white' },
+  { name: 'Brand Border', value: 'var(--border-brand)', cssVar: '--border-brand' },
+  { name: 'Brand Hover', value: 'var(--border-brand-hover)', cssVar: '--border-brand-hover' },
+  { name: 'Error Border', value: 'var(--border-error)', cssVar: '--border-error' }
 ])
 
-// 错误色颜色数据
-const errorColors = ref([
-  { name: 'Error 1', value: 'var(--all-red-1)', cssVar: '--all-red-1' },
-  { name: 'Error 2', value: 'var(--all-red-2)', cssVar: '--all-red-2' },
-  { name: 'Error 3', value: 'var(--all-red-3)', cssVar: '--all-red-3' },
-  { name: 'Error 4', value: 'var(--all-red-4)', cssVar: '--all-red-4' },
-  { name: 'Error 5 (Default)', value: 'var(--all-red-5)', cssVar: '--all-red-5' },
-  { name: 'Error 6', value: 'var(--all-red-6)', cssVar: '--all-red-6' },
-  { name: 'Error 7', value: 'var(--all-red-7)', cssVar: '--all-red-7' },
-  { name: 'Error 8', value: 'var(--all-red-8)', cssVar: '--all-red-8' },
-  { name: 'Error 9', value: 'var(--all-red-9)', cssVar: '--all-red-9' },
-  { name: 'Error 10', value: 'var(--all-red-10)', cssVar: '--all-red-10' }
+// 按钮色数据
+const buttonColors = ref([
+  { name: 'Brand Button', value: 'var(--button-brand)', cssVar: '--button-brand' },
+  { name: 'Brand Hover', value: 'var(--button-brand-hover)', cssVar: '--button-brand-hover' },
+  { name: 'Primary Button', value: 'var(--button-primary)', cssVar: '--button-primary' },
+  { name: 'Primary Hover', value: 'var(--button-primary---hover)', cssVar: '--button-primary---hover' },
+  { name: 'White Button', value: 'var(--button-white)', cssVar: '--button-white' }
 ])
 
-// 警告色颜色数据
-const warningColors = ref([
-  { name: 'Warning 1', value: 'var(--all-orange-1)', cssVar: '--all-orange-1' },
-  { name: 'Warning 2', value: 'var(--all-orange-2)', cssVar: '--all-orange-2' },
-  { name: 'Warning 3', value: 'var(--all-orange-3)', cssVar: '--all-orange-3' },
-  { name: 'Warning 4', value: 'var(--all-orange-4)', cssVar: '--all-orange-4' },
-  { name: 'Warning 5 (Default)', value: 'var(--all-orange-5)', cssVar: '--all-orange-5' },
-  { name: 'Warning 6', value: 'var(--all-orange-6)', cssVar: '--all-orange-6' },
-  { name: 'Warning 7', value: 'var(--all-orange-7)', cssVar: '--all-orange-7' },
-  { name: 'Warning 8', value: 'var(--all-orange-8)', cssVar: '--all-orange-8' },
-  { name: 'Warning 9', value: 'var(--all-orange-9)', cssVar: '--all-orange-9' },
-  { name: 'Warning 10', value: 'var(--all-orange-10)', cssVar: '--all-orange-10' }
-])
-
-// 成功色颜色数据
-const successColors = ref([
-  { name: 'Success 1', value: 'var(--all-green-1)', cssVar: '--all-green-1' },
-  { name: 'Success 2', value: 'var(--all-green-2)', cssVar: '--all-green-2' },
-  { name: 'Success 3', value: 'var(--all-green-3)', cssVar: '--all-green-3' },
-  { name: 'Success 4', value: 'var(--all-green-4)', cssVar: '--all-green-4' },
-  { name: 'Success 5 (Default)', value: 'var(--all-green-5)', cssVar: '--all-green-5' },
-  { name: 'Success 6', value: 'var(--all-green-6)', cssVar: '--all-green-6' },
-  { name: 'Success 7', value: 'var(--all-green-7)', cssVar: '--all-green-7' },
-  { name: 'Success 8', value: 'var(--all-green-8)', cssVar: '--all-green-8' },
-  { name: 'Success 9', value: 'var(--all-green-9)', cssVar: '--all-green-9' },
-  { name: 'Success 10', value: 'var(--all-green-10)', cssVar: '--all-green-10' }
+// 图标色数据
+const iconColors = ref([
+  { name: 'Primary Icon', value: 'var(--icon-primary)', cssVar: '--icon-primary' },
+  { name: 'Secondary Icon', value: 'var(--icon-secondary)', cssVar: '--icon-secondary' },
+  { name: 'Tertiary Icon', value: 'var(--icon-tertiary)', cssVar: '--icon-tertiary' },
+  { name: 'Tertiary Hover', value: 'var(--icon-tertiary-hover)', cssVar: '--icon-tertiary-hover' },
+  { name: 'White Icon', value: 'var(--icon-white)', cssVar: '--icon-white' },
+  { name: 'Brand Icon', value: 'var(--icon-brand)', cssVar: '--icon-brand' }
 ])
 </script>
 

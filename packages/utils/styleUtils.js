@@ -38,7 +38,7 @@ export function applyGlobalOverride() {
         mutation.addedNodes.forEach((node) => {
           if (node.nodeType === 1 && node.classList) {
             // 为新添加的 Element Plus 组件添加覆盖类
-            if (node.className && node.className.includes('el-')) {
+            if (node.className && typeof node.className === 'string' && node.className.includes('el-')) {
               const parent = node.closest('.mc-ui-override') || node.parentElement;
               if (parent && !parent.classList.contains('mc-ui-override')) {
                 parent.classList.add('mc-ui-override');

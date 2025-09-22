@@ -14,6 +14,7 @@ import { default as MTag } from './components/Tag/Tag.vue';
 import { default as MAlert } from './components/Alert/Alert.vue';
 import { default as MDialog } from './components/Dialog/Dialog.vue';
 import { default as MNotification } from './components/Notification/Notification.vue';
+import { default as MMessage, Message } from './components/Message/Message.vue';
 import { default as MNotifiMessage, NotifiMessage } from './components/NotifiMessage/NotifiMessage.vue';
 import { default as MDatePicker } from './components/DatePicker/DatePicker.vue';
 import { default as MEmpty } from './components/Empty/Empty.vue';
@@ -31,15 +32,6 @@ declare namespace _default {
     export { install };
 }
 export default _default;
-export const MMessage: (ElementPlusComponents.MessageFn & {
-    primary: ElementPlusComponents.MessageTypedFn;
-    success: ElementPlusComponents.MessageTypedFn;
-    warning: ElementPlusComponents.MessageTypedFn;
-    info: ElementPlusComponents.MessageTypedFn;
-    error: ElementPlusComponents.MessageTypedFn;
-} & import('vue').Plugin) & {
-    _context: import('vue').AppContext | null;
-};
 export const MMessageBox: ElementPlusComponents.IElMessageBox & import('vue').Plugin;
 export const mComponents: {};
 export const MButtonGroup: any;
@@ -76,6 +68,6 @@ export const MTeleport: any;
 export const MConfigProvider: any;
 declare function install(app: any): void;
 import * as ElementPlusComponents from 'element-plus';
-export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, NotifiMessage };
+export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, Message, NotifiMessage };
 export { addOverrideClass, addComponentOverride, applyGlobalOverride, forceRefreshStyles, createOverrideComponent } from './utils/styleUtils.js';
 //# sourceMappingURL=index.d.ts.map

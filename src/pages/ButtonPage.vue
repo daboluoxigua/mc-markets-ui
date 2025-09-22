@@ -60,7 +60,38 @@
     <!-- 按钮状态 -->
     <DemoSection 
       title="按钮状态"
-      :code="buttonStateCode"
+      code='<div class="doc-grid">
+        <div class="doc-item">
+          <m-button type="primary" disabled>禁用状态</m-button>
+          <span>Disabled</span>
+        </div>
+        <div class="doc-item">
+          <m-button type="primary" :loading="loading" @click="handleLoading">
+            {{ loading ? "加载中..." : "点击加载" }}
+          </m-button>
+          <span>Loading</span>
+        </div>
+        <div class="doc-item">
+          <m-button :disabled="disabled" @click="handleDisabled">
+            {{ disabled ? "已禁用" : "可点击" }}
+          </m-button>
+          <span>Toggle</span>
+        </div>
+        <div class="doc-item">
+          <m-button plain>朴素按钮</m-button>
+          <span>Plain</span>
+        </div>
+        <div class="doc-item">
+          <m-button round>圆角按钮</m-button>
+          <span>Round</span>
+        </div>
+        <div class="doc-item">
+          <m-button circle>
+            <m-icon name="search" />
+          </m-button>
+          <span>Circle</span>
+        </div>
+      </div>'
     >
       <div class="doc-grid">
         <div class="doc-item">
@@ -366,8 +397,6 @@ import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { MButton, MIcon } from "@mc-markets/ui";
 
-// 代码示例
-const buttonStateCode = "<m-button type='primary' :loading='loading' @click='handleLoading'>{{ loading ? '加载中...' : '点击加载' }}</m-button><m-button :disabled='disabled' @click='handleDisabled'>{{ disabled ? '已禁用' : '可点击' }}</m-button>";
 
 // 响应式数据
 const loading = ref(true);

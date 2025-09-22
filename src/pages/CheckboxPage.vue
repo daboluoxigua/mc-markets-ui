@@ -124,26 +124,6 @@ const checked2 = ref(false);
       </div>
     </DemoSection>
 
-    <!-- 按钮样式 -->
-    <DemoSection 
-      title="按钮样式" 
-      :columns="1"
-      code="<m-checkbox-group v-model='buttonCheckList'><m-checkbox-button label='Option A' value='Value A' /><m-checkbox-button label='Option B' value='Value B' /></m-checkbox-group>"
-    >
-      <div class="doc-grid">
-        <div class="doc-item">
-          <m-checkbox-group v-model="buttonCheckList">
-            <m-checkbox-button label="Option A" value="Value A" />
-            <m-checkbox-button label="Option B" value="Value B" />
-            <m-checkbox-button label="Option C" value="Value C" />
-            <m-checkbox-button label="disabled" value="Value disabled" disabled />
-            <m-checkbox-button label="selected and disabled" value="Value selected and disabled" disabled />
-          </m-checkbox-group>
-          <span>按钮样式</span>
-        </div>
-      </div>
-    </DemoSection>
-
     <!-- 带有边框 -->
     <DemoSection 
       title="带有边框" 
