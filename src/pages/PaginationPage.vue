@@ -72,23 +72,6 @@
       title="附加功能"
       code="<m-pagination layout='total, sizes, prev, pager, next, jumper' :total='400' :page-sizes='[100, 200, 300, 400]' />"
     >
-      <div class="flex items-center mb-4">
-        <m-radio-group v-model="size" class="mr-4">
-          <m-radio-button value="default">default</m-radio-button>
-          <m-radio-button value="large">large</m-radio-button>
-          <m-radio-button value="small">small</m-radio-button>
-        </m-radio-group>
-        <div>
-          background:
-          <m-switch v-model="background" class="ml-2" />
-        </div>
-        <div class="ml-4">
-          disabled: <m-switch v-model="disabled" class="ml-2" />
-        </div>
-      </div>
-
-      <hr class="my-4" />
-
       <div class="demo-pagination-block">
         <div class="demonstration">Total item count</div>
         <m-pagination
@@ -139,6 +122,7 @@
           v-model:page-size="pageSize4"
           :page-sizes="[100, 200, 300, 400]"
           :size="size"
+          background 
           :disabled="disabled"
           :background="background"
           layout="total, sizes, prev, pager, next, jumper"
