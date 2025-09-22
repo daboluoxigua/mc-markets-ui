@@ -38,7 +38,49 @@
     <!-- 自定义内容 -->
     <DemoSection 
       title="自定义内容"
-      code="<m-button plain @click='dialogTableVisible = true'>Open a Table nested Dialog</m-button> <m-button plain @click='dialogFormVisible = true'>Open a Form nested Dialog</m-button>"
+      code="
+      <m-button plain @click='dialogTableVisible = true'>Open a Table nested Dialog</m-button> <m-button plain @click='dialogFormVisible = true'>Open a Form nested Dialog</m-button>
+      <m-dialog
+            v-model='dialogTableVisible'
+            title='Shipping address'
+            width='800'
+          >
+            <m-table :data='gridData'>
+              <m-table-column property='date' label='Date' width='150' />
+              <m-table-column property='name' label='Name' width='200' />
+              <m-table-column property='address' label='Address' />
+            </m-table>
+          </m-dialog>
+
+          <m-dialog
+            v-model='dialogFormVisible'
+            title='Shipping address'
+            width='500'
+          >
+            <m-form :model='form'>
+              <m-form-item label='Promotion name' :label-width='formLabelWidth'>
+                <m-input v-model='form.name' autocomplete='off' />
+              </m-form-item>
+              <m-form-item label='Zones' :label-width='formLabelWidth'>
+                <m-select
+                  v-model='form.region'
+                  placeholder='Please select a zone'
+                >
+                  <m-option label='Zone No.1' value='shanghai' />
+                  <m-option label='Zone No.2' value='beijing' />
+                </m-select>
+              </m-form-item>
+            </m-form>
+            <template #footer>
+              <div class='dialog-footer'>
+                <m-button @click='dialogFormVisible = false'>Cancel</m-button>
+                <m-button type='primary' @click='dialogFormVisible = false'>
+                  Confirm
+                </m-button>
+              </div>
+            </template>
+          </m-dialog>
+      "
     >
       <div class="example-dialog-block">
         <div class="example-demonstration">
