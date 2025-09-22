@@ -13,7 +13,7 @@
           import { MIcon } from '@mc-markets/ui'
           const customPrefix = shallowRef({
             render() {
-              return h(MIcon, { name: 'calendar-clock', size: '24' })
+              return h(MIcon, { name: 'calendar-clock', size: '20' })
             },
           })
       </script>
@@ -362,7 +362,7 @@ const shortcuts = [
 
 const customPrefix = shallowRef({
   render() {
-    return h(MIcon, { name: "calendar-clock", size: "24" });
+    return h(MIcon, { name: "calendar-clock", size: "20" });
   },
 });
 
