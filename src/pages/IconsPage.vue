@@ -204,7 +204,7 @@ import { iconList, searchIcons } from "@/utils/icon-types.js";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { copyWithMessage } from "@/utils/clipboard.js";
-import { MMessage } from "@mc-markets/ui";
+import { Message } from "@mc-markets/ui";
 
 // 响应式数据
 const clickedIcon = ref("");
@@ -345,7 +345,7 @@ onMounted(() => {
 // 方法
 const handleIconClick = (iconName) => {
   clickedIcon.value = iconName;
-  MMessage.success(`你点击了图标: ${iconName}`);
+  Message.success("复制成功");
   setTimeout(() => {
     clickedIcon.value = "";
   }, 2000);
@@ -353,17 +353,18 @@ const handleIconClick = (iconName) => {
 
 const selectIcon = (iconName) => {
   selectedIcon.value = iconName;
+  Message.success("复制成功");
 };
 
 const copyIconClass = async (className) => {
   try {
     await copyWithMessage(className, {
       onMessage: (message) => {
-        MMessage.success(message);
+        Message.success(message);
       },
     });
   } catch (error) {
-    MMessage.error("复制失败，请手动复制");
+    Message.error("复制失败，请手动复制");
   }
 };
 </script>
