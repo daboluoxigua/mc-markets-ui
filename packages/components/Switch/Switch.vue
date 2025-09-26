@@ -7,29 +7,40 @@
 </template>
 
 <script setup>
-import { useClassName } from "@packages/hooks/useClassName.js"
+import { useClassName } from "@packages/hooks/useClassName.js";
 
 defineOptions({
-  name: 'MSwitch'
-})
+  name: "MSwitch",
+});
 
 // 定义props
 const props = defineProps({
   popperClass: {
     type: String,
-    default: ''
-  }
-})
+    default: "",
+  },
+});
 
 // 使用类名 Hook
-const { mergedAttrs, className: popperClass } = useClassName('mc-switch-popper')
+const { mergedAttrs, className: popperClass } =
+  useClassName("mc-switch-popper");
 </script>
 
 <style lang="scss">
-.m-switch{
-  &.is-checked{
-    .el-switch__action{
+.m-switch {
+  &.is-checked {
+    .el-switch__action {
       background-color: var(--all-gray-10);
+    }
+  }
+  
+  &:not(.is-checked) {
+    .el-switch__core {
+      background-color: var(--all-gray-5);
+      border-color: var(--all-gray-5);
+      .el-switch__action {
+        background-color: var(--all-gray-1);
+      }
     }
   }
 }

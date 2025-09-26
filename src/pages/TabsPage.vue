@@ -206,7 +206,7 @@ const handleTabClick = (tab, event) => {
 import { ref } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
 import ApiDocs from '@/components/ApiDocs.vue'
-import { MMessage } from '@mc-markets/ui'
+import { Message, MTabs, MTabPane } from '@mc-markets/ui'
 
 // 响应式数据
 const activeName = ref('first')
@@ -420,7 +420,7 @@ const tabNavApiExposes = [
 
 // 方法
 const handleTabClick = (tab) => {
-  MMessage.success(`切换到标签: ${tab.name}`)
+  Message.success(`切换到标签: ${tab.name}`)
 }
 
 const handlePositionChange = () => {
