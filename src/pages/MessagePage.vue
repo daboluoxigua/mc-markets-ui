@@ -215,7 +215,7 @@ const openError = () => {
     />
 
     <!-- Message 组件实例 -->
-    <m-message />
+    <!-- <m-message /> -->
   </div>
 </template>
 
