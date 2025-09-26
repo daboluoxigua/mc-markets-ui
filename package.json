@@ -16,6 +16,7 @@
     },
     "./styles/index": "./packages/styles/index.scss",
     "./styles/font": "./packages/styles/font/iconfont.css",
+    "./dist/style": "./dist/style.css",
     "./package.json": "./package.json"
   },
   "files": [
