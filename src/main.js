@@ -11,8 +11,8 @@ import ElementPlus from 'element-plus'
 import mcMarketsUI from '@mc-markets/ui'
 const app = createApp(App)
 
-app.use(ElementPlus)
 app.use(mcMarketsUI)  // 注册组件库
+app.use(ElementPlus)
 app.use(router)
 
 // 初始化默认黑暗主题
