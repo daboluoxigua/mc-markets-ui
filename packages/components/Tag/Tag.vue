@@ -3,8 +3,8 @@
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <i 
         class="prefixIcon" 
-        :class="['iconfont', prefixIcon]" 
-        v-if="prefixIcon"
+        :class="['iconfont', computedPrefixIcon]" 
+        v-if="computedPrefixIcon"
       ></i>
       <slot :name="name" />
       <i 
@@ -14,13 +14,16 @@
       ></i>
     </template>
   </el-tag>
-</template>
+</template>colorfont
 
 <script setup>
+import { computed } from 'vue'
+
 defineOptions({
   name: 'MTag'
 })
-defineProps({
+
+const props = defineProps({
   prefixIcon: {
     type: String,
     default: ''
@@ -38,6 +41,14 @@ defineProps({
     default: 'normal',
     validator: (value) => ['normal', 'color'].includes(value)
   }
+})
+
+// 计算属性：当loading为true且没有传入prefixIcon时，使用默认的加载图标
+const computedPrefixIcon = computed(() => {
+  if (props.loading && !props.prefixIcon) {
+    return 'colorfont icon-a-lucide_loader1'
+  }
+  return props.prefixIcon
 })
 </script>
 

@@ -18,7 +18,12 @@
           <span>primary</span>
         </div>
         <div class="doc-item">
-          <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 5</m-tag>
+          //loading状态下不传图标会自动使用默认加载图标
+          <m-tag type="warning" loading>Tag 5</m-tag>
+          <span>Loading Default</span>
+        </div>
+        <div class="doc-item">
+          <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 6</m-tag>
           <span>Danger</span>
         </div>
       </div>'
@@ -37,7 +42,11 @@
           <span>primary</span>
         </div>
         <div class="doc-item">
-          <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 5</m-tag>
+          <m-tag type="warning" loading>Tag 5</m-tag>
+          <span>Loading Default</span>
+        </div>
+        <div class="doc-item">
+          <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 6</m-tag>
           <span>Danger</span>
         </div>
       </div>
