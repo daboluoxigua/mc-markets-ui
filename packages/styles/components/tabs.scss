@@ -1,9 +1,77 @@
-.mc-ui-override {
-  .el-tabs__active-bar {
-    height: 3px;
+// MC UI Tabs 原生样式
+.m-tabs {
+  &__header {
+    position: relative;
   }
-  .el-tabs__nav-wrap::after {
-    height: 1px;
-    background-color: var(--border-primary);
+
+  &__nav {
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid var(--border-primary, #e4e7ed);
+  }
+
+  &__item {
+    position: relative;
+    padding: 12px 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--text-regular, #606266);
+    font-size: 14px;
+    transition: color 0.3s;
+    user-select: none;
+
+    &:hover {
+      color: var(--color-primary, #409eff);
+    }
+
+    &.is-active {
+      color: var(--color-primary, #409eff);
+    }
+
+    &.is-disabled {
+      color: var(--text-disabled, #c0c4cc);
+      cursor: not-allowed;
+      
+      &:hover {
+        color: var(--text-disabled, #c0c4cc);
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__active-bar {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--color-primary, #409eff);
+    transition: all 0.3s;
+    z-index: 1;
+  }
+
+  &__content {
+    padding: 20px 0;
+  }
+
+  // 可关闭标签样式
+  &__close {
+    margin-left: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--text-regular, #606266);
+    
+    &:hover {
+      color: var(--color-danger, #f56c6c);
+    }
+  }
+}
+
+.m-tab-pane {
+  display: none;
+
+  &.is-active {
+    display: block;
   }
 }

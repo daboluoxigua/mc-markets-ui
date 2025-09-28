@@ -1,0 +1,16 @@
+{
+  "id": "5032747",
+  "name": "MC Markets 彩色图标库",
+  "font_family": "colorfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "45689686",
+      "name": "lucide_loader 1",
+      "font_class": "a-lucide_loader1",
+      "unicode": "e7b9",
+      "unicode_decimal": 59321
+    }
+  ]
+}

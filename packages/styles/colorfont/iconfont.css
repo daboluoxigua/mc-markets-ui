@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "colorfont"; /* Project id 5032747 */
+  /* Color fonts */
+  src: 
+       url('./iconfont.woff2?t=1759051846956') format('woff2'),
+       url('./iconfont.woff?t=1759051846956') format('woff'),
+       url('./iconfont.ttf?t=1759051846956') format('truetype');
+}
+
+.colorfont {
+  font-family: "colorfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a-lucide_loader1:before {
+  content: "\e7b9";
+}
+

@@ -3,10 +3,16 @@
     // 自定义样式可以在这里添加
     font-size: var(--font-size-text-sm);
     --el-tag-border-radius: 8px;
+    padding: 0 8px;
 
-    .iconfont{
+    .iconfont,
+    .colorfont {
       font-size: 16px;
       display: inline-block;
+    }
+    
+    .colorfont {
+      font-family: "colorfont" !important;
     }
     .prefixIcon{
       margin-right: 4px;
@@ -120,6 +126,10 @@
   .el-tag--large{
     padding: 4px 10px;
     height: 28px;
+  }
+  .el-tag--small{
+    height: 22px;
+    padding: 0 6px;
   }
 }
 

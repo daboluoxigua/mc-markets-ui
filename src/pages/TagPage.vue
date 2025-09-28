@@ -13,7 +13,8 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <m-tag type="primary" loading prefix-icon="icon-a-lucide_loader1">Tag 4</m-tag>
+          //loading是彩色图标比较特殊，需要使用colorfont
+          <m-tag type="primary" loading prefix-icon="colorfont icon-a-lucide_loader1">Tag 4</m-tag>
           <span>primary</span>
         </div>
         <div class="doc-item">
@@ -32,7 +33,7 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <m-tag type="primary" loading prefix-icon="icon-a-lucide_loader1">Tag 4</m-tag>
+          <m-tag type="primary" loading prefix-icon="colorfont icon-a-lucide_loader1">Tag 4</m-tag>
           <span>primary</span>
         </div>
         <div class="doc-item">
@@ -418,6 +419,30 @@ const tagApiProps = [
     type: "boolean",
     default: "false",
     description: "Tag 是否为圆形",
+  },
+  {
+    name: "prefixIcon",
+    type: "string",
+    default: "",
+    description: "前置图标类名",
+  },
+  {
+    name: "suffixIcon",
+    type: "string",
+    default: "",
+    description: "后置图标类名",
+  },
+  {
+    name: "iconType",
+    type: "enum",
+    default: "normal",
+    description: "图标类型，可选值：normal（普通图标）/ color（彩色图标）",
+  },
+  {
+    name: "loading",
+    type: "boolean",
+    default: "false",
+    description: "是否显示加载状态",
   },
 ];
 
