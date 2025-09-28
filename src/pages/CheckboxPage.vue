@@ -5,6 +5,7 @@
       title="基础用法"
       code="<template>
   <m-checkbox v-model='checked2' label='Option 2' />
+  <m-checkbox v-model='checked2' size='large' label='Option 2' />
 </template>
 
 <script setup>
@@ -17,6 +18,10 @@ const checked2 = ref(false);
         <div class="doc-item">
           <m-checkbox v-model="checked2" label="Option 2" />
           <span>默认尺寸</span>
+        </div>
+        <div class="doc-item">
+          <m-checkbox v-model="checked2" size="large" label="Option 2" />
+          <span>大尺寸</span>
         </div>
       </div>
     </DemoSection>

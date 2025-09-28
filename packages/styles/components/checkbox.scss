@@ -1,9 +1,19 @@
 .mc-ui-override {
   .el-checkbox {
     --el-checkbox-checked-icon-color: #000;
-    --el-checkbox-input-height: 20px;
-    --el-checkbox-input-width: 20px;
+    --el-checkbox-input-height: 16px;
+    --el-checkbox-input-width: 16px;
     --el-checkbox-input-border: 2px solid var(--icon-tertiary);
+    --el-checkbox-disabled-checked-input-border-color: var(--icon-tertiary);
+    --el-checkbox-disabled-input-fill:var(--all-alphe-white-20);
+    &.el-checkbox--large{
+      --el-checkbox-input-height: 20px;
+      --el-checkbox-input-width: 20px;
+       .el-checkbox__inner{
+        height: var(--el-checkbox-input-height);
+        width: var(--el-checkbox-input-width);
+       }
+    }
   }
 
   .el-checkbox
