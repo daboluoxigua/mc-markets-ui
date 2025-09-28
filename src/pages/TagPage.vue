@@ -3,14 +3,9 @@
     <!-- 基础用法 -->
     <DemoSection 
       title="基础用法"
-      code="<m-tag type='success'>Tag 2</m-tag>
-<m-tag type='info'>Tag 3</m-tag>
-<m-tag type='primary'>Tag 4</m-tag>
-<m-tag type='danger'>Tag 5</m-tag>"
-    >
-      <div class="doc-grid">
+      code='<div class="doc-grid">
         <div class="doc-item">
-          <m-tag type="success">Tag 2</m-tag>
+          <m-tag type="success" prefix-icon="icon-circle-check-filled" suffix-icon="icon-circle-check-filled">Tag 2</m-tag>
           <span>Success</span>
         </div>
         <div class="doc-item">
@@ -18,11 +13,30 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <m-tag type="primary">Tag 4</m-tag>
+          <m-tag type="primary" loading prefix-icon="icon-a-lucide_loader1">Tag 4</m-tag>
           <span>primary</span>
         </div>
         <div class="doc-item">
-          <m-tag type="danger">Tag 5</m-tag>
+          <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 5</m-tag>
+          <span>Danger</span>
+        </div>
+      </div>'
+    >
+      <div class="doc-grid">
+        <div class="doc-item">
+          <m-tag type="success" prefix-icon="icon-circle-check-filled" suffix-icon="icon-circle-check-filled">Tag 2</m-tag>
+          <span>Success</span>
+        </div>
+        <div class="doc-item">
+          <m-tag type="info">Tag 3</m-tag>
+          <span>Info</span>
+        </div>
+        <div class="doc-item">
+          <m-tag type="primary" loading prefix-icon="icon-a-lucide_loader1">Tag 4</m-tag>
+          <span>primary</span>
+        </div>
+        <div class="doc-item">
+          <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 5</m-tag>
           <span>Danger</span>
         </div>
       </div>

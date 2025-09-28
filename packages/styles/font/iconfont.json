@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "45686273",
+      "name": "lucide_loader 1",
+      "font_class": "a-lucide_loader1",
+      "unicode": "e7f2",
+      "unicode_decimal": 59378
+    },
+    {
+      "icon_id": "45686129",
+      "name": "lucide_circle-x-filled",
+      "font_class": "lucide_circle-x-filled",
+      "unicode": "e7f1",
+      "unicode_decimal": 59377
+    },
+    {
+      "icon_id": "45669187",
+      "name": "lucide_user-round-plus 1",
+      "font_class": "a-lucide_user-round-plus1",
+      "unicode": "e7f0",
+      "unicode_decimal": 59376
+    },
+    {
+      "icon_id": "45668964",
+      "name": "lucide_file-check 1",
+      "font_class": "a-lucide_file-check1",
+      "unicode": "e7ef",
+      "unicode_decimal": 59375
+    },
+    {
+      "icon_id": "45668867",
+      "name": "lucide_external-link 1",
+      "font_class": "a-lucide_external-link1",
+      "unicode": "e7ee",
+      "unicode_decimal": 59374
+    },
+    {
+      "icon_id": "45566484",
+      "name": "iconsax_google 1",
+      "font_class": "a-iconsax_google1",
+      "unicode": "e7dd",
+      "unicode_decimal": 59357
+    },
+    {
+      "icon_id": "45566483",
+      "name": "lucide_megaphone",
+      "font_class": "lucide_megaphone",
+      "unicode": "e7ea",
+      "unicode_decimal": 59370
+    },
+    {
+      "icon_id": "45566482",
+      "name": "lucide_mail",
+      "font_class": "lucide_mail",
+      "unicode": "e7eb",
+      "unicode_decimal": 59371
+    },
+    {
+      "icon_id": "45566481",
+      "name": "lucide_smartphone",
+      "font_class": "lucide_smartphone",
+      "unicode": "e7ec",
+      "unicode_decimal": 59372
+    },
+    {
+      "icon_id": "45566480",
+      "name": "lucide_user",
+      "font_class": "lucide_user",
+      "unicode": "e7ed",
+      "unicode_decimal": 59373
+    },
+    {
       "icon_id": "45448006",
       "name": "withdraw",
       "font_class": "withdraw",

@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 5007157 */
-  src: url('./iconfont.woff2?t=1757404792101') format('woff2'),
-       url('./iconfont.woff?t=1757404792101') format('woff'),
-       url('./iconfont.ttf?t=1757404792101') format('truetype');
+  src: url('iconfont.woff2?t=1759047647370') format('woff2'),
+       url('iconfont.woff?t=1759047647370') format('woff'),
+       url('iconfont.ttf?t=1759047647370') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,46 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a-lucide_loader1:before {
+  content: "\e7f2";
+}
+
+.icon-lucide_circle-x-filled:before {
+  content: "\e7f1";
+}
+
+.icon-a-lucide_user-round-plus1:before {
+  content: "\e7f0";
+}
+
+.icon-a-lucide_file-check1:before {
+  content: "\e7ef";
+}
+
+.icon-a-lucide_external-link1:before {
+  content: "\e7ee";
+}
+
+.icon-a-iconsax_google1:before {
+  content: "\e7dd";
+}
+
+.icon-lucide_megaphone:before {
+  content: "\e7ea";
+}
+
+.icon-lucide_mail:before {
+  content: "\e7eb";
+}
+
+.icon-lucide_smartphone:before {
+  content: "\e7ec";
+}
+
+.icon-lucide_user:before {
+  content: "\e7ed";
 }
 
 .icon-withdraw:before {

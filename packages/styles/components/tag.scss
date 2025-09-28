@@ -4,6 +4,26 @@
     font-size: var(--font-size-text-sm);
     --el-tag-border-radius: 8px;
 
+    .iconfont{
+      font-size: 16px;
+      display: inline-block;
+    }
+    .prefixIcon{
+      margin-right: 4px;
+    }
+    .suffixIcon{
+      margin-left: 4px;
+    }
+
+    &.is-loading {
+      .prefixIcon,
+      .suffixIcon {
+        animation: rotate 3s linear infinite;
+        transform-origin: center center;
+        display: inline-block;
+      }
+    }
+
     &.el-tag--primary {
       --el-tag-bg-color: color-mix(
         in srgb,
@@ -100,5 +120,14 @@
   .el-tag--large{
     padding: 4px 10px;
     height: 28px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
