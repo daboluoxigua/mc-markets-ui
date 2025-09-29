@@ -865,7 +865,10 @@ const ie = /* @__PURE__ */ O(At, [["render", zt]]), Ft = /* @__PURE__ */ Object.
     );
     return (s, o) => {
       const a = Ve;
-      return l(), f(a, v(T(t), { "popper-class": T(n) }), b({ _: 2 }, [
+      return l(), f(a, v(T(t), {
+        class: "m-datepicker",
+        "popper-class": T(n)
+      }), b({ _: 2 }, [
         _(s.$slots, (r, i) => ({
           name: i,
           fn: p(() => [
@@ -1196,7 +1199,7 @@ function os(e, t, n, s, o, a) {
     ])
   ]);
 }
-const as = /* @__PURE__ */ O(Yt, [["render", os], ["__scopeId", "data-v-402b42a8"]]), rs = {
+const as = /* @__PURE__ */ O(Yt, [["render", os], ["__scopeId", "data-v-4d230557"]]), rs = {
   name: "MTabPane",
   props: {
     label: {
