@@ -1,5 +1,5 @@
 <template>
-  <div class="m-tabs">
+  <div class="m-tabs" :class="{ 'style-solid': styleType === 'solid' }">
     <div class="m-tabs__header">
       <div class="m-tabs__nav" ref="navRef">
         <div
@@ -14,6 +14,7 @@
           {{ tab.label }}
         </div>
         <div
+          v-if="styleType !== 'solid'"
           class="m-tabs__active-bar"
           :style="activeBarStyle"
         ></div>
@@ -38,6 +39,11 @@ export default {
     closable: {
       type: Boolean,
       default: false
+    },
+    styleType: {
+      type: String,
+      default: 'default',
+      validator: (value) => ['default', 'solid'].includes(value)
     }
   },
   emits: ['update:modelValue', 'tab-click', 'tab-remove', 'tab-change', 'tab-add', 'edit'],
@@ -221,6 +227,39 @@ export default {
     background-color: var(--text-brand);
     transition: all 0.3s;
     z-index: 1;
+  }
+
+  // solid 样式
+  &.style-solid {
+    .m-tabs__nav {
+      border-bottom: none;
+      background-color: var(--bg-tertiary-hover);
+      border-radius: 8px;
+      padding: 4px;
+    }
+
+    .m-tabs__item {
+      height: 32px;
+      margin-right: 0;
+      margin-bottom: 0;
+      padding: 0 16px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      &.is-active {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
   }
 }
 

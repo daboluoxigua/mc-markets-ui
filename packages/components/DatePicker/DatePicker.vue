@@ -1,5 +1,5 @@
 <template>
-  <el-date-picker v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass">
+  <el-date-picker v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass" :class="styleType">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -19,6 +19,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  styleType: {
+    type: String,
+    default: "default",
+  },
 });
 
 // 使用类名 Hook，排除 type 和 popperClass 属性
@@ -29,9 +33,14 @@ const { mergedAttrs, className: popperClass } = useClassName(
 </script>
 <style lang="scss">
 .m-datepicker{
-  &.el-date-editor.el-input__wrapper, .el-input__wrapper{
-    box-shadow: none ;
-    background-color: var(--bg-tertiary-hover);
+  &.style-type-solid{
+    &.el-date-editor.el-input__wrapper, .el-input__wrapper{
+      box-shadow: none ;
+      background-color: var(--bg-tertiary-hover);
+    }
+  }
+  &.el-input--small{
+    --el-input-height: 40px;
   }
 }
 .mc-datepicker-popper {

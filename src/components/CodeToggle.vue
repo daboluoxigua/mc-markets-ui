@@ -176,7 +176,7 @@ const copyCode = async () => {
   background: var(--el-fill-color-lighter);
   display: flex;
   justify-content: flex-end;
-  border-top: 1px solid var(--el-border-color-lighter);
+  // border-top: 1px solid var(--el-border-color-lighter);
 }
 
 .demo-toggle-btn {

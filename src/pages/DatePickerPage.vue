@@ -5,7 +5,7 @@
       title="基础用法"
       code="
       <template>
-        <m-date-picker v-model='value1' type='date' placeholder='Pick a day' :prefix-icon='customPrefix' />
+        <m-date-picker v-model='value1' type='date' size='small' style-type='solid' placeholder='Pick a day' :prefix-icon='customPrefix' />
       </template>
 
       <script setup>
@@ -26,6 +26,8 @@
             v-model="value1"
             type="date"
             placeholder="Pick a day"
+            size="small"
+            style-type="solid"
             :prefix-icon="customPrefix"
           />
         </div>
@@ -35,7 +37,7 @@
     <!-- 其他日期单位 -->
     <DemoSection
       title="其他日期单位"
-      code="<m-date-picker v-model='value2' type='datetime' placeholder='Select date and time' />"
+      code="<m-date-picker v-model='value2' type='datetime' size='small' style-type='solid' placeholder='Select date and time' />"
     >
       <div class="example-datepicker-block">
         <div class="example-demonstration">
@@ -47,6 +49,7 @@
             v-model="value2"
             type="datetime"
             placeholder="Select date and time"
+            style-type="solid"
           />
         </div>
       </div>
