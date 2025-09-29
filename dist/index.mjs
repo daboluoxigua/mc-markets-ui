@@ -1196,7 +1196,7 @@ function os(e, t, n, s, o, a) {
     ])
   ]);
 }
-const as = /* @__PURE__ */ O(Yt, [["render", os], ["__scopeId", "data-v-402b42a8"]]), rs = {
+const as = /* @__PURE__ */ O(Yt, [["render", os], ["__scopeId", "data-v-4d230557"]]), rs = {
   name: "MTabPane",
   props: {
     label: {

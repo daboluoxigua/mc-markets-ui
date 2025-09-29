@@ -51,6 +51,5 @@
     "src",
     "**/*.stories.*",
     "**/*.test.*"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  ]
 }

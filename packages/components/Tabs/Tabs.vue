@@ -200,6 +200,7 @@ export default {
     font-size: var(--font-size-text-base);
     transition: color 0.3s;
     user-select: none;
+    font-weight: 600;
 
     &:hover {
       color: var(--text-brand);
