@@ -23,6 +23,7 @@ import EmptyPage from '@/pages/EmptyPage.vue'
 import BannerPage from '@/pages/BannerPage.vue'
 import ColorPage from '@/pages/ColorPage.vue'
 import TabsPage from '@/pages/TabsPage.vue'
+import TabCardPage from '@/pages/TabCardPage.vue'
 
 const routes = [
   {
@@ -203,6 +204,14 @@ const routes = [
     component: TabsPage,
     meta: {
       title: 'Tabs 标签页'
+    }
+  },
+  {
+    path: '/tabcard',
+    name: 'TabCard',
+    component: TabCardPage,
+    meta: {
+      title: 'TabCard 标签卡片'
     }
   }
 ]

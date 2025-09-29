@@ -38,8 +38,10 @@ import MTableColumn from './components/Table/TableColumn.vue'
 import MBanner from './components/Banner/Banner.vue'
 import MTabs from './components/Tabs/Tabs.vue'
 import MTabPane from './components/Tabs/TabPane.vue'
+import MTabCard from './components/TabCard/TabCard.vue'
+import MTabCardItem from './components/TabCard/TabCardItem.vue'
 
-const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane]
+const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem]
 
 // 全局组件配置 - 需要自动创建实例的组件
 const globalInstanceComponents = [
@@ -91,7 +93,9 @@ function registerElementPlus(app) {
         'mformitem': 'm-form-item',
         'moptiongroup': 'm-option-group',
         'mtabs': 'm-tabs',
-        'mtabpane': 'm-tab-pane'
+        'mtabpane': 'm-tab-pane',
+        'mtabcard': 'm-tab-card',
+        'mtabcarditem': 'm-tab-card-item'
       }
       return nameMap[name] || name.replace(/^m/, 'm-')
     }
@@ -142,7 +146,9 @@ const install = (app) => {
         'mformitem': 'm-form-item',
         'moptiongroup': 'm-option-group',
         'mtabs': 'm-tabs',
-        'mtabpane': 'm-tab-pane'
+        'mtabpane': 'm-tab-pane',
+        'mtabcard': 'm-tab-card',
+        'mtabcarditem': 'm-tab-card-item'
       }
       name = nameMap[name] || name.replace(/^m/, 'm-')
       
@@ -172,7 +178,9 @@ export function checkComponentRegistration(app) {
         'mformitem': 'm-form-item',
         'moptiongroup': 'm-option-group',
         'mtabs': 'm-tabs',
-        'mtabpane': 'm-tab-pane'
+        'mtabpane': 'm-tab-pane',
+        'mtabcard': 'm-tab-card',
+        'mtabcarditem': 'm-tab-card-item'
       }
       return nameMap[name] || name.replace(/^m/, 'm-')
     }
@@ -193,7 +201,7 @@ export function checkComponentRegistration(app) {
 }
 
 export default { install }
-export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane }
+export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem }
 
 // 导出样式工具函数
 export { 
