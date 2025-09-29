@@ -13,14 +13,8 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          //loading是彩色图标比较特殊，需要使用colorfont
-          <m-tag type="primary" loading prefix-icon="colorfont icon-a-lucide_loader1">Tag 4</m-tag>
+          <m-tag type="primary" loading>Tag 4</m-tag>
           <span>primary</span>
-        </div>
-        <div class="doc-item">
-          //loading状态下不传图标会自动使用默认加载图标
-          <m-tag type="warning" loading>Tag 5</m-tag>
-          <span>Loading Default</span>
         </div>
         <div class="doc-item">
           <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 6</m-tag>
@@ -38,12 +32,8 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <m-tag type="primary" loading prefix-icon="colorfont icon-a-lucide_loader1">Tag 4</m-tag>
+          <m-tag type="primary" loading>Tag 4</m-tag>
           <span>primary</span>
-        </div>
-        <div class="doc-item">
-          <m-tag type="warning" loading>Tag 5</m-tag>
-          <span>Loading Default</span>
         </div>
         <div class="doc-item">
           <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 6</m-tag>
@@ -440,12 +430,6 @@ const tagApiProps = [
     type: "string",
     default: "",
     description: "后置图标类名",
-  },
-  {
-    name: "iconType",
-    type: "enum",
-    default: "normal",
-    description: "图标类型，可选值：normal（普通图标）/ color（彩色图标）",
   },
   {
     name: "loading",
