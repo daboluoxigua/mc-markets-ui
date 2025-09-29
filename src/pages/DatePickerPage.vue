@@ -69,6 +69,7 @@
             range-separator="To"
             start-placeholder="Start date"
             end-placeholder="End date"
+            :prefix-icon="customPrefix"
           />
         </div>
       </div>

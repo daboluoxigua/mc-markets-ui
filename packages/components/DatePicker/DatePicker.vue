@@ -1,5 +1,5 @@
 <template>
-  <el-date-picker v-bind="mergedAttrs" :popper-class="popperClass">
+  <el-date-picker v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -28,6 +28,12 @@ const { mergedAttrs, className: popperClass } = useClassName(
 );
 </script>
 <style lang="scss">
+.m-datepicker{
+  &.el-date-editor.el-input__wrapper, .el-input__wrapper{
+    box-shadow: none ;
+    background-color: var(--bg-tertiary-hover);
+  }
+}
 .mc-datepicker-popper {
   .el-picker-panel {
     border: 1px solid var(--border-primary);
