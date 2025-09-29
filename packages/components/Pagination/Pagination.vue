@@ -19,6 +19,14 @@ defineOptions({
   &.is-background .el-pager li.is-active {
     color: var(--text-quaternary) !important;
   }
+  .el-pager li{
+    border-radius: var(--xs);
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid var(--border-tertiary);
+      color: var(--text-primary);
+    }
+  }
   .el-select .el-select__wrapper {
     width: 112px;
     min-height: 32px;
@@ -37,9 +45,6 @@ defineOptions({
   .el-pager .number {
     font-size: var(--font-size-text-sm);
     font-weight: 500;
-    &:hover {
-      border: 1px solid var(--border-tertiary);
-    }
   }
   .btn-prev,
   .btn-next {
@@ -48,7 +53,9 @@ defineOptions({
     }
     &:hover:not(:disabled) {
       border: 1px solid var(--border-tertiary);
+      color: var(--text-primary);
     }
+    background-color: transparent !important;
   }
 }
 </style>
