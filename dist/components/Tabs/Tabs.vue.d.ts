@@ -7,6 +7,11 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         type: BooleanConstructor;
         default: boolean;
     };
+    styleType: {
+        type: StringConstructor;
+        default: string;
+        validator: (value: unknown) => boolean;
+    };
 }>, {
     navRef: import('vue').Ref<any, any>;
     tabs: import('vue').Ref<any[], any[]>;
@@ -36,6 +41,11 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         type: BooleanConstructor;
         default: boolean;
     };
+    styleType: {
+        type: StringConstructor;
+        default: string;
+        validator: (value: unknown) => boolean;
+    };
 }>> & Readonly<{
     "onUpdate:modelValue"?: (...args: any[]) => any;
     "onTab-click"?: (...args: any[]) => any;
@@ -45,6 +55,7 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     onEdit?: (...args: any[]) => any;
 }>, {
     closable: boolean;
+    styleType: string;
     modelValue: string | number;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, true, {}, any>;
 export default _default;
