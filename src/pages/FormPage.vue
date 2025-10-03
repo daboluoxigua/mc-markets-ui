@@ -2,9 +2,9 @@
   <div class="form-page">
     <!-- 典型表单 -->
     <DemoSection 
-      title="典型表单"
+      title="典型表单 表单size='large' "
       code="<template>
-  <m-form :model='form' label-width='auto' style='max-width: 600px'>
+  <m-form :model='form' label-width='auto' size='large' style='max-width: 600px'>
     <m-form-item label='活动名称'>
       <m-input v-model='form.name' />
     </m-form-item>
@@ -39,7 +39,7 @@ const onReset = () => {
 };
 </script>"
     >
-      <m-form :model="form" label-width="auto" style="max-width: 600px">
+      <m-form :model="form" label-width="auto" size="large" style="max-width: 600px">
         <m-form-item label="活动名称">
           <m-input v-model="form.name" />
         </m-form-item>

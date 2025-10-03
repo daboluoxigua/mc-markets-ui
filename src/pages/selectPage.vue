@@ -64,12 +64,12 @@ const value = ref('');
     </DemoSection>
     <!-- 实心选择器 -->
     <DemoSection 
-      title="实心选择器 styleType='solid' size='small'"
-      code="<m-select v-model='value' styleType='solid' size='small' placeholder='请选择'><m-option label='选项一' value='option1' /></m-select>"
+      title="实心选择器 styleType='solid'"
+      code="<m-select v-model='value' styleType='solid' placeholder='请选择'><m-option label='选项一' value='option1' /></m-select>"
     >
       <div class="doc-grid">
         <div class="doc-item">
-          <m-select v-model="value" styleType="solid" size="small" placeholder="请选择">
+          <m-select v-model="value" styleType="solid" placeholder="请选择">
             <m-option label="选项一" value="option1"></m-option>
             <m-option label="选项二" value="option2"></m-option>
             <m-option label="选项三" value="option3"></m-option>
@@ -77,7 +77,7 @@ const value = ref('');
           <span>基础选择器</span>
         </div>
         <div class="doc-item">
-          <m-select v-model="value" styleType="solid" size="small" placeholder="禁用状态" disabled>
+          <m-select v-model="value" styleType="solid" placeholder="禁用状态" disabled>
             <m-option label="选项一" value="option1"></m-option>
             <m-option label="选项二" value="option2"></m-option>
             <m-option label="选项三" value="option3"></m-option>
@@ -85,7 +85,7 @@ const value = ref('');
           <span>禁用状态</span>
         </div>
         <div class="doc-item">
-          <m-select v-model="value" styleType="solid" size="small" placeholder="可清空" clearable>
+          <m-select v-model="value" styleType="solid" placeholder="可清空" clearable>
             <m-option label="选项一" value="option1"></m-option>
             <m-option label="选项二" value="option2"></m-option>
             <m-option label="选项三" value="option3"></m-option>
@@ -93,7 +93,7 @@ const value = ref('');
           <span>可清空</span>
         </div>
         <div class="doc-item">
-          <m-select v-model="value" styleType="solid" size="small" placeholder="可搜索" clearable filterable @change="handleSelectChange">
+          <m-select v-model="value" styleType="solid" placeholder="可搜索" clearable filterable @change="handleSelectChange">
             <template #header>
               <m-input type="solid" v-model="searchValue" placeholder="请输入搜索内容">
                 <template #prefix>

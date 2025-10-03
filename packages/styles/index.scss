@@ -49,9 +49,9 @@
   $border-color-hover:var(--text-brand),
   // 自定义阴影
   $common-component-size: (
-    'large': 40px,
-    'default': 48px,
-    'small': 40px,
+    'large': 48px,
+    'default': 40px,
+    'small': 32px,
   )
 );
 @use "element-plus/theme-chalk/src/index.scss" as *;
@@ -87,8 +87,8 @@ html.dark{
   --el-border-radius-base:8px;
   --el-border-color-hover:var(--text-brand);
 
-  --el-component-size-large: 58px;
-  --el-component-size: 48px;
+  --el-component-size-large: 48px;
+  --el-component-size: 40px;
   --el-component-size-small: 32px;
   --el-font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

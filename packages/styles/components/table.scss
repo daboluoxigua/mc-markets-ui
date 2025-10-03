@@ -4,7 +4,9 @@
     --el-table-row-hover-bg-color: var(--bg-tertiary-hover);
     --el-table-border-color: transparent;
     --el-table-header-text-color: var(--text-tertiary);
-    --el-table-tr-bg-color: transparent;
+    --el-table-tr-bg-color: #161518;
+    --el-table-fixed-left-column:inset 10px 0 10px -10px #000;
+    --el-table-fixed-right-column:inset -10px 0 10px -10px #000;
 
     border: none;
     border-radius: 8px;
@@ -24,41 +26,12 @@
 
     .el-table__cell {
       padding: 18px 0px;
-      border: none;
+      // border: none;
     }
 
     .cell {
       line-height: 20px;
       padding: 0 16px;
-    }
-
-    .el-table__row:last-of-type {
-      .el-table__cell {
-        border-bottom: none;
-      }
-    }
-
-    .el-table__inner-wrapper::before {
-      display: none;
-    }
-
-    th.el-table__cell.is-leaf {
-      border-bottom: none;
-    }
-
-    // 去掉所有边框
-    .el-table__border-left-patch,
-    .el-table__border-right-patch,
-    .el-table__border-top-patch,
-    .el-table__border-bottom-patch {
-      display: none;
-    }
-
-    // 去掉单元格边框
-    td.el-table__cell,
-    th.el-table__cell {
-      border-right: none;
-      border-bottom: none;
     }
   }
 }

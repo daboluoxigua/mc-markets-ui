@@ -268,6 +268,13 @@ const tagButtonTableData = reactive([
     department: '市场部',
     status: '离线',
     level: '中级'
+  },
+  {
+    id: 6,
+    name: '钱七',
+    department: '市场部',
+    status: '离线',
+    level: '中级'
   }
 ])
 
