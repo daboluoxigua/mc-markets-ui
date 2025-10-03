@@ -23,6 +23,8 @@ import { default as MTableColumn } from './components/Table/TableColumn.vue';
 import { default as MBanner } from './components/Banner/Banner.vue';
 import { default as MTabs } from './components/Tabs/Tabs.vue';
 import { default as MTabPane } from './components/Tabs/TabPane.vue';
+import { default as MTabCard } from './components/TabCard/TabCard.vue';
+import { default as MTabCardItem } from './components/TabCard/TabCardItem.vue';
 export function checkComponentRegistration(app: any): {
     registered: string[];
     custom: any[];
@@ -68,6 +70,6 @@ export const MTeleport: any;
 export const MConfigProvider: any;
 declare function install(app: any): void;
 import * as ElementPlusComponents from 'element-plus';
-export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, Message, NotifiMessage };
+export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, Message, NotifiMessage };
 export { addOverrideClass, addComponentOverride, applyGlobalOverride, forceRefreshStyles, createOverrideComponent } from './utils/styleUtils.js';
 //# sourceMappingURL=index.d.ts.map

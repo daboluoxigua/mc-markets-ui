@@ -4,12 +4,17 @@ type __VLS_WithTemplateSlots<T, S> = T & (new () => {
     $slots: S;
 });
 declare const __VLS_component: import('vue').DefineComponent<{}, {
-    popperClass: string;
-    styleType: string;
+    $emit: (event: "click", ...args: any[]) => void;
+    name: string | number;
+    disabled: boolean;
+    label: string;
     $props: {
-        readonly popperClass?: string;
-        readonly styleType?: string;
+        readonly name?: string | number;
+        readonly disabled?: boolean;
+        readonly label?: string;
     };
 }, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<{}> & Readonly<{}>, {}, {}, {}, {}, string, import('vue').ComponentProvideOptions, true, {}, any>;
-declare function __VLS_template(): Partial<Record<NonNullable<string | number>, (_: {}) => any>>;
-//# sourceMappingURL=DatePicker.vue.d.ts.map
+declare function __VLS_template(): {
+    default?(_: {}): any;
+};
+//# sourceMappingURL=TabCardItem.vue.d.ts.map
