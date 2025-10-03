@@ -14,7 +14,6 @@
 
   .el-select__wrapper {
     padding: 4px 16px;
-    min-height: var(--el-component-size);
     &.is-disabled {
       background: var(--bg-tertiary-hover);
     }
@@ -24,7 +23,6 @@
     .el-select__wrapper {
       padding: 8px 16px;
       font-size: var(--font-size-text-sm);
-      min-height: 40px;
     }
   }
 
