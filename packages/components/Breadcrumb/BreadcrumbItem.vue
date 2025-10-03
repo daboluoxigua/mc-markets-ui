@@ -123,13 +123,20 @@ onUnmounted(() => {
     color: var(--text-tertiary, #c0c4cc);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     line-height: 16px;
     width: 16px;
     height: 16px;
     
+    
     :deep(svg) {
       width: 16px;
       height: 16px;
+    }
+    
+    // 字体图标微调
+    svg {
+      transform: translateY(10%);
     }
   }
   
