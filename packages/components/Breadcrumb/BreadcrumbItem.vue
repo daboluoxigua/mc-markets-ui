@@ -11,12 +11,12 @@
     <span v-else class="m-breadcrumb__inner">
       <slot></slot>
     </span>
-    <i
+    <span
       v-if="separatorIcon && !isLast"
       class="m-breadcrumb__separator"
     >
       <component :is="separatorIcon" />
-    </i>
+    </span>
     <span
       v-else-if="!isLast"
       class="m-breadcrumb__separator"
@@ -97,34 +97,39 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .m-breadcrumb__item {
   float: left;
+  display: flex;
+  align-items: center;
+  height: 20px;
   
   .m-breadcrumb__inner {
     color: var(--text-secondary, #606266);
     text-decoration: none;
     transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    height: 20px;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
     
     &:hover,
     &.is-link {
       color: var(--text-primary);
-      // color: var(--bg-brand, #409eff);
       cursor: pointer;
     }
   }
   
   .m-breadcrumb__separator {
-    margin: 0 9px;
+    margin: 0 4px;
     font-weight: 500;
     color: var(--text-tertiary, #c0c4cc);
     display: inline-flex;
     align-items: center;
-    transform: translateY(10%);
-    :deep(svg) {
-      width: 14px;
-      height: 14px;
-    }
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
     
-    [class*="icon"] {
-      margin-right: 6px;
+    :deep(svg) {
+      width: 16px;
+      height: 16px;
     }
   }
   

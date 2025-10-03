@@ -1,20 +1,13 @@
 <template>
   <div class="m-tab-card" :class="{ 'is-disabled': disabled }">
     <div class="m-tab-card__container">
-      <div
+      <m-tab-card-item
         v-for="(tab, index) in tabs"
         :key="tab.name"
-        :class="[
-          'm-tab-card__item',
-          { 
-            'is-active': activeTab === tab.name,
-            'is-disabled': tab.disabled
-          }
-        ]"
-        @click="handleTabClick(tab.name, tab.disabled)"
-      >
-        <span class="m-tab-card__text">{{ tab.label }}</span>
-      </div>
+        :name="tab.name"
+        :label="tab.label"
+        :disabled="tab.disabled"
+      />
     </div>
   </div>
 </template>
@@ -22,6 +15,7 @@
 <script setup>
 import { ref, computed, watch, provide } from 'vue'
 import { useClassName } from "@packages/hooks/useClassName.js"
+import MTabCardItem from './TabCardItem.vue'
 
 defineOptions({
   name: "MTabCard",
@@ -109,68 +103,14 @@ provide('tabCardContext', {
     padding: 4px;
     gap: 0;
   }
-
-  &__item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 132px;
-    height: 40px;
-    padding: 0 16px;
-    border-radius: var(--md);
-    cursor: pointer;
-    // transition: all 0.3s ease;
-    user-select: none;
-    background-color: transparent;
-    min-width: 80px;
-    text-align: center;
-    z-index: 1;
-
-    &:hover:not(.is-disabled):not(.is-active) {
-    //   background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    &.is-active {
-      background-color: var(--bg-brand, #ffd700);
-      color: var(--text-quaternary);
-      font-weight: 600;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    &.is-disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-
-    &:not(.is-active) {
-      color: var(--text-secondary, #ffffff);
-    }
-  }
-
-  &__text {
-    font-size: 14px;
-    line-height: 1.4;
-    white-space: nowrap;
-  }
 }
+
 
 // 深色主题适配
 @media (prefers-color-scheme: dark) {
   .m-tab-card {
     &__container {
       background-color: var(--bg-tertiary-hover, #2a2a2a);
-    }
-
-    &__item {
-      &:not(.is-active) {
-        color: var(--text-secondary, #cccccc);
-      }
-
-      &.is-active {
-        background-color: var(--bg-brand, #ffd700);
-        color: var(--text-primary, #1a1a1a);
-      }
     }
   }
 }

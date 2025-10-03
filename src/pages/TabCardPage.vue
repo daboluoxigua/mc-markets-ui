@@ -23,27 +23,6 @@
       </div>
     </DemoSection>
 
-    <!-- 使用 TabCardItem 子组件 -->
-    <DemoSection 
-      title="使用 TabCardItem 子组件"
-      :code="subComponentCode"
-    >
-      <div class="demo-container">
-        <m-tab-card v-model="activeTab2">
-          <m-tab-card-item 
-            v-for="option in tabOptions2" 
-            :key="option.name"
-            :name="option.name"
-            :label="option.label"
-            :disabled="option.disabled"
-          />
-        </m-tab-card>
-        
-        <div class="demo-content">
-          <p>当前选中的标签: <strong>{{ activeTab2 }}</strong></p>
-        </div>
-      </div>
-    </DemoSection>
 
     <!-- 禁用状态 -->
     <DemoSection 
@@ -153,37 +132,6 @@
         </tbody>
       </table>
 
-      <h3>TabCardItem Props</h3>
-      <table class="api-table">
-        <thead>
-          <tr>
-            <th>参数</th>
-            <th>说明</th>
-            <th>类型</th>
-            <th>默认值</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>name</td>
-            <td>标签名称，必填</td>
-            <td>string | number</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>label</td>
-            <td>标签显示文本</td>
-            <td>string</td>
-            <td>''</td>
-          </tr>
-          <tr>
-            <td>disabled</td>
-            <td>是否禁用该标签</td>
-            <td>boolean</td>
-            <td>false</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </template>
@@ -191,7 +139,7 @@
 <script setup>
 import { ref } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
-import { basicUsageCode, subComponentCode, disabledCode, themeCode } from './tabCardCodes.js'
+import { basicUsageCode, disabledCode, themeCode } from './tabCardCodes.js'
 
 // 基础用法数据
 const activeTab1 = ref('transaction')
@@ -200,13 +148,6 @@ const tabOptions1 = ref([
   { label: '资金记录', name: 'fund' }
 ])
 
-// 子组件用法数据
-const activeTab2 = ref('option1')
-const tabOptions2 = ref([
-  { label: '选项一', name: 'option1' },
-  { label: '选项二', name: 'option2' },
-  { label: '选项三', name: 'option3', disabled: true }
-])
 
 // 禁用状态数据
 const activeTab3 = ref('active')

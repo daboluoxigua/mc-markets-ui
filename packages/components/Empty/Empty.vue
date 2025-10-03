@@ -69,6 +69,6 @@ const imageUrl = computed(() => {
   
   // 使用 public 目录中的图片
   // Vite 会自动处理 public 目录中的静态资源
-  return `/images/empty/${image}.png`
+  return `https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/mc-ui/empty/${image}.png`
 })
 </script>

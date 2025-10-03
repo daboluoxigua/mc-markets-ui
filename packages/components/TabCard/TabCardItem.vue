@@ -63,23 +63,26 @@ const handleClick = () => {
 <style lang="scss" scoped>
 .m-tab-card-item {
   position: relative;
-  padding: 8px 16px;
-  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: var(--md);
   cursor: pointer;
-  transition: all 0.3s ease;
+  // transition: all 0.3s ease;
   user-select: none;
   background-color: transparent;
-  min-width: 80px;
+  padding: 0 36px;
   text-align: center;
   z-index: 1;
 
-  &:hover:not(.is-disabled):not(.is-active) {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
+  // &:hover:not(.is-disabled):not(.is-active) {
+  //   background-color: rgba(255, 255, 255, 0.05);
+  // }
 
   &.is-active {
     background-color: var(--bg-brand, #ffd700);
-    color: var(--text-primary, #1a1a1a);
+    color: var(--text-quaternary);
     font-weight: 600;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -97,6 +100,20 @@ const handleClick = () => {
     font-size: 14px;
     line-height: 1.4;
     white-space: nowrap;
+  }
+}
+
+// 深色主题适配
+@media (prefers-color-scheme: dark) {
+  .m-tab-card-item {
+    &:not(.is-active) {
+      color: var(--text-secondary, #cccccc);
+    }
+
+    &.is-active {
+      background-color: var(--bg-brand, #ffd700);
+      color: var(--text-primary, #1a1a1a);
+    }
   }
 }
 </style>
