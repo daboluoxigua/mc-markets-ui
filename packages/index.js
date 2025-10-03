@@ -40,8 +40,10 @@ import MTabs from './components/Tabs/Tabs.vue'
 import MTabPane from './components/Tabs/TabPane.vue'
 import MTabCard from './components/TabCard/TabCard.vue'
 import MTabCardItem from './components/TabCard/TabCardItem.vue'
+import MBreadcrumb from './components/Breadcrumb/Breadcrumb.vue'
+import MBreadcrumbItem from './components/Breadcrumb/BreadcrumbItem.vue'
 
-const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem]
+const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb, MBreadcrumbItem]
 
 // 全局组件配置 - 需要自动创建实例的组件
 const globalInstanceComponents = [
@@ -95,7 +97,9 @@ function registerElementPlus(app) {
         'mtabs': 'm-tabs',
         'mtabpane': 'm-tab-pane',
         'mtabcard': 'm-tab-card',
-        'mtabcarditem': 'm-tab-card-item'
+        'mtabcarditem': 'm-tab-card-item',
+        'mbreadcrumb': 'm-breadcrumb',
+        'mbreadcrumbitem': 'm-breadcrumb-item'
       }
       return nameMap[name] || name.replace(/^m/, 'm-')
     }
@@ -148,7 +152,9 @@ const install = (app) => {
         'mtabs': 'm-tabs',
         'mtabpane': 'm-tab-pane',
         'mtabcard': 'm-tab-card',
-        'mtabcarditem': 'm-tab-card-item'
+        'mtabcarditem': 'm-tab-card-item',
+        'mbreadcrumb': 'm-breadcrumb',
+        'mbreadcrumbitem': 'm-breadcrumb-item'
       }
       name = nameMap[name] || name.replace(/^m/, 'm-')
       
@@ -180,7 +186,9 @@ export function checkComponentRegistration(app) {
         'mtabs': 'm-tabs',
         'mtabpane': 'm-tab-pane',
         'mtabcard': 'm-tab-card',
-        'mtabcarditem': 'm-tab-card-item'
+        'mtabcarditem': 'm-tab-card-item',
+        'mbreadcrumb': 'm-breadcrumb',
+        'mbreadcrumbitem': 'm-breadcrumb-item'
       }
       return nameMap[name] || name.replace(/^m/, 'm-')
     }
@@ -201,7 +209,7 @@ export function checkComponentRegistration(app) {
 }
 
 export default { install }
-export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem }
+export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb, MBreadcrumbItem }
 
 // 导出样式工具函数
 export { 
@@ -223,8 +231,6 @@ export const mComponents = { ...convertedComponents }
 
 // 导出常用的 Element Plus 组件
 export const MButtonGroup = convertedComponents.MButtonGroup
-export const MBreadcrumb = convertedComponents.MBreadcrumb
-export const MBreadcrumbItem = convertedComponents.MBreadcrumbItem
 export const MCarousel = convertedComponents.MCarousel
 export const MCarouselItem = convertedComponents.MCarouselItem
 export const MCascader = convertedComponents.MCascader
