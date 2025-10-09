@@ -5,7 +5,7 @@ type __VLS_WithTemplateSlots<T, S> = T & (new () => {
 });
 declare const __VLS_component: import('vue').DefineComponent<{}, {
     popperClass: string;
-    styleType: string;
+    styleType?: string;
     $props: {
         readonly popperClass?: string;
         readonly styleType?: string;
