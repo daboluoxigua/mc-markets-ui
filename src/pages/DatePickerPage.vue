@@ -37,7 +37,16 @@
     <!-- 其他日期单位 -->
     <DemoSection
       title="其他日期单位"
-      code="<m-date-picker v-model='value2' type='datetime' size='small' style-type='solid' placeholder='Select date and time' />"
+      code="
+      <template>
+        <m-date-picker
+          v-model='value2'
+          type='datetime'
+          placeholder='Select date and time'
+          style-type='solid'
+        />
+      </template>
+      "
     >
       <div class="example-datepicker-block">
         <div class="example-demonstration">
@@ -58,7 +67,29 @@
     <!-- 日期范围 -->
     <DemoSection
       title="日期范围"
-      code="<m-date-picker v-model='value3' type='daterange' range-separator='To' start-placeholder='Start date' end-placeholder='End date' />"
+      code="
+      <template>
+        <m-date-picker
+          v-model='value3'
+          type='daterange'
+          style-type='solid'
+          range-separator='To'
+          start-placeholder='Start date'
+          end-placeholder='End date'
+          :prefix-icon='customPrefix'
+        />
+      </template>
+
+      <script setup>
+        import { shallowRef, h } from 'vue'
+        import { MIcon } from '@mc-markets/ui'
+        const customPrefix = shallowRef({
+          render() {
+            return h(MIcon, { name: 'calendar-clock', size: '20' })
+          },
+        })
+      </script>
+      "
     >
       <div class="example-datepicker-block">
         <div class="example-demonstration">
@@ -82,7 +113,22 @@
     <!-- 默认显示日期 -->
     <DemoSection
       title="默认显示日期"
-      code="<m-date-picker v-model='value4' type='daterange' start-placeholder='Start Date' end-placeholder='End Date' :default-value='defaultValue' />"
+      code="
+      <template>
+        <m-date-picker
+          v-model='value4'
+          type='daterange'
+          start-placeholder='Start Date'
+          end-placeholder='End Date'
+          :default-value='defaultValue'
+        />
+      </template>
+
+      <script setup>
+        import { ref } from 'vue'
+        const defaultValue = ref([new Date(2024, 9, 1), new Date(2024, 9, 7)])
+      </script>
+      "
     >
       <div class="example-datepicker-block">
         <div class="example-demonstration">
@@ -105,7 +151,53 @@
     <!-- 带快捷选项 -->
     <DemoSection
       title="带快捷选项"
-      code="<m-date-picker v-model='value5' type='daterange' unlink-panels range-separator='To' :shortcuts='shortcuts' />"
+      code="
+      <template>
+        <m-date-picker
+          v-model='value5'
+          type='daterange'
+          align='right'
+          unlink-panels
+          range-separator='To'
+          start-placeholder='Start date'
+          end-placeholder='End date'
+          :shortcuts='shortcuts'
+        />
+      </template>
+
+      <script setup>
+        import { ref } from 'vue'
+        const shortcuts = [
+          {
+            text: 'Last week',
+            value: () => {
+              const end = new Date()
+              const start = new Date()
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
+              return [start, end]
+            },
+          },
+          {
+            text: 'Last month',
+            value: () => {
+              const end = new Date()
+              const start = new Date()
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
+              return [start, end]
+            },
+          },
+          {
+            text: 'Last 3 months',
+            value: () => {
+              const end = new Date()
+              const start = new Date()
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
+              return [start, end]
+            },
+          },
+        ]
+      </script>
+      "
     >
       <div class="example-datepicker-block">
         <div class="example-demonstration">
@@ -132,7 +224,22 @@
     <!-- 带输入限制 -->
     <DemoSection
       title="带输入限制"
-      code="<m-date-picker v-model='value6' type='date' placeholder='Pick a day' :disabled-date='disabledDate' />"
+      code="
+      <template>
+        <m-date-picker
+          v-model='value6'
+          type='date'
+          placeholder='Pick a day'
+          :disabled-date='disabledDate'
+        />
+      </template>
+
+      <script setup>
+        const disabledDate = (time) => {
+          return time.getTime() > Date.now()
+        }
+      </script>
+      "
     >
       <div class="example-datepicker-block">
         <div class="example-demonstration">
