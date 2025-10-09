@@ -13,12 +13,14 @@
   }
 
   .el-select__wrapper {
+    box-sizing: border-box;
     padding: 4px 16px;
+    height: 40px;
     &.is-disabled {
       background: var(--bg-tertiary-hover);
     }
   }
-
+  
   .el-select--small {
     .el-select__wrapper {
       padding: 8px 16px;

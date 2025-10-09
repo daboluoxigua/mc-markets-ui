@@ -69,6 +69,7 @@
           <m-date-picker
             v-model="value3"
             type="daterange"
+            style-type="solid"
             range-separator="To"
             start-placeholder="Start date"
             end-placeholder="End date"

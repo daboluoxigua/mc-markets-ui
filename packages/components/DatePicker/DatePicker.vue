@@ -1,5 +1,5 @@
 <template>
-  <el-date-picker v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass" :class="styleType">
+  <el-date-picker v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass" :class="{ 'style-type-solid': styleType === 'solid' }">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -21,7 +21,6 @@ const props = defineProps({
   },
   styleType: {
     type: String,
-    default: "default",
   },
 });
 

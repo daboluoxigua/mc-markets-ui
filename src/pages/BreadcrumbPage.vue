@@ -11,47 +11,7 @@
       :code="basicUsageCode"
     >
       <div class="demo-container">
-        <m-breadcrumb separator=">">
-          <m-breadcrumb-item :to="{ path: '/' }">总览</m-breadcrumb-item>
-          <m-breadcrumb-item>资金记录</m-breadcrumb-item>
-        </m-breadcrumb>
-      </div>
-    </DemoSection>
-
-    <!-- 图标分隔符 -->
-    <DemoSection 
-      title="图标分隔符"
-      :code="iconSeparatorCode"
-    >
-      <div class="demo-container">
-        <m-breadcrumb :separator-icon="ArrowRight">
-          <m-breadcrumb-item :to="{ path: '/' }">homepage</m-breadcrumb-item>
-          <m-breadcrumb-item>promotion management</m-breadcrumb-item>
-          <m-breadcrumb-item>promotion list</m-breadcrumb-item>
-          <m-breadcrumb-item>promotion detail</m-breadcrumb-item>
-        </m-breadcrumb>
-      </div>
-    </DemoSection>
-
-    <!-- 自定义分隔符 -->
-    <DemoSection 
-      title="自定义分隔符"
-      :code="customSeparatorCode"
-    >
-      <div class="demo-container">
-        <m-breadcrumb separator=">">
-          <m-breadcrumb-item :to="{ path: '/' }">首页</m-breadcrumb-item>
-          <m-breadcrumb-item>产品管理</m-breadcrumb-item>
-          <m-breadcrumb-item>产品列表</m-breadcrumb-item>
-          <m-breadcrumb-item>产品详情</m-breadcrumb-item>
-        </m-breadcrumb>
-        
-        <m-breadcrumb separator="|" style="margin-top: 16px;">
-          <m-breadcrumb-item :to="{ path: '/' }">首页</m-breadcrumb-item>
-          <m-breadcrumb-item>用户管理</m-breadcrumb-item>
-          <m-breadcrumb-item>用户列表</m-breadcrumb-item>
-          <m-breadcrumb-item>用户详情</m-breadcrumb-item>
-        </m-breadcrumb>
+        <m-breadcrumb :items="basicItems" />
       </div>
     </DemoSection>
 
@@ -61,12 +21,7 @@
       :code="routerCode"
     >
       <div class="demo-container">
-        <m-breadcrumb separator="/">
-          <m-breadcrumb-item :to="{ path: '/' }">首页</m-breadcrumb-item>
-          <m-breadcrumb-item :to="{ path: '/button' }">按钮组件</m-breadcrumb-item>
-          <m-breadcrumb-item :to="{ path: '/input' }">输入框组件</m-breadcrumb-item>
-          <m-breadcrumb-item>当前页面</m-breadcrumb-item>
-        </m-breadcrumb>
+        <m-breadcrumb :items="routerItems" />
         
         <div class="demo-content">
           <p>点击上面的面包屑项可以跳转到对应页面</p>
@@ -80,12 +35,7 @@
       :code="disabledCode"
     >
       <div class="demo-container">
-        <m-breadcrumb separator="/">
-          <m-breadcrumb-item>首页</m-breadcrumb-item>
-          <m-breadcrumb-item>产品管理</m-breadcrumb-item>
-          <m-breadcrumb-item>产品列表</m-breadcrumb-item>
-          <m-breadcrumb-item>产品详情</m-breadcrumb-item>
-        </m-breadcrumb>
+        <m-breadcrumb :items="disabledItems" />
         
         <div class="demo-content">
           <p>没有设置 to 属性的面包屑项不会有点击效果</p>
@@ -108,76 +58,60 @@
         </thead>
         <tbody>
           <tr>
-            <td>separator</td>
-            <td>分隔符</td>
-            <td>string</td>
-            <td>/</td>
-          </tr>
-          <tr>
-            <td>separatorIcon</td>
-            <td>图标分隔符的组件或组件名</td>
-            <td>string / Component</td>
-            <td>—</td>
+            <td>items</td>
+            <td>面包屑数据数组</td>
+            <td>Array</td>
+            <td>[]</td>
           </tr>
         </tbody>
       </table>
 
-      <h3>Breadcrumb Slots</h3>
+      <h3>Breadcrumb Events</h3>
       <table class="api-table">
         <thead>
           <tr>
-            <th>插槽名</th>
+            <th>事件名</th>
             <th>说明</th>
-            <th>子标签</th>
+            <th>回调参数</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>default</td>
-            <td>自定义默认内容</td>
-            <td>Breadcrumb Item</td>
+            <td>click</td>
+            <td>点击面包屑项时触发</td>
+            <td>被点击的面包屑项</td>
           </tr>
         </tbody>
       </table>
 
-      <h3>BreadcrumbItem Attributes</h3>
+      <h3>Item 数据结构</h3>
       <table class="api-table">
         <thead>
           <tr>
             <th>属性名</th>
             <th>说明</th>
             <th>类型</th>
-            <th>默认值</th>
+            <th>必填</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>label</td>
+            <td>显示文本</td>
+            <td>String</td>
+            <td>是</td>
+          </tr>
+          <tr>
             <td>to</td>
-            <td>路由跳转目标，同 vue-router 的 to 属性</td>
-            <td>string / object</td>
-            <td>''</td>
+            <td>跳转路径，不设置则不可点击</td>
+            <td>String / Object</td>
+            <td>否</td>
           </tr>
           <tr>
             <td>replace</td>
-            <td>如果设置该属性为 true, 导航将不会留下历史记录</td>
-            <td>boolean</td>
-            <td>false</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>BreadcrumbItem Slots</h3>
-      <table class="api-table">
-        <thead>
-          <tr>
-            <th>插槽名</th>
-            <th>说明</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>default</td>
-            <td>自定义默认内容</td>
+            <td>是否替换历史记录</td>
+            <td>Boolean</td>
+            <td>否</td>
           </tr>
         </tbody>
       </table>
@@ -188,8 +122,29 @@
 <script setup>
 import { ref } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
-import { ArrowRight } from '@element-plus/icons-vue'
-import { basicUsageCode, iconSeparatorCode, customSeparatorCode, routerCode, disabledCode } from './breadcrumbCodes.js'
+import { basicUsageCode, routerCode, disabledCode } from './breadcrumbCodes.js'
+
+// 基础用法数据
+const basicItems = ref([
+  { label: '总览', to: { path: '/' } },
+  { label: '资金记录' }
+])
+
+// 路由跳转数据
+const routerItems = ref([
+  { label: '首页', to: { path: '/' } },
+  { label: '按钮组件', to: { path: '/button' } },
+  { label: '输入框组件', to: { path: '/input' } },
+  { label: '当前页面' }
+])
+
+// 禁用跳转数据
+const disabledItems = ref([
+  { label: '首页' },
+  { label: '产品管理' },
+  { label: '产品列表' },
+  { label: '产品详情' }
+])
 </script>
 
 <style lang="scss" scoped>

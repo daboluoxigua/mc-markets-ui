@@ -1,77 +1,113 @@
 <template>
   <nav class="m-breadcrumb" aria-label="Breadcrumb">
-    <slot></slot>
+    <template v-for="(item, index) in items" :key="index">
+      <span
+        :class="['m-breadcrumb__item', { 'is-link': item.to }]"
+        @click="handleItemClick(item)"
+      >
+        {{ item.label }}
+      </span>
+      <BreadcrumbSeparator 
+        v-if="index < items.length - 1"
+        class="m-breadcrumb__separator"
+      />
+    </template>
   </nav>
 </template>
 
 <script setup>
-import { provide, ref, computed } from 'vue'
+import BreadcrumbSeparator from './BreadcrumbSeparator.vue'
 
 defineOptions({
   name: "MBreadcrumb",
 })
 
-// 定义 props
 const props = defineProps({
-  separator: {
-    type: String,
-    default: '/'
-  },
-  separatorIcon: {
-    type: [String, Object],
-    default: undefined
+  items: {
+    type: Array,
+    default: () => [],
+    validator: (items) => {
+      return items.every(item => 
+        typeof item === 'object' && 
+        item.label !== undefined
+      )
+    }
   }
 })
 
-// 子组件管理
-const items = ref([])
+const emit = defineEmits(['click'])
 
-// 注册子组件
-const registerItem = () => {
-  const id = Date.now() + Math.random()
-  items.value.push(id)
-  return id
-}
-
-// 注销子组件
-const unregisterItem = (id) => {
-  const index = items.value.indexOf(id)
-  if (index > -1) {
-    items.value.splice(index, 1)
+const handleItemClick = (item) => {
+  if (!item.to) return
+  
+  emit('click', item)
+  
+  // 处理路由跳转
+  if (typeof item.to === 'string') {
+    if (item.to.startsWith('http://') || item.to.startsWith('https://')) {
+      window.location.href = item.to
+    } else {
+      if (item.replace) {
+        window.history.replaceState({}, '', item.to)
+      } else {
+        window.history.pushState({}, '', item.to)
+      }
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    }
+  } else if (typeof item.to === 'object' && item.to.path) {
+    const path = item.to.path
+    if (item.replace) {
+      window.history.replaceState({}, '', path)
+    } else {
+      window.history.pushState({}, '', path)
+    }
+    window.dispatchEvent(new PopStateEvent('popstate'))
   }
 }
-
-// 判断是否为最后一项
-const isLastItem = (currentId) => {
-  const currentIndex = items.value.indexOf(currentId)
-  return currentIndex === items.value.length - 1
-}
-
-// 提供给子组件的配置
-provide('breadcrumbContext', {
-  separator: props.separator,
-  separatorIcon: props.separatorIcon,
-  registerItem,
-  unregisterItem,
-  isLastItem
-})
 </script>
 
 <style lang="scss" scoped>
 .m-breadcrumb {
+  display: inline-flex;
+  align-items: center;
   font-size: 14px;
-  line-height: 1;
-  color: var(--text-secondary, #606266);
+  line-height: 20px;
+  height: 20px;
   
-  &::before {
-    display: table;
-    content: "";
+  &__item {
+    color: var(--text-secondary, #909399);
+    transition: color 0.2s;
+    white-space: nowrap;
+    line-height: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    
+    &.is-link {
+      color: var(--text-primary, #303133);
+      cursor: pointer;
+      font-weight: 500;
+      
+      &:hover {
+        color: var(--bg-brand, #ffd700);
+      }
+    }
+    
+    &:last-child {
+      color: var(--text-tertiary, #c0c4cc);
+      cursor: default;
+      font-weight: normal;
+    }
   }
   
-  &::after {
-    display: table;
-    clear: both;
-    content: "";
+  &__separator {
+    margin: 0 8px;
+    color: var(--text-tertiary, #c0c4cc);
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    height: 20px;
   }
 }
 </style>
+

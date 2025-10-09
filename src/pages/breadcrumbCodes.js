@@ -1,55 +1,42 @@
-// Breadcrumb 组件代码示例
-
 export const basicUsageCode = `<template>
-  <m-breadcrumb separator=">">
-    <m-breadcrumb-item :to="{ path: '/' }">总览</m-breadcrumb-item>
-    <m-breadcrumb-item>资金记录</m-breadcrumb-item>
-  </m-breadcrumb>
-</template>`
-
-export const iconSeparatorCode = `<template>
-  <m-breadcrumb :separator-icon="ArrowRight">
-    <m-breadcrumb-item :to="{ path: '/' }">homepage</m-breadcrumb-item>
-    <m-breadcrumb-item>promotion management</m-breadcrumb-item>
-    <m-breadcrumb-item>promotion list</m-breadcrumb-item>
-    <m-breadcrumb-item>promotion detail</m-breadcrumb-item>
-  </m-breadcrumb>
+  <m-breadcrumb :items="basicItems" />
 </template>
 
 <script setup>
-import { ArrowRight } from '@element-plus/icons-vue'
-</script>`
+import { ref } from 'vue'
 
-export const customSeparatorCode = `<template>
-  <m-breadcrumb separator=">">
-    <m-breadcrumb-item :to="{ path: '/' }">首页</m-breadcrumb-item>
-    <m-breadcrumb-item>产品管理</m-breadcrumb-item>
-    <m-breadcrumb-item>产品列表</m-breadcrumb-item>
-    <m-breadcrumb-item>产品详情</m-breadcrumb-item>
-  </m-breadcrumb>
-  
-  <m-breadcrumb separator="|" style="margin-top: 16px;">
-    <m-breadcrumb-item :to="{ path: '/' }">首页</m-breadcrumb-item>
-    <m-breadcrumb-item>用户管理</m-breadcrumb-item>
-    <m-breadcrumb-item>用户列表</m-breadcrumb-item>
-    <m-breadcrumb-item>用户详情</m-breadcrumb-item>
-  </m-breadcrumb>
-</template>`
+const basicItems = ref([
+  { label: '总览', to: { path: '/' } },
+  { label: '资金记录' }
+])
+</` + `script>`
 
 export const routerCode = `<template>
-  <m-breadcrumb separator="/">
-    <m-breadcrumb-item :to="{ path: '/' }">首页</m-breadcrumb-item>
-    <m-breadcrumb-item :to="{ path: '/button' }">按钮组件</m-breadcrumb-item>
-    <m-breadcrumb-item :to="{ path: '/input' }">输入框组件</m-breadcrumb-item>
-    <m-breadcrumb-item>当前页面</m-breadcrumb-item>
-  </m-breadcrumb>
-</template>`
+  <m-breadcrumb :items="routerItems" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const routerItems = ref([
+  { label: '首页', to: { path: '/' } },
+  { label: '按钮组件', to: { path: '/button' } },
+  { label: '输入框组件', to: { path: '/input' } },
+  { label: '当前页面' }
+])
+</` + `script>`
 
 export const disabledCode = `<template>
-  <m-breadcrumb separator="/">
-    <m-breadcrumb-item>首页</m-breadcrumb-item>
-    <m-breadcrumb-item>产品管理</m-breadcrumb-item>
-    <m-breadcrumb-item>产品列表</m-breadcrumb-item>
-    <m-breadcrumb-item>产品详情</m-breadcrumb-item>
-  </m-breadcrumb>
-</template>`
+  <m-breadcrumb :items="disabledItems" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const disabledItems = ref([
+  { label: '首页' },
+  { label: '产品管理' },
+  { label: '产品列表' },
+  { label: '产品详情' }
+])
+</` + `script>`
