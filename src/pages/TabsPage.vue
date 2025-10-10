@@ -3,31 +3,7 @@
     <!-- 基础使用 -->
     <DemoSection 
       title="基础使用"
-      code="<template>
-  <m-tabs v-model='activeName' @tab-click='handleTabClick' @tab-change='handleTabChange'>
-    <m-tab-pane label='User' name='first'>User 内容</m-tab-pane>
-    <m-tab-pane label='Config' name='second'>Config 内容</m-tab-pane>
-    <m-tab-pane label='Role' name='third'>Role 内容</m-tab-pane>
-    <m-tab-pane label='Task' name='fourth'>Task 内容</m-tab-pane>
-  </m-tabs>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-
-const activeName = ref('first');
-
-const handleTabClick = (tabName) => {
-  console.log('点击了tab:', tabName);
-};
-
-const handleTabChange = (newValue, oldValue) => {
-  console.log('tab变化:', newValue, oldValue);
-};
-const handleTabChange = (newValue, oldValue) => {
-  Message.success(`标签从 ${oldValue} 切换到 ${newValue}`)
-}
-</script>"
+      :code="basicUsageCode"
     >
       <div class="demo-container">
         <m-tabs v-model="activeName" @tab-click="handleTabClick" @tab-change="handleTabChange">
@@ -67,7 +43,8 @@ const handleTabChange = (newValue, oldValue) => {
 import { ref } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
 import ApiDocs from '@/components/ApiDocs.vue'
-import { Message} from '@mc-markets/ui'
+import { Message } from '@mc-markets/ui'
+import { basicUsageCode } from './tabsCodes.js'
 
 // 响应式数据
 const activeName = ref('first')
