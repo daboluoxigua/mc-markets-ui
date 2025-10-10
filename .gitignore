@@ -11,6 +11,8 @@ node_modules
 # dist
 dist-ssr
 demo-dist
+dist
+dist/*
 *.local
 
 # Editor directories and files
