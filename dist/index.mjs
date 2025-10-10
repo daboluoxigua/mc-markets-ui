@@ -1,21 +1,21 @@
 var fe = Object.defineProperty, _e = Object.defineProperties;
 var ge = Object.getOwnPropertyDescriptors;
-var z = Object.getOwnPropertySymbols;
+var F = Object.getOwnPropertySymbols;
 var X = Object.prototype.hasOwnProperty, Y = Object.prototype.propertyIsEnumerable;
 var Q = (e, t, n) => t in e ? fe(e, t, { enumerable: !0, configurable: !0, writable: !0, value: n }) : e[t] = n, w = (e, t) => {
   for (var n in t || (t = {}))
     X.call(t, n) && Q(e, n, t[n]);
-  if (z)
-    for (var n of z(t))
+  if (F)
+    for (var n of F(t))
       Y.call(t, n) && Q(e, n, t[n]);
   return e;
 }, E = (e, t) => _e(e, ge(t));
-var F = (e, t) => {
+var D = (e, t) => {
   var n = {};
   for (var s in e)
     X.call(e, s) && t.indexOf(s) < 0 && (n[s] = e[s]);
-  if (e != null && z)
-    for (var s of z(e))
+  if (e != null && F)
+    for (var s of F(e))
       t.indexOf(s) < 0 && Y.call(e, s) && (n[s] = e[s]);
   return n;
 };
@@ -36,7 +36,7 @@ var H = (e, t, n) => new Promise((s, o) => {
   l((n = n.apply(e, t)).next());
 });
 import * as ee from "element-plus";
-import { computed as $, createElementBlock as c, openBlock as i, mergeProps as y, renderSlot as m, createBlock as f, createSlots as v, renderList as _, withCtx as p, ref as O, useAttrs as V, unref as I, normalizeProps as G, guardReactiveProps as U, createCommentVNode as C, createElementVNode as h, Fragment as j, normalizeClass as T, mergeModels as K, useModel as be, createVNode as N, Teleport as te, TransitionGroup as se, resolveDynamicComponent as ne, toDisplayString as x, useSlots as ve, watch as L, normalizeStyle as oe, createTextVNode as ae, provide as re, onMounted as le, nextTick as he, withDirectives as ye, vShow as $e, inject as ie, onUnmounted as Me } from "vue";
+import { computed as h, createElementBlock as c, openBlock as i, mergeProps as $, renderSlot as m, createBlock as f, createSlots as v, renderList as _, withCtx as p, ref as O, useAttrs as R, unref as I, normalizeProps as U, guardReactiveProps as q, createCommentVNode as C, createElementVNode as y, Fragment as j, normalizeClass as T, mergeModels as K, useModel as be, createVNode as L, Teleport as te, TransitionGroup as se, resolveDynamicComponent as ne, toDisplayString as x, useSlots as ve, watch as V, normalizeStyle as oe, createTextVNode as ae, provide as re, onMounted as le, nextTick as he, withDirectives as ye, vShow as $e, inject as ie, onUnmounted as Me } from "vue";
 import { ElButton as Ce, ElInput as ke, ElForm as we, ElFormItem as Se, ElTooltip as Te, ElSelect as Ie, ElOption as Be, ElOptionGroup as Oe, ElPagination as Ee, ElRadio as xe, ElRadioGroup as Pe, ElRadioButton as je, ElSwitch as Ae, ElTag as Ne, ElAlert as Le, ElDialog as Ve, ElNotification as Re, ElDatePicker as ze, ElEmpty as Fe, ElTable as De, ElTableColumn as Ge } from "element-plus/es";
 import "element-plus/es/components/base/style/index";
 import "element-plus/es/components/button/style/index";
@@ -105,16 +105,16 @@ const S = (e, t) => {
   },
   emits: ["click"],
   setup(e, { emit: t }) {
-    const n = e, s = t, o = $(() => {
+    const n = e, s = t, o = h(() => {
       const l = ["iconfont"];
       return n.name && l.push(`${n.prefix}-${n.name}`), n.spin && l.push("icon-spin"), n.pulse && l.push("icon-pulse"), n.flip && l.push(`icon-flip-${n.flip}`), l;
-    }), a = $(() => {
+    }), a = h(() => {
       const l = {};
       return n.size && (typeof n.size == "number" ? l.fontSize = `${n.size}px` : l.fontSize = n.size), n.color && (l.color = n.color), n.rotate !== 0 && (l.transform = `rotate(${n.rotate}deg)`), l;
     }), r = (l) => {
       s("click", l);
     };
-    return (l, d) => (i(), c("i", y({
+    return (l, d) => (i(), c("i", $({
       class: o.value,
       style: a.value
     }, l.$attrs, { onClick: r }), [
@@ -128,7 +128,7 @@ const S = (e, t) => {
   setup(e) {
     return (t, n) => {
       const s = Ce;
-      return i(), f(s, y(t.$attrs, { class: "m-button" }), v({ _: 2 }, [
+      return i(), f(s, $(t.$attrs, { class: "m-button" }), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
           name: a,
           fn: p(() => [
@@ -145,7 +145,7 @@ const S = (e, t) => {
   setup(e) {
     return (t, n) => {
       const s = ke;
-      return i(), f(s, y(t.$attrs, {
+      return i(), f(s, $(t.$attrs, {
         class: ["m-input", { solid: t.$attrs.styleType === "solid" }]
       }), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
@@ -163,7 +163,7 @@ const S = (e, t) => {
   __name: "Form",
   setup(e, { expose: t }) {
     const n = O();
-    return V(), t({
+    return R(), t({
       validate: (s) => {
         var o;
         return (o = n.value) == null ? void 0 : o.validate(s);
@@ -186,7 +186,7 @@ const S = (e, t) => {
       }
     }), (s, o) => {
       const a = we;
-      return i(), f(a, y({
+      return i(), f(a, $({
         ref_key: "formRef",
         ref: n
       }, s.$attrs, { class: "m-form" }), v({ _: 2 }, [
@@ -206,7 +206,7 @@ const S = (e, t) => {
   setup(e) {
     return (t, n) => {
       const s = Se;
-      return i(), f(s, y(t.$attrs, { class: "m-form-item" }), v({ _: 2 }, [
+      return i(), f(s, $(t.$attrs, { class: "m-form-item" }), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
           name: a,
           fn: p(() => [
@@ -223,7 +223,7 @@ const S = (e, t) => {
   }), n;
 };
 function A(e, t = "popperClass") {
-  const n = V(), s = $(() => Xe(n, t)), o = $(() => Qe(e, n[t]));
+  const n = R(), s = h(() => Xe(n, t)), o = h(() => Qe(e, n[t]));
   return {
     mergedAttrs: s,
     className: o
@@ -243,7 +243,7 @@ const Ye = /* @__PURE__ */ Object.assign({
     const { mergedAttrs: t, className: n } = A("mc-tooltip-popper");
     return (s, o) => {
       const a = Te;
-      return i(), f(a, y(I(t), { "popper-class": I(n) }), v({ _: 2 }, [
+      return i(), f(a, $(I(t), { "popper-class": I(n) }), v({ _: 2 }, [
         _(s.$slots, (r, l) => ({
           name: l,
           fn: p(() => [
@@ -260,7 +260,7 @@ const Ye = /* @__PURE__ */ Object.assign({
   setup(e) {
     return (t, n) => {
       const s = Ie;
-      return i(), f(s, y({
+      return i(), f(s, $({
         class: ["m-select", { solid: t.$attrs.styleType === "solid" }],
         "show-arrow": !1
       }, t.$attrs), v({ _: 2 }, [
@@ -280,7 +280,7 @@ const Ye = /* @__PURE__ */ Object.assign({
   setup(e) {
     return (t, n) => {
       const s = Be;
-      return i(), f(s, G(U(t.$attrs)), v({ _: 2 }, [
+      return i(), f(s, U(q(t.$attrs)), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
           name: a,
           fn: p(() => [
@@ -297,7 +297,7 @@ const Ye = /* @__PURE__ */ Object.assign({
   setup(e) {
     return (t, n) => {
       const s = Oe;
-      return i(), f(s, G(U(t.$attrs)), v({ _: 2 }, [
+      return i(), f(s, U(q(t.$attrs)), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
           name: a,
           fn: p(() => [
@@ -314,7 +314,7 @@ const Ye = /* @__PURE__ */ Object.assign({
   setup(e) {
     return (t, n) => {
       const s = Ee;
-      return i(), f(s, y(t.$attrs, { class: "m-pagination" }), v({ _: 2 }, [
+      return i(), f(s, $(t.$attrs, { class: "m-pagination" }), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
           name: a,
           fn: p(() => [
@@ -338,7 +338,7 @@ const Ye = /* @__PURE__ */ Object.assign({
     const { mergedAttrs: t } = A("mc-radio-popper");
     return (n, s) => {
       const o = xe;
-      return i(), f(o, y(I(t), { class: "m-radio" }), v({ _: 2 }, [
+      return i(), f(o, $(I(t), { class: "m-radio" }), v({ _: 2 }, [
         _(n.$slots, (a, r) => ({
           name: r,
           fn: p(() => [
@@ -359,16 +359,16 @@ const Ye = /* @__PURE__ */ Object.assign({
     }
   },
   setup(e) {
-    const t = V(), n = $(() => {
+    const t = R(), n = h(() => {
       const o = "mc-radio-group-popper";
       return t.popperClass ? `${o} ${t.popperClass}`.trim() : o;
-    }), s = $(() => {
+    }), s = h(() => {
       const r = t, { popperClass: o } = r;
-      return F(r, ["popperClass"]);
+      return D(r, ["popperClass"]);
     });
     return (o, a) => {
       const r = Pe;
-      return i(), f(r, y(s.value, {
+      return i(), f(r, $(s.value, {
         "popper-class": n.value,
         class: "m-radio-group"
       }), v({ _: 2 }, [
@@ -395,7 +395,7 @@ const Ye = /* @__PURE__ */ Object.assign({
     const { mergedAttrs: t } = A("mc-radio-button-popper");
     return (n, s) => {
       const o = je;
-      return i(), f(o, y(I(t), { class: "m-radio-button" }), v({ _: 2 }, [
+      return i(), f(o, $(I(t), { class: "m-radio-button" }), v({ _: 2 }, [
         _(n.$slots, (a, r) => ({
           name: r,
           fn: p(() => [
@@ -419,7 +419,7 @@ const Ye = /* @__PURE__ */ Object.assign({
     const { mergedAttrs: t, className: n } = A("mc-switch-popper");
     return (s, o) => {
       const a = Ae;
-      return i(), f(a, y(I(t), {
+      return i(), f(a, $(I(t), {
         "popper-class": I(n),
         class: "m-switch"
       }), v({ _: 2 }, [
@@ -451,36 +451,45 @@ const Ye = /* @__PURE__ */ Object.assign({
     loading: {
       type: Boolean,
       default: !1
+    },
+    status: {
+      type: String,
+      default: "",
+      validator: (e) => ["", "success", "warning", "danger"].includes(e)
     }
   },
   setup(e) {
-    const t = e, n = $(() => t.prefixIcon);
-    return (s, o) => {
-      const a = Ne;
-      return i(), f(a, y(s.$attrs, {
-        class: ["m-tag", { "is-loading": e.loading }]
+    const t = e, n = h(() => {
+      if (t.status)
+        return t.status;
+    }), s = h(() => t.status === "warning" ? !0 : t.loading), o = h(() => t.prefixIcon ? t.prefixIcon : t.status === "success" ? "icon-circle-check-filled" : t.status === "danger" ? "icon-lucide_circle-x-filled" : ""), a = h(() => t.suffixIcon ? t.suffixIcon : "");
+    return (r, l) => {
+      const d = Ne;
+      return i(), f(d, $(r.$attrs, {
+        type: n.value,
+        class: ["m-tag", { "is-loading": s.value }]
       }), v({ _: 2 }, [
-        _(s.$slots, (r, l) => ({
-          name: l,
+        _(r.$slots, (g, M) => ({
+          name: M,
           fn: p(() => [
-            e.loading && !e.prefixIcon ? (i(), c("div", lt, [
-              h("div", it, [
-                (i(), c(j, null, _(8, (d) => h("div", { key: d })), 64))
+            s.value && !o.value ? (i(), c("div", lt, [
+              y("div", it, [
+                (i(), c(j, null, _(8, (N) => y("div", { key: N })), 64))
               ])
-            ])) : n.value ? (i(), c("i", {
+            ])) : o.value ? (i(), c("i", {
               key: 1,
-              class: T(["prefixIcon", ["iconfont", n.value]])
+              class: T(["prefixIcon", ["iconfont", o.value]])
             }, null, 2)) : C("", !0),
-            h("div", null, [
-              m(s.$slots, l)
+            y("div", null, [
+              m(r.$slots, M)
             ]),
-            e.suffixIcon ? (i(), c("i", {
+            a.value ? (i(), c("i", {
               key: 2,
-              class: T(["suffixIcon", ["iconfont", e.suffixIcon]])
+              class: T(["suffixIcon", ["iconfont", a.value]])
             }, null, 2)) : C("", !0)
           ])
         }))
-      ]), 1040, ["class"]);
+      ]), 1040, ["type", "class"]);
     };
   }
 }), ut = ["src", "alt"], dt = ["success", "warning", "error"], mt = {
@@ -498,20 +507,20 @@ const Ye = /* @__PURE__ */ Object.assign({
     }
   },
   setup(e) {
-    const t = e, n = V(), s = $(() => {
-      const l = n, { useCustomIcon: a } = l, r = F(l, ["useCustomIcon"]);
+    const t = e, n = R(), s = h(() => {
+      const l = n, { useCustomIcon: a } = l, r = D(l, ["useCustomIcon"]);
       return E(w({}, r), {
         type: t.type
         // 确保 type 属性正确传递给 el-alert
       });
-    }), o = $(() => t.useCustomIcon ? `https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/mc-ui/alert/alert-${t.type}.png` : null);
+    }), o = h(() => t.useCustomIcon ? `https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/mc-ui/alert/alert-${t.type}.png` : null);
     return (a, r) => {
       const l = Le;
-      return i(), f(l, y(s.value, { class: "mc-alert" }), v({ _: 2 }, [
+      return i(), f(l, $(s.value, { class: "mc-alert" }), v({ _: 2 }, [
         o.value ? {
           name: "icon",
           fn: p(() => [
-            h("img", {
+            y("img", {
               src: o.value,
               alt: `${e.type} icon`,
               class: "mc-alert-icon"
@@ -566,7 +575,7 @@ const Ye = /* @__PURE__ */ Object.assign({
     return (s, o) => {
       const a = Ve;
       return i(), c("div", null, [
-        N(a, y({
+        L(a, $({
           modelValue: n.value,
           "onUpdate:modelValue": o[0] || (o[0] = (r) => n.value = r),
           width: e.width,
@@ -586,7 +595,7 @@ const Ye = /* @__PURE__ */ Object.assign({
           s.$slots.header ? {
             name: "header",
             fn: p(({ close: r, titleId: l, titleClass: d }) => [
-              m(s.$slots, "header", G(U({ close: r, titleId: l, titleClass: d })))
+              m(s.$slots, "header", U(q({ close: r, titleId: l, titleClass: d })))
             ]),
             key: "0"
           } : void 0,
@@ -606,7 +615,7 @@ const Ye = /* @__PURE__ */ Object.assign({
 };
 function gt(e, t, n, s, o, a) {
   const r = Re;
-  return i(), f(r, y(e.$attrs, { class: "mc-notification" }), v({ _: 2 }, [
+  return i(), f(r, $(e.$attrs, { class: "mc-notification" }), v({ _: 2 }, [
     _(e.$slots, (l, d) => ({
       name: d,
       fn: p(() => [
@@ -711,7 +720,7 @@ const ht = {
 }, Et = ["onClick"];
 function xt(e, t, n, s, o, a) {
   return i(), f(te, { to: "body" }, [
-    N(se, {
+    L(se, {
       name: "message",
       tag: "div",
       class: "message-container"
@@ -734,7 +743,7 @@ function xt(e, t, n, s, o, a) {
               class: "message-icon-img"
             }, null, 8, Ct)) : r.type === "success" ? (i(), c("img", kt)) : r.type === "warning" ? (i(), c("img", wt)) : r.type === "error" ? (i(), c("img", St)) : C("", !0)
           ])) : C("", !0),
-          h("div", Tt, [
+          y("div", Tt, [
             typeof r.message == "function" ? (i(), f(ne(r.message), { key: 0 })) : r.dangerouslyUseHTMLString ? (i(), c("div", {
               key: 1,
               innerHTML: r.message
@@ -811,7 +820,7 @@ const sn = {
 }, zt = ["onClick"];
 function Ft(e, t, n, s, o, a) {
   return i(), f(te, { to: "body" }, [
-    N(se, {
+    L(se, {
       name: "notification",
       tag: "div",
       class: "notification-container"
@@ -824,15 +833,15 @@ function Ft(e, t, n, s, o, a) {
             `notification-${r.position}`
           ])
         }, [
-          t[0] || (t[0] = h("div", { class: "notification-icon" }, [
-            h("img", {
+          t[0] || (t[0] = y("div", { class: "notification-icon" }, [
+            y("img", {
               src: "https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/MCImages/userCenter/icon-quota-tip.png",
               alt: "notification icon"
             })
           ], -1)),
-          h("div", Nt, [
-            h("div", Lt, x(r.title), 1),
-            h("div", Vt, x(r.message), 1),
+          y("div", Nt, [
+            y("div", Lt, x(r.title), 1),
+            y("div", Vt, x(r.message), 1),
             r.slotContent ? (i(), c("div", Rt, [
               (i(), f(ne(r.slotContent)))
             ])) : C("", !0)
@@ -868,7 +877,7 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
     );
     return (s, o) => {
       const a = ze;
-      return i(), f(a, y(I(t), {
+      return i(), f(a, $(I(t), {
         class: ["m-datepicker", { "style-type-solid": e.styleType === "solid" }],
         "popper-class": I(n)
       }), v({ _: 2 }, [
@@ -909,16 +918,16 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
     }
   },
   setup(e) {
-    const t = e, n = V(), s = $(() => {
+    const t = e, n = R(), s = h(() => {
       const l = n, { image: a } = l;
-      return F(l, ["image"]);
-    }), o = $(() => {
+      return D(l, ["image"]);
+    }), o = h(() => {
       const { image: a } = t;
       return a.includes("/") || a.includes("http") ? a : `https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/mc-ui/empty/${a}.png`;
     });
     return (a, r) => {
       const l = Fe;
-      return i(), f(l, y(s.value, { image: o.value }), v({ _: 2 }, [
+      return i(), f(l, $(s.value, { image: o.value }), v({ _: 2 }, [
         _(a.$slots, (d, g) => ({
           name: g,
           fn: p(() => [
@@ -935,7 +944,7 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
   setup(e) {
     return (t, n) => {
       const s = De;
-      return i(), f(s, G(U(t.$attrs)), v({ _: 2 }, [
+      return i(), f(s, U(q(t.$attrs)), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
           name: a,
           fn: p(() => [
@@ -952,7 +961,7 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
   setup(e) {
     return (t, n) => {
       const s = Ge;
-      return i(), f(s, y(t.$attrs, { class: "m-table-column" }), v({ _: 2 }, [
+      return i(), f(s, $(t.$attrs, { class: "m-table-column" }), v({ _: 2 }, [
         _(t.$slots, (o, a) => ({
           name: a,
           fn: p(() => [
@@ -1030,10 +1039,10 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
   emits: ["close", "update:visible"],
   setup(e, { expose: t, emit: n }) {
     const s = ve(), o = e, a = n, r = O(o.visible);
-    L(() => o.visible, (M) => {
+    V(() => o.visible, (M) => {
       r.value = M;
     });
-    const l = $(() => {
+    const l = h(() => {
       const M = {};
       return o.backgroundColor && (M.backgroundColor = o.backgroundColor), o.textColor && (M.color = o.textColor), o.borderColor && (M.borderColor = o.borderColor), M;
     }), d = {
@@ -1042,17 +1051,17 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
       warning: "warning",
       error: "close-circle"
     };
-    $(() => o.icon || d[o.type]);
+    h(() => o.icon || d[o.type]);
     const g = () => {
       r.value = !1, a("update:visible", !1), a("close");
     };
-    return L(r, (M) => {
+    return V(r, (M) => {
       M && o.duration > 0 && setTimeout(() => {
         g();
       }, o.duration);
     }), t({
       close: g
-    }), (M, q) => e.visible ? (i(), c("div", {
+    }), (M, N) => e.visible ? (i(), c("div", {
       key: 0,
       class: T(["m-banner", [
         `m-banner--${e.type}`,
@@ -1063,16 +1072,16 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
       ]]),
       style: oe(l.value)
     }, [
-      h("div", Zt, [
+      y("div", Zt, [
         e.icon || I(s).icon ? (i(), c("div", Jt, [
           m(M.$slots, "icon", {}, () => [
-            N(Z, {
+            L(Z, {
               name: e.icon,
               size: e.iconSize
             }, null, 8, ["name", "size"])
           ], !0)
         ])) : C("", !0),
-        h("div", Qt, [
+        y("div", Qt, [
           m(M.$slots, "default", {}, () => [
             ae(x(e.content), 1)
           ], !0)
@@ -1082,7 +1091,7 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
           class: "m-banner__close",
           onClick: g
         }, [
-          N(Z, {
+          L(Z, {
             name: "lucide-x",
             size: e.closeIconSize
           }, null, 8, ["size"])
@@ -1145,21 +1154,21 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
     }, g = () => {
       t("tab-add"), t("edit", null, "add");
     }, M = (b) => {
-      const k = s.value.findIndex((R) => R.name === b.name);
+      const k = s.value.findIndex((z) => z.name === b.name);
       k === -1 ? s.value.push(b) : s.value[k] = b;
-    }, q = (b) => {
-      const k = s.value.findIndex((R) => R.name === b);
+    }, N = (b) => {
+      const k = s.value.findIndex((z) => z.name === b);
       k > -1 && s.value.splice(k, 1);
     };
     return re("tabsContext", {
       activeTab: o,
       registerTab: M,
-      unregisterTab: q,
+      unregisterTab: N,
       handleTabRemove: d,
       handleTabAdd: g
-    }), L(() => e.modelValue, (b, k) => {
+    }), V(() => e.modelValue, (b, k) => {
       b !== o.value && (o.value = b, t("tab-change", b, k), r());
-    }), L(s, () => {
+    }), V(s, () => {
       r();
     }, { deep: !0 }), le(() => {
       if (!o.value && s.value.length > 0) {
@@ -1176,7 +1185,7 @@ const ue = /* @__PURE__ */ S(At, [["render", Ft]]), Dt = /* @__PURE__ */ Object.
       handleTabRemove: d,
       handleTabAdd: g,
       registerTab: M,
-      unregisterTab: q,
+      unregisterTab: N,
       updateActiveBarPosition: r
     };
   }
@@ -1188,8 +1197,8 @@ function os(e, t, n, s, o, a) {
   return i(), c("div", {
     class: T(["m-tabs", { "style-solid": n.styleType === "solid" }])
   }, [
-    h("div", es, [
-      h("div", ts, [
+    y("div", es, [
+      y("div", ts, [
         (i(!0), c(j, null, _(s.tabs, (r, l) => (i(), c("div", {
           key: r.name,
           class: T([
@@ -1205,7 +1214,7 @@ function os(e, t, n, s, o, a) {
         }, null, 4)) : C("", !0)
       ], 512)
     ]),
-    h("div", ns, [
+    y("div", ns, [
       m(e.$slots, "default", {}, void 0, !0)
     ])
   ], 2);
@@ -1231,7 +1240,7 @@ const as = /* @__PURE__ */ S(Kt, [["render", os], ["__scopeId", "data-v-37dc138d
     }
   },
   setup(e) {
-    const t = ie("tabsContext"), n = $(() => e.name || e.label), s = $(() => t.activeTab.value === n.value);
+    const t = ie("tabsContext"), n = h(() => e.name || e.label), s = h(() => t.activeTab.value === n.value);
     return le(() => {
       const o = {
         label: e.label,
@@ -1277,7 +1286,7 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
   },
   emits: ["click"],
   setup(e, { emit: t }) {
-    const n = e, s = t, o = ie("tabCardContext"), a = $(() => o.activeTab.value === n.name), r = () => {
+    const n = e, s = t, o = ie("tabCardContext"), a = h(() => o.activeTab.value === n.name), r = () => {
       n.disabled || (o.handleTabClick(n.name, n.disabled), s("click", n.name));
     };
     return (l, d) => (i(), c("div", {
@@ -1290,14 +1299,14 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
       ]),
       onClick: r
     }, [
-      h("span", cs, [
+      y("span", cs, [
         m(l.$slots, "default", {}, () => [
           ae(x(e.label), 1)
         ], !0)
       ])
     ], 2));
   }
-}), de = /* @__PURE__ */ S(us, [["__scopeId", "data-v-18eaffcc"]]), ds = { class: "m-tab-card__container" }, ms = /* @__PURE__ */ Object.assign({
+}), de = /* @__PURE__ */ S(us, [["__scopeId", "data-v-aa4c402c"]]), ds = { class: "m-tab-card__container" }, ms = /* @__PURE__ */ Object.assign({
   name: "MTabCard"
 }, {
   __name: "TabCard",
@@ -1319,7 +1328,7 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
   setup(e, { emit: t }) {
     const n = e, s = t;
     A();
-    const o = O(n.modelValue), a = $(() => n.options.map((l) => typeof l == "string" ? { label: l, name: l, disabled: !1 } : {
+    const o = O(n.modelValue), a = h(() => n.options.map((l) => typeof l == "string" ? { label: l, name: l, disabled: !1 } : {
       label: l.label || l.name || "",
       name: l.name || l.label || "",
       disabled: l.disabled || !1
@@ -1329,7 +1338,7 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
       const g = o.value;
       o.value = l, s("update:modelValue", l), s("change", l, g), s("tab-click", l);
     };
-    return L(() => n.modelValue, (l) => {
+    return V(() => n.modelValue, (l) => {
       l !== o.value && (o.value = l);
     }), re("tabCardContext", {
       activeTab: o,
@@ -1337,7 +1346,7 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
     }), (l, d) => (i(), c("div", {
       class: T(["m-tab-card", { "is-disabled": e.disabled }])
     }, [
-      h("div", ds, [
+      y("div", ds, [
         (i(!0), c(j, null, _(a.value, (g, M) => (i(), f(de, {
           key: g.name,
           name: g.name,
@@ -1347,7 +1356,7 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
       ])
     ], 2));
   }
-}), ps = /* @__PURE__ */ S(ms, [["__scopeId", "data-v-4384e3e5"]]), fs = {
+}), ps = /* @__PURE__ */ S(ms, [["__scopeId", "data-v-098ad86f"]]), fs = {
   class: "breadcrumb-separator-icon",
   width: "6",
   height: "10",
@@ -1360,7 +1369,7 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
   __name: "BreadcrumbSeparator",
   setup(e) {
     return (t, n) => (i(), c("svg", fs, [...n[0] || (n[0] = [
-      h("path", {
+      y("path", {
         "fill-rule": "evenodd",
         "clip-rule": "evenodd",
         d: "M0.52827 0.529247C0.788619 0.268897 1.21073 0.268897 1.47108 0.529247L5.47108 4.52925C5.73143 4.7896 5.73143 5.21171 5.47108 5.47206L1.47108 9.47206C1.21073 9.73241 0.788619 9.73241 0.52827 9.47206C0.26792 9.21171 0.26792 8.7896 0.52827 8.52925L4.05687 5.00065L0.52827 1.47206C0.26792 1.21171 0.26792 0.789596 0.52827 0.529247Z",
@@ -1398,7 +1407,7 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
     };
     return (o, a) => (i(), c("nav", bs, [
       (i(!0), c(j, null, _(e.items, (r, l) => (i(), c(j, { key: l }, [
-        h("span", {
+        y("span", {
           class: T(["m-breadcrumb__item", { "is-link": r.to }]),
           onClick: (d) => s(r)
         }, x(r.label), 11, vs),
@@ -1410,11 +1419,11 @@ const is = /* @__PURE__ */ S(rs, [["render", ls], ["__scopeId", "data-v-31f89b3b
     ]));
   }
 }), ys = /* @__PURE__ */ S(hs, [["__scopeId", "data-v-bfa840fa"]]);
-function D(e) {
+function G(e) {
   e && e.classList && e.classList.add("mc-ui-override");
 }
 function $s(e) {
-  e && e.$el && D(e.$el);
+  e && e.$el && G(e.$el);
 }
 function Ms() {
   typeof document != "undefined" && (document.body.classList.add("mc-ui-override"), new MutationObserver((t) => {
@@ -1446,17 +1455,17 @@ function Cs(e = '[class*="el-"]') {
 function ks(e) {
   return E(w({}, e), {
     mounted() {
-      D(this.$el), e.mounted && e.mounted.call(this);
+      G(this.$el), e.mounted && e.mounted.call(this);
     },
     updated() {
-      D(this.$el), e.updated && e.updated.call(this);
+      G(this.$el), e.updated && e.updated.call(this);
     }
   });
 }
 const ws = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   addComponentOverride: $s,
-  addOverrideClass: D,
+  addOverrideClass: G,
   applyGlobalOverride: Ms,
   createOverrideComponent: ks,
   forceRefreshStyles: Cs
@@ -1621,7 +1630,7 @@ export {
   ht as Message,
   sn as NotifiMessage,
   $s as addComponentOverride,
-  D as addOverrideClass,
+  G as addOverrideClass,
   Ms as applyGlobalOverride,
   nn as checkComponentRegistration,
   ks as createOverrideComponent,

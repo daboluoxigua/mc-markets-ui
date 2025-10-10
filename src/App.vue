@@ -44,9 +44,15 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-// 获取菜单路由
+// 获取菜单路由并按首字母排序
 const menuRoutes = computed(() => {
-  return router.getRoutes().filter(route => route.meta?.title)
+  return router.getRoutes()
+    .filter(route => route.meta?.title)
+    .sort((a, b) => {
+      const titleA = a.meta.title.toLowerCase()
+      const titleB = b.meta.title.toLowerCase()
+      return titleA.localeCompare(titleB)
+    })
 })
 
 // 菜单选择处理

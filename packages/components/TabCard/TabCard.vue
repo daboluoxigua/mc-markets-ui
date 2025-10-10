@@ -104,14 +104,4 @@ provide('tabCardContext', {
     gap: 0;
   }
 }
-
-
-// 深色主题适配
-@media (prefers-color-scheme: dark) {
-  .m-tab-card {
-    &__container {
-      background-color: var(--bg-tertiary-hover, #2a2a2a);
-    }
-  }
-}
 </style>

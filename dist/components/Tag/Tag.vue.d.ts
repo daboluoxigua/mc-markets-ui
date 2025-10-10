@@ -7,10 +7,12 @@ declare const __VLS_component: import('vue').DefineComponent<{}, {
     prefixIcon: string;
     suffixIcon: string;
     loading: boolean;
+    status: string;
     $props: {
         readonly prefixIcon?: string;
         readonly suffixIcon?: string;
         readonly loading?: boolean;
+        readonly status?: string;
     };
 }, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<{}> & Readonly<{}>, {}, {}, {}, {}, string, import('vue').ComponentProvideOptions, true, {}, any>;
 declare function __VLS_template(): Partial<Record<NonNullable<string | number>, (_: {}) => any>>;
