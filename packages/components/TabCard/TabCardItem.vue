@@ -102,18 +102,4 @@ const handleClick = () => {
     white-space: nowrap;
   }
 }
-
-// 深色主题适配
-@media (prefers-color-scheme: dark) {
-  .m-tab-card-item {
-    &:not(.is-active) {
-      color: var(--text-secondary, #cccccc);
-    }
-
-    &.is-active {
-      background-color: var(--bg-brand, #ffd700);
-      color: var(--text-primary, #1a1a1a);
-    }
-  }
-}
 </style>

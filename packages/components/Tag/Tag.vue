@@ -1,8 +1,8 @@
 <template>
-  <el-tag v-bind="$attrs" class="m-tag" :class="{ 'is-loading': loading }">
+  <el-tag v-bind="$attrs" :type="computedType" class="m-tag" :class="{ 'is-loading': computedLoading }">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <!-- 自定义spinner loading效果 -->
-      <div v-if="loading && !prefixIcon" class="custom-spinner">
+      <div v-if="computedLoading && !computedPrefixIcon" class="custom-spinner">
         <div class="ldio-spinner">
           <div v-for="i in 8" :key="i"></div>
         </div>
@@ -18,8 +18,8 @@
       </div>
       <i 
         class="suffixIcon" 
-        :class="['iconfont', suffixIcon]" 
-        v-if="suffixIcon"
+        :class="['iconfont', computedSuffixIcon]" 
+        v-if="computedSuffixIcon"
       ></i>
     </template>
   </el-tag>
@@ -44,12 +44,56 @@ const props = defineProps({
   loading: {
     type: Boolean,
     default: false
+  },
+  status: {
+    type: String,
+    default: ''
   }
 })
 
-// 计算属性：处理prefixIcon
+// 根据status自动设置type颜色
+const computedType = computed(() => {
+  if (props.status) {
+    // 如果设置了status，自动映射到对应的type
+    return props.status
+  }
+  // 否则使用v-bind传入的type（通过$attrs）
+  return undefined
+})
+
+// 根据status自动设置图标和loading状态
+const computedLoading = computed(() => {
+  if (props.status === 'warning') {
+    return true
+  }
+  return props.loading
+})
+
 const computedPrefixIcon = computed(() => {
-  return props.prefixIcon
+  // 如果有显式的prefixIcon，优先使用
+  if (props.prefixIcon) {
+    return props.prefixIcon
+  }
+  
+  // 根据status自动设置prefixIcon
+  if (props.status === 'success') {
+    return 'icon-circle-check-filled'
+  }
+  
+  if (props.status === 'danger') {
+    return 'icon-lucide_circle-x-filled'
+  }
+  
+  return ''
+})
+
+const computedSuffixIcon = computed(() => {
+  // 如果有显式的suffixIcon，优先使用
+  if (props.suffixIcon) {
+    return props.suffixIcon
+  }
+  
+  return ''
 })
 </script>
 

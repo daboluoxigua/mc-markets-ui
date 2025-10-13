@@ -45,29 +45,6 @@
       </div>
     </DemoSection>
 
-    <!-- 不同主题样式 -->
-    <DemoSection 
-      title="不同主题样式"
-      :code="themeCode"
-    >
-      <div class="demo-container">
-        <div class="theme-demo light-theme">
-          <h3>浅色主题</h3>
-          <m-tab-card 
-            v-model="activeTab4" 
-            :options="tabOptions1"
-          />
-        </div>
-        
-        <div class="theme-demo dark-theme">
-          <h3>深色主题</h3>
-          <m-tab-card 
-            v-model="activeTab5" 
-            :options="tabOptions1"
-          />
-        </div>
-      </div>
-    </DemoSection>
 
     <div class="demo-section">
       <h2>API 文档</h2>
@@ -139,7 +116,7 @@
 <script setup>
 import { ref } from 'vue'
 import DemoSection from '@/components/DemoSection.vue'
-import { basicUsageCode, disabledCode, themeCode } from './tabCardCodes.js'
+import { basicUsageCode, disabledCode } from './tabCardCodes.js'
 
 // 基础用法数据
 const activeTab1 = ref('transaction')
@@ -158,9 +135,6 @@ const tabOptions3 = ref([
   { label: '正常', name: 'normal' }
 ])
 
-// 主题演示数据
-const activeTab4 = ref('light1')
-const activeTab5 = ref('dark1')
 
 
 // 事件处理
@@ -215,27 +189,6 @@ const toggleDisabled = () => {
   }
 }
 
-.theme-demo {
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  
-  h3 {
-    margin: 0 0 16px 0;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  
-  &.light-theme {
-    background: #666;
-    color: #333;
-  }
-  
-  &.dark-theme {
-    background: #1a1a1a;
-    color: #fff;
-  }
-}
 
 .api-table {
   width: 100%;

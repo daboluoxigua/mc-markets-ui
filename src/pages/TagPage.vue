@@ -13,7 +13,7 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <m-tag type="primary" loading>Tag 4</m-tag>
+          <m-tag type="warning" loading>Tag 4</m-tag>
           <span>primary</span>
         </div>
         <div class="doc-item">
@@ -32,12 +32,35 @@
           <span>Info</span>
         </div>
         <div class="doc-item">
-          <m-tag type="primary" loading>Tag 4</m-tag>
+          <m-tag type="warning" loading>Tag 4</m-tag>
           <span>primary</span>
         </div>
         <div class="doc-item">
           <m-tag type="danger" suffix-icon="icon-lucide_circle-x-filled" prefix-icon="icon-lucide_circle-x-filled">Tag 6</m-tag>
           <span>Danger</span>
+        </div>
+      </div>
+    </DemoSection>
+
+    <!-- 业务状态类型 -->
+    <DemoSection 
+      title="业务状态类型"
+      code='<m-tag status="success">成功状态</m-tag>
+<m-tag status="warning">处理中</m-tag>
+<m-tag status="danger">失败状态</m-tag>'
+    >
+      <div class="doc-grid">
+        <div class="doc-item">
+          <m-tag status="success">成功状态</m-tag>
+          <span>status="success" 前置成功图标</span>
+        </div>
+        <div class="doc-item">
+          <m-tag status="warning">处理中</m-tag>
+          <span>status="warning" 前置 loading</span>
+        </div>
+        <div class="doc-item">
+          <m-tag status="danger">失败状态</m-tag>
+          <span>status="danger" 前置错误图标</span>
         </div>
       </div>
     </DemoSection>
@@ -376,6 +399,12 @@ const tagApiProps = [
     type: "enum",
     default: "primary",
     description: "Tag 的类型，可选值：success / info / primary / danger",
+  },
+  {
+    name: "status",
+    type: "enum",
+    default: "",
+    description: "业务状态类型，可选值：success（绿色+前置成功图标）/ warning（黄色+前置 loading）/ danger（红色+前置错误图标）",
   },
   {
     name: "closable",

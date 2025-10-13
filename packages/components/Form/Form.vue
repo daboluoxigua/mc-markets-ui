@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { ref, useAttrs, defineExpose } from 'vue'
+import { ref, useAttrs } from 'vue'
 
 defineOptions({
   name: 'MForm'
