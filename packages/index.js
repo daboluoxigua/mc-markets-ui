@@ -6,11 +6,7 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
-<<<<<<< HEAD
  * @version 1.0.91
-=======
- * @version 1.0.91
->>>>>>> 4ccbb5130e3f04c84f93391073a4ce2280f58f9f
  */
 
 import * as ElementPlusComponents from 'element-plus'

@@ -5,6 +5,7 @@
        url('./iconfont.woff2?t=1759051846956') format('woff2'),
        url('./iconfont.woff?t=1759051846956') format('woff'),
        url('./iconfont.ttf?t=1759051846956') format('truetype');
+  font-display: swap;
 }
 
 .colorfont {
