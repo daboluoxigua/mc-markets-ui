@@ -28,7 +28,9 @@
     }
   }
 
-  // 下拉菜单样式 - 全局样式（仅在组件未定义时生效）
+  
+}
+// 下拉菜单样式 - 全局样式（仅在组件未定义时生效）
   .el-select-dropdown {
     padding: 12px;
   }
@@ -59,4 +61,3 @@
     padding: 0px;
     padding-bottom: 4px;
   }
-}

@@ -6,7 +6,7 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.1.0
+ * @version 1.1.5
  */
 
 import * as ElementPlusComponents from 'element-plus'
@@ -205,7 +205,7 @@ export function checkComponentRegistration(app) {
 }
 
 export default { install }
-export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb }
+export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb }
 
 // 导出样式工具函数
 export { 

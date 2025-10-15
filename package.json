@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.5",
   "type": "module",
   "author": "chenyu",
   "description": "Vue 3 组件库，基于 Element Plus 的自定义组件",
@@ -13,6 +13,11 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
+    },
+    "./resolver": {
+      "import": "./packages/resolver.js",
+      "require": "./packages/resolver.cjs",
+      "types": "./packages/resolver.d.ts"
     },
     "./styles/index": "./packages/styles/index.scss",
     "./styles/font": "./packages/styles/font/iconfont.css",
@@ -26,7 +31,16 @@
     "packages/components",
     "packages/hooks",
     "packages/utils",
+    "packages/resolver.js",
+    "packages/resolver.cjs",
+    "packages/resolver.d.ts",
     "README.md",
+    "RESOLVER_USAGE.md",
+    "STYLE_IMPORT_GUIDE.md",
+    "QUICK_FIX_STYLE.md",
+    "CLEAR_VITE_CACHE.md",
+    "FIX_EXPORT_ISSUE.md",
+    "TEST_RESOLVER.md",
     "USAGE_GUIDE.md",
     "QUICK_START.md",
     "FIX_ESM_ERROR.md",
