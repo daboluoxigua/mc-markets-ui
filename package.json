@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.1.5",
+  "version": "1.1.6",
   "type": "module",
   "author": "chenyu",
   "description": "Vue 3 组件库，基于 Element Plus 的自定义组件",
@@ -20,6 +20,7 @@
       "types": "./packages/resolver.d.ts"
     },
     "./styles/index": "./packages/styles/index.scss",
+    "./styles/index.scss": "./packages/styles/index.scss",
     "./styles/font": "./packages/styles/font/iconfont.css",
     "./styles/colorfont": "./packages/styles/colorfont/iconfont.css",
     "./dist/style": "./dist/style.css",
