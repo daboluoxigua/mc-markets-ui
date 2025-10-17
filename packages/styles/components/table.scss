@@ -4,7 +4,7 @@
     --el-table-row-hover-bg-color: var(--bg-tertiary-hover);
     --el-table-border-color: transparent;
     --el-table-header-text-color: var(--text-tertiary);
-    --el-table-tr-bg-color: #161518;
+    --el-table-tr-bg-color: var(--bg-tertiary);
     --el-table-fixed-left-column:inset 10px 0 10px -10px #000;
     --el-table-fixed-right-column:inset -10px 0 10px -10px #000;
 
@@ -17,6 +17,8 @@
       }
       .cell {
         line-height: 28px;
+        overflow-wrap: unset;
+        overflow: initial;
       }
       .el-table__cell {
         padding: 8px 0px;
@@ -25,7 +27,7 @@
     }
 
     .el-table__cell {
-      padding: 18px 0px;
+      padding: 16px 0px;
       // border: none;
     }
 
