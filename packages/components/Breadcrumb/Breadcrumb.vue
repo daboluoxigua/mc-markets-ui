@@ -84,17 +84,17 @@ const handleItemClick = (item) => {
     align-items: center;
     
     &.is-link {
-      color: var(--text-primary, #303133);
+      color: var(--text-tertiary);
       cursor: pointer;
       font-weight: 500;
       
       &:hover {
-        color: var(--bg-brand, #ffd700);
+        color: var(--text-primary, #ffd700);
       }
     }
     
     &:last-child {
-      color: var(--text-tertiary, #c0c4cc);
+      color: var(--text-primary, #c0c4cc);
       cursor: default;
       font-weight: normal;
     }

@@ -66,7 +66,7 @@ const handleClick = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 32px;
   border-radius: var(--md);
   cursor: pointer;
   // transition: all 0.3s ease;

@@ -6,11 +6,39 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "45686273",
-      "name": "lucide_loader 1",
-      "font_class": "a-lucide_loader1",
+      "icon_id": "45824425",
+      "name": "1",
+      "font_class": "a-1",
+      "unicode": "e7f5",
+      "unicode_decimal": 59381
+    },
+    {
+      "icon_id": "45824424",
+      "name": "2",
+      "font_class": "a-2",
+      "unicode": "e7f6",
+      "unicode_decimal": 59382
+    },
+    {
+      "icon_id": "45824312",
+      "name": "Triangle",
+      "font_class": "sanjiao",
+      "unicode": "e7f4",
+      "unicode_decimal": 59380
+    },
+    {
+      "icon_id": "45762196",
+      "name": "lucide_dot",
+      "font_class": "lucide_dot",
       "unicode": "e7f2",
       "unicode_decimal": 59378
+    },
+    {
+      "icon_id": "45762195",
+      "name": "iconsax_arrow-down-02",
+      "font_class": "iconsax_arrow-down-02",
+      "unicode": "e7f3",
+      "unicode_decimal": 59379
     },
     {
       "icon_id": "45686129",

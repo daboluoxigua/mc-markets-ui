@@ -91,4 +91,6 @@ html.dark{
   --el-component-size: 40px;
   --el-component-size-small: 32px;
   --el-font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --el-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.1);
+  --el-border-color:var(--border-primary);
 }

@@ -14,7 +14,7 @@
     --el-button-divide-border-color: rgba(255, 255, 255, 0.5);
     --el-button-hover-text-color: var(--text-primary);
     --el-button-hover-bg-color: var(--bg-tertiary-hover);
-    --el-button-hover-border-color: var(--bg-tertiary);
+    --el-button-hover-border-color: var(--bg-tertiary-hover);
     --el-button-active-text-color: var(--text-primary);
     --el-button-active-border-color: var(--bg-tertiary);
     --el-button-active-bg-color: var(--bg-tertiary);
@@ -108,7 +108,7 @@
       &:hover {
         color: var(--text-brand-hover);
         border: 0 solid transparent;
-        background-color: transparent;
+        background-color: transparent !important;
       }
       &.is-disabled {
         color: color-mix(in srgb, var(--bg-brand) 50%, transparent);

@@ -1,7 +1,7 @@
 {
   "name": "@mc-markets/ui",
   "private": false,
-  "version": "1.1.11",
+  "version": "1.1.22",
   "type": "module",
   "author": "chenyu",
   "description": "Vue 3 组件库，基于 Element Plus 的自定义组件",
@@ -79,6 +79,7 @@
     "publish:lib": "node publish.js"
   },
   "dependencies": {
+    "@mc-markets/ui": "^1.1.19",
     "element-plus": "^2.11.2",
     "highlight.js": "^11.11.1",
     "vue": "^3.3.0",

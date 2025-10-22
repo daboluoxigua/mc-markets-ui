@@ -89,7 +89,7 @@
         in srgb,
         var(--text-warning-primary) 10%,
         transparent
-      );;
+      );
         --el-tag-border-color: transparent;
       }
       &.el-tag--warning {
@@ -128,8 +128,9 @@
     height: 28px;
   }
   .el-tag--small{
-    height: 22px;
-    padding: 0 6px;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: var(--sm);
   }
 }
 
