@@ -1,0 +1,16 @@
+.mc-ui-override {
+  .el-popper {
+    padding: 8px 20px;
+    &.is-light {
+      background: var(--all-gray-6);
+      border: 1px solid var(--all-gray-6);
+      .el-popper__arrow::before {
+        background: var(--all-gray-6);
+        border: 1px solid var(--all-gray-6);
+      }
+    }
+    &.is-pure{
+        padding: 0;
+    }
+  }
+}

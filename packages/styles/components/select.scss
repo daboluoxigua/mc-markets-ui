@@ -31,6 +31,13 @@
   
 }
 // 下拉菜单样式 - 全局样式（仅在组件未定义时生效）
+
+.el-select__popper.el-popper.is-light{
+  box-shadow: none;
+  background: var(--bg-tertiary-hover);
+  border: 1px solid var(--border-primary);
+  
+}
   .el-select-dropdown {
     padding: 12px;
   }
@@ -53,6 +60,7 @@
     }
     &.is-selected{
       color: var(--text-brand);
+      font-weight: 500;
     }
   }
 

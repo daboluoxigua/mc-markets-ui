@@ -5,7 +5,7 @@
       title="Tag和Button组合表格"
       code="<m-table :data='tagButtonTableData'><m-table-column prop='name' label='姓名'/><m-table-column prop='status' label='状态'><template #default='scope'><m-tag :type='getStatusType(scope.row.status)'>{{ scope.row.status }}</m-tag></template></m-table-column></m-table>"
     >
-      <m-table :data="tagButtonTableData" style="width: 100%">
+      <m-table :data="tagButtonTableData" style="width: 100%" show-overflow-tooltip tooltip-effect="light">
         <m-table-column prop="id" label="ID" width="80" />
         <m-table-column prop="name" label="姓名"/>
         <m-table-column prop="department" label="部门"/>
@@ -236,7 +236,7 @@ const tableData = reactive([
 const tagButtonTableData = reactive([
   {
     id: 1,
-    name: '张三',
+    name: '张三张三张三张三张三张三张三张三张三张三',
     department: '技术部',
     status: '在线',
     level: '高级'
