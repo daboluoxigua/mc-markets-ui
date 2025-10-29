@@ -33,8 +33,9 @@ const { mergedAttrs, className: popperClass } = useClassName(
 <style lang="scss">
 .m-datepicker{
   &.style-type-solid{
+    --el-input-border-color: var(--bg-tertiary-hover);
     &.el-date-editor.el-input__wrapper, .el-input__wrapper{
-      box-shadow: none ;
+      // box-shadow: none ;
       background-color: var(--bg-tertiary-hover);
     }
   }

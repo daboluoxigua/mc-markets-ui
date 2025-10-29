@@ -6,7 +6,7 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.1.25
+ * @version 1.1.31
  */
 
 import * as ElementPlusComponents from 'element-plus'
@@ -43,6 +43,29 @@ import MTabCardItem from './components/TabCard/TabCardItem.vue'
 import MBreadcrumb from './components/Breadcrumb/Breadcrumb.vue'
 
 const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb]
+
+// 统一的组件名称转换函数
+// 将 MDatePicker -> m-date-picker，与 Element Plus 转换逻辑保持一致
+function convertComponentName(componentName) {
+  if (!componentName || typeof componentName !== 'string') {
+    return null
+  }
+  
+  // 如果不是 M 开头，返回 null
+  if (!componentName.startsWith('M')) {
+    return null
+  }
+  
+  // 移除 M 前缀，然后转换驼峰为 kebab-case
+  // MDatePicker -> DatePicker -> -Date-Picker -> -date-picker -> date-picker -> m-date-picker
+  const nameWithoutPrefix = componentName.slice(1)
+  const kebabCase = nameWithoutPrefix
+    .replace(/([A-Z])/g, '-$1')
+    .toLowerCase()
+    .replace(/^-/, '')
+  
+  return 'm-' + kebabCase
+}
 
 // 全局组件配置 - 需要自动创建实例的组件
 const globalInstanceComponents = [
@@ -85,24 +108,9 @@ const convertedComponents = {}
 
 function registerElementPlus(app) {
   // 获取已注册的自定义组件名称
-  const customComponentNames = components.map(comp => {
-    if (comp && comp.name && typeof comp.name === 'string') {
-      let name = comp.name.toLowerCase()
-      const nameMap = {
-        'mradiogroup': 'm-radio-group',
-        'mradiobutton': 'm-radio-button',
-        'mformitem': 'm-form-item',
-        'moptiongroup': 'm-option-group',
-        'mtabs': 'm-tabs',
-        'mtabpane': 'm-tab-pane',
-        'mtabcard': 'm-tab-card',
-        'mtabcarditem': 'm-tab-card-item',
-        'mbreadcrumb': 'm-breadcrumb'
-      }
-      return nameMap[name] || name.replace(/^m/, 'm-')
-    }
-    return null
-  }).filter(Boolean)
+  const customComponentNames = components
+    .map(comp => convertComponentName(comp?.name))
+    .filter(Boolean)
 
   
   Object.entries(ElementPlusComponents).forEach(([key, comp]) => {
@@ -139,22 +147,8 @@ const install = (app) => {
   
   // 先注册自定义组件 - 确保优先级
   components.forEach(component => {
-    if (component && component.name && typeof component.name === 'string') {
-      let name = component.name.toLowerCase()
-      // 处理特定的组件名称映射
-      const nameMap = {
-        'mradiogroup': 'm-radio-group',
-        'mradiobutton': 'm-radio-button',
-        'mformitem': 'm-form-item',
-        'moptiongroup': 'm-option-group',
-        'mtabs': 'm-tabs',
-        'mtabpane': 'm-tab-pane',
-        'mtabcard': 'm-tab-card',
-        'mtabcarditem': 'm-tab-card-item',
-        'mbreadcrumb': 'm-breadcrumb'
-      }
-      name = nameMap[name] || name.replace(/^m/, 'm-')
-      
+    const name = convertComponentName(component?.name)
+    if (name) {
       // 强制注册自定义组件，确保覆盖任何已存在的组件
       app.component(name, component)
     }
@@ -166,41 +160,6 @@ const install = (app) => {
   // 自动创建全局组件实例
   if (typeof window !== 'undefined') {
     createGlobalComponents()
-  }
-}
-
-// 工具函数：检查组件注册状态
-export function checkComponentRegistration(app) {
-  const registeredComponents = Object.keys(app._context.components || {})
-  const customComponents = components.map(comp => {
-    if (comp && comp.name && typeof comp.name === 'string') {
-      let name = comp.name.toLowerCase()
-      const nameMap = {
-        'mradiogroup': 'm-radio-group',
-        'mradiobutton': 'm-radio-button',
-        'mformitem': 'm-form-item',
-        'moptiongroup': 'm-option-group',
-        'mtabs': 'm-tabs',
-        'mtabpane': 'm-tab-pane',
-        'mtabcard': 'm-tab-card',
-        'mtabcarditem': 'm-tab-card-item',
-        'mbreadcrumb': 'm-breadcrumb'
-      }
-      return nameMap[name] || name.replace(/^m/, 'm-')
-    }
-    return null
-  }).filter(Boolean)
-  
-  console.log('📊 组件注册状态报告:')
-  console.log('已注册的组件:', registeredComponents.filter(name => name.startsWith('m-')))
-  console.log('自定义组件:', customComponents)
-  
-  return {
-    registered: registeredComponents,
-    custom: customComponents,
-    conflicts: registeredComponents.filter(name => 
-      name.startsWith('m-') && customComponents.includes(name)
-    )
   }
 }
 

@@ -1,9 +1,10 @@
 .mc-ui-override {
   .el-popper {
     padding: 8px 20px;
-    &.is-light {
+    &.is-dark {
       background: var(--all-gray-6);
       border: 1px solid var(--all-gray-6);
+      color: var(--text-white);
       .el-popper__arrow::before {
         background: var(--all-gray-6);
         border: 1px solid var(--all-gray-6);
