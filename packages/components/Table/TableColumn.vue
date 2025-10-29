@@ -1,7 +1,7 @@
 <template>
   <el-table-column v-bind="$attrs" class="m-table-column">
-    <template v-for="(_, name) in $slots" :key="name" #[name]>
-      <slot :name="name" />
+    <template v-for="(_, name) in $slots" :key="name" #[name]="slotProps">
+      <slot :name="name" v-bind="slotProps || {}" />
     </template>
   </el-table-column>
 </template>
