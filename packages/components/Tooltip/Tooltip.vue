@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip v-bind="mergedAttrs" :popper-class="popperClass">
+  <el-tooltip ref="tooltipRef" v-bind="mergedAttrs" :popper-class="popperClass">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -8,6 +8,7 @@
 
 <script setup>
 import { useClassName } from "@packages/hooks/useClassName.js"
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({
   name: 'MTooltip'
@@ -23,6 +24,10 @@ const props = defineProps({
 
 // 使用类名 Hook
 const { mergedAttrs, className: popperClass } = useClassName('mc-tooltip-popper')
+
+const { innerRef: tooltipRef, exposedProxy } = useExposeRef('tooltipRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">

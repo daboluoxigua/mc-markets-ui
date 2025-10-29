@@ -1,5 +1,5 @@
 <template>
-  <el-radio-group v-bind="mergedAttrs" :popper-class="computedPopperClass" class="m-radio-group">
+  <el-radio-group ref="radioGroupRef" v-bind="mergedAttrs" :popper-class="computedPopperClass" class="m-radio-group">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -8,6 +8,7 @@
 
 <script setup>
 import { computed, useAttrs } from 'vue'
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({
   name: 'MRadioGroup'
@@ -40,6 +41,10 @@ const mergedAttrs = computed(() => {
   const { popperClass, ...otherAttrs } = attrs
   return otherAttrs
 })
+
+const { innerRef: radioGroupRef, exposedProxy } = useExposeRef('radioGroupRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">

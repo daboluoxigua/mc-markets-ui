@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-dialog
+      ref="dialogRef"
       v-model="dialogVisible"
       :width="width"
       :title="title"
@@ -23,6 +24,8 @@
 </template>
 
 <script setup>
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
+
 defineOptions({
   name: 'MDialog'
 })
@@ -54,6 +57,9 @@ const dialogVisible = defineModel('modelValue', {
   default: false
 })
 
+const { innerRef: dialogRef, exposedProxy } = useExposeRef('dialogRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style scoped lang="scss">

@@ -1,5 +1,5 @@
 <template>
-  <el-form-item v-bind="$attrs" class="m-form-item">
+  <el-form-item v-bind="$attrs" class="m-form-item" ref="formItemRef">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -10,11 +10,13 @@
 defineOptions({
   name: 'MFormItem'
 })
+
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
+
+const { innerRef: formItemRef, exposedProxy } = useExposeRef('formItemRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">
-// FormItem 组件样式 - 使用 m-form-item 类名隔离样式
-.m-form-item {
-  // 自定义样式可以在这里添加
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <el-button v-bind="$attrs" class="m-button">
+  <el-button ref="buttonRef" v-bind="$attrs" class="m-button">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -7,9 +7,15 @@
 </template>
 
 <script setup>
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
+
 defineOptions({
   name: 'MButton'
 })
+
+const { innerRef: buttonRef, exposedProxy } = useExposeRef('buttonRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss" scoped>

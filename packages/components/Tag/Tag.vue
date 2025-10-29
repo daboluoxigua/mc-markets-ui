@@ -1,5 +1,5 @@
 <template>
-  <el-tag v-bind="$attrs" :type="computedType" class="m-tag" :class="{ 'is-loading': computedLoading }">
+  <el-tag ref="tagRef" v-bind="$attrs" :type="computedType" class="m-tag" :class="{ 'is-loading': computedLoading }">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <!-- 自定义spinner loading效果 -->
       <div v-if="computedLoading && !computedPrefixIcon" class="custom-spinner">
@@ -27,6 +27,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({
   name: 'MTag'
@@ -95,6 +96,10 @@ const computedSuffixIcon = computed(() => {
   
   return ''
 })
+
+const { innerRef: tagRef, exposedProxy } = useExposeRef('tagRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">

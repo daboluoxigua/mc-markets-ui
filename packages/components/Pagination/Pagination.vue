@@ -1,5 +1,5 @@
 <template>
-  <el-pagination v-bind="$attrs" class="m-pagination">
+  <el-pagination ref="paginationRef" v-bind="$attrs" class="m-pagination">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -7,9 +7,15 @@
 </template>
 
 <script setup>
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
+
 defineOptions({
   name: "MPagination",
 });
+
+const { innerRef: paginationRef, exposedProxy } = useExposeRef('paginationRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">

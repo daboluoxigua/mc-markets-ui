@@ -1,5 +1,6 @@
 <template>
   <el-select
+    ref="selectRef"
     class="m-select"
     :class="{ solid: $attrs.styleType === 'solid' }"
     :show-arrow="false"
@@ -12,9 +13,15 @@
 </template>
 
 <script setup>
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
+
 defineOptions({
   name: "MSelect",
 });
+
+const { innerRef: selectRef, exposedProxy } = useExposeRef('selectRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss" scoped>

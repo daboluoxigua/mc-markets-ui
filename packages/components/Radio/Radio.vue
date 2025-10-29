@@ -1,5 +1,5 @@
 <template>
-  <el-radio v-bind="mergedAttrs" class="m-radio">
+  <el-radio ref="radioRef" v-bind="mergedAttrs" class="m-radio">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -8,6 +8,7 @@
 
 <script setup>
 import { useClassName } from "@packages/hooks/useClassName.js"
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({
   name: 'MRadio'
@@ -23,6 +24,10 @@ const props = defineProps({
 
 // 使用类名 Hook
 const { mergedAttrs, className: popperClass } = useClassName('mc-radio-popper')
+
+const { innerRef: radioRef, exposedProxy } = useExposeRef('radioRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-  <el-empty v-bind="mergedAttrs" :image="imageUrl">
+  <el-empty ref="emptyRef" v-bind="mergedAttrs" :image="imageUrl">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -34,6 +34,7 @@ export default {
 
 <script setup>
 import { computed, useAttrs } from 'vue'
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 const props = defineProps({
   image: {
@@ -71,4 +72,8 @@ const imageUrl = computed(() => {
   // Vite 会自动处理 public 目录中的静态资源
   return `https://cfdsaas-pre.oss-cn-hongkong.aliyuncs.com/mc-assets/mc-ui/empty/${image}.png`
 })
+
+const { innerRef: emptyRef, exposedProxy } = useExposeRef('emptyRef')
+
+defineExpose(exposedProxy)
 </script>

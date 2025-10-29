@@ -1,5 +1,5 @@
 <template>
-  <el-date-picker v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass" :class="{ 'style-type-solid': styleType === 'solid' }">
+  <el-date-picker ref="datePickerRef" v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass" :class="{ 'style-type-solid': styleType === 'solid' }">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -8,6 +8,7 @@
 
 <script setup>
 import { useClassName } from "@packages/hooks/useClassName.js";
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({
   name: "MDatePicker",
@@ -29,6 +30,10 @@ const { mergedAttrs, className: popperClass } = useClassName(
   "mc-datepicker-popper",
   "popperClass"
 );
+
+const { innerRef: datePickerRef, exposedProxy } = useExposeRef('datePickerRef')
+
+defineExpose(exposedProxy)
 </script>
 <style lang="scss">
 .m-datepicker{

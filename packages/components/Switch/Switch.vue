@@ -1,5 +1,5 @@
 <template>
-  <el-switch v-bind="mergedAttrs" :popper-class="popperClass" class="m-switch">
+  <el-switch ref="switchRef" v-bind="mergedAttrs" :popper-class="popperClass" class="m-switch">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -8,6 +8,7 @@
 
 <script setup>
 import { useClassName } from "@packages/hooks/useClassName.js";
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({
   name: "MSwitch",
@@ -24,6 +25,10 @@ const props = defineProps({
 // 使用类名 Hook
 const { mergedAttrs, className: popperClass } =
   useClassName("mc-switch-popper");
+
+const { innerRef: switchRef, exposedProxy } = useExposeRef('switchRef')
+
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">

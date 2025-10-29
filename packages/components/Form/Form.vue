@@ -7,23 +7,15 @@
 </template>
 
 <script setup>
-import { ref, useAttrs } from 'vue'
+import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({
   name: 'MForm'
 })
 
-const formRef = ref()
-const attrs = useAttrs()
+const { innerRef: formRef, exposedProxy } = useExposeRef('formRef')
 
-// 暴露表单方法
-defineExpose({
-  validate: (callback) => formRef.value?.validate(callback),
-  validateField: (props, callback) => formRef.value?.validateField(props, callback),
-  resetFields: () => formRef.value?.resetFields(),
-  scrollToField: (prop) => formRef.value?.scrollToField(prop),
-  clearValidate: (props) => formRef.value?.clearValidate(props)
-})
+defineExpose(exposedProxy)
 </script>
 
 <style lang="scss">
