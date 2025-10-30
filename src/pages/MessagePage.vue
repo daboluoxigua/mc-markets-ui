@@ -382,6 +382,7 @@ const openCustomIcon = () => {
 const openNoIcon = () => {
   Message.success({
     message: '这是一条没有图标的消息',
+    showIcon: false,
     icon: '',
   });
 };
