@@ -66,6 +66,56 @@ export function applyGlobalOverride() {
 }
 
 /**
+ * 启用或自动切换 H5 适配（为 html 添加 mc-h5 类）
+ * @param {Object} options
+ * @param {'auto'|'on'|'off'} [options.mode='auto'] - 自动/强开/关闭
+ * @param {number} [options.breakpoint=768] - 视口断点（px）
+ * @returns {() => void} 调用以移除监听并清理状态
+ */
+export function enableH5Override(options = {}) {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return () => {};
+
+  const {
+    mode = 'auto',
+    breakpoint = 768,
+  } = options;
+
+  const root = document.documentElement;
+
+  const isMobileUA = () => /Mobi|Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  const isNarrow = () => window.innerWidth <= breakpoint;
+
+  const apply = (enable) => {
+    if (enable) {
+      root.classList.add('mc-h5');
+    } else {
+      root.classList.remove('mc-h5');
+    }
+  };
+
+  if (mode === 'on') {
+    apply(true);
+    return () => { root.classList.remove('mc-h5'); };
+  }
+
+  if (mode === 'off') {
+    apply(false);
+    return () => {};
+  }
+
+  // auto 模式：依据 UA 或断点
+  const compute = () => apply(isMobileUA() || isNarrow());
+  compute();
+
+  const onResize = () => compute();
+  window.addEventListener('resize', onResize, { passive: true });
+
+  return () => {
+    window.removeEventListener('resize', onResize);
+  };
+}
+
+/**
  * 强制刷新组件样式
  * @param {string} selector - CSS 选择器
  */

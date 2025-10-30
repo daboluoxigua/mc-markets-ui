@@ -95,3 +95,11 @@ html.dark{
   --el-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.1);
   --el-border-color:var(--border-primary);
 }
+
+
+html.dark.mc-h5 {
+	/* Element Plus 尺寸在 H5 下更紧凑 */
+	--el-component-size-large: 44px;
+	--el-component-size: 36px;
+	--el-component-size-small: 30px;
+}

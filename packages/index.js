@@ -138,8 +138,10 @@ function registerElementPlus(app) {
 const install = (app) => {
   // 应用全局样式覆盖
   if (typeof window !== 'undefined') {
-    import('./utils/styleUtils.js').then(({ applyGlobalOverride }) => {
+    import('./utils/styleUtils.js').then(({ applyGlobalOverride, enableH5Override }) => {
       applyGlobalOverride();
+      // 自动启用 H5 适配（UA 或断点）
+      enableH5Override({ mode: 'auto', breakpoint: 768 });
     });
   }
   
@@ -172,6 +174,7 @@ export {
   addComponentOverride, 
   applyGlobalOverride, 
   forceRefreshStyles,
+  enableH5Override,
   createOverrideComponent 
 } from './utils/styleUtils.js'
 

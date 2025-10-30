@@ -66,11 +66,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --config vite.config.demo.js",
+    "dev:h5": "cross-env VITE_H5=1 vite --config vite.config.demo.js",
     "build": "node scripts/build.js",
     "build:clean": "rimraf dist",
     "build:demo": "vite build --config vite.config.demo.js",
+    "build:demo:h5": "cross-env VITE_H5=1 vite build --config vite.config.demo.js",
     "preview": "vite preview",
     "preview:demo": "vite preview --config vite.config.demo.js --port 4173",
+    "preview:demo:h5": "cross-env VITE_H5=1 vite preview --config vite.config.demo.js --port 4174",
     "lint": "eslint . --ext .vue,.js,.jsx --fix",
     "format": "prettier --write .",
     "test": "vitest",
@@ -82,6 +85,7 @@
     "@mc-markets/ui": "^1.1.19",
     "element-plus": "^2.11.2",
     "highlight.js": "^11.11.1",
+    "postcss-pxtorem": "^6.1.0",
     "vue": "^3.3.0",
     "vue-router": "^4.5.1"
   },

@@ -21,7 +21,7 @@
     --el-button-outline-color: var(--bg-tertiary);
     --el-button-hover-link-text-color: var(--text-brand);
     --el-button-active-color: var(--text-primary);
-    height: 40px;
+    height: var(--el-component-size);
     padding: 8px 16px;
 
     &.is-plain {
@@ -40,11 +40,11 @@
     }
 
     &.el-button--large {
-      height: 48px;
+      height: var(--el-component-size-large);
       padding: 12px 20px;
     }
     &.el-button--small {
-      height: 32px;
+      height: var(--el-component-size-small);
       padding: 5px 12px;
       font-size: 14px;
     }
