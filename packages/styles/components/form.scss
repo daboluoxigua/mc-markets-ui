@@ -15,4 +15,12 @@
       margin-bottom: 20px;
     }
   }
+  .el-form-item--large .el-form-item__label{
+    height: var(--el-component-size-large);
+    line-height: var(--el-component-size-large);
+  }
+  .el-form-item--small .el-form-item__label{
+    height: var(--el-component-size-small);
+    line-height: var(--el-component-size-small);
+  }
 }

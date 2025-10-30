@@ -8,6 +8,7 @@
       :draggable="draggable"
       :close-on-click-modal="closeOnClickModal"
       :center="center"
+      align-center
       v-bind="$attrs"
       class="m-dialog"
       header-class="m-header"

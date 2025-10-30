@@ -10,6 +10,7 @@
   .el-dialog__header {
     padding-bottom: 24px;
     padding-right: 0;
+    font-size: 0;
 
     .el-dialog__title {
       line-height: 32px;
@@ -44,5 +45,12 @@
     > .el-button {
       flex: 1;
     }
+  }
+}
+
+
+.mc-h5 {
+  .el-dialog {
+    width: 343px;
   }
 }
