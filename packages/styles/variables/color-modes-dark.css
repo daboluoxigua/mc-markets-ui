@@ -100,13 +100,13 @@
 	--bg-error-secondary: var(--colors-red-2);
 	--bg-error-solid: var(--colors-red-7);
 	--bg-primary: var(--colors-gray-10);
-	--bg-tertiary-hover: var(--colors-gray-7);
 	--bg-quaternary: var(--colors-gray-6);
 	--bg-secondary: var(--colors-gray-9);
 	--bg-success-primary: var(--colors-green-1);
 	--bg-success-secondary: var(--colors-green-2);
 	--bg-success-solid: var(--colors-green-7);
 	--bg-tertiary: var(--colors-gray-8);
+	--bg-tertiary-hover: var(--colors-gray-7);
 	--bg-warning-primary: var(--colors-orange-1);
 	--bg-warning-secondary: var(--colors-orange-2);
 	--bg-warning-solid: var(--colors-orange-7);

@@ -3,13 +3,14 @@
     v-show="isActive"
     class="m-tab-pane"
     :class="{ 'is-active': isActive }"
+    :data-tab-name="tabName"
   >
     <slot></slot>
   </div>
 </template>
 
 <script>
-import { inject, computed, onMounted, onUnmounted } from 'vue'
+import { inject, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 
 export default {
   name: 'MTabPane',
@@ -44,8 +45,8 @@ export default {
       return tabsContext.activeTab.value === tabName.value
     })
 
-    // 组件挂载时注册tab
-    onMounted(() => {
+    // 注册tab的函数
+    const doRegisterTab = () => {
       const tabInfo = {
         label: props.label,
         name: tabName.value,
@@ -53,7 +54,22 @@ export default {
         closable: props.closable
       }
       tabsContext.registerTab(tabInfo)
+    }
+    
+    // 组件挂载时注册tab
+    onMounted(() => {
+      doRegisterTab()
     })
+
+    // 监听props变化，立即更新tab信息并重新排序（不使用防抖，确保立即响应）
+    watch(() => [props.label, props.name, props.disabled, props.closable], (newVal, oldVal) => {
+      // 只在首次渲染后或值真正改变时触发
+      if (!oldVal || newVal[0] !== oldVal[0] || newVal[1] !== oldVal[1] || 
+          newVal[2] !== oldVal[2] || newVal[3] !== oldVal[3]) {
+        // 立即注册，不使用防抖，确保顺序正确
+        doRegisterTab()
+      }
+    }, { immediate: false })
 
     // 组件卸载时注销tab
     onUnmounted(() => {

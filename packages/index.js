@@ -6,7 +6,7 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.1.32
+ * @version 1.1.36
  */
 
 import * as ElementPlusComponents from 'element-plus'
@@ -175,6 +175,7 @@ export {
   applyGlobalOverride, 
   forceRefreshStyles,
   enableH5Override,
+  isH5,
   createOverrideComponent 
 } from './utils/styleUtils.js'
 

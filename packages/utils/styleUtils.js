@@ -132,6 +132,29 @@ export function forceRefreshStyles(selector = '[class*="el-"]') {
 }
 
 /**
+ * 检测当前是否为 H5 环境
+ * 优先检查 mc-h5 类（由 enableH5Override 管理），如果不存在则回退到 UA 和窗口宽度检测
+ * @param {number} [breakpoint=768] - 视口断点（px），仅在回退检测时使用
+ * @returns {boolean} 是否为 H5 环境
+ */
+export function isH5(breakpoint = 768) {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return false;
+  }
+
+  // 优先检查 mc-h5 类（最可靠，由 enableH5Override 自动管理）
+  const root = document.documentElement;
+  if (root.classList.contains('mc-h5')) {
+    return true;
+  }
+
+  // 回退检测：UA 或窗口宽度（兼容未调用 enableH5Override 的情况）
+  const isMobileUA = /Mobi|Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  const isNarrow = window.innerWidth <= breakpoint;
+  return isMobileUA || isNarrow;
+}
+
+/**
  * 创建带有样式覆盖的 Element Plus 组件配置
  * @param {Object} componentConfig - 组件配置
  * @returns {Object} 增强后的组件配置

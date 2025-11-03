@@ -6,11 +6,17 @@
       :code="basicUsageCode"
     >
       <div class="demo-container">
+        <m-button @click="tabsSwitch">切换tabs</m-button>
+        <m-button @click="activeName='b'">切换到b</m-button>
         <m-tabs v-model="activeName" @tab-click="handleTabClick" @tab-change="handleTabChange">
-          <m-tab-pane label="User" name="first">User 内容</m-tab-pane>
-          <m-tab-pane label="Config" name="second">Config 内容</m-tab-pane>
-          <m-tab-pane label="Role" name="third">Role 内容</m-tab-pane>
-          <m-tab-pane label="Task" name="fourth">Task 内容</m-tab-pane>
+          <m-tab-pane 
+            v-for="tab in tabs" 
+            :key="tab.name"
+            :label="tab.label" 
+            :name="tab.name"
+          >
+            {{ tab.content }}
+          </m-tab-pane>
         </m-tabs>
       </div>
     </DemoSection>
@@ -47,8 +53,47 @@ import { Message } from '@mc-markets/ui'
 import { basicUsageCode } from './tabsCodes.js'
 
 // 响应式数据
-const activeName = ref('first')
+const activeName = ref('a')
 
+// Tab 数据
+const tabs1 = ref([
+  { label: '1', name: 'a', content: 'a' },
+  { label: '2', name: 'b', content: 'b' },
+  { label: '3', name: 'c', content: 'c' },
+  { label: '4', name: 'd', content: 'd' },
+  { label: '5', name: 'e', content: 'e' },
+  { label: '6', name: 'f', content: 'f' },
+  { label: '7', name: 'g', content: 'g' },
+  { label: '8', name: 'h', content: 'h' },
+  { label: '9', name: 'i', content: 'i' },
+  { label: '10', name: 'j', content: 'j' },
+  { label: '11', name: 'k', content: 'k' },
+  { label: '12', name: 'l', content: 'l' },
+  { label: '13', name: 'm', content: 'm' },
+  { label: '14', name: 'n', content: 'n' },
+  { label: '15', name: 'o', content: 'o' },
+  { label: '16', name: 'p', content: 'p' },
+  { label: '17', name: 'q', content: 'q' },
+  { label: '18', name: 'r', content: 'r' },
+  { label: '19', name: 's', content: 's' },
+  { label: '20', name: 't', content: 't' },
+  { label: '21', name: 'u', content: 'u' },
+])
+const tabs2 = ref([
+  { label: '4', name: 'd', content: 'd' },
+  { label: '3', name: 'c', content: 'c' },
+  { label: '2', name: 'b', content: 'b' },
+])
+
+// 当前显示的 tabs 列表
+const tabs = ref(tabs1.value)
+
+const tabsSwitch = () => {
+  // 切换 tabs1 和 tabs2
+  tabs.value = tabs.value === tabs1.value ? tabs2.value : tabs1.value
+  // 切换到新列表的第一个标签
+  activeName.value = tabs.value[0].name
+}
 // Tabs API 文档数据
 const tabsApiProps = [
   {

@@ -39,6 +39,7 @@ h2 {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--border-primary);
+  font-size: 18px;
 }
 </style>
 
