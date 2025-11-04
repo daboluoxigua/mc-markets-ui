@@ -7,8 +7,7 @@
     --el-table-tr-bg-color: var(--bg-tertiary);
     --el-table-fixed-left-column:inset 10px 0 10px -10px #000;
     --el-table-fixed-right-column:inset -10px 0 10px -10px #000;
-
-    border: none;
+    --el-table-border: none;
     border-radius: 8px;
 
     thead {
@@ -33,6 +32,21 @@
 
     .cell {
       line-height: 20px;
+      padding: 0 16px;
+    }
+  }
+}
+
+
+.mc-h5 {
+  .el-table {
+    font-size: var(--font-size-text-xs);
+    .el-table__cell{
+      padding: 12px 0px;
+    }
+
+    .cell {
+      line-height: 18px;
       padding: 0 16px;
     }
   }

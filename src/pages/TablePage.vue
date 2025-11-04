@@ -85,7 +85,7 @@
       <m-table :data="tableData" height="250" style="width: 100%">
         <m-table-column prop="date" label="日期" width="180" />
         <m-table-column prop="name" label="姓名" width="180" />
-        <m-table-column prop="address" label="地址" align="right" />
+        <m-table-column prop="address" label="地址" align="right" width="300" />
       </m-table>
     </DemoSection>
 

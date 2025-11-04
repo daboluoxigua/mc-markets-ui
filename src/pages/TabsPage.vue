@@ -60,7 +60,7 @@ const tabs1 = ref([
   { label: '1', name: 'a', content: 'a' },
   { label: '2', name: 'b', content: 'b' },
   { label: '3', name: 'c', content: 'c' },
-  { label: '4', name: 'd', content: 'd' },
+  { label: '43444', name: 'd', content: 'd' },
   { label: '5', name: 'e', content: 'e' },
   { label: '6', name: 'f', content: 'f' },
   { label: '7', name: 'g', content: 'g' },
