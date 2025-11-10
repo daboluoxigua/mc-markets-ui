@@ -3,19 +3,50 @@
     <!-- 基础选择器 -->
     <DemoSection 
       title="基础选择器"
-      code="<template>
-  <m-select v-model='value' placeholder='请选择'>
-    <m-option label='选项一' value='option1'></m-option>
-    <m-option label='选项二' value='option2'></m-option>
-    <m-option label='选项三' value='option3'></m-option>
-  </m-select>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-
-const value = ref('');
-</script>"
+      code='<div class="doc-grid">
+        <div class="doc-item">
+          <m-select v-model="value" placeholder="请选择">
+            <m-option label="选项一" value="option1"></m-option>
+            <m-option label="选项二" value="option2"></m-option>
+            <m-option label="选项三" value="option3"></m-option>
+          </m-select>
+          <span>基础选择器</span>
+        </div>
+        <div class="doc-item">
+          <m-select v-model="value" placeholder="禁用状态" disabled>
+            <m-option label="选项一" value="option1"></m-option>
+            <m-option label="选项二" value="option2"></m-option>
+            <m-option label="选项三" value="option3"></m-option>
+          </m-select>
+          <span>禁用状态</span>
+        </div>
+        <div class="doc-item">
+          <m-select v-model="value" placeholder="可清空" clearable>
+            <m-option label="选项一" value="option1"></m-option>
+            <m-option label="选项二" value="option2"></m-option>
+            <m-option label="选项三" value="option3"></m-option>
+          </m-select>
+          <span>可清空</span>
+        </div>
+        <div class="doc-item">
+          <m-select v-model="value" placeholder="可搜索" clearable filterable @change="handleSelectChange">
+            <template #header>
+              <m-input styleType="solid" v-model="searchValue" placeholder="请输入搜索内容">
+                <template #prefix>
+                  <m-icon name="search" size="24"/>
+                </template>
+              </m-input>
+            </template>
+            <m-option 
+              v-for="option in filteredOptions" 
+              :key="option.value" 
+              :label="option.label" 
+              :value="option.value"
+            ></m-option>
+          </m-select>
+          <span>可搜索</span>
+        </div>
+      </div>'
     >
       <div class="doc-grid">
         <div class="doc-item">
