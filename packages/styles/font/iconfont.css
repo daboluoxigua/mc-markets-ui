@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 5007157 */
-  src: url('iconfont.woff2?t=1760695499187') format('woff2'),
-       url('iconfont.woff?t=1760695499187') format('woff'),
-       url('iconfont.ttf?t=1760695499187') format('truetype');
+  src: url('iconfont.woff2?t=1762239013662') format('woff2'),
+       url('iconfont.woff?t=1762239013662') format('woff'),
+       url('iconfont.ttf?t=1762239013662') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,62 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a-lucide_wallet-cards1:before {
+  content: "\e7fe";
+}
+
+.icon-Transaction_outline:before {
+  content: "\e7fd";
+}
+
+.icon-a-circle-star1:before {
+  content: "\e7ff";
+}
+
+.icon-a-Investmentportfolio-fill:before {
+  content: "\e800";
+}
+
+.icon-a-maximize1:before {
+  content: "\e801";
+}
+
+.icon-market:before {
+  content: "\e802";
+}
+
+.icon-a-lucide_newspaper1:before {
+  content: "\e803";
+}
+
+.icon-a-lucide_file-chart-column1:before {
+  content: "\e804";
+}
+
+.icon-tabler_graph_outline:before {
+  content: "\e7f7";
+}
+
+.icon-swap:before {
+  content: "\e7f8";
+}
+
+.icon-a-Investmentportfolio_outline:before {
+  content: "\e7f9";
+}
+
+.icon-Transaction-fill:before {
+  content: "\e7fa";
+}
+
+.icon-a-lucide_vault1:before {
+  content: "\e7fb";
+}
+
+.icon-a-lucide_square-library1:before {
+  content: "\e7fc";
 }
 
 .icon-a-1:before {
@@ -201,10 +257,6 @@
   content: "\e7b6";
 }
 
-.icon-graph-filled:before {
-  content: "\e7b7";
-}
-
 .icon-star-filled:before {
   content: "\e7b8";
 }
@@ -311,10 +363,6 @@
 
 .icon-monitor:before {
   content: "\e7a9";
-}
-
-.icon-graph-outline:before {
-  content: "\e7aa";
 }
 
 .icon-home-filled:before {

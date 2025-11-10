@@ -6,6 +6,104 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "45928227",
+      "name": "lucide_wallet-cards 1",
+      "font_class": "a-lucide_wallet-cards1",
+      "unicode": "e7fe",
+      "unicode_decimal": 59390
+    },
+    {
+      "icon_id": "45917867",
+      "name": "Transaction_outline",
+      "font_class": "Transaction_outline",
+      "unicode": "e7fd",
+      "unicode_decimal": 59389
+    },
+    {
+      "icon_id": "45917865",
+      "name": "circle-star 1",
+      "font_class": "a-circle-star1",
+      "unicode": "e7ff",
+      "unicode_decimal": 59391
+    },
+    {
+      "icon_id": "45917864",
+      "name": "Investment portfolio-fill",
+      "font_class": "a-Investmentportfolio-fill",
+      "unicode": "e800",
+      "unicode_decimal": 59392
+    },
+    {
+      "icon_id": "45917862",
+      "name": "maximize 1",
+      "font_class": "a-maximize1",
+      "unicode": "e801",
+      "unicode_decimal": 59393
+    },
+    {
+      "icon_id": "45917863",
+      "name": "market",
+      "font_class": "market",
+      "unicode": "e802",
+      "unicode_decimal": 59394
+    },
+    {
+      "icon_id": "45917861",
+      "name": "lucide_newspaper 1",
+      "font_class": "a-lucide_newspaper1",
+      "unicode": "e803",
+      "unicode_decimal": 59395
+    },
+    {
+      "icon_id": "45917860",
+      "name": "lucide_file-chart-column 1",
+      "font_class": "a-lucide_file-chart-column1",
+      "unicode": "e804",
+      "unicode_decimal": 59396
+    },
+    {
+      "icon_id": "45917873",
+      "name": "tabler_graph_outline",
+      "font_class": "tabler_graph_outline",
+      "unicode": "e7f7",
+      "unicode_decimal": 59383
+    },
+    {
+      "icon_id": "45917872",
+      "name": "swap",
+      "font_class": "swap",
+      "unicode": "e7f8",
+      "unicode_decimal": 59384
+    },
+    {
+      "icon_id": "45917871",
+      "name": "icon-kfckfc",
+      "font_class": "a-Investmentportfolio_outline",
+      "unicode": "e7f9",
+      "unicode_decimal": 59385
+    },
+    {
+      "icon_id": "45917870",
+      "name": "Transaction-fill",
+      "font_class": "Transaction-fill",
+      "unicode": "e7fa",
+      "unicode_decimal": 59386
+    },
+    {
+      "icon_id": "45917869",
+      "name": "lucide_vault 1",
+      "font_class": "a-lucide_vault1",
+      "unicode": "e7fb",
+      "unicode_decimal": 59387
+    },
+    {
+      "icon_id": "45917868",
+      "name": "lucide_square-library 1",
+      "font_class": "a-lucide_square-library1",
+      "unicode": "e7fc",
+      "unicode_decimal": 59388
+    },
+    {
       "icon_id": "45824425",
       "name": "1",
       "font_class": "a-1",
@@ -335,13 +433,6 @@
       "unicode_decimal": 59318
     },
     {
-      "icon_id": "45359524",
-      "name": "graph-filled",
-      "font_class": "graph-filled",
-      "unicode": "e7b7",
-      "unicode_decimal": 59319
-    },
-    {
       "icon_id": "45359520",
       "name": "star-filled",
       "font_class": "star-filled",
@@ -529,13 +620,6 @@
       "font_class": "monitor",
       "unicode": "e7a9",
       "unicode_decimal": 59305
-    },
-    {
-      "icon_id": "45359534",
-      "name": "graph-outline",
-      "font_class": "graph-outline",
-      "unicode": "e7aa",
-      "unicode_decimal": 59306
     },
     {
       "icon_id": "45359533",
