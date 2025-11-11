@@ -1,10 +1,7 @@
 <template>
-  <section class="demo-section" :style="{ '--grid-columns': columns }">
-    <h2>{{ title }}</h2>
-    <CodeToggle :code="props.code">
-      <!-- 组件预览插槽 -->
-      <slot name="default"/>
-    </CodeToggle>
+  <section class="demo-section"  v-for="item in props.component" :key="item.name">
+    <h2>{{ item.title }}</h2>
+    <CodeToggle :component="item"></CodeToggle>
   </section>
 </template>
 
@@ -24,9 +21,12 @@ const props = defineProps({
   code: {
     type: String,
     default: ""
+  },  
+  component: {
+    type: Object,
+    default: () => []
   }
 })
-
 </script>
 
 <style scoped lang="scss">

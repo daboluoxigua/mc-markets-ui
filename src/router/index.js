@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // 导入页面组件
 import IconsPage from '@/pages/IconsPage.vue'
-import ButtonPage from '@/pages/ButtonPage.vue'
+import ButtonPage from '@/pages/button/index.vue'
 import TooltipPage from '@/pages/TooltipPage.vue'
 import PaginationPage from '@/pages/PaginationPage.vue'
 import InputPage from '@/pages/InputPage.vue'

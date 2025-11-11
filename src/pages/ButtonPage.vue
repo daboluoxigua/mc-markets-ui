@@ -3,6 +3,7 @@
     <!-- 基础按钮类型 -->
     <DemoSection 
       title="基础按钮类型"
+      :component="[Test]"
       code="<m-button>默认按钮</m-button>
 <m-button type='primary'>主要按钮</m-button>"
     >
@@ -396,6 +397,7 @@ import { ref } from "vue";
 import DemoSection from "@/components/DemoSection.vue";
 import ApiDocs from "@/components/ApiDocs.vue";
 import { MButton, MIcon } from "@mc-markets/ui";
+import Test from "@/components/test.vue";
 
 
 // 响应式数据

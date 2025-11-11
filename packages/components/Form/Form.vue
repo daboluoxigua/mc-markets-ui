@@ -7,6 +7,7 @@
 </template>
 
 <script setup>
+import { ElForm } from 'element-plus'
 import { useExposeRef } from '@packages/hooks/useExposeRef.js'
 
 defineOptions({

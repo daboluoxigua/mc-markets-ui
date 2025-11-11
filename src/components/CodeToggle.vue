@@ -2,7 +2,7 @@
   <div class="code-toggle">
     <!-- 组件预览区域 -->
     <div class="demo-preview">
-      <slot name="default"></slot>
+      <component :is="component"></component>
     </div>
     
     <!-- 代码展示控制区域 -->
@@ -34,83 +34,29 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import hljs from "highlight.js";
-import prettier from "prettier/standalone";
-import parserHtml from "prettier/parser-html";
 import "highlight.js/styles/atom-one-dark.css"; // 导入Atom One Dark主题样式
 
 // 定义 props
 const props = defineProps({
-  defaultVisible: {
-    type: Boolean,
-    default: false,
-  },
-  language: {
-    type: String,
-    default: "html", // 默认语言为HTML
-  },
-  code: {
-    type: String,
-    default: "", // 直接传入代码字符串
+  component: {
+    type: Object,
+    default: () => {}, // 直接传入代码字符串
   },
 });
-
+const code = computed(() => {
+  return props.component?.code;
+});
+const highlightedCode = ref("");
 const copyBtnRef = ref(null);
-const codeRef = ref(null);
 
 // 响应式数据
-const isVisible = ref(props.defaultVisible);
+const isVisible = ref(false);
 
 
 // 高亮代码
-const highlightedCode = computed(() => {
-  const code = props.code;
-  
-  if (!code) {
-    return "";
-  }
+highlightedCode.value = hljs.highlight(code.value, { language: 'html' }).value
 
-  // 使用prettier格式化代码
-  let formattedCode = code;
-  try {
-    const result = prettier.format(code, {
-      parser: "html",
-      plugins: [parserHtml],
-      printWidth: 120, // 增加行宽，减少不必要的换行
-      tabWidth: 2,
-      useTabs: false,
-      singleQuote: true,
-      trailingComma: "none",
-      bracketSpacing: true,
-      arrowParens: "avoid",
-      htmlWhitespaceSensitivity: "ignore", // 忽略HTML空白敏感度
-      endOfLine: "lf"
-    });
-    
-    formattedCode = typeof result === 'string' ? result : code;
-  } catch (error) {
-    console.warn("代码格式化失败，使用原始代码:", error);
-    formattedCode = code;
-  }
-
-  // 使用highlight.js进行代码高亮
-  try {
-    const result = hljs.highlight(formattedCode, {
-      language: props.language,
-      ignoreIllegals: true,
-    });
-    return result.value;
-  } catch (error) {
-    console.warn("代码高亮失败，使用转义后的原始代码:", error);
-    // 如果高亮失败，返回HTML转义后的原始代码
-    return formattedCode
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-});
-
+console.log(props)
 
 // 方法
 const toggle = () => {
