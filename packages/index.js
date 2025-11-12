@@ -41,7 +41,7 @@ import MTabPane from './components/Tabs/TabPane.vue'
 import MTabCard from './components/TabCard/TabCard.vue'
 import MTabCardItem from './components/TabCard/TabCardItem.vue'
 import MBreadcrumb from './components/Breadcrumb/Breadcrumb.vue'
-
+import MPicker from './components/Picker/Picker.vue'
 const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb]
 
 // 统一的组件名称转换函数
@@ -166,7 +166,7 @@ const install = (app) => {
 }
 
 export default { install }
-export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb }
+export { MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb, MPicker }
 
 // 导出样式工具函数
 export { 

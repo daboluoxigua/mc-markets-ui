@@ -5,7 +5,6 @@
       <div class="header-content">
         <h1>@mc-markets/ui</h1>
         <div class="header-actions">
-          <!-- 主题选择器和黑暗模式开关已移除，默认使用黑暗模式 -->
         </div>
       </div>
     </el-header>
@@ -61,11 +60,24 @@ const handleMenuSelect = (path) => {
 }
 </script>
 
+<style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow: hidden;
+}
+</style>
 <style scoped lang="scss">
+
+
 .demo-app {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .demo-header {

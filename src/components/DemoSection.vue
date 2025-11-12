@@ -10,10 +10,6 @@ import CodeToggle from './CodeToggle.vue'
 
 // 定义 props
 const props = defineProps({
-  title: {
-    type: String,
-    required: true
-  },
   columns: {
     type: Number,
     default: 4

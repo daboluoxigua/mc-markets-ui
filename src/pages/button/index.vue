@@ -1,6 +1,5 @@
 <template>
     <DemoSection 
-      title="基础按钮类型"
       :component="[Base,Disabled,Size,Status,Text]"
     ></DemoSection>
     <!-- API 文档 -->
