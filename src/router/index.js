@@ -25,6 +25,7 @@ import ColorPage from '@/pages/ColorPage.vue'
 import TabsPage from '@/pages/tabs/index.vue'
 import TabCardPage from '@/pages/tabCard/index.vue'
 import BreadcrumbPage from '@/pages/breadcrumb/index.vue'
+import PickerPage from '@/pages/picker/index.vue'
 
 const routes = [
   {
@@ -221,6 +222,14 @@ const routes = [
     component: BreadcrumbPage,
     meta: {
       title: 'Breadcrumb 面包屑'
+    }
+  },
+  {
+    path: '/picker',
+    name: 'Picker',
+    component: PickerPage,
+    meta: {
+      title: 'Picker 选择器'
     }
   }
 ]

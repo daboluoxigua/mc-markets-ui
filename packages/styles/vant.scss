@@ -1,0 +1,23 @@
+/*
+ * 变量主题样式库
+*/
+:root:root {
+
+  // 主要色 已修改
+  --van-red: var(--all-red-5);
+  --van-blue: var(--colors-yellow-4);
+  --van-orange: var(--all-orange-5);
+  --van-orange-dark: #ed6a0c;
+  --van-orange-light: #fffbe8;
+  --van-green: var(--all-green-5);
+
+  // 全局popup样式
+  --van-popup-background: var(--bg-tertiary);
+  --van-popup-transition: transform var(--van-duration-base);
+  --van-popup-round-radius: 24px;
+
+  // 全局picker样式
+  --van-picker-background: var(--bg-tertiary);
+  --van-picker-mask-color: var(--bg-tertiary);
+  --van-picker-option-text-color: var(--text-primary);
+}

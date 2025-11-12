@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "46055230",
+      "name": "tabler_alert-circle-fill",
+      "font_class": "tabler_alert-circle-fill",
+      "unicode": "e805",
+      "unicode_decimal": 59397
+    },
+    {
       "icon_id": "45928227",
       "name": "lucide_wallet-cards 1",
       "font_class": "a-lucide_wallet-cards1",

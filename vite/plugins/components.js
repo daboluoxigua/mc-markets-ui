@@ -1,5 +1,6 @@
 import components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default function createComponents() {
   return components({
@@ -11,6 +12,7 @@ export default function createComponents() {
       ElementPlusResolver({
         importStyle: "sass",
       }),
+      VantResolver(),
     ], // ElementPlus按需加载
   });
 }

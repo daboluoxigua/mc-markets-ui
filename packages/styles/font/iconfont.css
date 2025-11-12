@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 5007157 */
-  src: url('iconfont.woff2?t=1762239013662') format('woff2'),
-       url('iconfont.woff?t=1762239013662') format('woff'),
-       url('iconfont.ttf?t=1762239013662') format('truetype');
+  src: url('iconfont.woff2?t=1762935832912') format('woff2'),
+       url('iconfont.woff?t=1762935832912') format('woff'),
+       url('iconfont.ttf?t=1762935832912') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tabler_alert-circle-fill:before {
+  content: "\e805";
 }
 
 .icon-a-lucide_wallet-cards1:before {

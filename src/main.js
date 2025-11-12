@@ -3,9 +3,11 @@ import App from './App.vue'
 import router from './router'
 
 // 使用开发环境的组件库
+import 'vant/lib/index.css';
 import '@mc-markets/ui/styles/index.scss'
 import '@mc-markets/ui/styles/font/iconfont.css'
 import '@mc-markets/ui/styles/colorfont/iconfont.css'
+import '@mc-markets/ui/styles/vant.scss'
 import { setTheme } from './utils/theme'
 import ElementPlus from 'element-plus'
 

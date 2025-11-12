@@ -112,17 +112,6 @@ const handleClick = (event) => {
 </script>
 
 <style scoped lang="scss">
-.iconfont {
-  display: inline-block;
-  font-style: normal;
-  vertical-align: baseline;
-  text-align: center;
-  text-transform: none;
-  line-height: 1;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 /* 旋转动画 */
 .icon-spin {
