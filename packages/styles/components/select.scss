@@ -20,7 +20,7 @@
       background: var(--bg-tertiary-hover);
     }
   }
-  
+
   .el-select--small {
     .el-select__wrapper {
       padding: 8px 16px;
@@ -34,15 +34,14 @@
       min-height: var(--el-component-size-large);
     }
   }
-}
-// 下拉菜单样式 - 全局样式（仅在组件未定义时生效）
 
-.el-select__popper.el-popper.is-light{
-  box-shadow: none;
-  background: var(--bg-tertiary-hover);
-  border: 1px solid var(--border-primary);
-  
-}
+  // 下拉菜单样式 - 全局样式（仅在组件未定义时生效）
+
+  .el-select__popper.el-popper.is-light {
+    box-shadow: none;
+    background: var(--bg-tertiary-hover);
+    border: 1px solid var(--border-primary);
+  }
   .el-select-dropdown {
     padding: 12px;
   }
@@ -63,7 +62,7 @@
     &.is-hovering {
       background: var(--all-alphe-white-6, #ffffff0f);
     }
-    &.is-selected{
+    &.is-selected {
       color: var(--text-brand);
       font-weight: 500;
     }
@@ -74,3 +73,4 @@
     padding: 0px;
     padding-bottom: 4px;
   }
+}

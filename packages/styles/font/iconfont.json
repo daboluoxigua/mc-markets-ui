@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "46130478",
+      "name": "lucide_scan-eye",
+      "font_class": "lucide_scan-eye",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "46130477",
+      "name": "lucide_map-pin-house",
+      "font_class": "lucide_map-pin-house",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "46130476",
+      "name": "lucide_notebook-pen",
+      "font_class": "lucide_notebook-pen",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "46130469",
+      "name": "lucide_image-up",
+      "font_class": "lucide_image-up",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "46092833",
+      "name": "lucide_monitor-smartphone",
+      "font_class": "lucide_monitor-smartphone",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "46055230",
       "name": "tabler_alert-circle-fill",
       "font_class": "tabler_alert-circle-fill",

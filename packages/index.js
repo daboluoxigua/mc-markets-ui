@@ -6,7 +6,7 @@
  * 将 Element Plus 组件前缀从 el- 转换为 m- 并导出
  * 导出 Element Plus 事件相关功能（Message、MessageBox、Notification、Loading 等）
  * 
- * @version 1.1.41
+ * @version 1.1.53
  */
 
 import * as ElementPlusComponents from 'element-plus'
@@ -42,7 +42,7 @@ import MTabCard from './components/TabCard/TabCard.vue'
 import MTabCardItem from './components/TabCard/TabCardItem.vue'
 import MBreadcrumb from './components/Breadcrumb/Breadcrumb.vue'
 import MPicker from './components/Picker/Picker.vue'
-const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb]
+const components = [MIcon, MButton, MInput, MForm, MFormItem, MTooltip, MSelect, MOption, MOptionGroup, MPagination, MRadio, MRadioGroup, MRadioButton, MSwitch, MTag, MAlert, MDialog, MNotification, MMessage, MNotifiMessage, MDatePicker, MEmpty, MTable, MTableColumn, MBanner, MTabs, MTabPane, MTabCard, MTabCardItem, MBreadcrumb, MPicker]
 
 // 统一的组件名称转换函数
 // 将 MDatePicker -> m-date-picker，与 Element Plus 转换逻辑保持一致
@@ -149,10 +149,15 @@ const install = (app) => {
   
   // 先注册自定义组件 - 确保优先级
   components.forEach(component => {
-    const name = convertComponentName(component?.name)
-    if (name) {
-      // 强制注册自定义组件，确保覆盖任何已存在的组件
-      app.component(name, component)
+    const convertName = convertComponentName(component?.name)
+    const originalName = component?.name
+    if (convertName) {
+      // 强制注册自定义组件，确保覆盖任何已存在的组件 (kebab-case)
+      app.component(convertName, component)
+    }
+    if (originalName) {
+      // 同时注册 PascalCase，兼容直接使用 <MPicker /> 等写法
+      app.component(originalName, component)
     }
   })
   

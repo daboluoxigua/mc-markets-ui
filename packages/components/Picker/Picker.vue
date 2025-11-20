@@ -24,18 +24,22 @@
             {{ item[columnsFieldNames.label] }}
           </template>
         </div>
-        <div
-          class="active-icon"
-          v-show="model === item[columnsFieldNames.value]"
-        >
-          <i class="iconfont icon-check"></i>
+        <div class="active-icon">
+          <i
+            v-show="model === item[columnsFieldNames.value]"
+            class="iconfont icon-check"
+          ></i>
         </div>
       </div>
+      <slot />
     </div>
   </popup>
 </template>
 <script setup>
 import { Popup, Picker } from "vant";
+defineOptions({
+  name: "MPicker",
+});
 const emit = defineEmits(["confirm"]);
 const props = defineProps({
   title: {
@@ -103,15 +107,16 @@ const bindClosePopup = () => {
 .list-container {
   display: flex;
   flex-direction: column;
-  max-height: 300px;
-  padding: 0 16px;
+  max-height: 558px;
+  padding: 0 16px 24px;
   overflow-y: auto;
   .list-item {
-    padding: 16px 12px;
+    padding:16px 12px;
     border-radius: var(--md);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 52px;
     &.active {
       background: var(--bg-tertiary-hover);
     }
@@ -121,9 +126,11 @@ const bindClosePopup = () => {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex: 1;
     }
     .active-icon {
       font-size: 20px;
+      width: 20px;
       color: var(--text-primary);
     }
   }

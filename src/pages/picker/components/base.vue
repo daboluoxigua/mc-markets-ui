@@ -3,7 +3,7 @@
 </demo>
 <!-- #region snippet -->
 <template>
-  <m-input v-model="selected" placeholder="请选择城市" @click="show = true" readonly>
+  <m-input v-model="value" placeholder="请选择城市" @click="show = true" readonly>
     <template #suffix>
         <m-icon name="chevron-down" />
     </template>
@@ -20,13 +20,16 @@
       <img :src="item.icon" style="width: 20px; height: 20px; border-radius: 50%;" />
       <span>{{ item.text }}</span>
     </template>
+    <template #default>
+      xxxxxxxx
+    </template>
   </m-picker>
 </template>
 <script setup>
 import { MPicker, MIcon } from "@mc-markets/ui";
 
 const show = ref(false);
-const value = ref(["Hangzhou"]);
+const value = ref('Hangzhou');
 const selected = ref(null);
 const columns = [
   { text: "杭州", value: "Hangzhou", icon: "https://img.yzcdn.cn/vant/apple-1.jpg" },
