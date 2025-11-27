@@ -31,7 +31,7 @@ const openCloseable = () => {
 
 const openPersistent = () => {
   Message.warning({
-    message: "这条消息不会自动关闭",
+    message: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa",
     duration: 0,
     showClose: true,
   });

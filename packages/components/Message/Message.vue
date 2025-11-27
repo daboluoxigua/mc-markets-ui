@@ -352,8 +352,13 @@ export { Message };
 
   .message-content {
     flex: 1;
+    min-width: 0; // 允许 flex 子元素缩小
     line-height: 1.4;
     position: relative;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 
     .message-repeat {
       position: absolute;
