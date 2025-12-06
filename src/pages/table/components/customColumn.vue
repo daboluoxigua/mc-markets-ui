@@ -3,7 +3,7 @@
 </demo>
 <!-- #region snippet -->
 <template>
-  <m-table :data="tableData" style="width: 100%">
+  <m-table :data="tableData" table-layout="auto" style="width: 100%">
     <m-table-column prop="date" label="日期" width="180" />
     <m-table-column prop="name" label="姓名" width="180" />
     <m-table-column prop="address" label="地址" align="right" />
@@ -11,7 +11,7 @@
       <template #default="scope">
         <m-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</m-button>
         <m-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">
-          删除
+          删除22
         </m-button>
       </template>
     </m-table-column>

@@ -1,6 +1,5 @@
-/* 3.-border-mode-1.css */
 :root {
-	--none: 0px;
-	--xs: 2px;
-	--xxs: 1px;
+	--Border-none: 0px;
+	--Border-xs: 2px;
+	--Border-xxs: 1px;
 }

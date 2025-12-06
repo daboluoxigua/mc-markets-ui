@@ -12,7 +12,7 @@
     }
 
     .el-form-item {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
   }
   .el-form-item--large .el-form-item__label{
@@ -22,5 +22,10 @@
   .el-form-item--small .el-form-item__label{
     height: var(--el-component-size-small);
     line-height: var(--el-component-size-small);
+  }
+  .el-form-item__error{
+    position: initial;
+    padding-top: 4px;
+    width: 100%;
   }
 }

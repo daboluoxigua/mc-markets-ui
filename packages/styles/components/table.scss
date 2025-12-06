@@ -32,7 +32,18 @@
 
     .cell {
       line-height: 20px;
-      padding: 0 16px;
+      padding: 0 8px;
+    }
+
+    .el-table__cell:first-of-type {
+      .cell {
+        padding-left: 16px;
+      }
+    }
+    .el-table__cell:last-of-type {
+      .cell {
+        padding-right: 16px;
+      }
     }
   }
 }

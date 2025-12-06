@@ -13,6 +13,7 @@
         size="small"
         style-type="solid"
         :prefix-icon="customPrefix"
+        popper-class="custom-popper-class"
       />
     </div>
   </div>

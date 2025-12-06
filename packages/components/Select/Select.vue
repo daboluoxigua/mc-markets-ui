@@ -2,9 +2,9 @@
   <el-select
     ref="selectRef"
     class="m-select"
-    :class="{ solid: $attrs.styleType === 'solid' }"
     :show-arrow="false"
     v-bind="$attrs"
+    :class="{ solid: styleType === 'solid' }"
   >
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
@@ -14,7 +14,11 @@
 
 <script setup>
 import { useExposeRef } from '@packages/hooks/useExposeRef.js'
-
+const props = defineProps({
+  styleType: {
+    type: String,
+  },
+});
 defineOptions({
   name: "MSelect",
 });

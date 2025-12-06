@@ -621,7 +621,7 @@ export default {
     position: relative;
     display: inline-flex;
     white-space: nowrap;
-    padding: 0 16px;
+    padding: 0 0;
   }
 
   &__item {

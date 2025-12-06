@@ -1,5 +1,5 @@
 <template>
-  <el-date-picker ref="datePickerRef" v-bind="mergedAttrs" class="m-datepicker" :popper-class="popperClass" :class="{ 'style-type-solid': styleType === 'solid' }">
+  <el-date-picker ref="datePickerRef" v-bind="$attrs" class="m-datepicker" :popper-class="popperClass+' mc-datepicker-popper'" :class="{ 'style-type-solid': styleType === 'solid' }">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>

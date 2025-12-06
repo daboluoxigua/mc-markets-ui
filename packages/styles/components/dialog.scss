@@ -1,7 +1,7 @@
 .mc-ui-override {
   .el-dialog {
     --el-dialog-padding-primary: 24px;
-    --el-dialog-title-font-size: 24px;
+    --el-dialog-title-font-size: var(--font-size-display-2xl);
     --el-dialog-border-radius: 16px;
     --el-dialog-bg-color: var(--bg-tertiary);
     box-shadow:none;
@@ -34,7 +34,7 @@
 
       &:hover {
         .el-dialog__close {
-          color: var(--bg-brand-hover);
+          color: var(--icon-primary);
         }
       }
     }
