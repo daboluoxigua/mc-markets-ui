@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
     css: {
       preprocessorOptions: {
         scss: {
-          silenceDeprecations: ['legacy-js-api']
+          silenceDeprecations: ['legacy-js-api', 'if-function']
         }
       },
       postcss: isH5 ? {

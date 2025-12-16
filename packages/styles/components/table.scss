@@ -46,6 +46,10 @@
       }
     }
   }
+
+  .el-table__header-wrapper tr td.el-table-fixed-column--left.is-last-column::before, .el-table__header-wrapper tr td.el-table-fixed-column--left.is-first-column::before, .el-table__header-wrapper tr td.el-table-fixed-column--right.is-last-column::before, .el-table__header-wrapper tr td.el-table-fixed-column--right.is-first-column::before, .el-table__header-wrapper tr th.el-table-fixed-column--left.is-last-column::before, .el-table__header-wrapper tr th.el-table-fixed-column--left.is-first-column::before, .el-table__header-wrapper tr th.el-table-fixed-column--right.is-last-column::before, .el-table__header-wrapper tr th.el-table-fixed-column--right.is-first-column::before, .el-table__body-wrapper tr td.el-table-fixed-column--left.is-last-column::before, .el-table__body-wrapper tr td.el-table-fixed-column--left.is-first-column::before, .el-table__body-wrapper tr td.el-table-fixed-column--right.is-last-column::before, .el-table__body-wrapper tr td.el-table-fixed-column--right.is-first-column::before, .el-table__body-wrapper tr th.el-table-fixed-column--left.is-last-column::before, .el-table__body-wrapper tr th.el-table-fixed-column--left.is-first-column::before, .el-table__body-wrapper tr th.el-table-fixed-column--right.is-last-column::before, .el-table__body-wrapper tr th.el-table-fixed-column--right.is-first-column::before, .el-table__footer-wrapper tr td.el-table-fixed-column--left.is-last-column::before, .el-table__footer-wrapper tr td.el-table-fixed-column--left.is-first-column::before, .el-table__footer-wrapper tr td.el-table-fixed-column--right.is-last-column::before, .el-table__footer-wrapper tr td.el-table-fixed-column--right.is-first-column::before, .el-table__footer-wrapper tr th.el-table-fixed-column--left.is-last-column::before, .el-table__footer-wrapper tr th.el-table-fixed-column--left.is-first-column::before, .el-table__footer-wrapper tr th.el-table-fixed-column--right.is-last-column::before, .el-table__footer-wrapper tr th.el-table-fixed-column--right.is-first-column::before{
+    bottom: 0;
+  }
 }
 
 

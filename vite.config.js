@@ -29,7 +29,7 @@ export default ({ command, mode }) => {
     css: {
       preprocessorOptions: {
         scss: {
-          silenceDeprecations: ['legacy-js-api'],
+          silenceDeprecations: ['legacy-js-api', 'if-function'],
           // 确保自定义样式优先级
           additionalData: `
             // 提高自定义样式优先级
