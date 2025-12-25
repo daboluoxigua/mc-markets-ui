@@ -1,5 +1,5 @@
 <template>
-  <el-date-picker ref="datePickerRef" v-bind="$attrs" class="m-datepicker" :popper-class="popperClass+' mc-datepicker-popper'" :class="{ 'style-type-solid': styleType === 'solid' }">
+  <el-date-picker ref="datePickerRef" :prefix-icon="customPrefix"  class="m-datepicker" :popper-class="popperClass+' mc-datepicker-popper'" :class="{ 'style-type-solid': styleType === 'solid' }" v-bind="$attrs">
     <template v-for="(_, name) in $slots" :key="name" #[name]>
       <slot :name="name" />
     </template>
@@ -9,6 +9,7 @@
 <script setup>
 import { useClassName } from "@packages/hooks/useClassName.js";
 import { useExposeRef } from '@packages/hooks/useExposeRef.js'
+import Icon from '../Icon/Icon.vue'
 
 defineOptions({
   name: "MDatePicker",
@@ -24,7 +25,11 @@ const props = defineProps({
     type: String,
   },
 });
-
+const customPrefix = shallowRef({
+  render() {
+    return h(Icon, { name: 'calendar-clock', size: '20' })
+  }
+})
 // 使用类名 Hook，排除 type 和 popperClass 属性
 const { mergedAttrs, className: popperClass } = useClassName(
   "mc-datepicker-popper",
