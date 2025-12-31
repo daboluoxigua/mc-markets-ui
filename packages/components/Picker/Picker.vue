@@ -8,40 +8,48 @@
         <i class="iconfont icon-lucide-x"></i>
       </div>
     </div>
+
     <div class="list-container">
-      <div
-        class="list-item"
-        :class="{ active: model === item[columnsFieldNames.value] }"
-        v-for="item in columns"
-        :key="item[columnsFieldNames.value]"
-        @click="pickerConfirm(item)"
-      >
-        <div class="label">
-          <template v-if="$slots.label">
-            <slot name="label" :item="item"></slot>
-          </template>
-          <template v-else>
-            {{ item[columnsFieldNames.label] }}
-          </template>
+      <van-loading v-if="loading"  class="loading"/>
+      <template v-else>
+        <div
+          class="list-item"
+          :class="{ active: model === item[columnsFieldNames.value] }"
+          v-for="item in columns"
+          :key="item[columnsFieldNames.value]"
+          @click="pickerConfirm(item)"
+        >
+          <div class="label">
+            <template v-if="$slots.label">
+              <slot name="label" :item="item"></slot>
+            </template>
+            <template v-else>
+              {{ item[columnsFieldNames.label] }}
+            </template>
+          </div>
+          <div class="active-icon">
+            <i
+              v-show="model === item[columnsFieldNames.value]"
+              class="iconfont icon-check"
+            ></i>
+          </div>
         </div>
-        <div class="active-icon">
-          <i
-            v-show="model === item[columnsFieldNames.value]"
-            class="iconfont icon-check"
-          ></i>
-        </div>
-      </div>
-      <slot />
+        <slot />
+      </template>
     </div>
   </popup>
 </template>
 <script setup>
-import { Popup, Picker } from "vant";
+import { Popup, Picker, Loading } from "vant";
 defineOptions({
   name: "MPicker",
 });
 const emit = defineEmits(["confirm"]);
 const props = defineProps({
+  loading: {
+    type: Boolean,
+    default: false,
+  },
   title: {
     type: String,
     default: "",
@@ -110,8 +118,11 @@ const bindClosePopup = () => {
   max-height: 558px;
   padding: 0 16px 24px;
   overflow-y: auto;
+  .loading {
+    margin: 20px auto;
+  }
   .list-item {
-    padding:16px 12px;
+    padding: 16px 12px;
     border-radius: var(--md);
     display: flex;
     align-items: center;

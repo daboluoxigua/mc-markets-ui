@@ -15,19 +15,21 @@
     :columns="columns"
     :columns-field-names="{ label: 'text', value: 'value' }"
     @confirm="handleConfirm"
+    :loading="loading"
   >
     <template #label="{ item }">
       <img :src="item.icon" style="width: 20px; height: 20px; border-radius: 50%;" />
       <span>{{ item.text }}</span>
     </template>
     <template #default>
-      xxxxxxxx
+      33333333
     </template>
   </m-picker>
 </template>
 <script setup>
 import { MPicker, MIcon } from "@mc-markets/ui";
 
+const loading = ref(true);
 const show = ref(false);
 const value = ref('Hangzhou');
 const selected = ref(null);

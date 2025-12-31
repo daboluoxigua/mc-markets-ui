@@ -56,7 +56,6 @@ const isVisible = ref(false);
 // 高亮代码
 highlightedCode.value = hljs.highlight(code.value, { language: 'html' }).value
 
-console.log(props)
 
 // 方法
 const toggle = () => {
