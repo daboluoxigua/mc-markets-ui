@@ -44,17 +44,22 @@ export default defineConfig(({ mode }) => {
     outDir: "demo-dist", // 演示站点输出目录
     assetsDir: "assets",
     sourcemap: false,
-    minify: 'esbuild', // 使用 esbuild 进行压缩，更快且无需额外依赖
+    minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vue-vendor': ['vue', 'vue-router'],
-          'element-vendor': ['element-plus'],
-          'ui-vendor': ['@mc-markets/ui']
+        // 用函数拆分：Vant 按子模块单独成 chunk，避免同一 chunk 内多处 createNamespace 的 bem 重复声明
+        manualChunks(id) {
+          if (id.includes('node_modules/vant')) {
+            const m = id.match(/vant[\/\\](?:es|lib)[\/\\]([^\/\\]+)/);
+            return m ? `vant-${m[1]}` : 'vant';
+          }
+          if (id.includes('node_modules/vue') || id.includes('node_modules/@vue')) return 'vue-vendor';
+          if (id.includes('node_modules/vue-router')) return 'vue-vendor';
+          if (id.includes('node_modules/element-plus')) return 'element-vendor';
+          if (id.includes('packages') || id.includes('@mc-markets/ui')) return 'ui-vendor';
         }
       }
     },
-    // esbuild 压缩配置
     esbuild: {
       drop: ['console', 'debugger']
     },
